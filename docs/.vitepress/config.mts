@@ -16,7 +16,7 @@ export default defineConfig({
   lastUpdated: true,
   appearance: 'dark',
   sitemap: {
-    hostname: 'https://YOUR-USER.github.io',
+    hostname: 'https://moibaldenegro.github.io',
   },
   head: [
     ['meta', { name: 'theme-color', content: '#09070D' }],
@@ -105,17 +105,20 @@ export default defineConfig({
         ] },
       ],
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/YOUR-USER/mxni-design-system-docs' },
-    ],
+   socialLinks: [
+  {
+    icon: 'github',
+    link: 'https://github.com/MoiBaldenegro/mxvi-design-system',
+  },
+],
     footer: {
       message: 'MXNI Design System · Initial specification v1.0',
       copyright: 'Built for a consistent technology ecosystem.',
     },
     editLink: {
-      pattern: 'https://github.com/YOUR-USER/mxni-design-system-docs/edit/main/docs/:path',
-      text: 'Editar esta página en GitHub',
-    },
+  pattern: 'https://github.com/MoiBaldenegro/mxvi-design-system/edit/main/docs/:path',
+  text: 'Editar esta página en GitHub',
+},
     docFooter: {
       prev: 'Página anterior',
       next: 'Siguiente página',
