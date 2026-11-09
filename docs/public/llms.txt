@@ -1,0 +1,54 @@
+# MXNI Design System — AI documentation index
+
+> One identity. Multiple products. A consistent experience.
+
+Use these canonical Markdown resources to understand and implement MXNI.
+Start with the agent instructions, then retrieve the relevant foundation, component, or guideline.
+
+## Core instructions
+- [Agent instructions](./ai/agent-instructions.md)
+- [Brand identity](./brand/identity.md)
+- [Foundations: colors](./foundations/colors.md)
+- [Foundations: typography](./foundations/typography.md)
+- [Foundations: spacing and layout](./foundations/spacing-layout.md)
+- [Foundations: accessibility](./foundations/accessibility.md)
+
+## Complete documentation
+- [MXNI instructions for AI agents](./markdown/ai/agent-instructions.md)
+- [AI context strategy](./markdown/ai/context-strategy.md)
+- [AI resources](./markdown/ai/index.md)
+- [MCP and RAG integration](./markdown/ai/mcp-rag.md)
+- [Brand identity](./markdown/brand/identity.md)
+- [Logo](./markdown/brand/logo.md)
+- [Visual language](./markdown/brand/visual-language.md)
+- [Buttons](./markdown/components/buttons.md)
+- [Cards and panels](./markdown/components/cards-panels.md)
+- [Feedback components](./markdown/components/feedback.md)
+- [Inputs](./markdown/components/inputs.md)
+- [Navigation](./markdown/components/navigation.md)
+- [Components overview](./markdown/components/overview.md)
+- [Accessibility](./markdown/foundations/accessibility.md)
+- [Color](./markdown/foundations/colors.md)
+- [Geometry and effects](./markdown/foundations/geometry-effects.md)
+- [Motion](./markdown/foundations/motion.md)
+- [Spacing and layout](./markdown/foundations/spacing-layout.md)
+- [Typography](./markdown/foundations/typography.md)
+- [Bento composition](./markdown/guidelines/bento-composition.md)
+- [Content and data visualization](./markdown/guidelines/content-data.md)
+- [Guidelines overview](./markdown/guidelines/overview.md)
+- [Product expression](./markdown/guidelines/product-expression.md)
+- [Thumbnail overlays](./markdown/guidelines/thumbnail-overlays.md)
+- [CSS tokens](./markdown/implementation/css-tokens.md)
+- [Implementation overview](./markdown/implementation/overview.md)
+- [React integration](./markdown/implementation/react.md)
+- [Versioning and contribution](./markdown/implementation/versioning.md)
+- [index.md](./markdown/index.md)
+
+## Download
+- [Complete Markdown bundle](./downloads/mxni-design-system-markdown.zip)
+
+## Agent usage
+1. Read `ai/agent-instructions.md`.
+2. Read only the relevant documents for the current task.
+3. Reuse documented tokens and patterns.
+4. Report deviations and proposed additions.

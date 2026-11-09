@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(240 170) rotate(90) scale(180 230)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A83FE0" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#09070D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stroke" x1="80" y1="50" x2="390" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A83FE0"/>
+      <stop offset=".55" stop-color="#E044C5"/>
+      <stop offset="1" stop-color="#24CDE0"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" rx="18" fill="#09070D"/>
+  <rect width="480" height="360" rx="18" fill="url(#glow)"/>
+  <g opacity=".25" stroke="#80618E">
+    <path d="M40 0V360M100 0V360M160 0V360M220 0V360M280 0V360M340 0V360M400 0V360M460 0V360"/>
+    <path d="M0 40H480M0 100H480M0 160H480M0 220H480M0 280H480M0 340H480"/>
+  </g>
+  <rect x="45" y="52" width="240" height="116" rx="8" fill="#15111C" stroke="#382C42"/>
+  <rect x="300" y="52" width="135" height="116" rx="8" fill="#211A2B" stroke="#382C42"/>
+  <rect x="45" y="183" width="125" height="125" rx="8" fill="#211A2B" stroke="#382C42"/>
+  <rect x="185" y="183" width="250" height="125" rx="8" fill="#15111C" stroke="#382C42"/>
+  <path d="M65 78H105M65 92H145M65 106H125" stroke="#24CDE0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M320 83H405M320 98H380M320 113H395" stroke="#A83FE0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M75 260L105 220L140 260" stroke="url(#stroke)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="210" y="260" fill="#F7F4FA" font-family="Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-3">MXNI<tspan fill="#E044C5">_</tspan></text>
+</svg>
