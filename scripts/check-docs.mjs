@@ -11,7 +11,7 @@ const required = [
   'foundations/typography.md',
   'foundations/accessibility.md',
   'components/overview.md',
-  'guidelines/thumbnail-overlays.md',
+  'guidelines/thumbnails.md',
   'implementation/css-tokens.md',
   'ai/agent-instructions.md',
 ]
