@@ -37,7 +37,7 @@ Start with the agent instructions, then retrieve the relevant foundation, compon
 - [Content and data visualization](./markdown/guidelines/content-data.md)
 - [Guidelines overview](./markdown/guidelines/overview.md)
 - [Product expression](./markdown/guidelines/product-expression.md)
-- [Thumbnail overlays](./markdown/guidelines/thumbnail-overlays.md)
+- [Thumbnails](./markdown/guidelines/thumbnails.md)
 - [CSS tokens](./markdown/implementation/css-tokens.md)
 - [Implementation overview](./markdown/implementation/overview.md)
 - [React integration](./markdown/implementation/react.md)

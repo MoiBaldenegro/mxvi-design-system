@@ -85,7 +85,7 @@ export default defineConfig({
           { text: 'Overview', link: '/guidelines/overview' },
           { text: 'Bento composition', link: '/guidelines/bento-composition' },
           { text: 'Product expression', link: '/guidelines/product-expression' },
-          { text: 'Thumbnail overlays', link: '/guidelines/thumbnail-overlays' },
+          { text: 'Thumbnails', link: '/guidelines/thumbnails' },
           { text: 'Content & data visualization', link: '/guidelines/content-data' },
         ] },
       ],
