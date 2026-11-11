@@ -45,7 +45,7 @@ Las piezas mínimas. No se dividen más.
 | [Botones](/catalog/atoms/buttons) | `.mx-button` y variantes `--accent`, `--surface`, `--quiet`, `--sm`, `--cta`, `--cta-outline` |
 | [Tipografía y enlaces](/catalog/atoms/typography) | `.mx-heading`, `.mx-label`, `.mx-text`, `.mx-meta`, `.mx-link` |
 | [Tags, chips y badges](/catalog/atoms/tags) | `.mx-tag`, `.mx-chip`, `.mx-kicker`, `.mx-badge`, `.mx-handle`, `.mx-verified` |
-| [Campos y botón de ícono](/catalog/atoms/inputs) | `.mx-input`, `.mx-icon-button` |
+| [Campos y botón de ícono](/catalog/atoms/inputs) | `.mx-input`, `.mx-select`, `.mx-field`, `.mx-form-row`, `.mx-icon-button` |
 | [Logo, imágenes y divisor](/catalog/atoms/media) | `.mx-logo`, `.mx-media`, `.mx-thumb`, `.mx-photo`, `.mx-divider` |
 
 ### Moléculas
@@ -55,10 +55,10 @@ Combinaciones pequeñas de átomos con un propósito.
 | Componente | Clases |
 |---|---|
 | [Barra de búsqueda](/catalog/molecules/search) | `.mx-search` |
-| [Navegación y listas de enlaces](/catalog/molecules/navigation) | `.mx-nav-links`, `.mx-link-list`, `.mx-social-link`, `.mx-tag-list`, `.mx-pagination` |
-| [Tarjetas](/catalog/molecules/cards) | `.mx-card`, `.mx-article-card`, `.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat` |
+| [Navegación y listas de enlaces](/catalog/molecules/navigation) | `.mx-nav-links`, `.mx-link-list`, `.mx-social-link`, `.mx-tag-list`, `.mx-pagination`, `.mx-segmented` |
+| [Tarjetas](/catalog/molecules/cards) | `.mx-card`, `.mx-article-card`, `.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`, `.mx-card__title`, `.mx-facts` |
 | [Tarjeta de marca y perfil](/catalog/molecules/brand-tile) | `.mx-brand-tile`, `.mx-profile-card` |
-| [Bloques de contenido](/catalog/molecules/content) | `.mx-callout`, `.mx-quote`, `.mx-notice`, `.mx-code`, `.mx-timeline-item` |
+| [Bloques de contenido](/catalog/molecules/content) | `.mx-callout`, `.mx-quote`, `.mx-notice`, `.mx-alert`, `.mx-status`, `.mx-table`, `.mx-code`, `.mx-timeline-item` |
 | [Fila de resultado](/catalog/molecules/result-row) | `.mx-result-row`, `.mx-result-list` |
 
 ### Organismos

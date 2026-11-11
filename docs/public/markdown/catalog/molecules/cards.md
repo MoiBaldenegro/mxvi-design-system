@@ -5,7 +5,8 @@ title: Tarjetas
 # Tarjetas
 
 **Nivel:** molécula · **Clases:** `.mx-card`, `.mx-article-card`,
-`.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`
+`.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`,
+`.mx-card__title`, `.mx-facts`
 
 Todas las tarjetas comparten la misma base: fondo `#101018`, borde de 1px
 blanco al 8 %, **esquinas rectas** y sombra suave con brillo interior.
@@ -163,3 +164,38 @@ Título y una lista de chips (habilidades por área) o de entradas
 | Grilla | 2 columnas; 4 desde 900px; separación 14px |
 
 </div>
+
+## Título de tarjeta
+
+Encabezado de una tarjeta de sección, con un ícono opcional en el color de
+acento.
+
+```html preview
+<section class="mx-card" style="max-width:520px">
+  <h2 class="mx-card__title"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>Datos del personaje</h2>
+  <p class="mx-text mx-text--secondary">Contenido de la sección.</p>
+</section>
+```
+
+- Geist Pixel 1.2rem `#ffffff`, ícono en `#B37AC2`, separación de 10px y
+  margen inferior de 14px.
+
+## Datos (clave y valor)
+
+Cuadrícula de mosaicos pequeños para fichas: etiqueta arriba y valor abajo. Es
+un `<dl>`; los mosaicos se separan con líneas de 1px.
+
+```html preview
+<dl class="mx-facts">
+  <div class="mx-fact"><dt>Nivel</dt><dd>80</dd></div>
+  <div class="mx-fact"><dt>Clase</dt><dd>Hunter</dd></div>
+  <div class="mx-fact"><dt>Especialización</dt><dd>Beast Mastery</dd></div>
+  <div class="mx-fact mx-fact--accent"><dt>Nivel de objeto</dt><dd>639</dd></div>
+</dl>
+```
+
+- Columnas de 150px como mínimo; cada mosaico con fondo `#101018` y padding
+  14px 16px.
+- Etiqueta en Geist Pixel .72rem en mayúsculas `#b8b8c5`; valor en Geist Sans
+  1.05rem 600 (`--accent`: `#C396CF`).
+- Fuera de un `<dl>` usa `.mx-fact__label` y `.mx-fact__value`.

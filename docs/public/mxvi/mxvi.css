@@ -122,6 +122,10 @@
   --color-scrollbar-thumb: #6C387A;
   --color-scrollbar-track: #090912;
 
+  /* Status colors for product UIs (forms, alerts). Design system only. */
+  --color-danger: #F05B72;
+  --color-success: #39C98A;
+
   /* Logo band */
   --space-mxvi-band: clamp(32px, 5vw, 64px);
   --opacity-logo-band: .62;
@@ -1086,6 +1090,180 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   .mx-code__copy { opacity: 1; }
 }
 
+/* MXVI — card title and facts (key/value tiles). Values from tokens.css.
+   Spec and markup: catalog/molecules/cards. */
+
+/* Title of a card section, optionally with a leading icon in the accent color. */
+.mx-card__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 var(--gap-card);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.mx-card__title svg { flex: none; color: var(--color-accent); }
+
+/* Facts: a grid of small tiles, label on top and value below. */
+.mx-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+}
+
+/* Each tile draws its own 1px frame, so an incomplete last row leaves no filled gap. */
+.mx-fact {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px 16px;
+  background: var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+.mx-fact dt, .mx-fact__label {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-synthesis: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mx-fact dd, .mx-fact__value {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.mx-fact--accent dd, .mx-fact--accent .mx-fact__value { color: var(--color-accent-hover); }
+
+/* MXVI — forms: labelled field, select and validation. Values from tokens.css.
+   Spec and markup: catalog/atoms/inputs. */
+
+.mx-field { display: grid; gap: 7px; min-width: 0; }
+
+.mx-field__label {
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-synthesis: none;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mx-field__error { margin: 0; color: var(--color-danger); font-size: 0.85rem; line-height: 1.4; }
+
+.mx-input[aria-invalid="true"] { border-color: var(--color-danger); }
+
+/* Native select with the input look; color-scheme keeps the native arrow light on dark. */
+.mx-select { color-scheme: dark; cursor: pointer; }
+
+/* Fields align on top so an error under one field does not shift the others;
+   buttons drop by the label height (1rem + 7px) to line up with the controls. */
+.mx-form-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap-card); }
+
+.mx-form-row > .mx-field { flex: 1 1 160px; }
+
+.mx-form-row > .mx-button { margin-top: calc(1rem + 7px); padding-block: 10px; }
+
+/* MXVI — feedback: alerts and status text. Values from tokens.css.
+   Spec and markup: catalog/molecules/content. */
+
+.mx-alert {
+  margin: 0;
+  padding: calc(var(--gap-card) * 0.75) var(--gap-card);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-square);
+  background: var(--color-surface);
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.mx-alert--error { border-left-color: var(--color-danger); }
+
+.mx-alert--error strong { color: var(--color-danger); }
+
+.mx-alert--success { border-left-color: var(--color-success); }
+
+.mx-alert--success strong { color: var(--color-success); }
+
+/* Loading and live status: quiet mono text. */
+.mx-status { margin: 0; color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 0.9rem; }
+
+/* MXVI — table and segmented control. Values from tokens.css.
+   Spec and markup: catalog/molecules/navigation (segmented) and content (table). */
+
+.mx-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); background: var(--color-surface); }
+
+.mx-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+
+.mx-table thead th {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-synthesis: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mx-table td, .mx-table tbody th {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-weight: 600;
+  text-align: left;
+}
+
+.mx-table td { font-weight: 400; }
+
+.mx-table tbody tr:last-child > * { border-bottom: none; }
+
+.mx-table tbody tr:hover > * { background: color-mix(in srgb, var(--color-text) 3%, transparent); }
+
+.mx-table .mx-table__num { font-family: var(--font-mono); text-align: right; white-space: nowrap; }
+
+/* Segmented control: a group of toggle buttons (aria-pressed). */
+.mx-segmented { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--color-border-strong); }
+
+.mx-segmented__option {
+  padding: 8px 16px;
+  border: 0;
+  border-right: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-square);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+
+.mx-segmented__option:last-child { border-right: 0; }
+
+.mx-segmented__option:hover { color: var(--color-text); }
+
+.mx-segmented__option[aria-pressed="true"] { background: var(--color-accent); color: var(--color-background); font-weight: 600; }
+
 /* MXVI — result row. Values from tokens.css (moisesbaldenegro.com).
    Spec and markup: catalog/molecules/result-row. */
 
@@ -1602,6 +1780,8 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   /* The filled search clear button declares visibility: visible; while closed it inherits the panel's. */
   .mx-navbar:not([data-menu='open']) .mx-navbar__menu .mx-search.is-filled .mx-search__clear { visibility: inherit; }
   .mx-navbar__menu .mx-search { flex: none; width: 100%; margin: var(--gap-card) 0 0; }
+  /* A grouped link list (nav.mx-nav-links) stacks like loose links. */
+  .mx-navbar__menu .mx-nav-links { flex-direction: column; align-items: stretch; gap: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

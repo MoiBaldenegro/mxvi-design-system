@@ -5,7 +5,7 @@ title: Bloques de contenido
 # Bloques de contenido
 
 **Nivel:** molécula · **Clases:** `.mx-callout`, `.mx-quote`, `.mx-notice`,
-`.mx-code`, `.mx-timeline-item`
+`.mx-alert`, `.mx-status`, `.mx-table`, `.mx-code`, `.mx-timeline-item`
 
 ## Callout
 
@@ -64,6 +64,46 @@ Estado vacío, guía o página de error.
 
 - `#101018`, borde 1px blanco 8 %, padding 24px 28px.
 - Título en Geist Pixel 1.35rem; texto `#b8b8c5`, interlineado 1.55.
+
+## Alerta
+
+Mensaje breve de error o de éxito dentro de un formulario o una sección. Para
+errores usa `role="alert"`.
+
+```html preview
+<p class="mx-alert mx-alert--error" role="alert"><strong>Error:</strong> no se pudo cargar esta sección.</p>
+<p class="mx-alert mx-alert--success" style="margin-top:14px"><strong>Listo:</strong> sesión iniciada.</p>
+```
+
+- Fondo `#101018`, borde 1px blanco 8 % y barra izquierda de 3px: `#F05B72`
+  (error), `#39C98A` (éxito) o `#B37AC2` (por defecto).
+
+## Estado de carga
+
+```html preview
+<p class="mx-status" role="status">Cargando personaje…</p>
+```
+
+- Geist Mono .9rem `#b8b8c5`.
+
+## Tabla
+
+```html preview
+<div class="mx-table-wrap">
+  <table class="mx-table">
+    <thead><tr><th>#</th><th>Personaje</th><th class="mx-table__num">Índice</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Whaazz</td><td class="mx-table__num">3,102</td></tr>
+      <tr><td>2</td><td>Pikaboo</td><td class="mx-table__num">3,054</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+
+- Contenedor con borde 1px blanco 8 % y desplazamiento horizontal en pantallas
+  estrechas.
+- Encabezados en Geist Pixel .78rem en mayúsculas `#b8b8c5`; celdas de 12px
+  14px separadas por líneas de 1px; números en Geist Mono alineados a la derecha.
 
 ## Bloque de código
 

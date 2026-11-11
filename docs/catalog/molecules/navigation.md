@@ -5,7 +5,7 @@ title: Navegación y listas de enlaces
 # Navegación y listas de enlaces
 
 **Nivel:** molécula · **Clases:** `.mx-nav-links`, `.mx-link-list`,
-`.mx-social-link`, `.mx-tag-list`, `.mx-chip-list`, `.mx-pagination`
+`.mx-social-link`, `.mx-tag-list`, `.mx-chip-list`, `.mx-pagination`, `.mx-segmented`
 
 ## Enlaces de navegación
 
@@ -110,3 +110,19 @@ Lista con ícono de marca (del sprite) y nombre. Dos formas: lista vertical
 
 - Botones de superficie compactos: padding 10px 18px y texto de 0.8333rem (13.33px); deshabilitado en `#b8b8c5`.
 - Etiqueta central en .9rem `#b8b8c5`.
+
+## Selector segmentado
+
+Grupo de botones excluyentes (pestañas ligeras, filtros). El activo lleva
+`aria-pressed="true"`.
+
+```html preview
+<div class="mx-segmented" role="group" aria-label="Modalidad">
+  <button class="mx-segmented__option" type="button" aria-pressed="false">2v2</button>
+  <button class="mx-segmented__option" type="button" aria-pressed="true">3v3</button>
+  <button class="mx-segmented__option" type="button" aria-pressed="false">RBG</button>
+</div>
+```
+
+- Borde 1px blanco 15 %; opciones de 8px 16px en `#b8b8c5`; la activa con fondo
+  `#B37AC2` y texto `#070716`.

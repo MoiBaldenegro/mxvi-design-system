@@ -63,15 +63,17 @@ background-size: 14px 14px, auto;
 
 ## Colores semánticos
 
-El sitio todavía no usa estados de éxito, advertencia o error. **Propuesta**
-para cuando un producto los necesite (con contraste AA sobre `#101018`):
+El sitio no usa estados de éxito o error; los productos con formularios sí
+(contraste AA sobre `#101018`). Éxito y error tienen token y los usan los
+[campos](/catalog/atoms/inputs#campo-con-etiqueta-y-error) y las
+[alertas](/catalog/molecules/content#alerta):
 
-| Estado | Valor |
-|---|---|
-| Éxito | `#39C98A` |
-| Advertencia | `#F3B64B` |
-| Error | `#F05B72` |
-| Información | `#5fd6ff` |
+| Estado | Valor | Token |
+|---|---|---|
+| Éxito | `#39C98A` | `--color-success` |
+| Advertencia | `#F3B64B` | — |
+| Error | `#F05B72` | `--color-danger` |
+| Información | `#5fd6ff` | — |
 
 Acompáñalos siempre con texto o ícono; el color nunca es la única señal.
 

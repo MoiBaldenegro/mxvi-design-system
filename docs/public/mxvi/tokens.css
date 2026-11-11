@@ -74,6 +74,10 @@
   --color-scrollbar-thumb: #6C387A;
   --color-scrollbar-track: #090912;
 
+  /* Status colors for product UIs (forms, alerts). Design system only. */
+  --color-danger: #F05B72;
+  --color-success: #39C98A;
+
   /* Logo band */
   --space-mxvi-band: clamp(32px, 5vw, 64px);
   --opacity-logo-band: .62;

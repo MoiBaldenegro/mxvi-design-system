@@ -781,7 +781,7 @@ Las piezas mínimas. No se dividen más.
 | [Botones](/catalog/atoms/buttons) | `.mx-button` y variantes `--accent`, `--surface`, `--quiet`, `--sm`, `--cta`, `--cta-outline` |
 | [Tipografía y enlaces](/catalog/atoms/typography) | `.mx-heading`, `.mx-label`, `.mx-text`, `.mx-meta`, `.mx-link` |
 | [Tags, chips y badges](/catalog/atoms/tags) | `.mx-tag`, `.mx-chip`, `.mx-kicker`, `.mx-badge`, `.mx-handle`, `.mx-verified` |
-| [Campos y botón de ícono](/catalog/atoms/inputs) | `.mx-input`, `.mx-icon-button` |
+| [Campos y botón de ícono](/catalog/atoms/inputs) | `.mx-input`, `.mx-select`, `.mx-field`, `.mx-form-row`, `.mx-icon-button` |
 | [Logo, imágenes y divisor](/catalog/atoms/media) | `.mx-logo`, `.mx-media`, `.mx-thumb`, `.mx-photo`, `.mx-divider` |
 
 ### Moléculas
@@ -791,10 +791,10 @@ Combinaciones pequeñas de átomos con un propósito.
 | Componente | Clases |
 |---|---|
 | [Barra de búsqueda](/catalog/molecules/search) | `.mx-search` |
-| [Navegación y listas de enlaces](/catalog/molecules/navigation) | `.mx-nav-links`, `.mx-link-list`, `.mx-social-link`, `.mx-tag-list`, `.mx-pagination` |
-| [Tarjetas](/catalog/molecules/cards) | `.mx-card`, `.mx-article-card`, `.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat` |
+| [Navegación y listas de enlaces](/catalog/molecules/navigation) | `.mx-nav-links`, `.mx-link-list`, `.mx-social-link`, `.mx-tag-list`, `.mx-pagination`, `.mx-segmented` |
+| [Tarjetas](/catalog/molecules/cards) | `.mx-card`, `.mx-article-card`, `.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`, `.mx-card__title`, `.mx-facts` |
 | [Tarjeta de marca y perfil](/catalog/molecules/brand-tile) | `.mx-brand-tile`, `.mx-profile-card` |
-| [Bloques de contenido](/catalog/molecules/content) | `.mx-callout`, `.mx-quote`, `.mx-notice`, `.mx-code`, `.mx-timeline-item` |
+| [Bloques de contenido](/catalog/molecules/content) | `.mx-callout`, `.mx-quote`, `.mx-notice`, `.mx-alert`, `.mx-status`, `.mx-table`, `.mx-code`, `.mx-timeline-item` |
 | [Fila de resultado](/catalog/molecules/result-row) | `.mx-result-row`, `.mx-result-list` |
 
 ### Organismos
@@ -1197,7 +1197,7 @@ title: Campos y botón de ícono
 
 # Campos y botón de ícono
 
-**Nivel:** átomo · **Clases:** `.mx-input`, `.mx-icon-button`
+**Nivel:** átomo · **Clases:** `.mx-input`, `.mx-select`, `.mx-field`, `.mx-form-row`, `.mx-icon-button`
 
 ## Campo de texto
 
@@ -1223,6 +1223,43 @@ title: Campos y botón de ícono
 - Siempre con etiqueta visible; el placeholder no la sustituye.
 - Para buscar usa la molécula [Barra de búsqueda](/catalog/molecules/search),
   que añade la lupa animada y el botón de limpiar.
+
+## Campo con etiqueta y error
+
+Etiqueta, control y mensaje de error agrupados. El error se enlaza con
+`aria-describedby` y el control marca `aria-invalid="true"`, que pinta el borde
+en rojo.
+
+```html preview
+<form class="mx-form-row" novalidate>
+  <div class="mx-field">
+    <label class="mx-field__label" for="demo-realm">Reino</label>
+    <input class="mx-input" id="demo-realm" value="Ragnaros">
+  </div>
+  <div class="mx-field">
+    <label class="mx-field__label" for="demo-name">Nombre</label>
+    <input class="mx-input" id="demo-name" aria-invalid="true" aria-describedby="demo-name-error">
+    <p class="mx-field__error" id="demo-name-error">Escribe el nombre del personaje.</p>
+  </div>
+  <div class="mx-field">
+    <label class="mx-field__label" for="demo-mode">Juego</label>
+    <select class="mx-input mx-select" id="demo-mode"><option>Retail</option><option>Classic</option></select>
+  </div>
+  <button class="mx-button mx-button--accent" type="submit">Buscar</button>
+</form>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Etiqueta | Geist Pixel .8rem, mayúsculas, `letter-spacing: .08em`, `#b8b8c5` |
+| Separación | 7px entre etiqueta, control y error |
+| Error | Geist Sans .85rem `#F05B72` (`--color-danger`); borde del control en el mismo color |
+| Select | igual que `.mx-input`, flecha nativa clara (`color-scheme: dark`) |
+| Fila (`.mx-form-row`) | flex que se ajusta; cada campo mide 160px como mínimo; los campos se alinean arriba (un error no desplaza a los demás) y los botones bajan la altura de la etiqueta |
+
+</div>
 
 ## Botón de ícono
 
@@ -1419,7 +1456,7 @@ title: Navegación y listas de enlaces
 # Navegación y listas de enlaces
 
 **Nivel:** molécula · **Clases:** `.mx-nav-links`, `.mx-link-list`,
-`.mx-social-link`, `.mx-tag-list`, `.mx-chip-list`, `.mx-pagination`
+`.mx-social-link`, `.mx-tag-list`, `.mx-chip-list`, `.mx-pagination`, `.mx-segmented`
 
 ## Enlaces de navegación
 
@@ -1525,6 +1562,22 @@ Lista con ícono de marca (del sprite) y nombre. Dos formas: lista vertical
 - Botones de superficie compactos: padding 10px 18px y texto de 0.8333rem (13.33px); deshabilitado en `#b8b8c5`.
 - Etiqueta central en .9rem `#b8b8c5`.
 
+## Selector segmentado
+
+Grupo de botones excluyentes (pestañas ligeras, filtros). El activo lleva
+`aria-pressed="true"`.
+
+```html preview
+<div class="mx-segmented" role="group" aria-label="Modalidad">
+  <button class="mx-segmented__option" type="button" aria-pressed="false">2v2</button>
+  <button class="mx-segmented__option" type="button" aria-pressed="true">3v3</button>
+  <button class="mx-segmented__option" type="button" aria-pressed="false">RBG</button>
+</div>
+```
+
+- Borde 1px blanco 15 %; opciones de 8px 16px en `#b8b8c5`; la activa con fondo
+  `#B37AC2` y texto `#070716`.
+
 
 
 ---
@@ -1538,7 +1591,8 @@ title: Tarjetas
 # Tarjetas
 
 **Nivel:** molécula · **Clases:** `.mx-card`, `.mx-article-card`,
-`.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`
+`.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`,
+`.mx-card__title`, `.mx-facts`
 
 Todas las tarjetas comparten la misma base: fondo `#101018`, borde de 1px
 blanco al 8 %, **esquinas rectas** y sombra suave con brillo interior.
@@ -1696,6 +1750,41 @@ Título y una lista de chips (habilidades por área) o de entradas
 | Grilla | 2 columnas; 4 desde 900px; separación 14px |
 
 </div>
+
+## Título de tarjeta
+
+Encabezado de una tarjeta de sección, con un ícono opcional en el color de
+acento.
+
+```html preview
+<section class="mx-card" style="max-width:520px">
+  <h2 class="mx-card__title"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>Datos del personaje</h2>
+  <p class="mx-text mx-text--secondary">Contenido de la sección.</p>
+</section>
+```
+
+- Geist Pixel 1.2rem `#ffffff`, ícono en `#B37AC2`, separación de 10px y
+  margen inferior de 14px.
+
+## Datos (clave y valor)
+
+Cuadrícula de mosaicos pequeños para fichas: etiqueta arriba y valor abajo. Es
+un `<dl>`; los mosaicos se separan con líneas de 1px.
+
+```html preview
+<dl class="mx-facts">
+  <div class="mx-fact"><dt>Nivel</dt><dd>80</dd></div>
+  <div class="mx-fact"><dt>Clase</dt><dd>Hunter</dd></div>
+  <div class="mx-fact"><dt>Especialización</dt><dd>Beast Mastery</dd></div>
+  <div class="mx-fact mx-fact--accent"><dt>Nivel de objeto</dt><dd>639</dd></div>
+</dl>
+```
+
+- Columnas de 150px como mínimo; cada mosaico con fondo `#101018` y padding
+  14px 16px.
+- Etiqueta en Geist Pixel .72rem en mayúsculas `#b8b8c5`; valor en Geist Sans
+  1.05rem 600 (`--accent`: `#C396CF`).
+- Fuera de un `<dl>` usa `.mx-fact__label` y `.mx-fact__value`.
 
 
 
@@ -1886,7 +1975,7 @@ title: Bloques de contenido
 # Bloques de contenido
 
 **Nivel:** molécula · **Clases:** `.mx-callout`, `.mx-quote`, `.mx-notice`,
-`.mx-code`, `.mx-timeline-item`
+`.mx-alert`, `.mx-status`, `.mx-table`, `.mx-code`, `.mx-timeline-item`
 
 ## Callout
 
@@ -1945,6 +2034,46 @@ Estado vacío, guía o página de error.
 
 - `#101018`, borde 1px blanco 8 %, padding 24px 28px.
 - Título en Geist Pixel 1.35rem; texto `#b8b8c5`, interlineado 1.55.
+
+## Alerta
+
+Mensaje breve de error o de éxito dentro de un formulario o una sección. Para
+errores usa `role="alert"`.
+
+```html preview
+<p class="mx-alert mx-alert--error" role="alert"><strong>Error:</strong> no se pudo cargar esta sección.</p>
+<p class="mx-alert mx-alert--success" style="margin-top:14px"><strong>Listo:</strong> sesión iniciada.</p>
+```
+
+- Fondo `#101018`, borde 1px blanco 8 % y barra izquierda de 3px: `#F05B72`
+  (error), `#39C98A` (éxito) o `#B37AC2` (por defecto).
+
+## Estado de carga
+
+```html preview
+<p class="mx-status" role="status">Cargando personaje…</p>
+```
+
+- Geist Mono .9rem `#b8b8c5`.
+
+## Tabla
+
+```html preview
+<div class="mx-table-wrap">
+  <table class="mx-table">
+    <thead><tr><th>#</th><th>Personaje</th><th class="mx-table__num">Índice</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Whaazz</td><td class="mx-table__num">3,102</td></tr>
+      <tr><td>2</td><td>Pikaboo</td><td class="mx-table__num">3,054</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+
+- Contenedor con borde 1px blanco 8 % y desplazamiento horizontal en pantallas
+  estrechas.
+- Encabezados en Geist Pixel .78rem en mayúsculas `#b8b8c5`; celdas de 12px
+  14px separadas por líneas de 1px; números en Geist Mono alineados a la derecha.
 
 ## Bloque de código
 
@@ -3020,15 +3149,17 @@ background-size: 14px 14px, auto;
 
 ## Colores semánticos
 
-El sitio todavía no usa estados de éxito, advertencia o error. **Propuesta**
-para cuando un producto los necesite (con contraste AA sobre `#101018`):
+El sitio no usa estados de éxito o error; los productos con formularios sí
+(contraste AA sobre `#101018`). Éxito y error tienen token y los usan los
+[campos](/catalog/atoms/inputs#campo-con-etiqueta-y-error) y las
+[alertas](/catalog/molecules/content#alerta):
 
-| Estado | Valor |
-|---|---|
-| Éxito | `#39C98A` |
-| Advertencia | `#F3B64B` |
-| Error | `#F05B72` |
-| Información | `#5fd6ff` |
+| Estado | Valor | Token |
+|---|---|---|
+| Éxito | `#39C98A` | `--color-success` |
+| Advertencia | `#F3B64B` | — |
+| Error | `#F05B72` | `--color-danger` |
+| Información | `#5fd6ff` | — |
 
 Acompáñalos siempre con texto o ícono; el color nunca es la única señal.
 
