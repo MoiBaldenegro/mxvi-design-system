@@ -21,7 +21,7 @@ los enlaces y la búsqueda a lo ancho.
     <a class="mx-logo" href="#" aria-current="page"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
     <button class="mx-icon-button mx-navbar__toggle" type="button" data-mx-menu-toggle aria-controls="mx-menu" aria-expanded="false" aria-label="Abrir menú"></button>
     <div class="mx-navbar__menu" id="mx-menu">
-      <a class="mx-nav-link" href="#" aria-current="page">About</a>
+      <a class="mx-nav-link" href="#" aria-current="page">whoami</a>
       <a class="mx-nav-link" href="#">Arquitectura</a>
       <a class="mx-nav-link" href="#">Diseño de sistemas</a>
       <a class="mx-nav-link" href="#">@moibaldenegro</a>

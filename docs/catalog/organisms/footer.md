@@ -25,7 +25,7 @@ la barra inferior.
       <p class="mx-label">Navegación</p>
       <ul class="mx-link-list">
         <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-        <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+        <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
         <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
         <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
       </ul>
@@ -96,7 +96,7 @@ Logo de 96px, frase, ubicación con punto de acento y acción principal.
   <p class="mx-label">Navegación</p>
   <ul class="mx-link-list">
     <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
   </ul>
 </nav>

@@ -15,7 +15,7 @@ en la página actual queda fijo.
 ```html preview
 <nav aria-label="Principal">
   <ul class="mx-nav-links">
-    <li><a class="mx-nav-link" href="#" aria-current="page">About</a></li>
+    <li><a class="mx-nav-link" href="#" aria-current="page">whoami</a></li>
     <li><a class="mx-nav-link" href="#">Arquitectura</a></li>
     <li><a class="mx-nav-link" href="#">Diseño de sistemas</a></li>
     <li><a class="mx-nav-link" href="#">@moibaldenegro</a></li>
@@ -43,7 +43,7 @@ Columna de enlaces del footer: discretos, en gris secundario.
   <p class="mx-label" style="margin-bottom:14px">Navegación</p>
   <ul class="mx-link-list">
     <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
   </ul>

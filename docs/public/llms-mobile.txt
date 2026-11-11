@@ -813,7 +813,7 @@ Secciones completas, listas para usar tal cual.
 | [Navbar](/catalog/organisms/navbar) | `.mx-navbar` |
 | [Footer](/catalog/organisms/footer) | `.mx-footer`, `.mx-footer-brand`, `.mx-footer-bar` |
 | [Hero Bento](/catalog/organisms/hero-bento) | `.mx-hero`, `.mx-bento` |
-| [Perfil (About)](/catalog/organisms/profile) | `.mx-profile-hero`, `.mx-stats`, `.mx-timeline`, `.mx-card-grid` |
+| [Perfil (whoami)](/catalog/organisms/profile) | `.mx-profile-hero`, `.mx-stats`, `.mx-timeline`, `.mx-card-grid` |
 | [Artículo](/catalog/organisms/article) | `.mx-post-hero`, `.mx-prose`, `.mx-article-list` |
 | [Promociones y banda de logo](/catalog/organisms/promo) | `.mx-promo-grid`, `.mx-promo-tile`, `.mx-logo-band` |
 
@@ -1436,7 +1436,7 @@ en la página actual queda fijo.
 ```html preview
 <nav aria-label="Principal">
   <ul class="mx-nav-links">
-    <li><a class="mx-nav-link" href="#" aria-current="page">About</a></li>
+    <li><a class="mx-nav-link" href="#" aria-current="page">whoami</a></li>
     <li><a class="mx-nav-link" href="#">Arquitectura</a></li>
     <li><a class="mx-nav-link" href="#">Diseño de sistemas</a></li>
     <li><a class="mx-nav-link" href="#">@moibaldenegro</a></li>
@@ -1464,7 +1464,7 @@ Columna de enlaces del footer: discretos, en gris secundario.
   <p class="mx-label" style="margin-bottom:14px">Navegación</p>
   <ul class="mx-link-list">
     <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
   </ul>
@@ -2086,7 +2086,7 @@ los enlaces y la búsqueda a lo ancho.
     <a class="mx-logo" href="#" aria-current="page"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
     <button class="mx-icon-button mx-navbar__toggle" type="button" data-mx-menu-toggle aria-controls="mx-menu" aria-expanded="false" aria-label="Abrir menú"></button>
     <div class="mx-navbar__menu" id="mx-menu">
-      <a class="mx-nav-link" href="#" aria-current="page">About</a>
+      <a class="mx-nav-link" href="#" aria-current="page">whoami</a>
       <a class="mx-nav-link" href="#">Arquitectura</a>
       <a class="mx-nav-link" href="#">Diseño de sistemas</a>
       <a class="mx-nav-link" href="#">@moibaldenegro</a>
@@ -2165,7 +2165,7 @@ la barra inferior.
       <p class="mx-label">Navegación</p>
       <ul class="mx-link-list">
         <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-        <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+        <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
         <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
         <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
       </ul>
@@ -2236,7 +2236,7 @@ Logo de 96px, frase, ubicación con punto de acento y acción principal.
   <p class="mx-label">Navegación</p>
   <ul class="mx-link-list">
     <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
-    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">whoami</a></li>
     <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
   </ul>
 </nav>
@@ -2387,10 +2387,10 @@ con otro contenido, o solo la cuadrícula (`.mx-bento`).
 <!-- SOURCE: catalog/organisms/profile.md -->
 
 ---
-title: Perfil (About)
+title: Perfil (whoami)
 ---
 
-# Perfil (About)
+# Perfil (whoami)
 
 **Nivel:** organismo · **Clases:** `.mx-profile-hero`, `.mx-stats`,
 `.mx-timeline`, `.mx-card-grid`, `.mx-section`

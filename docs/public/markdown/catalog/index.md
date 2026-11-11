@@ -70,7 +70,7 @@ Secciones completas, listas para usar tal cual.
 | [Navbar](/catalog/organisms/navbar) | `.mx-navbar` |
 | [Footer](/catalog/organisms/footer) | `.mx-footer`, `.mx-footer-brand`, `.mx-footer-bar` |
 | [Hero Bento](/catalog/organisms/hero-bento) | `.mx-hero`, `.mx-bento` |
-| [Perfil (About)](/catalog/organisms/profile) | `.mx-profile-hero`, `.mx-stats`, `.mx-timeline`, `.mx-card-grid` |
+| [Perfil (whoami)](/catalog/organisms/profile) | `.mx-profile-hero`, `.mx-stats`, `.mx-timeline`, `.mx-card-grid` |
 | [Artículo](/catalog/organisms/article) | `.mx-post-hero`, `.mx-prose`, `.mx-article-list` |
 | [Promociones y banda de logo](/catalog/organisms/promo) | `.mx-promo-grid`, `.mx-promo-tile`, `.mx-logo-band` |
 

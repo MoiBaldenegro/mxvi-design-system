@@ -55,7 +55,7 @@ foundations, components and the complete platform guide in one file.
 - [Footer](./markdown/catalog/organisms/footer.md)
 - [Hero Bento](./markdown/catalog/organisms/hero-bento.md)
 - [Navbar](./markdown/catalog/organisms/navbar.md)
-- [Perfil (About)](./markdown/catalog/organisms/profile.md)
+- [Perfil (whoami)](./markdown/catalog/organisms/profile.md)
 - [Promociones y banda de logo](./markdown/catalog/organisms/promo.md)
 - [Plantillas de página](./markdown/catalog/templates.md)
 - [ADN visual](./markdown/catalog/visual-dna.md)

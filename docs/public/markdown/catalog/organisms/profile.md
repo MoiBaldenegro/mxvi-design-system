@@ -1,8 +1,8 @@
 ---
-title: Perfil (About)
+title: Perfil (whoami)
 ---
 
-# Perfil (About)
+# Perfil (whoami)
 
 **Nivel:** organismo · **Clases:** `.mx-profile-hero`, `.mx-stats`,
 `.mx-timeline`, `.mx-card-grid`, `.mx-section`
