@@ -24,10 +24,10 @@ con otro contenido, o solo la cuadrícula (`.mx-bento`).
         <p class="mx-profile-card__description">Senior Software Engineer • Systems Architect • Node.js • NestJS • Rust</p>
       </div>
     </section>
-    <article class="mx-brand-tile" data-brand="htb" data-cols="5" data-rows="4">
+    <article class="mx-brand-tile mx-brand-tile--rich" data-brand="htb" data-cols="5" data-rows="4">
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Hack The Box</p></header>
-      <div class="mx-brand-tile__body"><p style="margin:0">Rango: Hacker · 42 máquinas</p></div>
-      <div class="mx-brand-tile__icon" style="opacity:.16;--icon-width:150px;--icon-scale:6"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxvi/assets/sprite.svg#htb"/></svg></div>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxvi/assets/sprite.svg#htb"/></svg></div>
+      <div class="mx-brand-tile__body"><div class="mx-tile-stats"><ul class="mx-tile-stats__list"><li class="mx-tile-stats__item"><span class="mx-tile-stats__label">Nivel</span><span class="mx-tile-stats__value">Hacker</span></li><li class="mx-tile-stats__item"><span class="mx-tile-stats__label">Owns</span><span class="mx-tile-stats__value">42 user / 38 root</span></li></ul></div></div>
     </article>
     <article class="mx-brand-tile" data-brand="rust" data-cols="2" data-rows="2" data-hide-mobile>
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Rust</p></header>
@@ -39,16 +39,16 @@ con otro contenido, o solo la cuadrícula (`.mx-bento`).
     </article>
     <article class="mx-brand-tile" data-brand="cloudflare" data-cols="2" data-rows="2" data-hide-mobile>
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Cloudflare</p></header>
-      <div class="mx-brand-tile__icon" style="--icon-width:270px;--icon-rotation:0deg;--icon-scale:1.25"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 116"><use href="/mxvi/assets/sprite.svg#cloudflare-cloud"/></svg></div>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 116"><use href="/mxvi/assets/sprite.svg#cloudflare-cloud"/></svg></div>
     </article>
     <article class="mx-brand-tile" data-brand="nestjs" data-cols="5" data-rows="2">
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">NestJS</p></header>
-      <div class="mx-brand-tile__icon" style="--icon-width:230px;--icon-rotation:-5deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 264.6 255.6"><use href="/mxvi/assets/sprite.svg#nestjs"/></svg></div>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 264.6 255.6"><use href="/mxvi/assets/sprite.svg#nestjs"/></svg></div>
       <a class="mx-brand-tile__link" href="#"><span class="mx-visually-hidden">NestJS</span><span class="mx-brand-tile__arrow" aria-hidden="true">↗</span></a>
     </article>
     <article class="mx-brand-tile" data-brand="node" data-cols="4" data-rows="2">
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Node JS</p></header>
-      <div class="mx-brand-tile__icon" style="--icon-width:240px;--icon-rotation:-10deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 292"><use href="/mxvi/assets/sprite.svg#node"/></svg></div>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 292"><use href="/mxvi/assets/sprite.svg#node"/></svg></div>
     </article>
     <article class="mx-brand-tile" data-brand="react" data-cols="2" data-rows="2" data-hide-mobile>
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">React</p></header>
@@ -56,7 +56,7 @@ con otro contenido, o solo la cuadrícula (`.mx-bento`).
     </article>
     <article class="mx-brand-tile" data-brand="typescript" data-cols="4" data-rows="2">
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">TypeScript</p></header>
-      <div class="mx-brand-tile__icon" style="--icon-width:220px;--icon-rotation:-10deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxvi/assets/sprite.svg#typescript"/></svg></div>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxvi/assets/sprite.svg#typescript"/></svg></div>
     </article>
     <article class="mx-brand-tile" data-brand="github" data-cols="2" data-rows="2" data-hide-mobile>
       <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">GitHub</p></header>

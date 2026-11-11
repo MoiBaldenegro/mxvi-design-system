@@ -33,15 +33,61 @@ toda la tarjeta es clicable y aparece una flecha ↗ al pasar el mouse.
 </div>
 ```
 
-Tarjeta rica: con contenido en lugar de logo (por ejemplo, estadísticas).
+### Tarjeta rica
+
+Contenido en lugar de logo (por ejemplo, estadísticas): clase
+`.mx-brand-tile--rich` con un cuerpo `.mx-brand-tile__body` y la lista
+`.mx-tile-stats`. El logo queda de fondo al 16 % de opacidad.
 
 ```html preview
-<article class="mx-brand-tile" data-brand="htb" style="max-width:520px;min-height:240px">
+<article class="mx-brand-tile mx-brand-tile--rich" data-brand="htb" style="max-width:520px;min-height:240px">
   <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Hack The Box</p></header>
-  <div class="mx-brand-tile__body"><p style="margin:0">Rango: Hacker · 42 máquinas</p></div>
-  <div class="mx-brand-tile__icon" style="opacity:.16"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxvi/assets/sprite.svg#htb"/></svg></div>
+  <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxvi/assets/sprite.svg#htb"/></svg></div>
+  <div class="mx-brand-tile__body">
+    <div class="mx-tile-stats">
+      <ul class="mx-tile-stats__list">
+        <li class="mx-tile-stats__item"><span class="mx-tile-stats__label">Nivel</span><span class="mx-tile-stats__value">Hacker</span></li>
+        <li class="mx-tile-stats__item"><span class="mx-tile-stats__label">Puntos</span><span class="mx-tile-stats__value">120</span></li>
+        <li class="mx-tile-stats__item"><span class="mx-tile-stats__label">Owns</span><span class="mx-tile-stats__value">42 user / 38 root</span></li>
+      </ul>
+    </div>
+  </div>
 </article>
 ```
+
+- Etiquetas en Geist Sans .75rem MAYÚSCULAS `#b8b8c5`; valores en Geist Mono
+  600 con el acento de la marca (`--tile-accent`: `#9FEF00` en HTB, ciruela
+  por defecto), separados por líneas de 1px blanco 8 %.
+- Sin datos: `<p class="mx-tile-stats__empty">Estadísticas no disponibles</p>`.
+- Mientras carga: `<p class="mx-brand-tile__loading">Cargando…</p>`.
+
+### Acentos
+
+Ícono pequeño en la esquina (`.mx-brand-tile__corner`) y logo de fondo tenue
+anclado al borde inferior (`.mx-brand-tile__backdrop`, tamaños `sm`, `md` o
+`lg` con `data-size`).
+
+```html preview
+<div class="mx-card-grid">
+  <article class="mx-brand-tile" data-brand="claude-code">
+    <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Claude Code</p></header>
+    <div class="mx-brand-tile__backdrop" data-size="md"><svg aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#anthropic-wordmark"/></svg></div>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="/mxvi/assets/sprite.svg#claude-code"/></svg></div>
+    <div class="mx-brand-tile__corner"><svg aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#claude"/></svg></div>
+  </article>
+  <article class="mx-brand-tile" data-brand="github">
+    <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">GitHub</p></header>
+    <div class="mx-brand-tile__backdrop" data-size="lg"><svg aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#github-wordmark"/></svg></div>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 1024"><use href="/mxvi/assets/sprite.svg#github"/></svg></div>
+    <a class="mx-brand-tile__link" href="#"><span class="mx-visually-hidden">GitHub</span><span class="mx-brand-tile__arrow" aria-hidden="true">↗</span></a>
+  </article>
+</div>
+```
+
+- Esquina: 22 × 22px a 16px del borde (18px y 14px en ≤ 1200px); el título y
+  la flecha se recorren para dejarle espacio.
+- Fondo: opacidad 6 %, más ancho que la tarjeta y recortado; `sm` queda dentro
+  (60 % del ancho), `lg` desborda más.
 
 ### Especificación visual
 
@@ -54,14 +100,14 @@ Tarjeta rica: con contenido en lugar de logo (por ejemplo, estadísticas).
 | Brillo superior | degradado de blanco 8 % a transparente en el 45 % superior |
 | Glow inferior | círculo radial de 180px en la esquina inferior derecha (−45px fuera) |
 | Título | Geist Pixel .95rem MAYÚSCULAS `.08em`, a 18px arriba y 22px a la izquierda (.8rem y 14px en ≤ 1200px) |
-| Logo | 115px de ancho por defecto, rotado −8°, escalado ×3, anclado a 4px de la derecha y 32px del borde inferior; desborda y se recorta |
+| Logo | SVG de 28px de alto con el ancho, la rotación y la escala de su marca (por defecto 150px, 12°, ×5); anclado a 4px de la derecha y 32px del borde inferior; desborda y se recorta |
 | Hover | la tarjeta sube 4px, sombra de hover, `contrast(1.4)`; el logo gira a 2° y escala ×1.12 |
 | Flecha ↗ | 1.25rem, arriba a la derecha (16px), aparece con hover o foco |
 | Alto mínimo | 190px fuera de la cuadrícula; dentro, lo define la fila |
 
 </div>
 
-Ajustes por tarjeta: `--icon-width`, `--icon-rotation` y `--icon-scale`
+Cada marca trae su geometría (`components/molecules/brand-geometry.css`), también ajustada en ≤ 1200px. Ajustes manuales: `--icon-width`, `--icon-rotation` y `--icon-scale`
 (por ejemplo `style="--icon-width:240px; --icon-scale:7"` para logos grandes).
 
 ### Colores de marca

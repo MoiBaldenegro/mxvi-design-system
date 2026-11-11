@@ -16,6 +16,9 @@ valores. No requiere ningún framework.
 <script src="https://moibaldenegro.github.io/mxvi-design-system/mxvi/mxvi.js" defer></script>
 ```
 
+Puedes importar solo lo que uses, por ejemplo
+`@import './mxvi/components/atoms/buttons.css';` después de `tokens.css`.
+
 Para producción, descarga el paquete de la plataforma (incluye la carpeta
 `mxvi/` con CSS, JS, fuentes y assets) y sírvelo desde tu propio dominio:
 
@@ -24,7 +27,11 @@ mxvi/
 ├── mxvi.css          ← fuentes + tokens + base + componentes
 ├── tokens.css        ← solo variables
 ├── base.css          ← reset y estilos globales
-├── components.css    ← componentes .mx-*
+├── components.css    ← índice de componentes (@import)
+├── components/       ← un archivo por componente (≤ 100 líneas):
+│   ├── atoms/        ← buttons, typography, tags, inputs, media
+│   ├── molecules/    ← cards, search, navigation, brand-tile...
+│   └── organisms/    ← navbar, footer, hero, post, prose, promo...
 ├── fonts.css         ← @font-face de Geist
 ├── mxvi.js           ← comportamientos opcionales
 ├── fonts/            ← Geist, Geist Mono, Geist Pixel (OFL 1.1)

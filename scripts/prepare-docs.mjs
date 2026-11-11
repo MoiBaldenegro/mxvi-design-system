@@ -226,9 +226,22 @@ const mxviPublic = path.join(publicRoot, 'mxvi')
 await fs.rm(mxviPublic, { recursive: true, force: true })
 await fs.cp(mxviSource, mxviPublic, { recursive: true })
 const mxviParts = ['fonts.css', 'tokens.css', 'base.css', 'components.css']
+
+// components.css is an index of @import rules: inline them so mxvi.css is a
+// single request (relative font URLs in fonts.css stay valid next to it).
+async function inlineImports(file) {
+  const css = await fs.readFile(file, 'utf8')
+  const parts = []
+  for (const line of css.split('\n')) {
+    const match = /^@import '(.+)';$/.exec(line.trim())
+    parts.push(match ? await inlineImports(path.join(path.dirname(file), match[1])) : line)
+  }
+  return parts.join('\n')
+}
+
 const mxviBundle = [
   '/* MXVI Design System — mxvi.css (generated: fonts + tokens + base + components). */',
-  ...await Promise.all(mxviParts.map(part => fs.readFile(path.join(mxviSource, part), 'utf8'))),
+  ...await Promise.all(mxviParts.map(part => inlineImports(path.join(mxviSource, part)))),
 ].join('\n\n')
 await fs.writeFile(path.join(mxviPublic, 'mxvi.css'), mxviBundle)
 
