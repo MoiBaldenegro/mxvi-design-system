@@ -73,3 +73,12 @@
 @media (prefers-reduced-motion: reduce) {
   .mx-navbar__menu, .mx-navbar[data-menu='open'] .mx-navbar__menu { transition: none; }
 }
+
+/* Short viewports (landscape phones, zoom): the bar stops being sticky. */
+@media (max-height: 500px) { .mx-navbar { position: static; } }
+@media (max-width: 969px) and (max-height: 500px) and (scripting: enabled) { .mx-navbar { position: relative; } }
+
+/* Anchors clear the header: wrapped header without JS, single row with JS. */
+@media (max-width: 969px) { html { scroll-padding-top: var(--header-height-mobile); } }
+@media (max-width: 969px) and (scripting: enabled) { html { scroll-padding-top: var(--header-height); } }
+

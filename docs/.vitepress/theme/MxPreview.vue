@@ -40,6 +40,7 @@ const srcdoc = computed(() => {
 <link rel="stylesheet" href="${css}">
 <style>
   html { scrollbar-gutter: auto; }
+  html, body { height: auto; }
   body { min-height: 0; padding: ${padding};
     background-image: radial-gradient(color-mix(in srgb, var(--color-text) 3%, transparent) 1px, transparent 1px);
     background-size: 14px 14px; }

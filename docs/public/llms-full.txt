@@ -4012,7 +4012,13 @@ tokens allowed are listed in `DESIGN_SYSTEM_ONLY` (today, the logo colors).
 - Run it locally with `npm run tokens:check`, or against a local copy of the
   website with `node scripts/check-tokens-sync.mjs ../moibaldenegro.com/src/styles/tokens.css`.
 
-The check covers tokens. Changes to component styles (paddings, layouts) still
+The website also keeps a synced copy of the component sheets
+(`src/styles/mxvi/`, written by its `scripts/sync-mxvi.mjs` with a sha256
+manifest). `scripts/check-site-copy.mjs` (`npm run site:check`, same workflow)
+fails when that copy is missing a sheet or is outdated; the fix is to run
+`node scripts/sync-mxvi.mjs` in the website repository.
+
+The token check covers tokens. Changes to component styles (paddings, layouts) still
 need to be ported by hand to `mxvi/components.css` and the catalog.
 
 ## Change process
