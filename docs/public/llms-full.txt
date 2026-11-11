@@ -46,6 +46,18 @@ Keep foundations consistent. Adapt density, navigation, semantic colors, and com
 
 Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduced motion, accessible labels, and non-color status cues.
 
+## Platforms
+
+Identify the target platform before designing or coding and follow its guide:
+
+- Web (browser sites and web apps): `platforms/web/` or `/llms-web.txt`.
+- Desktop (installed Windows, macOS or Linux apps): `platforms/desktop/` or `/llms-desktop.txt`.
+- Mobile (installed iOS or Android apps): `platforms/mobile/` or `/llms-mobile.txt`.
+
+Foundations and tokens are the same everywhere; layout, navigation, input,
+component sizing and OS conventions follow the platform guide. A website opened
+on a phone follows the web guide.
+
 ## Implementation rules
 
 1. Read the relevant docs before coding.
@@ -58,9 +70,10 @@ Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduc
 ## Output checklist
 
 Before finishing, report:
+- target platform (web, desktop or mobile);
 - tokens used;
 - components/patterns reused;
-- responsive behavior;
+- responsive or adaptive behavior for that platform;
 - accessibility considerations;
 - deviations or proposed additions.
 
@@ -85,6 +98,8 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 |---|---|
 | `/llms.txt` | Discovery index with links to important docs |
 | `/llms-full.txt` | Consolidated text context |
+| `/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt` | Core rules plus one complete platform guide, in one file |
+| `/downloads/mxni-{web,desktop,mobile}-markdown.zip` | Platform bundle for local projects, with its own `AGENTS.md` and the official logo SVGs |
 | `/markdown/...` | Individual raw Markdown files |
 | `/downloads/mxni-design-system-markdown.zip` | Offline documentation bundle |
 | `/ai/agent-instructions.md` | Short implementation contract |
@@ -93,9 +108,22 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 
 1. Start with `llms.txt`.
 2. Read `ai/agent-instructions.md`.
-3. Retrieve only the relevant foundation, guideline, or component documents.
-4. For large tasks, use `llms-full.txt` as broad context, then verify details against the individual canonical Markdown pages.
-5. Cite the exact page paths in implementation notes.
+3. Identify the target platform and load its context (`/llms-<platform>.txt`) or its guide under `platforms/<platform>/`.
+4. Retrieve only the relevant foundation, guideline, or component documents.
+5. For large tasks, use the platform context or `llms-full.txt` as broad context, then verify details against the individual canonical Markdown pages.
+6. Cite the exact page paths in implementation notes.
+
+## Two ways to consume the documentation
+
+**Online (fetch).** Give the agent a URL: the platform context
+(`/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt`) for broad work, or
+a single raw page under `/markdown/` for a narrow task. Every page on the site
+links to its raw Markdown.
+
+**Local (download).** Download the platform zip, unzip it into the project
+(for example `docs/mxni/`) and point the project's agent instructions to
+`docs/mxni/AGENTS.md`. Links that start with `/` inside the Markdown map to
+files in that folder.
 
 ## Context efficiency
 
@@ -126,8 +154,13 @@ Published machine-readable files:
 
 - `/llms.txt`
 - `/llms-full.txt`
+- `/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt`
 - `/ai/agent-instructions.md`
 - `/downloads/mxni-design-system-markdown.zip`
+- `/downloads/mxni-web-markdown.zip`, `/downloads/mxni-desktop-markdown.zip`, `/downloads/mxni-mobile-markdown.zip`
+
+Platform guides: [Web](/platforms/web/), [Escritorio](/platforms/desktop/) and
+[Móvil](/platforms/mobile/).
 
 The generated Markdown endpoints are rebuilt from the canonical documentation before each site build.
 
@@ -493,6 +526,11 @@ title: Navigation
 - On mobile, provide a clear and accessible navigation disclosure.
 - Keep labels concise and recognizable.
 
+Platform patterns (URL and top bar on web, sidebars and menus on desktop,
+bottom navigation and back stacks on mobile) are described in each platform
+guide: [Web](/platforms/web/navigation), [Desktop](/platforms/desktop/navigation),
+[Mobile](/platforms/mobile/navigation).
+
 
 ---
 
@@ -531,6 +569,13 @@ Interactive components should consider:
 ## Naming
 
 Use clear names such as `Button`, `TextField`, `Card`, `Badge`, `Dialog`, and `Toast`. Keep implementation-specific names out of design documentation unless they are part of the public API.
+
+## Platform adaptation
+
+The contracts on these pages apply to every platform. Sizes, input methods and
+OS conventions are adapted in each platform guide:
+[Web](/platforms/web/components), [Desktop](/platforms/desktop/components),
+[Mobile](/platforms/mobile/components).
 
 ## Component maturity
 
@@ -959,6 +1004,13 @@ MXNI supports multiple product types while retaining a shared foundation.
 | Docs | Retrieval and comprehension | Structured, readable, technical |
 
 A product may add tokens, but additions must be named, justified, and documented.
+
+## Platforms
+
+Product families describe the purpose of a product; platforms describe where
+it runs. Apply the guide for each platform the product ships on:
+[Web](/platforms/web/), [Desktop](/platforms/desktop/) and
+[Mobile](/platforms/mobile/).
 
 
 ---
@@ -1397,6 +1449,11 @@ hero:
     src: /brand/mxni-hero.svg
     alt: MXNI Design System visual identity
 features:
+  - icon: 🖥️
+    title: Plataformas
+    details: Guías específicas para web, escritorio y móvil, con contexto listo para agentes de IA.
+    link: /platforms/
+    linkText: Elegir plataforma
   - icon: 🎨
     title: Foundations
     details: Colores, tipografía, geometría, espaciado, motion y accesibilidad.
@@ -1443,8 +1500,1388 @@ MXNI es un sistema visual compartido por un ecosistema de productos. No busca qu
 
 ## Recursos rápidos
 
+**Por plataforma** — guía, contexto para un LLM (fetch) y Markdown descargable
+para tu proyecto:
+
+| Plataforma | Guía | Para un LLM | Para un proyecto local |
+|---|---|---|---|
+| Web | [Guía web](/platforms/web/) | [llms-web.txt](/llms-web.txt) | [mxni-web-markdown.zip](/downloads/mxni-web-markdown.zip) |
+| Escritorio | [Guía de escritorio](/platforms/desktop/) | [llms-desktop.txt](/llms-desktop.txt) | [mxni-desktop-markdown.zip](/downloads/mxni-desktop-markdown.zip) |
+| Móvil | [Guía móvil](/platforms/mobile/) | [llms-mobile.txt](/llms-mobile.txt) | [mxni-mobile-markdown.zip](/downloads/mxni-mobile-markdown.zip) |
+
+**Todo el sistema:**
+
 - [Índice para modelos: llms.txt](/llms.txt)
 - [Documentación consolidada: llms-full.txt](/llms-full.txt)
 - [Instrucciones para agentes](/ai/agent-instructions.md)
 - [Descargar todos los Markdown](/downloads/mxni-design-system-markdown.zip)
 - [Ver tokens CSS](/implementation/css-tokens)
+
+
+---
+
+<!-- SOURCE: platforms/desktop/checklist.md -->
+
+---
+title: Escritorio — Checklist
+---
+
+# Escritorio: checklist de revisión
+
+Usa esta lista antes de dar por terminada una interfaz de escritorio. Los
+agentes de IA deben reportar cada punto.
+
+## Marca y tokens
+
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens MXNI.
+- [ ] Los acentos se usan con moderación (5–10 % de la composición).
+- [ ] El logo es el SVG oficial con sus colores originales.
+
+## Ventana y layout
+
+- [ ] La ventana tiene tamaño mínimo y el layout se adapta al redimensionar.
+- [ ] Se guardan y restauran tamaño, posición y paneles.
+- [ ] Los controles de ventana respetan la convención del sistema operativo.
+- [ ] Se ve bien a escala de pantalla 100 %, 150 % y 200 %.
+- [ ] La densidad corresponde al tipo de producto.
+
+## Navegación y comandos
+
+- [ ] La navegación principal es persistente y marca la ubicación actual.
+- [ ] Las acciones frecuentes tienen atajo y el atajo se muestra.
+- [ ] Los atajos estándar del sistema no se reasignan.
+- [ ] Todo lo que hay en un menú contextual existe en otro lugar accesible.
+
+## Accesibilidad
+
+- [ ] Todo es operable con teclado y el foco es visible.
+- [ ] Los controles exponen nombre, rol y estado al sistema.
+- [ ] El color nunca es la única señal de estado.
+- [ ] Contraste AA verificado.
+- [ ] Se respetan movimiento reducido y alto contraste.
+- [ ] Arrastrar y soltar tiene alternativa.
+
+## Robustez
+
+- [ ] La interfaz no se congela en tareas largas.
+- [ ] No se pierden cambios al cerrar.
+
+## Reporte del agente
+
+- Plataforma: **escritorio** (y sistemas operativos objetivo).
+- Tokens usados.
+- Componentes y patrones reutilizados.
+- Comportamiento al redimensionar.
+- Atajos definidos.
+- Consideraciones de accesibilidad.
+- Desviaciones o adiciones propuestas.
+
+
+
+---
+
+<!-- SOURCE: platforms/desktop/components.md -->
+
+---
+title: Escritorio — Componentes
+---
+
+# Escritorio: componentes
+
+Los contratos de [Components](/components/overview) aplican igual. Esta página
+explica cómo adaptarlos a escritorio.
+
+## Botones
+
+- Alturas: `32` (pequeño, el más común en barras de herramientas), `40`
+  (mediano, en formularios y diálogos) y `48 px` (grande, solo en pantallas de
+  bienvenida o acciones muy destacadas).
+- En diálogos, el orden de los botones sigue la convención del sistema: en
+  macOS la acción principal va a la derecha; en Windows, la acción principal
+  suele ir primero (a la izquierda del grupo, alineado a la derecha).
+- `Enter` ejecuta la acción principal y `Escape` cancela.
+- Los botones de solo ícono en barras de herramientas tienen tooltip con el
+  nombre y el atajo.
+
+## Campos
+
+- Alto de `32 px` en interfaces compactas y `40 px` en formularios.
+- Etiquetas visibles; en formularios anchos pueden ir a la izquierda del campo.
+- Valida al salir del campo o al enviar, no en cada tecla.
+- Permite copiar, pegar, deshacer y seleccionar texto como en el resto del
+  sistema.
+
+## Listas, tablas y árboles
+
+- Selección con clic, `Shift + clic` (rango) y `Ctrl/⌘ + clic` (múltiple).
+- Navegación con flechas, `Home`, `End`, `Page Up/Down`.
+- Columnas redimensionables y ordenables cuando haya muchos datos.
+- Fila seleccionada: `--mxni-elevated` + barra o borde `#A83FE0`.
+- Números con cifras tabulares; IDs y rutas en JetBrains Mono.
+
+## Paneles e inspectores
+
+- Usa paneles en lugar de modales para editar propiedades o ver detalles.
+- Los paneles se pueden ocultar, redimensionar y recuerdan su estado.
+
+## Feedback
+
+- **Notificaciones del sistema:** solo para eventos que el usuario necesita
+  aunque la app esté en segundo plano (descarga terminada, mensaje nuevo).
+- **Toasts dentro de la app:** feedback breve; nunca información esencial.
+- **Diálogos:** para decisiones que bloquean el trabajo (guardar antes de
+  cerrar, borrar). Título, acciones explícitas, `Escape` para cancelar.
+- **Progreso:** en la barra de estado o en el propio elemento; la app sigue
+  respondiendo durante tareas largas. Si la plataforma lo permite, muestra
+  también el progreso en el ícono de la barra de tareas o el Dock.
+
+## Tooltips
+
+- Aparecen al hacer hover o foco, tras un retraso breve (unos `500 ms`).
+- Contienen el nombre del control y su atajo.
+- Nunca son la única forma de obtener información esencial.
+
+## Menús
+
+- Alto de opción de `28–32 px`.
+- Separadores entre grupos; atajos alineados a la derecha.
+- Las opciones deshabilitadas se muestran atenuadas, no ocultas, para que el
+  usuario sepa que existen.
+
+
+
+---
+
+<!-- SOURCE: platforms/desktop/index.md -->
+
+---
+title: Escritorio — Resumen
+---
+
+# Escritorio
+
+Guía de MXNI para aplicaciones instaladas en Windows, macOS o Linux, ya sean
+nativas o construidas con tecnologías web empaquetadas (Electron, Tauri u
+otras). La interfaz es la misma marca, pero el usuario espera que la aplicación
+se comporte como una aplicación de su sistema operativo.
+
+## Tipos de producto de escritorio
+
+| Tipo | Prioridad | Expresión MXNI |
+|---|---|---|
+| Herramienta de productividad | Completar tareas rápido | Funcional, densidad equilibrada o compacta |
+| Editor / IDE / herramienta técnica | Trabajo prolongado y preciso | Compacta, paneles, mucha información visible |
+| Utilidad pequeña | Una tarea concreta | Ventana pequeña, clara y directa |
+| Cliente de un servicio (chat, música, etc.) | Uso frecuente y continuo | Equilibrada, navegación estable |
+
+## Páginas de esta guía
+
+1. [Layout y ventanas](/platforms/desktop/layout)
+2. [Navegación](/platforms/desktop/navigation)
+3. [Componentes en escritorio](/platforms/desktop/components)
+4. [Interacción y accesibilidad](/platforms/desktop/interaction)
+5. [Checklist de revisión](/platforms/desktop/checklist)
+
+## Contrato para agentes (escritorio)
+
+Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
+guía completa o `/llms-desktop.txt`.
+
+**Tokens**
+
+- Fondo `#09070D`, superficie `#15111C`, elevada `#211A2B`, borde `#382C42`.
+- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
+- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
+  (limitado a datos y estados).
+- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
+  info `#24CDE0`.
+- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
+- Espaciado `4, 8, 12, 16, 24, 32, 48, 64`; radios `2, 6, 10` y `999` solo
+  para pills.
+- Movimiento `120 / 180 / 280 / 400 ms`.
+
+**Reglas de escritorio**
+
+1. Los valores en px de los tokens son px independientes de la densidad; el
+   sistema operativo los escala según la configuración de pantalla.
+2. La ventana es redimensionable: define un tamaño mínimo y adapta el layout
+   con los mismos breakpoints de [Spacing & layout](/foundations/spacing-layout).
+3. Respeta las convenciones del sistema operativo: controles de ventana,
+   barra de menús, atajos (`Ctrl` en Windows/Linux, `⌘` en macOS) y menús
+   contextuales.
+4. Todo es operable con teclado; las acciones frecuentes tienen atajo.
+5. El puntero es preciso: los controles pueden ser más compactos (mínimo
+   `32 px` de alto), pero el hover nunca es la única vía.
+6. Usa paneles y sidebars persistentes en lugar de pantallas que se reemplazan.
+7. Recuerda el estado: tamaño y posición de la ventana, paneles abiertos,
+   última vista.
+8. Respeta las preferencias del sistema: movimiento reducido, alto contraste y
+   escala de texto.
+9. Objetivo de accesibilidad: el equivalente a WCAG 2.2 AA, usando las APIs de
+   accesibilidad del sistema operativo.
+10. Reporta tokens usados, comportamiento al redimensionar, atajos,
+    accesibilidad y desviaciones.
+
+## Qué no hacer
+
+- Llevar a escritorio una landing page o un layout de marketing.
+- Dibujar controles de ventana que imiten los de otro sistema operativo.
+- Bloquear la aplicación entera durante tareas largas.
+- Usar diálogos modales para todo; prefiere paneles e inspectores.
+- Depender de hover o de tooltips para información esencial.
+
+
+
+---
+
+<!-- SOURCE: platforms/desktop/interaction.md -->
+
+---
+title: Escritorio — Interacción y accesibilidad
+---
+
+# Escritorio: interacción y accesibilidad
+
+Complementa [Accessibility](/foundations/accessibility). El objetivo es el
+equivalente a WCAG 2.2 AA usando las APIs de accesibilidad del sistema
+operativo (UI Automation en Windows, NSAccessibility en macOS, AT-SPI en
+Linux). Si la app usa tecnologías web (Electron, Tauri), las reglas de HTML
+semántico de la guía [Web](/platforms/web/interaction) también aplican.
+
+## Métodos de entrada
+
+| Entrada | Reglas |
+|---|---|
+| Teclado | Todo es operable sin mouse. Orden de foco lógico, foco visible, atajos para acciones frecuentes. |
+| Mouse / trackpad | Hover para feedback y tooltips; clic derecho para menús contextuales; arrastrar y soltar donde tenga sentido. |
+| Táctil (laptops 2 en 1) | Controles de al menos `32 px` de alto con espacio entre ellos; ninguna acción depende de hover o clic derecho. |
+| Lector de pantalla | Cada control tiene nombre, rol y estado expuestos al sistema. |
+
+## Foco
+
+- Anillo de foco visible en todos los controles, incluidos los personalizados.
+- Puedes usar el cian `#24CDE0` o el morado `#A83FE0` según el fondo; el glow
+  no basta por sí solo.
+- `Tab` recorre las regiones (sidebar, contenido, inspector); las flechas se
+  mueven dentro de listas, árboles y grupos.
+- `F6` (Windows/Linux) o un atajo equivalente cambia entre paneles.
+
+## Arrastrar y soltar
+
+- Siempre existe una alternativa con teclado o menú (por ejemplo "Mover a…").
+- Muestra la zona de destino con `--mxni-elevated` y borde `#24CDE0`.
+
+## Preferencias del sistema
+
+- **Movimiento reducido:** desactiva animaciones no esenciales.
+- **Alto contraste / colores forzados:** los bordes, el foco y los estados
+  siguen visibles.
+- **Escala de texto y de pantalla:** el layout no se rompe a 150 % ni a 200 %.
+- **Tema:** MXNI es oscuro por defecto. Si la app ofrece tema claro, sigue la
+  preferencia del sistema como valor inicial.
+
+## Movimiento
+
+- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion).
+- Las animaciones de paneles y menús usan `Fast` o `Base`; en escritorio se
+  esperan respuestas inmediatas.
+
+## Rendimiento y estado
+
+- La interfaz nunca se congela: las tareas largas corren en segundo plano con
+  progreso y opción de cancelar.
+- Guarda el trabajo automáticamente o avisa antes de perder cambios.
+- Recupera la sesión tras un cierre inesperado cuando sea posible.
+
+## Validación
+
+- Recorrido completo solo con teclado.
+- Prueba con el lector de pantalla del sistema (Narrator o NVDA en Windows,
+  VoiceOver en macOS, Orca en Linux).
+- Prueba con escala de pantalla 100 %, 150 % y 200 %, y con alto contraste.
+
+
+
+---
+
+<!-- SOURCE: platforms/desktop/layout.md -->
+
+---
+title: Escritorio — Layout y ventanas
+---
+
+# Escritorio: layout y ventanas
+
+## Unidades
+
+Los tokens de MXNI están en px. En escritorio se interpretan como px
+independientes de la densidad: el sistema operativo los multiplica por la
+escala de pantalla (por ejemplo 125 % o 200 % en Windows, Retina en macOS).
+Diseña siempre a escala 100 % y verifica en 150 % y 200 %.
+
+## Tamaño de ventana
+
+La ventana se puede redimensionar; el layout responde a su ancho, no al de la
+pantalla.
+
+| Ancho de ventana | Breakpoint MXNI | Layout sugerido |
+|---|---|---|
+| `< 640 px` | Compact | Una columna; sidebar oculta tras un botón. Solo si la app lo permite. |
+| `640–1023 px` | Medium | Sidebar colapsable (solo íconos) + contenido. |
+| `1024–1439 px` | Wide | Sidebar + contenido; inspector opcional. |
+| `≥ 1440 px` | XL | Sidebar + contenido + inspector visibles. |
+
+**Propuesta:**
+
+- Tamaño mínimo de ventana de `800 × 560 px` para aplicaciones completas; las
+  utilidades pequeñas pueden definir el suyo.
+- Tamaño inicial de `1280 × 800 px` o el 80 % de la pantalla, lo que sea menor.
+- Guardar y restaurar tamaño, posición y estado de maximizado.
+
+## Estructura de la ventana
+
+```text
+┌───────────────────────────────────────────────┐
+│ Barra de título / barra de herramientas       │
+├──────────┬──────────────────────┬─────────────┤
+│ Sidebar  │ Contenido principal  │ Inspector   │
+│          │                      │ (opcional)  │
+├──────────┴──────────────────────┴─────────────┤
+│ Barra de estado (opcional)                    │
+└───────────────────────────────────────────────┘
+```
+
+- **Barra de título:** usa la nativa o una personalizada que respete la
+  posición de los controles de ventana del sistema (izquierda en macOS,
+  derecha en Windows) y siga siendo arrastrable.
+- **Sidebar:** `--mxni-surface`, de `220` a `280 px`; colapsable a solo íconos
+  (`56`–`64 px`).
+- **Contenido:** `--mxni-bg`, con margen interno `space-6` o `space-8`.
+- **Inspector:** `--mxni-surface`, de `280` a `360 px`, ocultable.
+- **Barra de estado:** `24`–`28 px`, texto Label o Code, información
+  secundaria (sincronización, versión, posición).
+
+Los paneles redimensionables deben tener un divisor visible al hacer hover o
+foco, y un tamaño mínimo para que el contenido no se rompa.
+
+## Densidad
+
+| Tipo | Densidad | Alto de fila en listas |
+|---|---|---|
+| Utilidad o cliente de servicio | Equilibrada | `40 px` |
+| Herramienta de productividad | Equilibrada | `32–40 px` |
+| Editor / IDE / herramientas técnicas | Compacta | `24–32 px` |
+
+Compacta nunca significa apretada: mantén al menos `space-2` entre elementos
+interactivos.
+
+## Tipografía en escritorio
+
+- Body de `14 px` en interfaces de trabajo; `16 px` en contenido de lectura.
+- Labels de `12 px`; no bajes de `11 px`.
+- Respeta la escala de texto del sistema operativo cuando la plataforma la
+  ofrezca.
+
+## Varias ventanas
+
+- Si la app abre varias ventanas, cada una tiene un título claro.
+- Los diálogos son ventanas hijas o modales dentro de la ventana, nunca
+  ventanas sueltas que se pierdan detrás de otras.
+
+
+
+---
+
+<!-- SOURCE: platforms/desktop/navigation.md -->
+
+---
+title: Escritorio — Navegación
+---
+
+# Escritorio: navegación
+
+Aplica los patrones de [Navigation](/components/navigation) con las
+convenciones de las aplicaciones de escritorio.
+
+## Estructura
+
+| Patrón | Uso en escritorio |
+|---|---|
+| Sidebar | Navegación principal entre áreas de la app. Persistente y colapsable. |
+| Pestañas | Documentos o vistas abiertas a la vez (como un editor o navegador). Se pueden cerrar y reordenar. |
+| Barra de menús | Acceso a todos los comandos. En macOS vive en la barra superior del sistema; en Windows/Linux, dentro de la ventana o en un menú de la aplicación. |
+| Paleta de comandos | Búsqueda de comandos y destinos con el teclado (`Ctrl/⌘ + K` o `Ctrl/⌘ + Shift + P`). |
+| Menú contextual | Acciones sobre el elemento con clic derecho; siempre duplicadas en otro lugar accesible. |
+| Breadcrumbs | Rutas dentro de jerarquías (carpetas, proyectos). |
+
+## Reglas
+
+1. La navegación principal no cambia de lugar entre vistas.
+2. Marca claramente la vista y el elemento seleccionados (superficie elevada +
+   borde o barra de acento, no solo color).
+3. Todo comando de un menú contextual existe también en la barra de menús, la
+   paleta de comandos o la interfaz visible.
+4. Las acciones frecuentes tienen atajo de teclado y el atajo se muestra junto
+   al comando en menús y tooltips.
+5. Historial: si la app tiene navegación entre vistas, soporta
+   `Alt + ←/→` (Windows/Linux) o `⌘ + [ / ]` (macOS) para atrás y adelante.
+6. Restaura la última vista al reabrir la aplicación.
+
+## Atajos de teclado
+
+Respeta los atajos estándar del sistema y no los reasignes:
+
+| Acción | Windows / Linux | macOS |
+|---|---|---|
+| Nuevo | `Ctrl + N` | `⌘ + N` |
+| Abrir | `Ctrl + O` | `⌘ + O` |
+| Guardar | `Ctrl + S` | `⌘ + S` |
+| Buscar | `Ctrl + F` | `⌘ + F` |
+| Deshacer / rehacer | `Ctrl + Z` / `Ctrl + Y` o `Ctrl + Shift + Z` | `⌘ + Z` / `⌘ + Shift + Z` |
+| Copiar / pegar | `Ctrl + C` / `Ctrl + V` | `⌘ + C` / `⌘ + V` |
+| Preferencias | `Ctrl + ,` | `⌘ + ,` |
+| Cerrar ventana o pestaña | `Ctrl + W` | `⌘ + W` |
+| Salir | `Alt + F4` / `Ctrl + Q` | `⌘ + Q` |
+
+Muestra los atajos en JetBrains Mono, en `--mxni-text-muted`, alineados a la
+derecha en los menús.
+
+## Logo
+
+- El logo aparece en la pantalla de bienvenida, en "Acerca de" y en el ícono
+  de la aplicación; no es necesario en la barra de cada ventana.
+- Usa el [SVG oficial](/brand/logo) con sus colores originales.
+
+
+
+---
+
+<!-- SOURCE: platforms/index.md -->
+
+---
+title: Plataformas
+---
+
+# Plataformas
+
+MXNI es un solo sistema de diseño: los mismos fundamentos, tokens, componentes y
+reglas de marca aplican en todas partes. Lo que cambia entre plataformas es
+**cómo** se aplican: el espacio disponible, la forma de interactuar, los patrones
+de navegación que el usuario espera y las convenciones del sistema operativo.
+
+Cada plataforma tiene una guía completa y autocontenida. Algunas reglas se
+repiten a propósito: así una persona o un agente de IA puede trabajar con una
+sola guía sin tener que reconstruir el contexto desde otras páginas.
+
+## Elige la plataforma
+
+| Plataforma | Cuándo aplica | Guía | Para un LLM (fetch) | Para un proyecto local |
+|---|---|---|---|---|
+| **Web** | Sitios, landing pages, documentación y aplicaciones que corren en un navegador. | [Web](/platforms/web/) | [`/llms-web.txt`](/llms-web.txt) | [Descargar Markdown (.zip)](/downloads/mxni-web-markdown.zip) |
+| **Escritorio** | Aplicaciones instaladas en Windows, macOS o Linux (nativas, Electron, Tauri u otras). | [Escritorio](/platforms/desktop/) | [`/llms-desktop.txt`](/llms-desktop.txt) | [Descargar Markdown (.zip)](/downloads/mxni-desktop-markdown.zip) |
+| **Móvil** | Aplicaciones para teléfonos y tabletas iOS o Android (nativas o multiplataforma). | [Móvil](/platforms/mobile/) | [`/llms-mobile.txt`](/llms-mobile.txt) | [Descargar Markdown (.zip)](/downloads/mxni-mobile-markdown.zip) |
+
+Si un producto existe en varias plataformas, aplica la guía de cada una a su
+versión correspondiente. Una aplicación web abierta en el navegador de un
+teléfono sigue la guía **Web** (con su layout compacto); la guía **Móvil** es
+para aplicaciones instaladas.
+
+## Qué se comparte siempre
+
+- Paleta de marca, colores semánticos y proporciones de uso ([Color](/foundations/colors)).
+- Tipografías Manrope y JetBrains Mono, y la escala tipográfica ([Typography](/foundations/typography)).
+- Escala de espaciado `4–64 px` ([Spacing & layout](/foundations/spacing-layout)).
+- Radios, bordes, sombras y glow ([Geometry & effects](/foundations/geometry-effects)).
+- Duraciones y principios de movimiento ([Motion](/foundations/motion)).
+- Requisitos de accesibilidad ([Accessibility](/foundations/accessibility)).
+- Contratos y estados de los componentes ([Components](/components/overview)).
+- Logo y firma de marca ([Logo](/brand/logo)).
+
+## Qué cambia por plataforma
+
+| Aspecto | Web | Escritorio | Móvil |
+|---|---|---|---|
+| Entrada principal | Puntero, teclado y táctil | Puntero preciso y teclado | Táctil y gestos |
+| Unidad de diseño | CSS px | px del sistema (escalados por el SO) | pt (iOS) / dp (Android) |
+| Layout | Responsivo por breakpoints | Ventanas redimensionables | Pantalla completa, orientación y áreas seguras |
+| Navegación | URL, barra superior, sidebar, breadcrumbs | Sidebar, pestañas, menús, paleta de comandos | Barra inferior, pilas de navegación, gesto o botón "atrás" |
+| Densidad típica | Espaciosa (marketing) o equilibrada (apps) | Equilibrada o compacta | Equilibrada, con objetivos táctiles grandes |
+| Tamaño mínimo de control | 44 × 44 px en táctil | 32 px de alto con puntero | 44 pt (iOS) / 48 dp (Android) |
+| Hover | Mejora opcional, nunca requisito | Disponible, nunca única vía | No existe |
+| Convenciones a respetar | Navegador y estándares web | Sistema operativo (ventanas, menús, atajos) | Guías de iOS y Android |
+
+## Cómo se usa con agentes de IA
+
+Toda la documentación se puede leer aquí y consumir de dos formas.
+
+### 1. En línea: el agente lee la documentación por fetch
+
+1. Identifica la plataforma del trabajo (web, escritorio o móvil).
+2. Pide al agente que lea el contexto de esa plataforma:
+   `/llms-web.txt`, `/llms-desktop.txt` o `/llms-mobile.txt`. Cada archivo
+   incluye las instrucciones para agentes, los fundamentos, los componentes y
+   la guía completa de la plataforma en un solo documento.
+3. Para trabajos pequeños, basta con el Markdown de la página **Resumen** de la
+   plataforma (por ejemplo `/markdown/platforms/web/index.md`), que contiene un
+   contrato compacto con los tokens y reglas clave.
+4. Cada página de este sitio tiene su Markdown crudo en
+   `/markdown/<ruta>.md`; el enlace está al inicio de la página.
+
+Ejemplo de instrucción para el agente:
+
+```text
+Antes de escribir UI, lee https://moibaldenegro.github.io/mxvi-design-system/llms-web.txt
+y sigue el design system MXNI. Reporta los tokens usados y cualquier desviación.
+```
+
+### 2. Local: la documentación vive dentro del proyecto
+
+1. Descarga el `.zip` de la plataforma (tabla de arriba) y descomprímelo en el
+   repositorio, por ejemplo en `docs/mxni/`.
+2. El paquete incluye un `AGENTS.md` que indica qué leer primero, los Markdown
+   del núcleo común y los de la plataforma, y su `llms-<plataforma>.txt`.
+3. Referencia la carpeta desde las instrucciones de tu agente (por ejemplo en
+   el `AGENTS.md` o `CLAUDE.md` del proyecto):
+
+```text
+Para cualquier interfaz, sigue el design system MXNI en docs/mxni/.
+Empieza por docs/mxni/AGENTS.md.
+```
+
+Los enlaces que empiezan con `/` dentro de los Markdown apuntan a archivos del
+paquete: `/foundations/colors` corresponde a `foundations/colors.md`.
+
+Pide siempre al agente que reporte la plataforma usada y cualquier desviación.
+
+## Estado
+
+Las guías de plataforma son una **propuesta v1.0**. Las decisiones marcadas
+como **Propuesta** no existían en los fundamentos y deben validarse en
+productos reales antes de considerarse estables.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/checklist.md -->
+
+---
+title: Móvil — Checklist
+---
+
+# Móvil: checklist de revisión
+
+Usa esta lista antes de dar por terminada una interfaz móvil. Los agentes de
+IA deben reportar cada punto.
+
+## Marca y tokens
+
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens MXNI
+      (px → pt/dp).
+- [ ] Los acentos se usan con moderación (5–10 % de la composición).
+- [ ] El logo es el SVG oficial con sus colores originales.
+
+## Layout
+
+- [ ] Respeta las áreas seguras y la barra de estado.
+- [ ] Funciona en teléfono pequeño, teléfono grande y tableta.
+- [ ] Conserva el estado al rotar o cambiar de tamaño.
+- [ ] Navegación y acción principal están en la zona del pulgar.
+
+## Navegación
+
+- [ ] La barra inferior tiene de 3 a 5 destinos con ícono y etiqueta.
+- [ ] "Atrás" funciona con botón y con el gesto o botón del sistema.
+- [ ] Se siguen las convenciones de iOS y de Android en cada versión.
+- [ ] Los enlaces profundos llevan a la pantalla correcta.
+
+## Interacción y accesibilidad
+
+- [ ] Objetivos táctiles de `44 pt` (iOS) / `48 dp` (Android).
+- [ ] Ningún gesto es la única forma de hacer algo.
+- [ ] No hay información solo disponible con hover.
+- [ ] El texto crece con la configuración del sistema sin cortarse.
+- [ ] Contraste AA verificado; el color no es la única señal.
+- [ ] Probado con VoiceOver y TalkBack.
+- [ ] Se respeta "Reducir movimiento".
+
+## Robustez
+
+- [ ] Estados sin conexión y de carga definidos.
+- [ ] No se pierde lo escrito al salir y volver a la app.
+
+## Reporte del agente
+
+- Plataforma: **móvil** (iOS, Android o ambos; nativo o multiplataforma).
+- Tokens usados.
+- Componentes y patrones reutilizados.
+- Comportamiento en tamaños y orientaciones.
+- Consideraciones de accesibilidad.
+- Desviaciones o adiciones propuestas.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/components.md -->
+
+---
+title: Móvil — Componentes
+---
+
+# Móvil: componentes
+
+Los contratos de [Components](/components/overview) aplican igual. Esta página
+explica cómo adaptarlos a móvil. Cuando exista un control nativo con mejor
+accesibilidad y comportamiento, úsalo y aplícale los tokens de MXNI.
+
+## Botones
+
+- Alto mínimo de `44 pt` (iOS) / `48 dp` (Android); el botón principal usa
+  `48`–`56`.
+- El botón principal de una pantalla puede ocupar todo el ancho (menos los
+  márgenes) y vivir en la zona inferior.
+- Un solo botón principal por pantalla.
+- Estado presionado visible al tocar (cambio de superficie u opacidad), con
+  duración `Fast` (120 ms).
+- Radio `radius-md` (6) o `radius-lg` (10) en botones grandes.
+
+## Campos
+
+- Alto mínimo de `48`; texto de `16` para que se lea bien y, en web, para que
+  iOS no haga zoom al enfocar.
+- Usa el tipo de teclado correcto: correo, teléfono, número, URL, contraseña.
+- Activa autocompletado y gestores de contraseñas del sistema.
+- La pantalla hace scroll para que el campo enfocado y su error no queden
+  debajo del teclado.
+- Etiqueta siempre visible; el placeholder no la sustituye.
+
+## Listas
+
+- Filas de al menos `48` de alto; `64`–`72` con dos líneas.
+- Toda la fila es el área táctil si lleva a un detalle.
+- Las acciones por deslizamiento (swipe) son atajos; la misma acción existe en
+  el detalle o en un menú.
+- Divisores `--mxni-border` o separación por espacio, no ambos.
+
+## Tarjetas
+
+- Ocupan el ancho disponible menos los márgenes.
+- Superficie `--mxni-surface`, borde `--mxni-border`, radio `radius-md` o
+  `radius-lg`.
+- Si toda la tarjeta es tocable, no lleva otras acciones dentro.
+
+## Hojas inferiores y diálogos
+
+- **Hoja inferior:** opciones y detalles secundarios. Tiene asa o botón de
+  cerrar, se descarta deslizando hacia abajo y respeta el área segura inferior.
+- **Diálogo / alerta:** solo para decisiones que bloquean (confirmar un
+  borrado). Máximo dos o tres acciones con verbos claros.
+
+## Feedback
+
+- **Snackbar / toast:** mensajes breves en la parte inferior, sobre la barra de
+  navegación. Pueden llevar una acción ("Deshacer").
+- **Indicadores de carga:** esqueletos (skeletons) para contenido; spinner solo
+  para acciones cortas.
+- **Pull to refresh** en listas que se actualizan, con alternativa visible si la
+  actualización es importante.
+- **Notificaciones push:** solo con permiso y para información que el usuario
+  quiere recibir.
+- **Haptics:** con moderación y solo para confirmar acciones significativas.
+
+## Íconos
+
+- Íconos de `24` dentro de un área táctil de `44`/`48`.
+- Los íconos solos llevan etiqueta accesible.
+- En la barra inferior, ícono + etiqueta visible.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/index.md -->
+
+---
+title: Móvil — Resumen
+---
+
+# Móvil
+
+Guía de MXNI para aplicaciones instaladas en teléfonos y tabletas iOS o
+Android, nativas (SwiftUI, UIKit, Jetpack Compose) o multiplataforma (React
+Native, Flutter u otras). Un sitio web abierto en un teléfono sigue la guía
+[Web](/platforms/web/) con su layout Compact.
+
+La marca es la misma; la forma de usarla cambia: pantalla pequeña, uso con una
+mano, interacción táctil y convenciones fuertes de cada sistema operativo.
+
+## Tipos de producto móvil
+
+| Tipo | Prioridad | Expresión MXNI |
+|---|---|---|
+| App de uso frecuente | Tareas rápidas y repetidas | Funcional, navegación inferior estable |
+| App de contenido / media | Consumir y descubrir | Expresiva, imágenes grandes, alto contraste |
+| App de herramientas o datos | Consultar y actuar | Equilibrada, listas y tarjetas claras |
+| Compañera de un producto de escritorio | Revisar y aprobar | Subconjunto de funciones, simple |
+
+## Páginas de esta guía
+
+1. [Layout y pantallas](/platforms/mobile/layout)
+2. [Navegación](/platforms/mobile/navigation)
+3. [Componentes en móvil](/platforms/mobile/components)
+4. [Interacción y accesibilidad](/platforms/mobile/interaction)
+5. [Checklist de revisión](/platforms/mobile/checklist)
+
+## Contrato para agentes (móvil)
+
+Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
+guía completa o `/llms-mobile.txt`.
+
+**Tokens**
+
+- Fondo `#09070D`, superficie `#15111C`, elevada `#211A2B`, borde `#382C42`.
+- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
+- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
+  (limitado a datos y estados).
+- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
+  info `#24CDE0`.
+- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
+- Espaciado `4, 8, 12, 16, 24, 32, 48, 64`; radios `2, 6, 10` y `999` solo
+  para pills.
+- Movimiento `120 / 180 / 280 / 400 ms`.
+
+**Reglas móviles**
+
+1. **Propuesta:** `1 px` de los tokens equivale a `1 pt` en iOS y `1 dp` en
+   Android.
+2. Objetivos táctiles mínimos de `44 × 44 pt` (iOS) y `48 × 48 dp` (Android).
+3. Respeta las áreas seguras (notch, isla dinámica, barra de inicio, barra de
+   gestos) y la barra de estado.
+4. Navegación principal en la parte inferior (3 a 5 destinos) y pilas de
+   navegación con "atrás" del sistema funcionando.
+5. Acciones principales al alcance del pulgar.
+6. Ningún gesto es la única forma de hacer algo; siempre hay un control visible.
+7. No existe hover: toda la información y feedback funcionan con toque.
+8. Soporta el tamaño de texto del sistema (Dynamic Type / escala de fuente).
+9. Respeta movimiento reducido y lectores de pantalla (VoiceOver, TalkBack).
+10. Reporta tokens usados, comportamiento en distintos tamaños y orientaciones,
+    accesibilidad y desviaciones.
+
+## Qué no hacer
+
+- Encoger la versión de escritorio o la web de marketing.
+- Ignorar las convenciones de iOS o Android para "verse igual" en ambas.
+- Poner acciones críticas solo en la parte superior de pantallas grandes.
+- Usar texto menor a `12 pt/sp` o controles menores al mínimo táctil.
+- Llenar la pantalla de glow y acentos: en pantallas pequeñas saturan rápido.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/interaction.md -->
+
+---
+title: Móvil — Interacción y accesibilidad
+---
+
+# Móvil: interacción y accesibilidad
+
+Complementa [Accessibility](/foundations/accessibility). Los requisitos se
+aplican con las APIs de accesibilidad de cada sistema (UIAccessibility en iOS,
+la API de accesibilidad de Android) y se prueban con VoiceOver y TalkBack.
+
+## Toque y gestos
+
+| Interacción | Reglas |
+|---|---|
+| Toque | Objetivos de `44 × 44 pt` (iOS) / `48 × 48 dp` (Android) con separación de al menos `8`. |
+| Toque largo | Atajo para menús contextuales o selección; nunca la única vía. |
+| Deslizar (swipe) | Atajo para acciones en listas; la acción existe también en un control visible. |
+| Gestos del sistema | No uses gestos que choquen con los del sistema (bordes de pantalla, barra de inicio). |
+| Arrastrar | Con alternativa (botones "subir/bajar" o un menú "Mover"). |
+
+## Sin hover
+
+- Toda información de un tooltip debe estar visible o accesible con un toque.
+- El estado presionado reemplaza al hover como feedback inmediato.
+
+## Lectores de pantalla
+
+- Cada control tiene etiqueta, rol y estado (seleccionado, deshabilitado,
+  expandido).
+- El orden de lectura sigue el orden visual.
+- Agrupa elementos relacionados (por ejemplo una fila de lista) en un solo
+  elemento accesible.
+- Anuncia cambios importantes (errores, resultados) sin mover el foco sin
+  motivo.
+
+## Texto y contraste
+
+- Soporta Dynamic Type (iOS) y la escala de fuente (Android) al menos hasta
+  200 %, sin cortes ni solapamientos.
+- Contraste AA en las combinaciones reales; revisa el texto secundario
+  `#B7AABD` y atenuado `#81768A` sobre `--mxni-surface` y `--mxni-elevated`.
+- El color nunca es la única señal: acompaña con ícono o texto.
+
+## Movimiento
+
+- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion);
+  transiciones de pantalla con `Slow` (280 ms) o la transición nativa.
+- Con "Reducir movimiento" activo, sustituye desplazamientos y escalas por
+  fundidos o cambios inmediatos.
+
+## Preferencias del sistema
+
+- MXNI es oscuro por defecto. Si la app ofrece tema claro, sigue el modo del
+  sistema como valor inicial.
+- Respeta "Negritas", "Aumentar contraste" y "Reducir transparencia" cuando la
+  plataforma los ofrezca.
+
+## Conectividad y rendimiento
+
+- Muestra estados claros sin conexión y conserva lo que el usuario escribió.
+- Cachea lo necesario para que la app abra rápido.
+- Las acciones de red muestran progreso y permiten reintentar.
+
+## Validación
+
+- Prueba con VoiceOver (iOS) y TalkBack (Android).
+- Prueba con el texto del sistema al tamaño máximo.
+- Prueba con una mano en un teléfono grande y en una tableta.
+- Prueba en vertical y, si aplica, horizontal.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/layout.md -->
+
+---
+title: Móvil — Layout y pantallas
+---
+
+# Móvil: layout y pantallas
+
+## Unidades
+
+**Propuesta:** los tokens de MXNI se escriben en px y en móvil se interpretan
+como unidades independientes de la densidad: `1 px = 1 pt` en iOS y
+`1 px = 1 dp` en Android. El texto en Android usa `sp` para respetar la escala
+de fuente del usuario.
+
+| Token | iOS | Android |
+|---|---|---|
+| `space-4` (16 px) | 16 pt | 16 dp |
+| `radius-md` (6 px) | 6 pt | 6 dp |
+| Body (16 px) | 16 pt | 16 sp |
+
+## Tamaños de pantalla
+
+| Clase | Ancho aproximado | Layout |
+|---|---|---|
+| Teléfono | `< 600 pt/dp` | Una columna; navegación inferior. |
+| Teléfono grande / plegable abierto | `600–839 dp` | Una o dos columnas; navegación inferior o lateral. |
+| Tableta | `≥ 840 dp` o iPad | Dos o tres paneles (lista + detalle); navegación lateral. |
+
+Estos rangos se alinean con las clases de tamaño de iOS y las clases de
+tamaño de ventana de Android; consulta la documentación de cada plataforma
+para los valores exactos.
+
+## Márgenes y espaciado
+
+- Márgenes laterales de `16` (`space-4`) en teléfonos y `24` (`space-6`) en
+  tabletas.
+- Separación entre secciones de `24` a `32` (`space-6`–`space-8`).
+- Separación entre elementos táctiles de al menos `8` (`space-2`).
+
+## Áreas seguras
+
+- El contenido interactivo y el texto nunca quedan debajo del notch, la isla
+  dinámica, la barra de estado, la barra de inicio de iOS ni la barra de
+  gestos de Android.
+- Los fondos sí pueden extenderse bajo esas zonas (de borde a borde).
+- La barra de estado usa contenido claro sobre el fondo oscuro de MXNI.
+
+## Orientación
+
+- Los teléfonos funcionan al menos en vertical; si la app soporta horizontal,
+  el layout se reorganiza, no solo se estira.
+- Las tabletas soportan ambas orientaciones.
+- Al rotar o cambiar de tamaño (pantalla dividida, plegables) se conserva el
+  estado: scroll, texto escrito y selección.
+
+## Zona del pulgar
+
+```text
+┌─────────────────────┐
+│  Difícil de alcanzar │  ← títulos, información, acciones poco frecuentes
+│                     │
+│  Alcanzable         │  ← contenido y acciones secundarias
+│                     │
+│  Fácil (pulgar)     │  ← navegación y acciones principales
+└─────────────────────┘
+```
+
+Coloca la navegación principal y la acción principal en el tercio inferior.
+
+## Tipografía en móvil
+
+| Rol | Tamaño sugerido |
+|---|---|
+| Título de pantalla | `28–34` |
+| Título de sección | `20–22` |
+| Body | `16` (mínimo `14` en contenido secundario) |
+| Label / metadatos | `12` (nunca menos) |
+
+- Las tallas Display (`48–64`) solo en pantallas de bienvenida o portadas.
+- El texto debe crecer con Dynamic Type (iOS) o la escala de fuente (Android)
+  sin cortarse: permite varias líneas y evita alturas fijas.
+
+## Densidad
+
+Móvil usa densidad equilibrada: la pantalla es pequeña, pero los dedos no. Una
+fila de lista mide al menos `48` de alto; las filas con dos líneas, `64` a `72`.
+
+
+
+---
+
+<!-- SOURCE: platforms/mobile/navigation.md -->
+
+---
+title: Móvil — Navegación
+---
+
+# Móvil: navegación
+
+Aplica los patrones de [Navigation](/components/navigation) con las
+convenciones de iOS y Android.
+
+## Estructura
+
+| Patrón | Uso en móvil |
+|---|---|
+| Barra inferior (tab bar / navigation bar) | Destinos principales, de 3 a 5, siempre visibles. Ícono + etiqueta. |
+| Pila de navegación | Cada pantalla de detalle se apila sobre la anterior y se vuelve con "atrás". |
+| Barra superior | Título de la pantalla, botón atrás y una o dos acciones. |
+| Hoja inferior (bottom sheet) | Acciones o detalles secundarios sin salir de la pantalla. |
+| Pestañas superiores / segmentos | Vistas hermanas dentro de una pantalla. |
+| Riel o panel lateral | Navegación principal en tabletas y plegables abiertos. |
+
+## Reglas
+
+1. La barra inferior no cambia entre pantallas principales; cambiar de destino
+   conserva el estado de cada uno.
+2. El destino activo se marca con ícono relleno o barra de acento **y** etiqueta,
+   no solo con color.
+3. "Atrás" siempre funciona: el botón de la barra superior, el gesto de
+   deslizar desde el borde en iOS y el botón o gesto del sistema en Android.
+4. No escondas destinos principales en un menú hamburguesa si caben en la barra
+   inferior.
+5. Los enlaces profundos (deep links) abren la pantalla correcta con un "atrás"
+   que tenga sentido.
+6. Las acciones destructivas o irreversibles no se colocan junto a las de
+   navegación.
+
+## Diferencias entre iOS y Android
+
+| Aspecto | iOS | Android |
+|---|---|---|
+| Atrás | Botón en la barra superior y gesto desde el borde izquierdo | Botón o gesto del sistema; también en la barra superior |
+| Título de pantalla | Título grande que se reduce al hacer scroll | Barra superior con título alineado a la izquierda |
+| Acción principal | En la barra superior o en la parte inferior del contenido | Botón de acción flotante (FAB) cuando hay una acción dominante |
+| Barra inferior | Tab bar | Navigation bar |
+
+Usa la convención de cada plataforma aunque el diseño visual (colores,
+tipografía, geometría) sea el mismo MXNI.
+
+## Logo
+
+- El logo aparece en la pantalla de inicio (splash), en "Acerca de" y en el
+  ícono de la app; no en cada barra superior.
+- Usa el [SVG oficial](/brand/logo) con sus colores originales y su zona libre.
+
+
+
+---
+
+<!-- SOURCE: platforms/web/checklist.md -->
+
+---
+title: Web — Checklist
+---
+
+# Web: checklist de revisión
+
+Usa esta lista antes de dar por terminada una interfaz web. Los agentes de IA
+deben reportar cada punto.
+
+## Marca y tokens
+
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens `--mxni-*`.
+- [ ] Los acentos se usan con moderación (5–10 % de la composición).
+- [ ] El logo es el SVG oficial con sus colores originales.
+- [ ] No hay valores sueltos sin justificar.
+
+## Layout
+
+- [ ] Funciona en Compact (`< 640 px`), Medium, Wide y XL.
+- [ ] No hay scroll horizontal en la página.
+- [ ] El orden de lectura es el mismo en todos los tamaños.
+- [ ] La densidad corresponde al tipo de producto.
+
+## Navegación
+
+- [ ] Cada página o estado compartible tiene URL.
+- [ ] "Atrás" y "adelante" del navegador funcionan.
+- [ ] La ubicación actual está marcada (`aria-current`).
+- [ ] El menú compacto se abre y cierra con teclado y con `Escape`.
+
+## Accesibilidad
+
+- [ ] Todo es operable con teclado y el foco es visible.
+- [ ] Encabezados en orden y landmarks presentes.
+- [ ] Campos con etiqueta visible y errores asociados.
+- [ ] El color nunca es la única señal de estado.
+- [ ] Contraste AA verificado en las combinaciones reales.
+- [ ] `prefers-reduced-motion` respetado.
+- [ ] Objetivos táctiles de `44 × 44 px` en Compact.
+
+## Reporte del agente
+
+- Plataforma: **web**.
+- Tokens usados.
+- Componentes y patrones reutilizados.
+- Comportamiento responsive.
+- Consideraciones de accesibilidad.
+- Desviaciones o adiciones propuestas.
+
+
+
+---
+
+<!-- SOURCE: platforms/web/components.md -->
+
+---
+title: Web — Componentes
+---
+
+# Web: componentes
+
+Los contratos de [Components](/components/overview) aplican igual. Esta página
+explica cómo implementarlos en web.
+
+## Botones
+
+- Alturas: `32` (pequeño), `40` (mediano) y `48 px` (grande).
+- En Compact, los botones principales usan al menos `44 px` de alto o un área
+  táctil equivalente.
+- Usa `<button type="button">` o `type="submit"` dentro de formularios.
+- Estado de carga: deshabilita el envío duplicado y anuncia el progreso
+  (`aria-busy` o texto).
+- Radio `radius-md` (6 px).
+
+## Campos
+
+- Usa controles nativos (`<input>`, `<select>`, `<textarea>`) siempre que sea
+  posible.
+- Cada campo tiene `<label>` visible; el placeholder nunca lo sustituye.
+- Usa el `type` y el `autocomplete` correctos (`email`, `tel`,
+  `current-password`, etc.); en teléfonos esto abre el teclado adecuado.
+- Los errores se asocian al campo con `aria-describedby` y no dependen solo del
+  borde rojo.
+- En Compact, el texto de los campos debe ser de al menos `16 px`.
+
+## Tarjetas y paneles
+
+- Superficies `--mxni-surface` y `--mxni-elevated`, borde `--mxni-border`.
+- Una tarjeta clicable entera usa un enlace con nombre accesible; si tiene
+  varias acciones, no hagas clicable toda la tarjeta.
+- En Compact, las tarjetas ocupan todo el ancho disponible.
+
+## Feedback
+
+- **Toasts:** en una región `aria-live`; nunca con información esencial.
+- **Alertas:** en línea, con título o etiqueta de estado y `role="alert"` solo
+  si requieren atención inmediata.
+- **Diálogos:** usa `<dialog>` o un patrón equivalente con foco atrapado,
+  `Escape` para cerrar y devolución del foco al disparador.
+- **Progreso:** `<progress>` o `role="progressbar"` con valor si se conoce.
+
+## Tablas y datos
+
+- Usa `<table>` con encabezados `<th scope>` para datos tabulares.
+- En Compact, la tabla hace scroll horizontal dentro de su contenedor o se
+  transforma en una lista de tarjetas.
+- Números en `font-variant-numeric: tabular-nums`; identificadores y versiones
+  en JetBrains Mono.
+
+## Íconos
+
+- Íconos decorativos con `aria-hidden="true"`.
+- Botones solo con ícono necesitan `aria-label`.
+
+
+
+---
+
+<!-- SOURCE: platforms/web/index.md -->
+
+---
+title: Web — Resumen
+---
+
+# Web
+
+Guía de MXNI para productos que corren en un navegador: sitios de marca,
+landing pages, documentación y aplicaciones web. Una aplicación web abierta en
+un teléfono también sigue esta guía, usando su layout compacto.
+
+## Tipos de producto web
+
+| Tipo | Prioridad | Expresión MXNI |
+|---|---|---|
+| Sitio de marca / landing | Historia y conversión | Espaciosa, editorial, composición Bento |
+| Documentación | Encontrar y entender | Estructurada, legible, técnica |
+| Aplicación web | Completar tareas | Funcional, densidad equilibrada |
+| Dashboard | Monitorear y decidir | Densidad equilibrada o compacta, datos primero |
+
+## Páginas de esta guía
+
+1. [Layout y responsive](/platforms/web/layout)
+2. [Navegación](/platforms/web/navigation)
+3. [Componentes en web](/platforms/web/components)
+4. [Interacción y accesibilidad](/platforms/web/interaction)
+5. [Checklist de revisión](/platforms/web/checklist)
+
+## Contrato para agentes (web)
+
+Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
+guía completa o `/llms-web.txt`.
+
+**Tokens**
+
+- Fondo `#09070D` (`--mxni-bg`), superficie `#15111C` (`--mxni-surface`),
+  elevada `#211A2B` (`--mxni-elevated`), borde `#382C42` (`--mxni-border`).
+- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
+- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
+  (limitado a datos y estados).
+- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
+  info `#24CDE0`.
+- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
+- Espaciado `4, 8, 12, 16, 24, 32, 48, 64 px`; radios `2, 6, 10 px` y `999 px`
+  solo para pills.
+- Movimiento `120 / 180 / 280 / 400 ms`.
+
+**Reglas web**
+
+1. Implementa con los tokens CSS `--mxni-*` de
+   [CSS tokens](/implementation/css-tokens); no copies valores sueltos.
+2. Diseña mobile-first con los breakpoints Compact `< 640`, Medium
+   `640–1023`, Wide `1024–1439` y XL `≥ 1440 px`.
+3. HTML semántico: `<a>` para navegar, `<button>` para acciones, encabezados en
+   orden y landmarks (`header`, `nav`, `main`, `footer`).
+4. Todo funciona con teclado y tiene foco visible (`:focus-visible`).
+5. El hover es una mejora; nada depende solo de hover.
+6. Objetivos táctiles de al menos `44 × 44 px` en layouts compactos.
+7. Respeta `prefers-reduced-motion`.
+8. El estado navegable (páginas, filtros, pestañas relevantes) vive en la URL.
+9. Objetivo: WCAG 2.2 AA.
+10. Reporta tokens usados, comportamiento responsive, accesibilidad y
+    desviaciones.
+
+## Qué no hacer
+
+- Forzar un layout de marketing en una aplicación funcional.
+- Usar todos los acentos con la misma intensidad.
+- Reconstruir el logo con una fuente: usa el [SVG oficial](/brand/logo).
+- Poner texto largo en JetBrains Mono.
+- Ocultar contenido esencial detrás de hover o de animaciones.
+
+
+
+---
+
+<!-- SOURCE: platforms/web/interaction.md -->
+
+---
+title: Web — Interacción y accesibilidad
+---
+
+# Web: interacción y accesibilidad
+
+El objetivo para todo producto web es **WCAG 2.2 AA**. Esta página complementa
+[Accessibility](/foundations/accessibility).
+
+## Métodos de entrada
+
+En web no sabes con qué interactúa el usuario: puede ser mouse, teclado,
+táctil, lector de pantalla o una combinación. Diseña para todos.
+
+| Entrada | Reglas |
+|---|---|
+| Teclado | Todo es alcanzable con `Tab`, en orden lógico. Foco visible con `:focus-visible`. Sin trampas de foco fuera de diálogos. |
+| Mouse | El hover agrega información o feedback, pero nunca es la única forma de acceder a algo. |
+| Táctil | Objetivos de al menos `44 × 44 px`, separación suficiente entre ellos y sin gestos obligatorios sin alternativa. |
+| Lector de pantalla | HTML semántico, nombres accesibles, regiones `aria-live` para cambios dinámicos. |
+
+## Foco
+
+- Anillo de foco visible y con contraste suficiente; puedes usar el cian
+  `#24CDE0` o el morado `#A83FE0` según el fondo.
+- No uses el glow como único indicador de foco.
+- Al abrir un diálogo, el foco entra en él; al cerrarlo, regresa al disparador.
+
+## Movimiento
+
+- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion).
+- Con `prefers-reduced-motion: reduce`, elimina o reduce animaciones no
+  esenciales.
+- Sin parallax que estorbe la lectura y sin destellos.
+
+## Preferencias del usuario
+
+- MXNI es oscuro por defecto. Si el producto ofrece tema claro, guarda la
+  elección del usuario y respeta `prefers-color-scheme` como valor inicial.
+- Respeta el zoom del navegador hasta 200 % sin perder contenido.
+- Soporta `forced-colors` (modo de alto contraste de Windows): los bordes y el
+  foco deben seguir visibles.
+
+## Rendimiento
+
+El rendimiento también es experiencia:
+
+- Evita saltos de layout reservando espacio para imágenes y fuentes.
+- No bloquees la primera pantalla con animaciones o scripts grandes.
+- Muestra estados de carga en operaciones de más de un segundo.
+
+## Validación
+
+- Pruebas automáticas (por ejemplo axe) en cada cambio de UI.
+- Recorrido manual con teclado.
+- Prueba con un lector de pantalla (NVDA, VoiceOver o TalkBack según el
+  público).
+
+
+
+---
+
+<!-- SOURCE: platforms/web/layout.md -->
+
+---
+title: Web — Layout y responsive
+---
+
+# Web: layout y responsive
+
+## Breakpoints
+
+Usa los breakpoints de [Spacing & layout](/foundations/spacing-layout). Elige
+el cambio de layout según el contenido, no según el nombre del dispositivo.
+
+| Nombre | Ancho | Columnas | Margen lateral sugerido |
+|---|---:|---|---|
+| Compact | `< 640 px` | 4 o una sola columna | `space-4` (16 px) |
+| Medium | `640–1023 px` | 4 o 6 | `space-6` (24 px) |
+| Wide | `1024–1439 px` | 12 | `space-8` (32 px) |
+| XL | `≥ 1440 px` | 12, con ancho máximo | `space-8` (32 px) o más |
+
+**Propuesta:** limita el contenido a un contenedor de entre `1200` y
+`1280 px` en Wide y XL para que las líneas y las tarjetas no se estiren.
+
+## Mobile-first
+
+1. Diseña primero el layout Compact en una sola columna.
+2. Agrega columnas cuando el contenido lo pida.
+3. Mantén el mismo orden de lectura en todos los tamaños; el orden visual no
+   debe contradecir el orden del HTML.
+4. Nunca debe aparecer scroll horizontal en la página. Las tablas anchas hacen
+   scroll dentro de su propio contenedor.
+
+## Densidad por tipo de producto
+
+| Tipo | Densidad | Espaciado entre secciones |
+|---|---|---|
+| Marca / landing | Espaciosa | `space-12`–`space-16` |
+| Documentación | Equilibrada | `space-8`–`space-12` |
+| Aplicación web | Equilibrada | `space-6`–`space-8` |
+| Dashboard / herramientas de datos | Compacta, nunca apretada | `space-4`–`space-6` |
+
+## Composición Bento
+
+Las composiciones [Bento](/guidelines/bento-composition) funcionan bien en
+sitios de marca y dashboards:
+
+- En Wide/XL las tarjetas pueden ocupar varias columnas y alturas distintas.
+- En Medium reduce a 2 columnas; en Compact, a una sola.
+- Conserva gutters constantes (`space-4` o `space-6`).
+- La tarjeta más importante va primero en el orden del HTML.
+
+## Tipografía en web
+
+- Body de `16 px` por defecto; `14 px` solo en interfaces densas.
+- Largo de línea de 60–80 caracteres en texto largo.
+- Los títulos Display (`48–64 px`) se reducen en Compact (por ejemplo con
+  `clamp()`), sin bajar de H1 (`36 px`) en el título principal.
+- Carga Manrope y JetBrains Mono preferentemente self-hosted, con
+  `font-display: swap`.
+
+## Imágenes y media
+
+- Usa `width` y `height` (o `aspect-ratio`) para evitar saltos de layout.
+- Sirve tamaños adecuados con `srcset`/`sizes`.
+- Carga diferida (`loading="lazy"`) para imágenes fuera de la primera pantalla.
+- El logo siempre es el [SVG oficial](/brand/logo).
+
+
+
+---
+
+<!-- SOURCE: platforms/web/navigation.md -->
+
+---
+title: Web — Navegación
+---
+
+# Web: navegación
+
+Aplica los patrones de [Navigation](/components/navigation) con las
+convenciones del navegador.
+
+## Estructura
+
+| Patrón | Uso en web |
+|---|---|
+| Barra superior | Destinos principales del sitio o aplicación, logo y acciones globales (búsqueda, cuenta). |
+| Sidebar | Secciones dentro de documentación o aplicaciones con muchas áreas. En Compact se convierte en un panel desplegable. |
+| Pestañas | Vistas hermanas dentro de un mismo contexto. |
+| Breadcrumbs | Ubicación dentro de jerarquías profundas (documentación, catálogos). |
+| Paginación | Listas largas cuando el usuario necesita volver a un punto concreto. |
+
+## Reglas
+
+1. **La URL es parte de la navegación.** Cada página y cada estado que el usuario
+   querría compartir o recargar (filtros, pestañas, búsqueda) tiene su propia URL.
+2. Los botones "atrás" y "adelante" del navegador deben funcionar.
+3. Usa `<a href>` para ir a otro lugar y `<button>` para ejecutar acciones.
+4. Marca la ubicación actual visualmente y con `aria-current="page"`.
+5. Agrupa la navegación principal en un `<nav>` con nombre accesible.
+6. Agrega un enlace "Saltar al contenido" al inicio de la página.
+7. Los menús no se abren solo con hover; deben abrirse con clic y teclado.
+
+## Navegación en Compact
+
+- Muestra el logo y un botón de menú con nombre accesible ("Menú") y
+  `aria-expanded`.
+- El menú abierto atrapa el foco mientras está abierto, se cierra con `Escape`
+  y devuelve el foco al botón.
+- Mantén visibles las acciones críticas (por ejemplo búsqueda) si caben.
+
+## Logo
+
+- El logo en la barra superior enlaza al inicio.
+- Usa el SVG oficial con sus colores originales; respeta la zona libre de
+  [Logo](/brand/logo).
+

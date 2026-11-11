@@ -7,11 +7,19 @@ Start with the agent instructions, then retrieve the relevant foundation, compon
 
 ## Core instructions
 - [Agent instructions](./ai/agent-instructions.md)
-- [Brand identity](./brand/identity.md)
-- [Foundations: colors](./foundations/colors.md)
-- [Foundations: typography](./foundations/typography.md)
-- [Foundations: spacing and layout](./foundations/spacing-layout.md)
-- [Foundations: accessibility](./foundations/accessibility.md)
+- [Platforms: choose web, desktop or mobile](./markdown/platforms/index.md)
+- [Brand identity](./markdown/brand/identity.md)
+- [Foundations: colors](./markdown/foundations/colors.md)
+- [Foundations: typography](./markdown/foundations/typography.md)
+- [Foundations: spacing and layout](./markdown/foundations/spacing-layout.md)
+- [Foundations: accessibility](./markdown/foundations/accessibility.md)
+
+## Platforms
+Pick the target platform first. Each bundle contains the agent instructions,
+foundations, components and the complete platform guide in one file.
+- Web: [guide](./markdown/platforms/web/index.md) · [context: llms-web.txt](./llms-web.txt) · [download: mxni-web-markdown.zip](./downloads/mxni-web-markdown.zip)
+- Desktop: [guide](./markdown/platforms/desktop/index.md) · [context: llms-desktop.txt](./llms-desktop.txt) · [download: mxni-desktop-markdown.zip](./downloads/mxni-desktop-markdown.zip)
+- Mobile: [guide](./markdown/platforms/mobile/index.md) · [context: llms-mobile.txt](./llms-mobile.txt) · [download: mxni-mobile-markdown.zip](./downloads/mxni-mobile-markdown.zip)
 
 ## Complete documentation
 - [MXNI instructions for AI agents](./markdown/ai/agent-instructions.md)
@@ -43,12 +51,32 @@ Start with the agent instructions, then retrieve the relevant foundation, compon
 - [React integration](./markdown/implementation/react.md)
 - [Versioning and contribution](./markdown/implementation/versioning.md)
 - [index.md](./markdown/index.md)
+- [Escritorio: checklist de revisión](./markdown/platforms/desktop/checklist.md)
+- [Escritorio: componentes](./markdown/platforms/desktop/components.md)
+- [Escritorio](./markdown/platforms/desktop/index.md)
+- [Escritorio: interacción y accesibilidad](./markdown/platforms/desktop/interaction.md)
+- [Escritorio: layout y ventanas](./markdown/platforms/desktop/layout.md)
+- [Escritorio: navegación](./markdown/platforms/desktop/navigation.md)
+- [Plataformas](./markdown/platforms/index.md)
+- [Móvil: checklist de revisión](./markdown/platforms/mobile/checklist.md)
+- [Móvil: componentes](./markdown/platforms/mobile/components.md)
+- [Móvil](./markdown/platforms/mobile/index.md)
+- [Móvil: interacción y accesibilidad](./markdown/platforms/mobile/interaction.md)
+- [Móvil: layout y pantallas](./markdown/platforms/mobile/layout.md)
+- [Móvil: navegación](./markdown/platforms/mobile/navigation.md)
+- [Web: checklist de revisión](./markdown/platforms/web/checklist.md)
+- [Web: componentes](./markdown/platforms/web/components.md)
+- [Web](./markdown/platforms/web/index.md)
+- [Web: interacción y accesibilidad](./markdown/platforms/web/interaction.md)
+- [Web: layout y responsive](./markdown/platforms/web/layout.md)
+- [Web: navegación](./markdown/platforms/web/navigation.md)
 
 ## Download
 - [Complete Markdown bundle](./downloads/mxni-design-system-markdown.zip)
 
 ## Agent usage
 1. Read `ai/agent-instructions.md`.
-2. Read only the relevant documents for the current task.
-3. Reuse documented tokens and patterns.
-4. Report deviations and proposed additions.
+2. Identify the target platform (web, desktop or mobile) and read its guide or `llms-<platform>.txt`.
+3. Read only the other documents relevant to the current task.
+4. Reuse documented tokens and patterns.
+5. Report the platform, deviations and proposed additions.

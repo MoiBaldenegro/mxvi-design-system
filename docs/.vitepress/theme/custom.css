@@ -171,3 +171,43 @@
   width: min(100%, 360px);
   height: auto;
 }
+
+/* Raw Markdown links shown at the top of every documentation page. */
+.mxni-markdown-source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-bottom: 24px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.mxni-markdown-source__label {
+  color: var(--vp-c-text-3);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.mxni-markdown-source a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mxni-markdown-source a:hover,
+.mxni-markdown-source a:focus-visible {
+  text-decoration: underline;
+}
+
+.mxni-markdown-source__path {
+  margin-left: auto;
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}

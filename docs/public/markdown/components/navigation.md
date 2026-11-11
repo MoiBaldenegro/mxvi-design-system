@@ -20,3 +20,8 @@ title: Navigation
 - Do not rely on hover-only menus.
 - On mobile, provide a clear and accessible navigation disclosure.
 - Keep labels concise and recognizable.
+
+Platform patterns (URL and top bar on web, sidebars and menus on desktop,
+bottom navigation and back stacks on mobile) are described in each platform
+guide: [Web](/platforms/web/navigation), [Desktop](/platforms/desktop/navigation),
+[Mobile](/platforms/mobile/navigation).

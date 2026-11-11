@@ -42,6 +42,15 @@ export default defineConfig({
       provider: 'local',
     },
     nav: [
+      {
+        text: 'Plataformas',
+        items: [
+          { text: 'Elegir plataforma', link: '/platforms/' },
+          { text: 'Web', link: '/platforms/web/' },
+          { text: 'Escritorio', link: '/platforms/desktop/' },
+          { text: 'Móvil', link: '/platforms/mobile/' },
+        ],
+      },
       { text: 'Fundamentos', link: '/foundations/colors' },
       { text: 'Componentes', link: '/components/overview' },
       { text: 'Guidelines', link: '/guidelines/overview' },
@@ -50,12 +59,44 @@ export default defineConfig({
         items: [
           { text: 'llms.txt', link: '/llms.txt' },
           { text: 'llms-full.txt', link: '/llms-full.txt' },
+          { text: 'llms-web.txt', link: '/llms-web.txt' },
+          { text: 'llms-desktop.txt', link: '/llms-desktop.txt' },
+          { text: 'llms-mobile.txt', link: '/llms-mobile.txt' },
           { text: 'Agent instructions', link: '/ai/agent-instructions.md' },
           { text: 'Descargar Markdown', link: '/downloads/mxni-design-system-markdown.zip' },
         ],
       },
     ],
     sidebar: {
+      '/platforms/': [
+        { text: 'Plataformas', items: [
+          { text: 'Elegir plataforma', link: '/platforms/' },
+        ] },
+        { text: 'Web', collapsed: false, items: [
+          { text: 'Resumen', link: '/platforms/web/' },
+          { text: 'Layout y responsive', link: '/platforms/web/layout' },
+          { text: 'Navegación', link: '/platforms/web/navigation' },
+          { text: 'Componentes', link: '/platforms/web/components' },
+          { text: 'Interacción y accesibilidad', link: '/platforms/web/interaction' },
+          { text: 'Checklist', link: '/platforms/web/checklist' },
+        ] },
+        { text: 'Escritorio', collapsed: false, items: [
+          { text: 'Resumen', link: '/platforms/desktop/' },
+          { text: 'Layout y ventanas', link: '/platforms/desktop/layout' },
+          { text: 'Navegación', link: '/platforms/desktop/navigation' },
+          { text: 'Componentes', link: '/platforms/desktop/components' },
+          { text: 'Interacción y accesibilidad', link: '/platforms/desktop/interaction' },
+          { text: 'Checklist', link: '/platforms/desktop/checklist' },
+        ] },
+        { text: 'Móvil', collapsed: false, items: [
+          { text: 'Resumen', link: '/platforms/mobile/' },
+          { text: 'Layout y pantallas', link: '/platforms/mobile/layout' },
+          { text: 'Navegación', link: '/platforms/mobile/navigation' },
+          { text: 'Componentes', link: '/platforms/mobile/components' },
+          { text: 'Interacción y accesibilidad', link: '/platforms/mobile/interaction' },
+          { text: 'Checklist', link: '/platforms/mobile/checklist' },
+        ] },
+      ],
       '/brand/': [
         { text: 'Brand', items: [
           { text: 'Identidad', link: '/brand/identity' },

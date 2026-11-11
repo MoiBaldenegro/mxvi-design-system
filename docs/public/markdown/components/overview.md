@@ -32,6 +32,13 @@ Interactive components should consider:
 
 Use clear names such as `Button`, `TextField`, `Card`, `Badge`, `Dialog`, and `Toast`. Keep implementation-specific names out of design documentation unless they are part of the public API.
 
+## Platform adaptation
+
+The contracts on these pages apply to every platform. Sizes, input methods and
+OS conventions are adapted in each platform guide:
+[Web](/platforms/web/components), [Desktop](/platforms/desktop/components),
+[Mobile](/platforms/mobile/components).
+
 ## Component maturity
 
 Every component should be marked:

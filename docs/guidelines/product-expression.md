@@ -33,3 +33,10 @@ MXNI supports multiple product types while retaining a shared foundation.
 | Docs | Retrieval and comprehension | Structured, readable, technical |
 
 A product may add tokens, but additions must be named, justified, and documented.
+
+## Platforms
+
+Product families describe the purpose of a product; platforms describe where
+it runs. Apply the guide for each platform the product ships on:
+[Web](/platforms/web/), [Desktop](/platforms/desktop/) and
+[Mobile](/platforms/mobile/).

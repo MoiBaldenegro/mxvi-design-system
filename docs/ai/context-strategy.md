@@ -14,6 +14,8 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 |---|---|
 | `/llms.txt` | Discovery index with links to important docs |
 | `/llms-full.txt` | Consolidated text context |
+| `/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt` | Core rules plus one complete platform guide, in one file |
+| `/downloads/mxni-{web,desktop,mobile}-markdown.zip` | Platform bundle for local projects, with its own `AGENTS.md` and the official logo SVGs |
 | `/markdown/...` | Individual raw Markdown files |
 | `/downloads/mxni-design-system-markdown.zip` | Offline documentation bundle |
 | `/ai/agent-instructions.md` | Short implementation contract |
@@ -22,9 +24,22 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 
 1. Start with `llms.txt`.
 2. Read `ai/agent-instructions.md`.
-3. Retrieve only the relevant foundation, guideline, or component documents.
-4. For large tasks, use `llms-full.txt` as broad context, then verify details against the individual canonical Markdown pages.
-5. Cite the exact page paths in implementation notes.
+3. Identify the target platform and load its context (`/llms-<platform>.txt`) or its guide under `platforms/<platform>/`.
+4. Retrieve only the relevant foundation, guideline, or component documents.
+5. For large tasks, use the platform context or `llms-full.txt` as broad context, then verify details against the individual canonical Markdown pages.
+6. Cite the exact page paths in implementation notes.
+
+## Two ways to consume the documentation
+
+**Online (fetch).** Give the agent a URL: the platform context
+(`/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt`) for broad work, or
+a single raw page under `/markdown/` for a narrow task. Every page on the site
+links to its raw Markdown.
+
+**Local (download).** Download the platform zip, unzip it into the project
+(for example `docs/mxni/`) and point the project's agent instructions to
+`docs/mxni/AGENTS.md`. Links that start with `/` inside the Markdown map to
+files in that folder.
 
 ## Context efficiency
 

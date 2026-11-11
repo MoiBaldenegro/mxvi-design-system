@@ -14,6 +14,10 @@ const required = [
   'guidelines/thumbnails.md',
   'implementation/css-tokens.md',
   'ai/agent-instructions.md',
+  'platforms/index.md',
+  ...['web', 'desktop', 'mobile'].flatMap(platform =>
+    ['index', 'layout', 'navigation', 'components', 'interaction', 'checklist']
+      .map(page => `platforms/${platform}/${page}.md`)),
 ]
 const errors = []
 

@@ -36,6 +36,18 @@ Keep foundations consistent. Adapt density, navigation, semantic colors, and com
 
 Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduced motion, accessible labels, and non-color status cues.
 
+## Platforms
+
+Identify the target platform before designing or coding and follow its guide:
+
+- Web (browser sites and web apps): `platforms/web/` or `/llms-web.txt`.
+- Desktop (installed Windows, macOS or Linux apps): `platforms/desktop/` or `/llms-desktop.txt`.
+- Mobile (installed iOS or Android apps): `platforms/mobile/` or `/llms-mobile.txt`.
+
+Foundations and tokens are the same everywhere; layout, navigation, input,
+component sizing and OS conventions follow the platform guide. A website opened
+on a phone follows the web guide.
+
 ## Implementation rules
 
 1. Read the relevant docs before coding.
@@ -48,8 +60,9 @@ Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduc
 ## Output checklist
 
 Before finishing, report:
+- target platform (web, desktop or mobile);
 - tokens used;
 - components/patterns reused;
-- responsive behavior;
+- responsive or adaptive behavior for that platform;
 - accessibility considerations;
 - deviations or proposed additions.

@@ -20,6 +20,11 @@ hero:
     src: /brand/mxni-hero.svg
     alt: MXNI Design System visual identity
 features:
+  - icon: 🖥️
+    title: Plataformas
+    details: Guías específicas para web, escritorio y móvil, con contexto listo para agentes de IA.
+    link: /platforms/
+    linkText: Elegir plataforma
   - icon: 🎨
     title: Foundations
     details: Colores, tipografía, geometría, espaciado, motion y accesibilidad.
@@ -65,6 +70,17 @@ MXNI es un sistema visual compartido por un ecosistema de productos. No busca qu
 **Technical. Modular. Expressive.**
 
 ## Recursos rápidos
+
+**Por plataforma** — guía, contexto para un LLM (fetch) y Markdown descargable
+para tu proyecto:
+
+| Plataforma | Guía | Para un LLM | Para un proyecto local |
+|---|---|---|---|
+| Web | [Guía web](/platforms/web/) | [llms-web.txt](/llms-web.txt) | [mxni-web-markdown.zip](/downloads/mxni-web-markdown.zip) |
+| Escritorio | [Guía de escritorio](/platforms/desktop/) | [llms-desktop.txt](/llms-desktop.txt) | [mxni-desktop-markdown.zip](/downloads/mxni-desktop-markdown.zip) |
+| Móvil | [Guía móvil](/platforms/mobile/) | [llms-mobile.txt](/llms-mobile.txt) | [mxni-mobile-markdown.zip](/downloads/mxni-mobile-markdown.zip) |
+
+**Todo el sistema:**
 
 - [Índice para modelos: llms.txt](/llms.txt)
 - [Documentación consolidada: llms-full.txt](/llms-full.txt)
