@@ -21,8 +21,6 @@ const DEFAULT_URL =
 const DESIGN_SYSTEM_ONLY = new Set([
   '--color-logo-purple',
   '--color-logo-orange',
-  '--color-danger',
-  '--color-success',
 ])
 
 /** Custom properties of a stylesheet as a Map(name → normalized value). */
