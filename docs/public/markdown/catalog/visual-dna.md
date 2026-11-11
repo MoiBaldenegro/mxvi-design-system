@@ -4,9 +4,9 @@ title: ADN visual
 
 # ADN visual
 
-Estos son los rasgos que hacen que una interfaz se vea MXNI. Si un producto
+Estos son los rasgos que hacen que una interfaz se vea MXVI. Si un producto
 cumple todos, se ve como [moisesbaldenegro.com](https://moisesbaldenegro.com)
-aunque esté hecho en otra tecnología. Si rompe uno, deja de verse MXNI.
+aunque esté hecho en otra tecnología. Si rompe uno, deja de verse MXVI.
 
 ## 1. Noche índigo, no negro puro
 
@@ -81,7 +81,7 @@ Los títulos de tarjetas y las etiquetas van en **MAYÚSCULAS** con
   2px, tarjetas que suben 4px.
 - Con "reducir movimiento" todo se vuelve instantáneo.
 
-## Señales de que algo NO es MXNI
+## Señales de que algo NO es MXVI
 
 - Esquinas redondeadas.
 - Botones rellenos de morado o degradados en botones.

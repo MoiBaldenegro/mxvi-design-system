@@ -16,7 +16,7 @@ la barra inferior.
 <footer class="mx-footer" style="margin-top:0">
   <div class="mx-footer__inner">
     <div class="mx-footer-brand">
-      <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+      <a class="mx-logo" href="#"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
       <p class="mx-footer-brand__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
       <p class="mx-footer-brand__location"><span aria-hidden="true">◉</span> Guadalajara, Jalisco, México</p>
       <a class="mx-button mx-button--accent" href="#" download>Descargar CV <span aria-hidden="true">↓</span></a>
@@ -40,10 +40,10 @@ la barra inferior.
     <nav class="mx-footer__column" aria-label="Conecta">
       <p class="mx-label">Conecta</p>
       <ul class="mx-link-list">
-        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
       </ul>
     </nav>
   </div>
@@ -79,7 +79,7 @@ Logo de 96px, frase, ubicación con punto de acento y acción principal.
 
 ```html preview wide
 <div class="mx-footer-brand">
-  <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+  <a class="mx-logo" href="#"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
   <p class="mx-footer-brand__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
   <p class="mx-footer-brand__location"><span aria-hidden="true">◉</span> Guadalajara, Jalisco, México</p>
   <a class="mx-button mx-button--accent" href="#">Descargar CV <span aria-hidden="true">↓</span></a>
@@ -120,10 +120,10 @@ Logo de 96px, frase, ubicación con punto de acento y acción principal.
 <nav class="mx-footer__column" aria-label="Conecta" style="max-width:280px">
   <p class="mx-label">Conecta</p>
   <ul class="mx-link-list">
-    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
-    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
   </ul>
 </nav>
 ```

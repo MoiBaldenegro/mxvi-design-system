@@ -19,16 +19,16 @@ toda la tarjeta es clicable y aparece una flecha ↗ al pasar el mouse.
 <div class="mx-card-grid">
   <article class="mx-brand-tile" data-brand="rust">
     <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Rust</p></header>
-    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 224 224"><use href="/mxni/assets/sprite.svg#rust"/></svg></div>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 224 224"><use href="/mxvi/assets/sprite.svg#rust"/></svg></div>
     <a class="mx-brand-tile__link" href="#"><span class="mx-visually-hidden">Rust</span><span class="mx-brand-tile__arrow" aria-hidden="true">↗</span></a>
   </article>
   <article class="mx-brand-tile" data-brand="react">
     <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">React</p></header>
-    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 569 512"><use href="/mxni/assets/sprite.svg#react"/></svg></div>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 569 512"><use href="/mxvi/assets/sprite.svg#react"/></svg></div>
   </article>
   <article class="mx-brand-tile" data-brand="typescript">
     <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">TypeScript</p></header>
-    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxni/assets/sprite.svg#typescript"/></svg></div>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxvi/assets/sprite.svg#typescript"/></svg></div>
   </article>
 </div>
 ```
@@ -39,7 +39,7 @@ Tarjeta rica: con contenido en lugar de logo (por ejemplo, estadísticas).
 <article class="mx-brand-tile" data-brand="htb" style="max-width:520px;min-height:240px">
   <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Hack The Box</p></header>
   <div class="mx-brand-tile__body"><p style="margin:0">Rango: Hacker · 42 máquinas</p></div>
-  <div class="mx-brand-tile__icon" style="opacity:.16"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxni/assets/sprite.svg#htb"/></svg></div>
+  <div class="mx-brand-tile__icon" style="opacity:.16"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxvi/assets/sprite.svg#htb"/></svg></div>
 </article>
 ```
 
@@ -66,27 +66,27 @@ Ajustes por tarjeta: `--icon-width`, `--icon-rotation` y `--icon-scale`
 
 ### Colores de marca
 
-<div class="mxni-swatch-grid">
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#0E6C82"></div><div class="mxni-swatch__meta"><b>react</b><code>#0E6C82</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B74D05"></div><div class="mxni-swatch__meta"><b>html</b><code>#B74D05</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#08783A"></div><div class="mxni-swatch__meta"><b>node</b><code>#08783A</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#091223"></div><div class="mxni-swatch__meta"><b>github</b><code>#091223</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B61111"></div><div class="mxni-swatch__meta"><b>youtube</b><code>#B61111</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A33A16"></div><div class="mxni-swatch__meta"><b>rust</b><code>#A33A16</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#215BC7"></div><div class="mxni-swatch__meta"><b>typescript</b><code>#215BC7</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#6C387A"></div><div class="mxni-swatch__meta"><b>css</b><code>#6C387A</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#232F3E"></div><div class="mxni-swatch__meta"><b>aws</b><code>#232F3E</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#5C2A1C"></div><div class="mxni-swatch__meta"><b>claude-code</b><code>#5C2A1C</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3A0D18"></div><div class="mxni-swatch__meta"><b>nestjs</b><code>#3A0D18</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A8470C"></div><div class="mxni-swatch__meta"><b>cloudflare</b><code>#A8470C</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B4532F"></div><div class="mxni-swatch__meta"><b>claude</b><code>#B4532F</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3D2B1F"></div><div class="mxni-swatch__meta"><b>bun</b><code>#3D2B1F</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#1A2332"></div><div class="mxni-swatch__meta"><b>htb</b><code>#1A2332</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#252A31"></div><div class="mxni-swatch__meta"><b>bash</b><code>#252A31</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#241A5C"></div><div class="mxni-swatch__meta"><b>webassembly</b><code>#241A5C</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#2E1039"></div><div class="mxni-swatch__meta"><b>astro</b><code>#2E1039</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#101114"></div><div class="mxni-swatch__meta"><b>opencode</b><code>#101114</code></div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#0F2C36"></div><div class="mxni-swatch__meta"><b>tauri</b><code>#0F2C36</code></div></div>
+<div class="mxvi-swatch-grid">
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#0E6C82"></div><div class="mxvi-swatch__meta"><b>react</b><code>#0E6C82</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#B74D05"></div><div class="mxvi-swatch__meta"><b>html</b><code>#B74D05</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#08783A"></div><div class="mxvi-swatch__meta"><b>node</b><code>#08783A</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#091223"></div><div class="mxvi-swatch__meta"><b>github</b><code>#091223</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#B61111"></div><div class="mxvi-swatch__meta"><b>youtube</b><code>#B61111</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#A33A16"></div><div class="mxvi-swatch__meta"><b>rust</b><code>#A33A16</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#215BC7"></div><div class="mxvi-swatch__meta"><b>typescript</b><code>#215BC7</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#6C387A"></div><div class="mxvi-swatch__meta"><b>css</b><code>#6C387A</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#232F3E"></div><div class="mxvi-swatch__meta"><b>aws</b><code>#232F3E</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#5C2A1C"></div><div class="mxvi-swatch__meta"><b>claude-code</b><code>#5C2A1C</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#3A0D18"></div><div class="mxvi-swatch__meta"><b>nestjs</b><code>#3A0D18</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#A8470C"></div><div class="mxvi-swatch__meta"><b>cloudflare</b><code>#A8470C</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#B4532F"></div><div class="mxvi-swatch__meta"><b>claude</b><code>#B4532F</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#3D2B1F"></div><div class="mxvi-swatch__meta"><b>bun</b><code>#3D2B1F</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#1A2332"></div><div class="mxvi-swatch__meta"><b>htb</b><code>#1A2332</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#252A31"></div><div class="mxvi-swatch__meta"><b>bash</b><code>#252A31</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#241A5C"></div><div class="mxvi-swatch__meta"><b>webassembly</b><code>#241A5C</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#2E1039"></div><div class="mxvi-swatch__meta"><b>astro</b><code>#2E1039</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#101114"></div><div class="mxvi-swatch__meta"><b>opencode</b><code>#101114</code></div></div>
+  <div class="mxvi-swatch"><div class="mxvi-swatch__color" style="background:#0F2C36"></div><div class="mxvi-swatch__meta"><b>tauri</b><code>#0F2C36</code></div></div>
 </div>
 
 Los colores están oscurecidos para que el título blanco tenga contraste de al
@@ -100,7 +100,7 @@ descripción.
 
 ```html preview
 <section class="mx-profile-card" style="max-width:480px">
-  <div class="mx-profile-card__image"><img src="/mxni/assets/examples/moises-hero.jpg" alt="Moisés Baldenegro Melendez" width="952" height="960"></div>
+  <div class="mx-profile-card__image"><img src="/mxvi/assets/examples/moises-hero.jpg" alt="Moisés Baldenegro Melendez" width="952" height="960"></div>
   <div class="mx-profile-card__content">
     <span class="mx-handle">@moibaldenegro <span class="mx-verified"><span aria-hidden="true">✓</span><span class="mx-visually-hidden">Verificado</span></span></span>
     <h1 class="mx-profile-card__name">Moisés Baldenegro Melendez</h1>

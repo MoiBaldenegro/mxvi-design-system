@@ -9,7 +9,7 @@ deben reportar cada punto.
 
 ## Marca y tokens
 
-- [ ] Colores, tipografía, espaciado y radios salen de los tokens de `mxni/tokens.css`.
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens de `mxvi/tokens.css`.
 - [ ] Todas las esquinas son rectas y los títulos usan Geist Pixel.
 - [ ] Se usaron componentes del catálogo en lugar de crear nuevos.
 - [ ] Los acentos se usan con moderación (5–10 % de la composición).

@@ -4,7 +4,7 @@ title: Catálogo de componentes
 
 # Catálogo de componentes
 
-Este catálogo es el **look real de MXNI**, extraído pieza por pieza de
+Este catálogo es el **look real de MXVI**, extraído pieza por pieza de
 [moisesbaldenegro.com](https://moisesbaldenegro.com). Cualquier producto que
 use estos componentes, o que reproduzca sus especificaciones, debe verse
 idéntico a ese sitio.
@@ -25,9 +25,9 @@ de tres formas:
 
 | Página | Para qué |
 |---|---|
-| [ADN visual](/catalog/visual-dna) | Los rasgos que hacen que algo se vea MXNI. Léelo primero. |
+| [ADN visual](/catalog/visual-dna) | Los rasgos que hacen que algo se vea MXVI. Léelo primero. |
 | [Prompt maestro](/catalog/master-prompt) | Instrucción lista para que un agente genere un producto idéntico de un solo prompt. |
-| [Usar en cualquier tecnología](/catalog/install) | Cómo cargar `mxni.css` en web y cómo mapear los tokens a plataformas nativas. |
+| [Usar en cualquier tecnología](/catalog/install) | Cómo cargar `mxvi.css` en web y cómo mapear los tokens a plataformas nativas. |
 
 ## Niveles
 
@@ -83,14 +83,14 @@ Páginas completas armadas con los organismos:
 
 | Archivo | Contenido |
 |---|---|
-| [`/mxni/mxni.css`](/mxni/mxni.css) | Todo en un archivo: fuentes, tokens, base y componentes. |
-| [`/mxni/tokens.css`](/mxni/tokens.css) | Solo los tokens (variables CSS). |
-| [`/mxni/components.css`](/mxni/components.css) | Solo los componentes. |
-| [`/mxni/base.css`](/mxni/base.css) | Reset y estilos globales de página. |
-| [`/mxni/mxni.js`](/mxni/mxni.js) | Comportamientos opcionales: menú móvil, limpiar búsqueda, copiar código. |
-| `/mxni/fonts/` | Geist, Geist Mono y Geist Pixel (licencia SIL OFL 1.1). |
-| [`/mxni/assets/sprite.svg`](/mxni/assets/sprite.svg) | Íconos y logos de marca usados por las tarjetas y las redes sociales. |
-| [`/mxni/assets/logo.svg`](/mxni/assets/logo.svg) | Logo oficial MXNI. |
+| [`/mxvi/mxvi.css`](/mxvi/mxvi.css) | Todo en un archivo: fuentes, tokens, base y componentes. |
+| [`/mxvi/tokens.css`](/mxvi/tokens.css) | Solo los tokens (variables CSS). |
+| [`/mxvi/components.css`](/mxvi/components.css) | Solo los componentes. |
+| [`/mxvi/base.css`](/mxvi/base.css) | Reset y estilos globales de página. |
+| [`/mxvi/mxvi.js`](/mxvi/mxvi.js) | Comportamientos opcionales: menú móvil, limpiar búsqueda, copiar código. |
+| `/mxvi/fonts/` | Geist, Geist Mono y Geist Pixel (licencia SIL OFL 1.1). |
+| [`/mxvi/assets/sprite.svg`](/mxvi/assets/sprite.svg) | Íconos y logos de marca usados por las tarjetas y las redes sociales. |
+| [`/mxvi/assets/logo.svg`](/mxvi/assets/logo.svg) | Logo oficial MXVI. |
 
-Los paquetes descargables de cada plataforma incluyen la carpeta `mxni/`
+Los paquetes descargables de cada plataforma incluyen la carpeta `mxvi/`
 completa.

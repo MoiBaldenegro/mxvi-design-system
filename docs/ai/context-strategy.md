@@ -6,7 +6,7 @@ title: AI context strategy
 
 ## Goal
 
-Make MXNI documentation retrievable by humans, agents, IDE assistants, and language models without requiring the entire website to be copied into every prompt.
+Make MXVI documentation retrievable by humans, agents, IDE assistants, and language models without requiring the entire website to be copied into every prompt.
 
 ## Published resources
 
@@ -15,13 +15,13 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 | `/llms.txt` | Discovery index with links to important docs |
 | `/llms-full.txt` | Consolidated text context |
 | `/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt` | Core rules plus one complete platform guide, in one file |
-| `/downloads/mxni-{web,desktop,mobile}-markdown.zip` | Platform bundle for local projects, with its own `AGENTS.md` and the official logo SVGs |
+| `/downloads/mxvi-{web,desktop,mobile}-markdown.zip` | Platform bundle for local projects, with its own `AGENTS.md` and the official logo SVGs |
 | `/markdown/...` | Individual raw Markdown files |
-| `/downloads/mxni-design-system-markdown.zip` | Offline documentation bundle |
+| `/downloads/mxvi-design-system-markdown.zip` | Offline documentation bundle |
 | `/ai/agent-instructions.md` | Short implementation contract |
-| `/markdown/catalog/visual-dna.md` | The traits that make something look MXNI |
+| `/markdown/catalog/visual-dna.md` | The traits that make something look MXVI |
 | `/markdown/catalog/master-prompt.md` | Ready-to-paste prompt to build an identical product |
-| `/mxni/mxni.css`, `/mxni/mxni.js` | The real stylesheet and optional behaviors |
+| `/mxvi/mxvi.css`, `/mxvi/mxvi.js` | The real stylesheet and optional behaviors |
 
 ## Recommended model workflow
 
@@ -40,8 +40,8 @@ a single raw page under `/markdown/` for a narrow task. Every page on the site
 links to its raw Markdown.
 
 **Local (download).** Download the platform zip, unzip it into the project
-(for example `docs/mxni/`) and point the project's agent instructions to
-`docs/mxni/AGENTS.md`. Links that start with `/` inside the Markdown map to
+(for example `docs/mxvi/`) and point the project's agent instructions to
+`docs/mxvi/AGENTS.md`. Links that start with `/` inside the Markdown map to
 files in that folder.
 
 ## Context efficiency

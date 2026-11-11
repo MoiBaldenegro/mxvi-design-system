@@ -25,7 +25,7 @@ CTA azul de las secciones promocionales.
 ```html preview
 <div class="mx-row">
   <a class="mx-button" href="#">
-    <svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>
+    <svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#github"/></svg>
     GitHub
   </a>
   <a class="mx-button mx-button--accent" href="#">Descargar CV <span aria-hidden="true">↓</span></a>

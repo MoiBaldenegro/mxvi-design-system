@@ -1,8 +1,8 @@
-# MXNI Design System — AI documentation index
+# MXVI Design System — AI documentation index
 
 > One identity. Multiple products. A consistent experience.
 
-Use these canonical Markdown resources to understand and implement MXNI.
+Use these canonical Markdown resources to understand and implement MXVI.
 Start with the agent instructions, then retrieve the relevant foundation, component, or guideline.
 
 ## Core instructions
@@ -20,17 +20,17 @@ Everything must look identical to moisesbaldenegro.com. Read the visual DNA firs
 - [Master prompt](./markdown/catalog/master-prompt.md)
 - [Component catalog](./markdown/catalog/index.md)
 - [Use in any technology](./markdown/catalog/install.md)
-- [Stylesheet: mxni.css](./mxni/mxni.css) · [tokens.css](./mxni/tokens.css) · [mxni.js](./mxni/mxni.js)
+- [Stylesheet: mxvi.css](./mxvi/mxvi.css) · [tokens.css](./mxvi/tokens.css) · [mxvi.js](./mxvi/mxvi.js)
 
 ## Platforms
 Pick the target platform first. Each bundle contains the agent instructions,
 foundations, components and the complete platform guide in one file.
-- Web: [guide](./markdown/platforms/web/index.md) · [context: llms-web.txt](./llms-web.txt) · [download: mxni-web-markdown.zip](./downloads/mxni-web-markdown.zip)
-- Desktop: [guide](./markdown/platforms/desktop/index.md) · [context: llms-desktop.txt](./llms-desktop.txt) · [download: mxni-desktop-markdown.zip](./downloads/mxni-desktop-markdown.zip)
-- Mobile: [guide](./markdown/platforms/mobile/index.md) · [context: llms-mobile.txt](./llms-mobile.txt) · [download: mxni-mobile-markdown.zip](./downloads/mxni-mobile-markdown.zip)
+- Web: [guide](./markdown/platforms/web/index.md) · [context: llms-web.txt](./llms-web.txt) · [download: mxvi-web-markdown.zip](./downloads/mxvi-web-markdown.zip)
+- Desktop: [guide](./markdown/platforms/desktop/index.md) · [context: llms-desktop.txt](./llms-desktop.txt) · [download: mxvi-desktop-markdown.zip](./downloads/mxvi-desktop-markdown.zip)
+- Mobile: [guide](./markdown/platforms/mobile/index.md) · [context: llms-mobile.txt](./llms-mobile.txt) · [download: mxvi-mobile-markdown.zip](./downloads/mxvi-mobile-markdown.zip)
 
 ## Complete documentation
-- [MXNI instructions for AI agents](./markdown/ai/agent-instructions.md)
+- [MXVI instructions for AI agents](./markdown/ai/agent-instructions.md)
 - [AI context strategy](./markdown/ai/context-strategy.md)
 - [AI resources](./markdown/ai/index.md)
 - [MCP and RAG integration](./markdown/ai/mcp-rag.md)
@@ -102,7 +102,7 @@ foundations, components and the complete platform guide in one file.
 - [Web: navegación](./markdown/platforms/web/navigation.md)
 
 ## Download
-- [Complete Markdown bundle](./downloads/mxni-design-system-markdown.zip)
+- [Complete Markdown bundle](./downloads/mxvi-design-system-markdown.zip)
 
 ## Agent usage
 1. Read `ai/agent-instructions.md` and `catalog/visual-dna.md`.

@@ -4,7 +4,7 @@ title: Product expression
 
 # Product expression
 
-MXNI supports multiple product types while retaining a shared foundation.
+MXVI supports multiple product types while retaining a shared foundation.
 
 ## Shared across all products
 

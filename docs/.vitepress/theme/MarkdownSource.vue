@@ -13,10 +13,10 @@ const fileName = computed(() =>
 </script>
 
 <template>
-  <div class="mxni-markdown-source" aria-label="Markdown de esta página">
-    <span class="mxni-markdown-source__label">Markdown</span>
+  <div class="mxvi-markdown-source" aria-label="Markdown de esta página">
+    <span class="mxvi-markdown-source__label">Markdown</span>
     <a :href="markdownPath" target="_blank" rel="noopener">Ver</a>
     <a :href="markdownPath" :download="fileName">Descargar</a>
-    <code class="mxni-markdown-source__path">/markdown/{{ page.relativePath }}</code>
+    <code class="mxvi-markdown-source__path">/markdown/{{ page.relativePath }}</code>
   </div>
 </template>

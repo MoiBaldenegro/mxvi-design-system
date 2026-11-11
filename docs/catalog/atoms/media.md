@@ -11,8 +11,8 @@ title: Logo, imágenes y divisor
 
 ```html preview
 <div class="mx-row">
-  <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
-  <a class="mx-logo mx-logo--lg" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+  <a class="mx-logo" href="#"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
+  <a class="mx-logo mx-logo--lg" href="#"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
 </div>
 ```
 
@@ -23,7 +23,7 @@ title: Logo, imágenes y divisor
 ## Imagen 16:9 y 4:3
 
 ```html preview
-<img class="mx-media" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" style="max-width:520px">
+<img class="mx-media" src="/mxvi/assets/examples/entry-01.webp" alt="" width="1376" height="768" style="max-width:520px">
 ```
 
 <div class="mx-spec">
@@ -39,7 +39,7 @@ title: Logo, imágenes y divisor
 ## Miniatura
 
 ```html preview
-<img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+<img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">
 ```
 
 ## Foto enmarcada
@@ -48,7 +48,7 @@ Foto cuadrada con un marco de acento separado de la imagen y resplandor.
 
 ```html preview
 <div style="width:220px;padding:14px;box-shadow:0 0 70px var(--color-glow)">
-  <img class="mx-photo" src="/mxni/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960">
+  <img class="mx-photo" src="/mxvi/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960">
 </div>
 ```
 

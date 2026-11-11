@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MXNI Design System — tokens.css
+   MXVI Design System — tokens.css
    Source of truth: moisesbaldenegro.com (src/styles/tokens.css).
    Names and values are kept identical to the website so both can be diffed
    and synchronized 1:1. Pattern: --group-name (kebab-case).
@@ -29,7 +29,7 @@
   --color-glow: rgba(108, 56, 122, 0.35);
   --color-navbar: rgba(8, 8, 18, 0.75);
 
-  /* Logo colors (official MXNI logo) */
+  /* Logo colors (official MXVI logo) */
   --color-logo-purple: #6C387A;
   --color-logo-orange: #F7941D;
 

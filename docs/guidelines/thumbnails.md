@@ -6,7 +6,7 @@ title: Thumbnails
 
 ## Purpose
 
-An MXNI thumbnail is a finished, ready-to-upload image built from one real photograph. The photograph is the required input and stays the hero of the composition; MXNI provides the art direction around it.
+An MXVI thumbnail is a finished, ready-to-upload image built from one real photograph. The photograph is the required input and stays the hero of the composition; MXVI provides the art direction around it.
 
 ## Inputs
 
@@ -80,7 +80,7 @@ The secondary accent stays small and never matches the primary in intensity.
 
 ## Logo
 
-Do not generate or imitate the MXNI logo. When a logo is needed, composite the official SVG afterwards in a corner away from the duration badge, keeping clear space equal to the height of the letter M.
+Do not generate or imitate the MXVI logo. When a logo is needed, composite the official SVG afterwards in a corner away from the duration badge, keeping clear space equal to the height of the letter M.
 
 ## Generation prompt template
 
@@ -90,7 +90,7 @@ Attach the photograph and paste the prompt. It works as is; edit the first two l
 TITLE: none
 ACCENT FAMILY: Technical
 
-Create a finished MXNI YouTube thumbnail from the attached photograph.
+Create a finished MXVI YouTube thumbnail from the attached photograph.
 
 OUTPUT
 One complete, fully opaque 1280x720 image (16:9). The photograph is
@@ -163,4 +163,4 @@ The Display token (48–64 px) would shrink to about 8 px at the smallest thumbn
 |---|---:|---:|---|
 | `thumbnail-title` | 104–144 px | 800 | Title on a 1280 × 720 px thumbnail |
 
-All other values reuse existing MXNI colors, spacing, and radius tokens.
+All other values reuse existing MXVI colors, spacing, and radius tokens.

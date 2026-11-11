@@ -58,7 +58,7 @@ Ancho completo (`.mx-search--block`), por ejemplo dentro del menú móvil:
 ## Comportamiento
 
 - Es un formulario `GET` a `/search?q=`: funciona sin JavaScript.
-- Con [`mxni.js`](/catalog/install#comportamientos-js), la clase `is-filled`
+- Con [`mxvi.js`](/catalog/install#comportamientos-js), la clase `is-filled`
   muestra el botón × y este vacía el campo.
 - El landmark `<search>` y el `aria-label` del campo le dan nombre accesible;
   la lupa es decorativa.

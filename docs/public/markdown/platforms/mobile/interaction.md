@@ -50,7 +50,7 @@ la API de accesibilidad de Android) y se prueban con VoiceOver y TalkBack.
 
 ## Preferencias del sistema
 
-- MXNI es oscuro por defecto. Si la app ofrece tema claro, sigue el modo del
+- MXVI es oscuro por defecto. Si la app ofrece tema claro, sigue el modo del
   sistema como valor inicial.
 - Respeta "Negritas", "Aumentar contraste" y "Reducir transparencia" cuando la
   plataforma los ofrezca.

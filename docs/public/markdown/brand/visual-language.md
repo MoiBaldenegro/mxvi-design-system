@@ -8,7 +8,7 @@ title: Visual language
 
 Dark Tech / Modular Bento / Developer Aesthetic.
 
-MXNI debe sentirse como una extensión visual de un entorno de ingeniería moderno: oscuro, preciso, estructurado y expresivo.
+MXVI debe sentirse como una extensión visual de un entorno de ingeniería moderno: oscuro, preciso, estructurado y expresivo.
 
 ## Recursos gráficos
 

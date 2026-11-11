@@ -4,14 +4,14 @@ title: CSS tokens
 
 # Tokens CSS
 
-La fuente de verdad es [`/mxni/tokens.css`](/mxni/tokens.css). Sus nombres y
+La fuente de verdad es [`/mxvi/tokens.css`](/mxvi/tokens.css). Sus nombres y
 valores son **idénticos** a `src/styles/tokens.css` de moisesbaldenegro.com,
 para que ambos se puedan comparar y sincronizar 1:1.
 
 ```html
-<link rel="stylesheet" href="/mxni/mxni.css">   <!-- incluye los tokens -->
+<link rel="stylesheet" href="/mxvi/mxvi.css">   <!-- incluye los tokens -->
 <!-- o solo los tokens: -->
-<link rel="stylesheet" href="/mxni/tokens.css">
+<link rel="stylesheet" href="/mxvi/tokens.css">
 ```
 
 ## Tokens principales

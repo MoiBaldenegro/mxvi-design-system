@@ -1,8 +1,8 @@
 {
-  "name": "mxni-design-system-docs",
+  "name": "mxvi-design-system-docs",
   "version": "1.0.0",
   "private": true,
-  "description": "Human- and AI-readable documentation platform for the MXNI Design System.",
+  "description": "Human- and AI-readable documentation platform for the MXVI Design System.",
   "type": "module",
   "scripts": {
     "docs:prepare": "node scripts/prepare-docs.mjs",

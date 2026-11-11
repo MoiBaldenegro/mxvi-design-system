@@ -12,16 +12,16 @@ Use semantic versioning for the design system:
 - **Minor:** backward-compatible tokens, components, or guidelines.
 - **Patch:** corrections, clarifications, and non-breaking refinements.
 
-The documentation site and the `mxni/` package communicate the design-system
+The documentation site and the `mxvi/` package communicate the design-system
 version they implement. Current version: **1.1** (look extracted from
 moisesbaldenegro.com).
 
 ## Synchronization with the website
 
-moisesbaldenegro.com is the living reference. `mxni/tokens.css` keeps the
+moisesbaldenegro.com is the living reference. `mxvi/tokens.css` keeps the
 same token names and values as the website's `src/styles/tokens.css`:
 
-- A visual change on the website is ported to `mxni/` and the catalog in the
+- A visual change on the website is ported to `mxvi/` and the catalog in the
   same release.
 - A token change in the design system is applied to the website too, or
   documented as a pending divergence.

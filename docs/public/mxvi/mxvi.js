@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MXNI Design System — mxni.js
+   MXVI Design System — mxvi.js
    Optional, dependency-free behaviors. Works with any framework: it only
    reads data-* attributes. Frameworks may reimplement the same contract.
 
@@ -11,8 +11,8 @@
    - [data-mx-copy] inside .mx-code: copies the text of the <pre> and shows
      "Copiado" for 2 s.
 
-   Usage: <script src="/mxni/mxni.js" defer></script>, or call
-   window.MXNI.init(root) after rendering new markup.
+   Usage: <script src="/mxvi/mxvi.js" defer></script>, or call
+   window.MXVI.init(root) after rendering new markup.
    ========================================================================== */
 
 (function () {
@@ -99,7 +99,7 @@
     initCopy(root);
   }
 
-  window.MXNI = { init: init };
+  window.MXVI = { init: init };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(document); });

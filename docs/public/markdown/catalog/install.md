@@ -4,29 +4,29 @@ title: Usar en cualquier tecnología
 
 # Usar en cualquier tecnología
 
-MXNI es un **lenguaje visual**. En web se implementa con una hoja de estilos
+MXVI es un **lenguaje visual**. En web se implementa con una hoja de estilos
 sin dependencias; en cualquier otra tecnología se reproduce con los mismos
 valores. No requiere ningún framework.
 
 ## Web: una sola hoja de estilos
 
 ```html
-<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css">
+<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxvi/mxvi.css">
 <!-- Opcional: menú móvil, limpiar búsqueda y copiar código -->
-<script src="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.js" defer></script>
+<script src="https://moibaldenegro.github.io/mxvi-design-system/mxvi/mxvi.js" defer></script>
 ```
 
 Para producción, descarga el paquete de la plataforma (incluye la carpeta
-`mxni/` con CSS, JS, fuentes y assets) y sírvelo desde tu propio dominio:
+`mxvi/` con CSS, JS, fuentes y assets) y sírvelo desde tu propio dominio:
 
 ```text
-mxni/
-├── mxni.css          ← fuentes + tokens + base + componentes
+mxvi/
+├── mxvi.css          ← fuentes + tokens + base + componentes
 ├── tokens.css        ← solo variables
 ├── base.css          ← reset y estilos globales
 ├── components.css    ← componentes .mx-*
 ├── fonts.css         ← @font-face de Geist
-├── mxni.js           ← comportamientos opcionales
+├── mxvi.js           ← comportamientos opcionales
 ├── fonts/            ← Geist, Geist Mono, Geist Pixel (OFL 1.1)
 └── assets/           ← logo.svg, sprite.svg
 ```
@@ -39,40 +39,40 @@ cambia cómo se importa la hoja:
 ::: code-group
 
 ```html [HTML]
-<link rel="stylesheet" href="/mxni/mxni.css">
-<script src="/mxni/mxni.js" defer></script>
+<link rel="stylesheet" href="/mxvi/mxvi.css">
+<script src="/mxvi/mxvi.js" defer></script>
 ```
 
 ```tsx [React / Next.js]
 // app/layout.tsx o main.tsx
-import './mxni/mxni.css'
+import './mxvi/mxvi.css'
 
 // En JSX usa className en lugar de class:
 <a className="mx-button mx-button--accent" href="/cv.pdf">Descargar CV</a>
 ```
 
 ```ts [Vue / Nuxt]
-// main.ts (Vue) o nuxt.config.ts → css: ['~/mxni/mxni.css']
-import './mxni/mxni.css'
+// main.ts (Vue) o nuxt.config.ts → css: ['~/mxvi/mxvi.css']
+import './mxvi/mxvi.css'
 ```
 
 ```svelte [Svelte / SvelteKit]
 <!-- src/routes/+layout.svelte -->
 <script>
-  import '../mxni/mxni.css'
+  import '../mxvi/mxvi.css'
 </script>
 <slot />
 ```
 
 ```json [Angular]
 // angular.json → projects.<app>.architect.build.options
-"styles": ["src/mxni/mxni.css"]
+"styles": ["src/mxvi/mxvi.css"]
 ```
 
 ```astro [Astro]
 ---
 // src/layouts/Layout.astro
-import '../mxni/mxni.css'
+import '../mxvi/mxvi.css'
 ---
 ```
 
@@ -80,7 +80,7 @@ import '../mxni/mxni.css'
 
 ### Comportamientos (JS)
 
-`mxni.js` es opcional y solo lee atributos `data-*`. Si tu framework maneja el
+`mxvi.js` es opcional y solo lee atributos `data-*`. Si tu framework maneja el
 estado, reimplementa el mismo contrato:
 
 | Componente | Contrato |
@@ -90,7 +90,7 @@ estado, reimplementa el mismo contrato:
 | Copiar código | Botón `[data-mx-copy]` dentro de `.mx-code`: copia el `<pre>`, añade `is-copied` y muestra "Copiado" durante 2 s. |
 
 Si renderizas contenido después de la carga (SPA), llama a
-`window.MXNI.init(contenedor)`.
+`window.MXVI.init(contenedor)`.
 
 ## Otras tecnologías: mapa de tokens
 
@@ -111,7 +111,7 @@ valores. **Propuesta:** `1px` equivale a `1pt` en iOS y `1dp` en Android.
 | `--gap-card` | `14` | `14` | `14.dp` | `14` |
 | `--transition-default` | `0.28s` `cubic-bezier(.2,.8,.2,1)` | `.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.28)` | `tween(280, easing = CubicBezierEasing(.2f, .8f, .2f, 1f))` | `Duration(milliseconds: 280)`, `Cubic(.2, .8, .2, 1)` |
 
-Fuentes: usa los archivos de `mxni/fonts/` (Geist, Geist Mono y Geist Pixel
+Fuentes: usa los archivos de `mxvi/fonts/` (Geist, Geist Mono y Geist Pixel
 Circle) registrándolos en la plataforma correspondiente.
 
 La lista completa de tokens está en [Tokens CSS](/implementation/css-tokens).

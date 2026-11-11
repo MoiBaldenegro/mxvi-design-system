@@ -39,7 +39,7 @@ semántico de la guía [Web](/platforms/web/interaction) también aplican.
 - **Alto contraste / colores forzados:** los bordes, el foco y los estados
   siguen visibles.
 - **Escala de texto y de pantalla:** el layout no se rompe a 150 % ni a 200 %.
-- **Tema:** MXNI es oscuro por defecto. Si la app ofrece tema claro, sigue la
+- **Tema:** MXVI es oscuro por defecto. Si la app ofrece tema claro, sigue la
   preferencia del sistema como valor inicial.
 
 ## Movimiento

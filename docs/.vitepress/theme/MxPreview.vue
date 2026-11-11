@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
 
 // Live preview of a catalog component. The markup is rendered inside an
-// isolated iframe with the real mxni.css and mxni.js, so documentation styles
+// isolated iframe with the real mxvi.css and mxvi.js, so documentation styles
 // never leak into it. With `wide`, the iframe is laid out at a real device
 // width (desktop, tablet or phone) and scaled down to fit the column, so
 // responsive rules behave exactly as on that device.
@@ -29,8 +29,8 @@ function decode(value: string): string {
 }
 
 const srcdoc = computed(() => {
-  const css = withBase('/mxni/mxni.css')
-  const js = withBase('/mxni/mxni.js')
+  const css = withBase('/mxvi/mxvi.css')
+  const js = withBase('/mxvi/mxvi.js')
   const padding = props.flush ? '0' : '32px 24px'
   return `<!doctype html>
 <html lang="es">

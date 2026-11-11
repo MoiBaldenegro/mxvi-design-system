@@ -4,7 +4,7 @@ title: Móvil — Resumen
 
 # Móvil
 
-Guía de MXNI para aplicaciones instaladas en teléfonos y tabletas iOS o
+Guía de MXVI para aplicaciones instaladas en teléfonos y tabletas iOS o
 Android, nativas (SwiftUI, UIKit, Jetpack Compose) o multiplataforma (React
 Native, Flutter u otras). Un sitio web abierto en un teléfono sigue la guía
 [Web](/platforms/web/) con su layout Compact.
@@ -14,7 +14,7 @@ mano, interacción táctil y convenciones fuertes de cada sistema operativo.
 
 ## Tipos de producto móvil
 
-| Tipo | Prioridad | Expresión MXNI |
+| Tipo | Prioridad | Expresión MXVI |
 |---|---|---|
 | App de uso frecuente | Tareas rápidas y repetidas | Funcional, navegación inferior estable |
 | App de contenido / media | Consumir y descubrir | Expresiva, imágenes grandes, alto contraste |

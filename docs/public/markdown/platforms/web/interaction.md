@@ -34,7 +34,7 @@ táctil, lector de pantalla o una combinación. Diseña para todos.
 
 ## Preferencias del usuario
 
-- MXNI es oscuro por defecto. Si el producto ofrece tema claro, guarda la
+- MXVI es oscuro por defecto. Si el producto ofrece tema claro, guarda la
   elección del usuario y respeta `prefers-color-scheme` como valor inicial.
 - Respeta el zoom del navegador hasta 200 % sin perder contenido.
 - Soporta `forced-colors` (modo de alto contraste de Windows): los bordes y el

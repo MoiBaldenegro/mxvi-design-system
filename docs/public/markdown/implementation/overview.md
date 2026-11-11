@@ -7,7 +7,7 @@ title: Implementation overview
 ## Source of truth
 
 The look comes from [moisesbaldenegro.com](https://moisesbaldenegro.com). It is
-packaged in `mxni/` and published at `/mxni/`:
+packaged in `mxvi/` and published at `/mxvi/`:
 
 | File | Content |
 |---|---|
@@ -15,8 +15,8 @@ packaged in `mxni/` and published at `/mxni/`:
 | `fonts.css` + `fonts/` | Geist, Geist Mono, Geist Pixel (SIL OFL 1.1) |
 | `base.css` | Reset, page defaults, focus ring, skip link, reduced motion |
 | `components.css` | Atoms, molecules and organisms (`.mx-*`) |
-| `mxni.css` | All of the above in one file |
-| `mxni.js` | Optional behaviors (mobile menu, search clear, code copy) |
+| `mxvi.css` | All of the above in one file |
+| `mxvi.js` | Optional behaviors (mobile menu, search clear, code copy) |
 | `assets/` | Official logo and icon sprite |
 
 ## Recommended layers
@@ -31,14 +31,14 @@ packaged in `mxni/` and published at `/mxni/`:
 ## Technology neutrality
 
 The visual rules are framework-agnostic. The canonical implementation is
-HTML + `mxni.css`; every catalog page shows the same markup for React, Vue,
+HTML + `mxvi.css`; every catalog page shows the same markup for React, Vue,
 Svelte, Angular and Astro. For non-web technologies, the visual specs give
 the exact values ([Use in any technology](/catalog/install)).
 
 ## Adoption
 
-A product adopts MXNI by:
-- linking `mxni.css` (or reproducing its values);
+A product adopts MXVI by:
+- linking `mxvi.css` (or reproducing its values);
 - composing pages from catalog components;
 - checking the result against the [Visual DNA](/catalog/visual-dna);
 - documenting product-specific extensions;

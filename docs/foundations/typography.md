@@ -4,7 +4,7 @@ title: Typography
 
 # Tipografía
 
-MXNI usa la familia **Geist** en tres caras, autoalojadas en `mxni/fonts/`
+MXVI usa la familia **Geist** en tres caras, autoalojadas en `mxvi/fonts/`
 (licencia SIL Open Font License 1.1).
 
 ## Familias
@@ -51,9 +51,9 @@ cursiva: usa `font-weight: 400` y `font-synthesis: none`.
 ## Carga
 
 ```css
-@import url('/mxni/fonts.css');  /* o mxni.css, que ya la incluye */
+@import url('/mxvi/fonts.css');  /* o mxvi.css, que ya la incluye */
 ```
 
-En otras plataformas registra los archivos de `mxni/fonts/`:
+En otras plataformas registra los archivos de `mxvi/fonts/`:
 `Geist-Variable.woff2`, `Geist-Italic-Variable.woff2`,
 `GeistMono-Variable.woff2` y `GeistPixel-Circle.woff2`.

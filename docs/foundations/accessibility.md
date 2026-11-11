@@ -25,7 +25,7 @@ Dark interfaces can cause low-contrast text and controls. Test actual combinatio
 ## Focus
 
 Every interactive element shows a **2px `#B37AC2` outline with a 2px
-offset** on `:focus-visible` (global rule in `mxni/base.css`). Inside clipped
+offset** on `:focus-visible` (global rule in `mxvi/base.css`). Inside clipped
 containers (brand tiles) the offset is negative (`-4px`) so the ring stays
 visible. Do not remove the focus indicator without replacing it.
 

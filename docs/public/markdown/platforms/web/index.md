@@ -4,13 +4,13 @@ title: Web — Resumen
 
 # Web
 
-Guía de MXNI para productos que corren en un navegador: sitios de marca,
+Guía de MXVI para productos que corren en un navegador: sitios de marca,
 landing pages, documentación y aplicaciones web. Una aplicación web abierta en
 un teléfono también sigue esta guía, usando su layout compacto.
 
 ## Tipos de producto web
 
-| Tipo | Prioridad | Expresión MXNI |
+| Tipo | Prioridad | Expresión MXVI |
 |---|---|---|
 | Sitio de marca / landing | Historia y conversión | Espaciosa, editorial, composición Bento |
 | Documentación | Encontrar y entender | Estructurada, legible, técnica |
@@ -47,7 +47,7 @@ guía completa o `/llms-web.txt`.
 
 **Reglas web**
 
-1. Usa `mxni.css` y los componentes `.mx-*` del [catálogo](/catalog/); los
+1. Usa `mxvi.css` y los componentes `.mx-*` del [catálogo](/catalog/); los
    valores salen de los [tokens](/implementation/css-tokens).
 2. Diseña mobile-first con los cortes del sitio: 600, 768, 900, 970 y
    1200px ([layout](/platforms/web/layout)).

@@ -10,7 +10,7 @@ title: Geometry and effects
 --radius-square: 0;
 ```
 
-Es la regla más reconocible de MXNI. Radio **0** en tarjetas, botones,
+Es la regla más reconocible de MXVI. Radio **0** en tarjetas, botones,
 campos, tags, chips, imágenes, menús, diálogos, marcadores e incluso la barra
 de desplazamiento. Las únicas formas redondas son las que vienen dentro de un
 logo o ícono.

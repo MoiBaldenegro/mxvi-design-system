@@ -6,7 +6,7 @@ title: Móvil — Layout y pantallas
 
 ## Unidades
 
-**Propuesta:** los tokens de MXNI se escriben en px y en móvil se interpretan
+**Propuesta:** los tokens de MXVI se escriben en px y en móvil se interpretan
 como unidades independientes de la densidad: `1 px = 1 pt` en iOS y
 `1 px = 1 dp` en Android. El texto en Android usa `sp` para respetar la escala
 de fuente del usuario.
@@ -42,7 +42,7 @@ para los valores exactos.
   dinámica, la barra de estado, la barra de inicio de iOS ni la barra de
   gestos de Android.
 - Los fondos sí pueden extenderse bajo esas zonas (de borde a borde).
-- La barra de estado usa contenido claro sobre el fondo oscuro de MXNI.
+- La barra de estado usa contenido claro sobre el fondo oscuro de MXVI.
 
 ## Orientación
 

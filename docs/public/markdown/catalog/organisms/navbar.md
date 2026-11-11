@@ -18,7 +18,7 @@ los enlaces y la búsqueda a lo ancho.
 <a class="mx-skip-link" href="#contenido">Saltar al contenido</a>
 <header class="mx-navbar">
   <nav class="mx-navbar__inner" aria-label="Principal">
-    <a class="mx-logo" href="#" aria-current="page"><img src="/mxni/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
+    <a class="mx-logo" href="#" aria-current="page"><img src="/mxvi/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
     <button class="mx-icon-button mx-navbar__toggle" type="button" data-mx-menu-toggle aria-controls="mx-menu" aria-expanded="false" aria-label="Abrir menú"></button>
     <div class="mx-navbar__menu" id="mx-menu">
       <a class="mx-nav-link" href="#" aria-current="page">About</a>
@@ -62,7 +62,7 @@ los enlaces y la búsqueda a lo ancho.
   aparece arriba a la izquierda con fondo `#B37AC2`.
 - El enlace de la página actual lleva `aria-current="page"`.
 - Botón ☰/✕ con `aria-expanded` y `aria-controls`; `Escape` cierra el panel y
-  devuelve el foco ([contrato de `mxni.js`](/catalog/install#comportamientos-js)).
+  devuelve el foco ([contrato de `mxvi.js`](/catalog/install#comportamientos-js)).
 - Sin JavaScript, en móvil los enlaces se acomodan en varias líneas y la
   búsqueda ocupa todo el ancho.
 - Los enlaces externos llevan "(sitio externo)" oculto.

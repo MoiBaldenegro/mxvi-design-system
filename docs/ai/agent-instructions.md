@@ -1,17 +1,17 @@
 ---
-title: MXNI instructions for AI agents
+title: MXVI instructions for AI agents
 ---
 
-# MXNI instructions for AI agents
+# MXVI instructions for AI agents
 
 This document is the compact behavioral contract for AI systems generating
-MXNI interfaces, graphics, or implementation code. The goal: anything you
+MXVI interfaces, graphics, or implementation code. The goal: anything you
 build must look **identical to moisesbaldenegro.com**, in any technology.
 
 ## Read first
 
 1. [Visual DNA](/catalog/visual-dna) (`catalog/visual-dna.md`) — the traits
-   that make something look MXNI.
+   that make something look MXVI.
 2. [Component catalog](/catalog/) (`catalog/`) — every component with its
    exact visual spec and reference markup.
 3. The guide for the target platform: `platforms/web/`,
@@ -45,7 +45,7 @@ A ready-to-paste prompt is in [Master prompt](/catalog/master-prompt).
 
 ## Implementation
 
-- Web: link `/mxni/mxni.css` and use the `.mx-*` classes from the catalog.
+- Web: link `/mxvi/mxvi.css` and use the `.mx-*` classes from the catalog.
   The HTML in the catalog is canonical; framework tabs only adapt syntax.
 - Other technologies: reproduce the exact values from the catalog specs and
   [Use in any technology](/catalog/install).

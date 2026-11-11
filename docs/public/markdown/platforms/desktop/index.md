@@ -4,14 +4,14 @@ title: Escritorio — Resumen
 
 # Escritorio
 
-Guía de MXNI para aplicaciones instaladas en Windows, macOS o Linux, ya sean
+Guía de MXVI para aplicaciones instaladas en Windows, macOS o Linux, ya sean
 nativas o construidas con tecnologías web empaquetadas (Electron, Tauri u
 otras). La interfaz es la misma marca, pero el usuario espera que la aplicación
 se comporte como una aplicación de su sistema operativo.
 
 ## Tipos de producto de escritorio
 
-| Tipo | Prioridad | Expresión MXNI |
+| Tipo | Prioridad | Expresión MXVI |
 |---|---|---|
 | Herramienta de productividad | Completar tareas rápido | Funcional, densidad equilibrada o compacta |
 | Editor / IDE / herramienta técnica | Trabajo prolongado y preciso | Compacta, paneles, mucha información visible |

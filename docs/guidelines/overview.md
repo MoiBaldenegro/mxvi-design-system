@@ -14,11 +14,11 @@ Guidelines translate foundations into repeatable decisions.
 - Is the content readable at its actual size?
 - Does the layout adapt to narrow screens?
 - Are brand accents used intentionally?
-- Can the composition be recognized as MXNI without relying on the logo?
+- Can the composition be recognized as MXVI without relying on the logo?
 
 ## Recognition test
 
-A composition is recognizable as MXNI when it has, at least:
+A composition is recognizable as MXVI when it has, at least:
 
 - the indigo night background `#070716` with `#101018` surfaces;
 - 1px white hairlines (8 % / 15 %) instead of heavy boxes;

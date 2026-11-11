@@ -10,7 +10,7 @@ necesario para que un agente de IA produzca algo que se vea idéntico a
 Agrega al final lo que quieres construir.
 
 ```text
-Diseña siguiendo el design system MXNI. El resultado debe verse idéntico a
+Diseña siguiendo el design system MXVI. El resultado debe verse idéntico a
 moisesbaldenegro.com. Referencia completa:
 https://moibaldenegro.github.io/mxvi-design-system/llms-web.txt
 
@@ -37,7 +37,7 @@ LOOK (obligatorio)
 
 COMPONENTES
 - Navbar sticky de vidrio: fondo rgba(8,8,18,.75) + blur 18px, alto 64px, borde
-  inferior 15%. Logo MXNI a la izquierda, enlaces Geist Pixel 0.95rem con
+  inferior 15%. Logo MXVI a la izquierda, enlaces Geist Pixel 0.95rem con
   subrayado de acento de 2px que crece en hover y queda fijo en la página
   actual, búsqueda a la derecha.
 - Botón principal: fondo #070716, borde 2px #B37AC2, texto blanco 600; en hover
@@ -52,7 +52,7 @@ COMPONENTES
 
 IMPLEMENTACIÓN
 - En web, usa la hoja oficial:
-  https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css
+  https://moibaldenegro.github.io/mxvi-design-system/mxvi/mxvi.css
   y las clases .mx-* del catálogo:
   https://moibaldenegro.github.io/mxvi-design-system/catalog/
 - En otras tecnologías, reproduce los valores exactos de arriba.
@@ -80,10 +80,10 @@ adaptar navegación, tamaños táctiles y convenciones del sistema operativo.
 
 ## Proyecto local
 
-Si descargaste el paquete en tu proyecto (por ejemplo en `docs/mxni/`),
+Si descargaste el paquete en tu proyecto (por ejemplo en `docs/mxvi/`),
 sustituye las URLs por rutas locales:
 
 ```text
-Sigue el design system MXNI de docs/mxni/. Empieza por docs/mxni/AGENTS.md,
-lee docs/mxni/catalog/visual-dna.md y usa docs/mxni/mxni/mxni.css.
+Sigue el design system MXVI de docs/mxvi/. Empieza por docs/mxvi/AGENTS.md,
+lee docs/mxvi/catalog/visual-dna.md y usa docs/mxvi/mxvi/mxvi.css.
 ```

@@ -6,12 +6,12 @@ title: Brand identity
 
 ## Esencia
 
-**MXNI** es una identidad para un ecosistema de tecnología, software, ingeniería y contenido educativo.
+**MXVI** es una identidad para un ecosistema de tecnología, software, ingeniería y contenido educativo.
 
 ### Referencia viva
 
 [moisesbaldenegro.com](https://moisesbaldenegro.com) es la expresión de
-referencia de MXNI. Si hay dudas sobre cómo debe verse algo, se resuelve
+referencia de MXVI. Si hay dudas sobre cómo debe verse algo, se resuelve
 comparándolo con ese sitio y con el [ADN visual](/catalog/visual-dna).
 
 ### Propósito
@@ -44,9 +44,9 @@ Hacer que los productos y experiencias tecnológicas sean reconocibles, coherent
 
 ## Arquitectura de marca
 
-- **MXNI Web:** sitios, portfolio y landing pages.
-- **MXNI Software:** aplicaciones, herramientas y productos SaaS.
-- **MXNI Media:** contenido educativo, social y editorial.
-- **MXNI Docs:** documentación, conocimiento y recursos técnicos.
+- **MXVI Web:** sitios, portfolio y landing pages.
+- **MXVI Software:** aplicaciones, herramientas y productos SaaS.
+- **MXVI Media:** contenido educativo, social y editorial.
+- **MXVI Docs:** documentación, conocimiento y recursos técnicos.
 
 Los nombres anteriores son familias de expresión, no necesariamente marcas independientes.

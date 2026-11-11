@@ -6,7 +6,7 @@ title: Móvil — Componentes
 
 Los contratos de [Components](/components/overview) aplican igual. Esta página
 explica cómo adaptarlos a móvil. Cuando exista un control nativo con mejor
-accesibilidad y comportamiento, úsalo y aplícale los tokens de MXNI.
+accesibilidad y comportamiento, úsalo y aplícale los tokens de MXVI.
 
 ## Botones
 

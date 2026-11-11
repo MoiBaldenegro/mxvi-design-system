@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MXNI Design System — components.css
+   MXVI Design System — components.css
    Every value comes from tokens.css. Rules and measurements are taken from
    moisesbaldenegro.com; class names are generic (prefix mx-) so the same
    markup works in any framework. Lightweight BEM: block__element--modifier.
@@ -1060,7 +1060,7 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 }
 
 /* Header breakpoint: 969 / 970 px. Without JS the menu wraps; with JS it
-   becomes a disclosure panel (see mxni.js). */
+   becomes a disclosure panel (see mxvi.js). */
 @media (max-width: 969px) {
   .mx-navbar__inner { flex-wrap: wrap; justify-content: center; gap: 24px; padding-block: var(--gap-card); }
   .mx-nav-link { font-size: 0.85rem; }

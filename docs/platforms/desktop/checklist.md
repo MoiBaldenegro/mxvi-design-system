@@ -9,7 +9,7 @@ agentes de IA deben reportar cada punto.
 
 ## Marca y tokens
 
-- [ ] Colores, tipografía, espaciado y radios salen de los tokens MXNI.
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens MXVI.
 - [ ] Los acentos se usan con moderación (5–10 % de la composición).
 - [ ] El logo es el SVG oficial con sus colores originales.
 

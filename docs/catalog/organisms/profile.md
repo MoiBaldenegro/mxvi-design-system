@@ -14,7 +14,7 @@ cifras, línea de tiempo y cuadrículas de tarjetas.
 
 ```html preview wide
 <section class="mx-profile-hero" aria-labelledby="perfil-nombre">
-  <div class="mx-profile-hero__media"><img class="mx-photo" src="/mxni/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960"></div>
+  <div class="mx-profile-hero__media"><img class="mx-photo" src="/mxvi/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960"></div>
   <div class="mx-profile-hero__body">
     <span class="mx-handle">@moibaldenegro</span>
     <h1 class="mx-profile-hero__name" id="perfil-nombre">Moisés Baldenegro Melendez</h1>
@@ -24,9 +24,9 @@ cifras, línea de tiempo y cuadrículas de tarjetas.
     <p class="mx-profile-hero__focus">Senior Software Engineer • Systems Architect • Node.js • NestJS • TypeScript • Rust</p>
     <div class="mx-profile-hero__actions">
       <ul class="mx-social-list--inline">
-        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub</a></li>
-        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn</a></li>
-        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube</a></li>
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#github"/></svg>GitHub</a></li>
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#linkedin"/></svg>LinkedIn</a></li>
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#youtube"/></svg>YouTube</a></li>
       </ul>
       <a class="mx-button mx-button--accent" href="#" download>Descargar CV <span aria-hidden="true">↓</span></a>
     </div>

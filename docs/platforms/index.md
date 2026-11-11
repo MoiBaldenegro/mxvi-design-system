@@ -4,7 +4,7 @@ title: Plataformas
 
 # Plataformas
 
-MXNI es un solo sistema de diseño: los mismos fundamentos, tokens, componentes y
+MXVI es un solo sistema de diseño: los mismos fundamentos, tokens, componentes y
 reglas de marca aplican en todas partes. Lo que cambia entre plataformas es
 **cómo** se aplican: el espacio disponible, la forma de interactuar, los patrones
 de navegación que el usuario espera y las convenciones del sistema operativo.
@@ -17,9 +17,9 @@ sola guía sin tener que reconstruir el contexto desde otras páginas.
 
 | Plataforma | Cuándo aplica | Guía | Para un LLM (fetch) | Para un proyecto local |
 |---|---|---|---|---|
-| **Web** | Sitios, landing pages, documentación y aplicaciones que corren en un navegador. | [Web](/platforms/web/) | [`/llms-web.txt`](/llms-web.txt) | [Descargar Markdown (.zip)](/downloads/mxni-web-markdown.zip) |
-| **Escritorio** | Aplicaciones instaladas en Windows, macOS o Linux (nativas, Electron, Tauri u otras). | [Escritorio](/platforms/desktop/) | [`/llms-desktop.txt`](/llms-desktop.txt) | [Descargar Markdown (.zip)](/downloads/mxni-desktop-markdown.zip) |
-| **Móvil** | Aplicaciones para teléfonos y tabletas iOS o Android (nativas o multiplataforma). | [Móvil](/platforms/mobile/) | [`/llms-mobile.txt`](/llms-mobile.txt) | [Descargar Markdown (.zip)](/downloads/mxni-mobile-markdown.zip) |
+| **Web** | Sitios, landing pages, documentación y aplicaciones que corren en un navegador. | [Web](/platforms/web/) | [`/llms-web.txt`](/llms-web.txt) | [Descargar Markdown (.zip)](/downloads/mxvi-web-markdown.zip) |
+| **Escritorio** | Aplicaciones instaladas en Windows, macOS o Linux (nativas, Electron, Tauri u otras). | [Escritorio](/platforms/desktop/) | [`/llms-desktop.txt`](/llms-desktop.txt) | [Descargar Markdown (.zip)](/downloads/mxvi-desktop-markdown.zip) |
+| **Móvil** | Aplicaciones para teléfonos y tabletas iOS o Android (nativas o multiplataforma). | [Móvil](/platforms/mobile/) | [`/llms-mobile.txt`](/llms-mobile.txt) | [Descargar Markdown (.zip)](/downloads/mxvi-mobile-markdown.zip) |
 
 Si un producto existe en varias plataformas, aplica la guía de cada una a su
 versión correspondiente. Una aplicación web abierta en el navegador de un
@@ -72,21 +72,21 @@ Ejemplo de instrucción para el agente:
 
 ```text
 Antes de escribir UI, lee https://moibaldenegro.github.io/mxvi-design-system/llms-web.txt
-y sigue el design system MXNI. Reporta los tokens usados y cualquier desviación.
+y sigue el design system MXVI. Reporta los tokens usados y cualquier desviación.
 ```
 
 ### 2. Local: la documentación vive dentro del proyecto
 
 1. Descarga el `.zip` de la plataforma (tabla de arriba) y descomprímelo en el
-   repositorio, por ejemplo en `docs/mxni/`.
+   repositorio, por ejemplo en `docs/mxvi/`.
 2. El paquete incluye un `AGENTS.md` que indica qué leer primero, los Markdown
    del núcleo común y los de la plataforma, y su `llms-<plataforma>.txt`.
 3. Referencia la carpeta desde las instrucciones de tu agente (por ejemplo en
    el `AGENTS.md` o `CLAUDE.md` del proyecto):
 
 ```text
-Para cualquier interfaz, sigue el design system MXNI en docs/mxni/.
-Empieza por docs/mxni/AGENTS.md.
+Para cualquier interfaz, sigue el design system MXVI en docs/mxvi/.
+Empieza por docs/mxvi/AGENTS.md.
 ```
 
 Los enlaces que empiezan con `/` dentro de los Markdown apuntan a archivos del

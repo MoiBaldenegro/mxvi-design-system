@@ -4,7 +4,7 @@ title: React integration
 
 # Integración con React
 
-MXNI no depende de React: los componentes son clases CSS. En React solo se
+MXVI no depende de React: los componentes son clases CSS. En React solo se
 importa la hoja una vez y se usa `className`. Cada página del
 [catálogo](/catalog/) muestra el marcado en la pestaña **React**.
 
@@ -12,10 +12,10 @@ importa la hoja una vez y se usa `className`. Cada página del
 
 ```tsx
 // main.tsx, app/layout.tsx o el punto de entrada de la app
-import './mxni/mxni.css'
+import './mxvi/mxvi.css'
 ```
 
-Copia la carpeta `mxni/` del paquete descargable dentro del proyecto (incluye
+Copia la carpeta `mxvi/` del paquete descargable dentro del proyecto (incluye
 las fuentes y los assets).
 
 ## Componentes envoltorio (opcional)
@@ -48,7 +48,7 @@ export function Tag({ children }: { children: React.ReactNode }) {
 
 ## Comportamientos
 
-Puedes cargar `mxni/mxni.js` o reimplementar el contrato con estado de React.
+Puedes cargar `mxvi/mxvi.js` o reimplementar el contrato con estado de React.
 Ejemplo del menú móvil:
 
 ```tsx
@@ -58,7 +58,7 @@ export function Navbar({ children }: { children: React.ReactNode }) {
     <header className="mx-navbar" data-menu={open ? 'open' : 'closed'}
       onKeyDown={event => event.key === 'Escape' && setOpen(false)}>
       <nav className="mx-navbar__inner" aria-label="Principal">
-        <a className="mx-logo" href="/"><img src="/mxni/assets/logo.svg" alt="Inicio" width={72} height={25} /></a>
+        <a className="mx-logo" href="/"><img src="/mxvi/assets/logo.svg" alt="Inicio" width={72} height={25} /></a>
         <button className="mx-icon-button mx-navbar__toggle" type="button"
           aria-controls="mx-menu" aria-expanded={open}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}

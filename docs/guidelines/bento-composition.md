@@ -6,7 +6,7 @@ title: Bento composition
 
 ## Definition
 
-Bento is a modular composition made from rectangular content regions with varied spans. MXNI uses it to express systems, modules, and structured information.
+Bento is a modular composition made from rectangular content regions with varied spans. MXVI uses it to express systems, modules, and structured information.
 
 ## Rules
 

@@ -22,7 +22,7 @@ arriba.
       <a class="mx-button mx-button--cta" href="#">Ver en YouTube</a>
       <a class="mx-button mx-button--cta-outline" href="#">Sobre mí</a>
     </div>
-    <img class="mx-promo-tile__image" src="/mxni/assets/examples/pic01.webp" alt="Video sobre Rust en el kernel de Linux" width="1920" height="1920" loading="lazy">
+    <img class="mx-promo-tile__image" src="/mxvi/assets/examples/pic01.webp" alt="Video sobre Rust en el kernel de Linux" width="1920" height="1920" loading="lazy">
   </article>
   <article class="mx-promo-tile" data-tone="mfinance">
     <h3 class="mx-promo-tile__title">MFinance</h3>
@@ -31,7 +31,7 @@ arriba.
       <a class="mx-button mx-button--cta" href="#">Ver el código</a>
       <a class="mx-button mx-button--cta-outline" href="#">Más proyectos</a>
     </div>
-    <img class="mx-promo-tile__image" src="/mxni/assets/examples/pic01.webp" alt="Captura de MFinance" width="1920" height="1920" loading="lazy">
+    <img class="mx-promo-tile__image" src="/mxvi/assets/examples/pic01.webp" alt="Captura de MFinance" width="1920" height="1920" loading="lazy">
   </article>
 </section>
 ```
@@ -58,12 +58,12 @@ Franja de borde a borde con las cuatro letras del logo como enlaces, en blanco
 translúcido sobre la atmósfera morada.
 
 ```html preview flush wide
-<section class="mx-logo-band" aria-label="MXNI">
+<section class="mx-logo-band" aria-label="MXVI">
   <div class="mx-logo-band__track">
-    <a class="mx-logo-band__link" href="#" aria-label="M — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 717 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-m"/></svg></a>
-    <a class="mx-logo-band__link" href="#" aria-label="X — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 805 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-x"/></svg></a>
-    <a class="mx-logo-band__link" href="#" aria-label="V — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 795 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-v"/></svg></a>
-    <a class="mx-logo-band__link" href="#" aria-label="I — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 190 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-i"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="M — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 717 716" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#mxvi-m"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="X — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 805 716" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#mxvi-x"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="V — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 795 716" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#mxvi-v"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="I — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 190 716" aria-hidden="true" focusable="false"><use href="/mxvi/assets/sprite.svg#mxvi-i"/></svg></a>
   </div>
 </section>
 ```

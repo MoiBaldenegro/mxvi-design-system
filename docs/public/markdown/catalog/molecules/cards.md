@@ -38,7 +38,7 @@ tags. La imagen y el título forman un solo enlace.
 ```html preview
 <article class="mx-article-card" style="max-width:680px">
   <a class="mx-article-card__link" href="#">
-    <img class="mx-media mx-article-card__image" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
+    <img class="mx-media mx-article-card__image" src="/mxvi/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
     <h3 class="mx-article-card__title">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</h3>
   </a>
   <p class="mx-meta">Por Moisés Baldenegro Melendez • 6 min de lectura</p>

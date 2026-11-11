@@ -10,7 +10,7 @@ exacto, con medidas, colores y código, está en el
 [catálogo de componentes](/catalog/).
 :::
 
-This section defines the intended contracts for reusable MXNI components. It is a design specification, not yet a published component library.
+This section defines the intended contracts for reusable MXVI components. It is a design specification, not yet a published component library.
 
 ## Component principles
 

@@ -68,7 +68,7 @@ Estado vacío, guía o página de error.
 ## Bloque de código
 
 Con botón para copiar arriba a la derecha (requiere
-[`mxni.js`](/catalog/install#comportamientos-js) o tu propia implementación).
+[`mxvi.js`](/catalog/install#comportamientos-js) o tu propia implementación).
 
 ```html preview
 <div class="mx-code">

@@ -50,7 +50,7 @@ El [hero Bento](/catalog/organisms/hero-bento) es la firma de la portada:
 
 ## Tipografía en web
 
-- Carga `mxni.css` (incluye Geist, Geist Mono y Geist Pixel autoalojadas, con
+- Carga `mxvi.css` (incluye Geist, Geist Mono y Geist Pixel autoalojadas, con
   `font-display: swap`).
 - Texto de interfaz a 1rem; cuerpo de artículo de 17 a 19px con interlineado
   1.7.

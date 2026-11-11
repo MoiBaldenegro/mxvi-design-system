@@ -4,7 +4,7 @@ title: AI resources
 
 # AI resources
 
-MXNI documentation is designed to be consumed by humans and AI systems.
+MXVI documentation is designed to be consumed by humans and AI systems.
 
 - [Agent instructions](./agent-instructions)
 - [Context strategy](./context-strategy)
@@ -18,9 +18,9 @@ Published machine-readable files:
 - `/llms-full.txt`
 - `/llms-web.txt`, `/llms-desktop.txt`, `/llms-mobile.txt`
 - `/ai/agent-instructions.md`
-- `/mxni/mxni.css`, `/mxni/tokens.css`, `/mxni/mxni.js`
-- `/downloads/mxni-design-system-markdown.zip`
-- `/downloads/mxni-web-markdown.zip`, `/downloads/mxni-desktop-markdown.zip`, `/downloads/mxni-mobile-markdown.zip`
+- `/mxvi/mxvi.css`, `/mxvi/tokens.css`, `/mxvi/mxvi.js`
+- `/downloads/mxvi-design-system-markdown.zip`
+- `/downloads/mxvi-web-markdown.zip`, `/downloads/mxvi-desktop-markdown.zip`, `/downloads/mxvi-mobile-markdown.zip`
 
 Platform guides: [Web](/platforms/web/), [Escritorio](/platforms/desktop/) and
 [Móvil](/platforms/mobile/).

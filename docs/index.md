@@ -1,9 +1,9 @@
 ---
 layout: home
-title: MXNI Design System
+title: MXVI Design System
 titleTemplate: One identity. Multiple products.
 hero:
-  name: MXNI
+  name: MXVI
   text: Design System
   tagline: El look de moisesbaldenegro.com convertido en sistema. Componentes reales, especificaciones exactas y contexto listo para agentes de IA.
   actions:
@@ -18,10 +18,10 @@ hero:
       link: /catalog/master-prompt
     - theme: alt
       text: Descargar Markdown
-      link: /downloads/mxni-design-system-markdown.zip
+      link: /downloads/mxvi-design-system-markdown.zip
   image:
-    src: /brand/mxni-hero.svg
-    alt: MXNI Design System visual identity
+    src: /brand/mxvi-hero.svg
+    alt: MXVI Design System visual identity
 features:
   - title: Catálogo
     details: Átomos, moléculas, organismos y plantillas con su especificación visual exacta, vista previa y código.
@@ -57,7 +57,7 @@ features:
     linkText: Recursos descargables
 ---
 
-<div class="mxni-callout">
+<div class="mxvi-callout">
 
 **Estado:** v1.1. El look, los tokens y el catálogo se extrajeron de [moisesbaldenegro.com](https://moisesbaldenegro.com), que es la referencia viva del sistema. Las decisiones marcadas como **Propuesta** todavía no existen en el sitio y deben validarse.
 
@@ -65,7 +65,7 @@ features:
 
 ## La idea
 
-MXNI es el lenguaje visual de un ecosistema de productos. Cualquier producto
+MXVI es el lenguaje visual de un ecosistema de productos. Cualquier producto
 que lo use debe verse como moisesbaldenegro.com: noche índigo, líneas finas,
 esquinas rectas, un acento ciruela y tipografía Geist Pixel.
 
@@ -74,7 +74,7 @@ esquinas rectas, un acento ciruela y tipografía Geist Pixel.
 Para usarlo en web basta una hoja de estilos:
 
 ```html
-<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css">
+<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxvi/mxvi.css">
 ```
 
 En cualquier otra tecnología, reproduce los valores del [catálogo](/catalog/).
@@ -86,16 +86,16 @@ para tu proyecto:
 
 | Plataforma | Guía | Para un LLM | Para un proyecto local |
 |---|---|---|---|
-| Web | [Guía web](/platforms/web/) | [llms-web.txt](/llms-web.txt) | [mxni-web-markdown.zip](/downloads/mxni-web-markdown.zip) |
-| Escritorio | [Guía de escritorio](/platforms/desktop/) | [llms-desktop.txt](/llms-desktop.txt) | [mxni-desktop-markdown.zip](/downloads/mxni-desktop-markdown.zip) |
-| Móvil | [Guía móvil](/platforms/mobile/) | [llms-mobile.txt](/llms-mobile.txt) | [mxni-mobile-markdown.zip](/downloads/mxni-mobile-markdown.zip) |
+| Web | [Guía web](/platforms/web/) | [llms-web.txt](/llms-web.txt) | [mxvi-web-markdown.zip](/downloads/mxvi-web-markdown.zip) |
+| Escritorio | [Guía de escritorio](/platforms/desktop/) | [llms-desktop.txt](/llms-desktop.txt) | [mxvi-desktop-markdown.zip](/downloads/mxvi-desktop-markdown.zip) |
+| Móvil | [Guía móvil](/platforms/mobile/) | [llms-mobile.txt](/llms-mobile.txt) | [mxvi-mobile-markdown.zip](/downloads/mxvi-mobile-markdown.zip) |
 
 **Todo el sistema:**
 
 - [Catálogo de componentes](/catalog/) · [ADN visual](/catalog/visual-dna) · [Prompt maestro](/catalog/master-prompt)
-- [Hoja de estilos: mxni.css](/mxni/mxni.css)
+- [Hoja de estilos: mxvi.css](/mxvi/mxvi.css)
 - [Índice para modelos: llms.txt](/llms.txt)
 - [Documentación consolidada: llms-full.txt](/llms-full.txt)
 - [Instrucciones para agentes](/ai/agent-instructions.md)
-- [Descargar todos los Markdown](/downloads/mxni-design-system-markdown.zip)
+- [Descargar todos los Markdown](/downloads/mxvi-design-system-markdown.zip)
 - [Ver tokens CSS](/implementation/css-tokens)

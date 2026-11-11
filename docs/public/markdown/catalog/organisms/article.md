@@ -19,7 +19,7 @@ recomendados.
   <div class="mx-article-list">
     <article class="mx-article-card">
       <a class="mx-article-card__link" href="#">
-        <img class="mx-media mx-article-card__image" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
+        <img class="mx-media mx-article-card__image" src="/mxvi/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
         <h3 class="mx-article-card__title">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</h3>
       </a>
       <p class="mx-meta">Por Moisés Baldenegro Melendez • 6 min de lectura</p>
@@ -37,7 +37,7 @@ recomendados.
 
 ```html preview wide
 <header class="mx-post-hero">
-  <img class="mx-media" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768">
+  <img class="mx-media" src="/mxvi/assets/examples/entry-01.webp" alt="" width="1376" height="768">
   <div class="mx-post-hero__copy">
     <p class="mx-kicker">#arquitectura</p>
     <h1 class="mx-post-hero__title">Agilismo, diseño y fragilidad</h1>
@@ -98,7 +98,7 @@ recomendados.
   <h2 class="mx-heading" id="recomendados" style="font-size:1.35rem">Recomendados</h2>
   <ul class="mx-result-list">
     <li class="mx-result-row">
-      <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+      <img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">
       <div class="mx-result-row__body"><a class="mx-result-row__link" href="#">Principios del diseño de software</a><p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 9 min</p></div>
     </li>
   </ul>

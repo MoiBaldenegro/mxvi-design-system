@@ -1,12 +1,12 @@
-# MXNI Design System Documentation
+# MXVI Design System Documentation
 
-Documentation platform for the MXNI visual ecosystem. Its look, tokens and
+Documentation platform for the MXVI visual ecosystem. Its look, tokens and
 component catalog are extracted from [moisesbaldenegro.com](https://moisesbaldenegro.com):
 any product that follows it should look identical to that site.
 
-- `mxni/` — the real stylesheet package: `tokens.css`, `fonts.css`, `base.css`,
-  `components.css` (`.mx-*` classes), `mxni.js`, Geist fonts (OFL 1.1) and assets.
-  It is published as `/mxni/mxni.css` (fonts + tokens + base + components).
+- `mxvi/` — the real stylesheet package: `tokens.css`, `fonts.css`, `base.css`,
+  `components.css` (`.mx-*` classes), `mxvi.js`, Geist fonts (OFL 1.1) and assets.
+  It is published as `/mxvi/mxvi.css` (fonts + tokens + base + components).
 - `docs/catalog/` — atoms, molecules, organisms and templates, each with an exact
   visual spec, a live preview and reference code for HTML, React, Vue, Svelte,
   Angular and Astro.
@@ -52,13 +52,13 @@ The production site is generated in `docs/.vitepress/dist`.
 
 ## Deploy to GitHub Pages
 
-1. Create a GitHub repository, for example `mxni-design-system`.
+1. Create a GitHub repository, for example `mxvi-design-system`.
 2. Push this project to the repository's `main` branch.
 3. In GitHub, open **Settings → Pages**.
 4. Set **Build and deployment → Source** to **GitHub Actions**.
 5. Push a commit. The workflow at `.github/workflows/deploy.yml` builds and deploys the site.
 6. For a project repository, the default URL is:
-   `https://YOUR-USER.github.io/mxni-design-system/`
+   `https://YOUR-USER.github.io/mxvi-design-system/`
 
 The VitePress config derives the base path from `GITHUB_REPOSITORY` in GitHub Actions. For a user/organization site named `YOUR-USER.github.io`, the base path is `/`.
 
@@ -69,13 +69,13 @@ After deployment:
 - `/llms.txt` — documentation index for language models.
 - `/llms-full.txt` — consolidated documentation.
 - `/markdown/` — raw Markdown files, preserving the docs structure.
-- `/downloads/mxni-design-system-markdown.zip` — complete Markdown bundle.
-- `/ai/agent-instructions.md` — instructions for agents using MXNI.
+- `/downloads/mxvi-design-system-markdown.zip` — complete Markdown bundle.
+- `/ai/agent-instructions.md` — instructions for agents using MXVI.
 
 Use the full deployed URL when referencing these paths. Example:
 
 ```text
-https://YOUR-USER.github.io/mxni-design-system/llms.txt
+https://YOUR-USER.github.io/mxvi-design-system/llms.txt
 ```
 
 ## Source of truth
@@ -109,7 +109,7 @@ Edit files under `docs/`. Do not edit generated files under `docs/public/markdow
 
 ## Current status and design decisions
 
-This repository contains the initial MXNI Design System v1.0 proposal based on the supplied website reference and the agreed direction: **balanced, futuristic, minimal, modular, expressive**.
+This repository contains the initial MXVI Design System v1.0 proposal based on the supplied website reference and the agreed direction: **balanced, futuristic, minimal, modular, expressive**.
 
 Color values, typefaces, spacing, radii, and component rules are initial design decisions. Validate them against the actual logo, production interfaces, accessibility requirements, and real content before declaring them stable.
 

@@ -13,7 +13,7 @@ descripción y tags. Las filas se separan con líneas finas, sin cajas.
 ```html preview wide
 <ul class="mx-result-list">
   <li class="mx-result-row">
-    <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+    <img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">
     <div class="mx-result-row__body">
       <a class="mx-result-row__link" href="#">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</a>
       <p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 6 min</p>
@@ -22,7 +22,7 @@ descripción y tags. Las filas se separan con líneas finas, sin cajas.
     </div>
   </li>
   <li class="mx-result-row">
-    <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+    <img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">
     <div class="mx-result-row__body">
       <a class="mx-result-row__link" href="#">Principios del diseño de software</a>
       <p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 9 min</p>

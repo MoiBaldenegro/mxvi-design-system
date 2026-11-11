@@ -17,8 +17,8 @@ catálogo. Toda página comparte el mismo esqueleto: navbar, `<main>` y footer.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#070716">
   <title>Título | Sitio</title>
-  <link rel="stylesheet" href="/mxni/mxni.css">
-  <script src="/mxni/mxni.js" defer></script>
+  <link rel="stylesheet" href="/mxvi/mxvi.css">
+  <script src="/mxvi/mxvi.js" defer></script>
 </head>
 <body>
   <a class="mx-skip-link" href="#contenido">Saltar al contenido</a>

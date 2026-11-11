@@ -43,7 +43,7 @@ convenciones de iOS y Android.
 | Barra inferior | Tab bar | Navigation bar |
 
 Usa la convención de cada plataforma aunque el diseño visual (colores,
-tipografía, geometría) sea el mismo MXNI.
+tipografía, geometría) sea el mismo MXVI.
 
 ## Logo
 

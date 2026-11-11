@@ -10,8 +10,8 @@ const base = process.env.GITHUB_ACTIONS
 
 export default defineConfig({
   lang: 'es-MX',
-  title: 'MXNI Design System',
-  description: 'Sistema de diseño para el ecosistema MXNI: fundamentos, componentes, patrones y documentación para humanos y agentes de IA.',
+  title: 'MXVI Design System',
+  description: 'Sistema de diseño para el ecosistema MXVI: fundamentos, componentes, patrones y documentación para humanos y agentes de IA.',
   base,
   cleanUrls: true,
   markdown: {
@@ -39,16 +39,16 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#070716' }],
     ['meta', { name: 'color-scheme', content: 'dark' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'MXNI Design System' }],
+    ['meta', { property: 'og:title', content: 'MXVI Design System' }],
     ['meta', { property: 'og:description', content: 'One identity. Multiple products. A consistent experience.' }],
   ],
   themeConfig: {
-    // Official MXNI logo (vectorized from moibaldenegro.com) in its original
-    // colors. It already reads "MXNI", so the text title is hidden.
+    // Official MXVI logo (vectorized from moibaldenegro.com) in its original
+    // colors. It already reads "MXVI", so the text title is hidden.
     logo: {
-      light: '/brand/mxni-logo.svg',
-      dark: '/brand/mxni-logo.svg',
-      alt: 'MXNI',
+      light: '/brand/mxvi-logo.svg',
+      dark: '/brand/mxvi-logo.svg',
+      alt: 'MXVI',
     },
     siteTitle: false,
     outline: {
@@ -81,7 +81,7 @@ export default defineConfig({
           { text: 'llms-desktop.txt', link: '/llms-desktop.txt' },
           { text: 'llms-mobile.txt', link: '/llms-mobile.txt' },
           { text: 'Agent instructions', link: '/ai/agent-instructions.md' },
-          { text: 'Descargar Markdown', link: '/downloads/mxni-design-system-markdown.zip' },
+          { text: 'Descargar Markdown', link: '/downloads/mxvi-design-system-markdown.zip' },
         ],
       },
     ],
@@ -208,7 +208,7 @@ export default defineConfig({
   },
 ],
     footer: {
-      message: 'MXNI Design System v1.1 · El look de moisesbaldenegro.com',
+      message: 'MXVI Design System v1.1 · El look de moisesbaldenegro.com',
       copyright: 'Built for a consistent technology ecosystem.',
     },
     editLink: {

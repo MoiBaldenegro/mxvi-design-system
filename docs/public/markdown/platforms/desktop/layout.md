@@ -6,7 +6,7 @@ title: Escritorio — Layout y ventanas
 
 ## Unidades
 
-Los tokens de MXNI están en px. En escritorio se interpretan como px
+Los tokens de MXVI están en px. En escritorio se interpretan como px
 independientes de la densidad: el sistema operativo los multiplica por la
 escala de pantalla (por ejemplo 125 % o 200 % en Windows, Retina en macOS).
 Diseña siempre a escala 100 % y verifica en 150 % y 200 %.
@@ -16,7 +16,7 @@ Diseña siempre a escala 100 % y verifica en 150 % y 200 %.
 La ventana se puede redimensionar; el layout responde a su ancho, no al de la
 pantalla.
 
-| Ancho de ventana | Breakpoint MXNI | Layout sugerido |
+| Ancho de ventana | Breakpoint MXVI | Layout sugerido |
 |---|---|---|
 | `< 640 px` | Compact | Una columna; sidebar oculta tras un botón. Solo si la app lo permite. |
 | `640–1023 px` | Medium | Sidebar colapsable (solo íconos) + contenido. |
