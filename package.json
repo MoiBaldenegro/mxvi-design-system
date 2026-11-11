@@ -11,7 +11,8 @@
     "preview": "vitepress preview docs",
     "typecheck": "vue-tsc --noEmit",
     "docs:check": "node scripts/check-docs.mjs",
-    "tokens:check": "node scripts/check-tokens-sync.mjs"
+    "tokens:check": "node scripts/check-tokens-sync.mjs",
+    "site:check": "node scripts/check-site-copy.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

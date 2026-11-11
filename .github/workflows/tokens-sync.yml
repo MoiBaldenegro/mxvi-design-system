@@ -1,7 +1,8 @@
-name: Tokens in sync with moisesbaldenegro.com
+name: In sync with moisesbaldenegro.com
 
-# moisesbaldenegro.com is the living reference of the MXVI look. This check
-# fails when mxvi/tokens.css and the website's src/styles/tokens.css differ.
+# moisesbaldenegro.com is the living reference of the MXVI look. These checks
+# fail when mxvi/tokens.css and the website's src/styles/tokens.css differ, or
+# when the website's synced copy of the component sheets is outdated.
 # It runs on every change here and daily, to catch changes made on the website.
 on:
   push:
@@ -28,3 +29,6 @@ jobs:
 
       - name: Compare tokens with the website
         run: node scripts/check-tokens-sync.mjs
+
+      - name: Website uses the current component sheets
+        run: node scripts/check-site-copy.mjs
