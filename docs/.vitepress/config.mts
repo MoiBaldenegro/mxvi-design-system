@@ -26,9 +26,9 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: 'One identity. Multiple products. A consistent experience.' }],
   ],
   themeConfig: {
-    // Official MXNI_ wordmark (vectorized from moibaldenegro.com) with the
-    // magenta cursor. It already reads "MXNI_", so the text title is hidden.
-    // Both themes use a dark background, so the white variant is used.
+    // Official MXNI_ wordmark (vectorized from moibaldenegro.com) in its
+    // original colors with the magenta cursor. It already reads "MXNI_", so
+    // the text title is hidden.
     logo: {
       light: '/brand/mxni-wordmark.svg',
       dark: '/brand/mxni-wordmark.svg',

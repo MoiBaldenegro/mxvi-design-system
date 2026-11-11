@@ -16,11 +16,15 @@ La firma escrita es `MXNI_`. El guion bajo funciona como cursor, señal técnica
 | **Primary** | [`/brand/mxni-logo-white.svg`](/brand/mxni-logo-white.svg) | MXNI en blanco sobre fondo oscuro. |
 | **Purple** | [`/brand/mxni-logo-purple.svg`](/brand/mxni-logo-purple.svg) | MXNI en morado sobre fondos claros o neutros. |
 | **Monochrome** | [`/brand/mxni-logo-mono.svg`](/brand/mxni-logo-mono.svg) | Una sola tinta (`currentColor`) para impresión o bajo contraste de marca. |
-| **Wordmark** | [`/brand/mxni-wordmark.svg`](/brand/mxni-wordmark.svg) | MXNI_ con el cursor/acento magenta. |
+| **Wordmark** | [`/brand/mxni-wordmark.svg`](/brand/mxni-wordmark.svg) | MXNI_ en colores oficiales con el cursor/acento magenta. Es la firma que usa este sitio. |
 
 <div class="logo-preview">
   <img src="/brand/mxni-logo.svg" alt="Logo MXNI oficial" />
 </div>
+
+El logotipo se usa siempre con sus colores originales. Las variantes de una
+sola tinta quedan para casos donde el color no es posible (impresión, sellos,
+fondos que lo exijan).
 
 ## Construcción
 
