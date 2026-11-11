@@ -6,17 +6,17 @@ title: Logo
 
 ## Firma principal
 
-La firma escrita es `MXNI_`. El guion bajo funciona como cursor, señal técnica y cierre visual.
+La firma es el logotipo MXNI oficial, sin elementos añadidos: no se coloca
+guion bajo, cursor ni otro signo después del logo.
 
 ## Variantes
 
 | Variante | Archivo | Uso |
 | --- | --- | --- |
-| **Oficial** | [`/brand/mxni-logo.svg`](/brand/mxni-logo.svg) | Morado `#6C387A` y naranja `#F7941D`. Archivo maestro. |
+| **Oficial** | [`/brand/mxni-logo.svg`](/brand/mxni-logo.svg) | Morado `#6C387A` y naranja `#F7941D`. Archivo maestro; es el que usa este sitio. |
 | **Primary** | [`/brand/mxni-logo-white.svg`](/brand/mxni-logo-white.svg) | MXNI en blanco sobre fondo oscuro. |
 | **Purple** | [`/brand/mxni-logo-purple.svg`](/brand/mxni-logo-purple.svg) | MXNI en morado sobre fondos claros o neutros. |
 | **Monochrome** | [`/brand/mxni-logo-mono.svg`](/brand/mxni-logo-mono.svg) | Una sola tinta (`currentColor`) para impresión o bajo contraste de marca. |
-| **Wordmark** | [`/brand/mxni-wordmark.svg`](/brand/mxni-wordmark.svg) | MXNI_ en colores oficiales con el cursor/acento magenta. Es la firma que usa este sitio. |
 
 <div class="logo-preview">
   <img src="/brand/mxni-logo.svg" alt="Logo MXNI oficial" />

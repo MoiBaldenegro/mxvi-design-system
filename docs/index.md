@@ -3,7 +3,7 @@ layout: home
 title: MXNI Design System
 titleTemplate: One identity. Multiple products.
 hero:
-  name: MXNI_
+  name: MXNI
   text: Design System
   tagline: Un lenguaje visual para construir productos, experiencias y contenido con una identidad coherente.
   actions:

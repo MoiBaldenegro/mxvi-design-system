@@ -26,13 +26,12 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: 'One identity. Multiple products. A consistent experience.' }],
   ],
   themeConfig: {
-    // Official MXNI_ wordmark (vectorized from moibaldenegro.com) in its
-    // original colors with the magenta cursor. It already reads "MXNI_", so
-    // the text title is hidden.
+    // Official MXNI logo (vectorized from moibaldenegro.com) in its original
+    // colors. It already reads "MXNI", so the text title is hidden.
     logo: {
-      light: '/brand/mxni-wordmark.svg',
-      dark: '/brand/mxni-wordmark.svg',
-      alt: 'MXNI_',
+      light: '/brand/mxni-logo.svg',
+      dark: '/brand/mxni-logo.svg',
+      alt: 'MXNI',
     },
     siteTitle: false,
     outline: {

@@ -39,9 +39,35 @@
   letter-spacing: -.06em;
 }
 
+/* Hero name: the official MXNI logo replaces the typeset name. The text
+   stays in the <h1> for screen readers and search engines, but is not drawn
+   (the logo must not be rebuilt with a font when the official SVG exists). */
 .VPHome .VPHero .name {
-  font-weight: 800;
-  letter-spacing: -.065em;
+  display: block;
+  height: 48px;
+  aspect-ratio: 2048 / 716;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: url('/brand/mxni-logo.svg') no-repeat center / contain;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+@media (min-width: 640px) {
+  .VPHome .VPHero .name {
+    height: 64px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHome .VPHero .name {
+    height: 72px;
+    background-position: left center;
+  }
 }
 
 .VPHome .VPHero .text {
