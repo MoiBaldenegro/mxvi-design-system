@@ -81,8 +81,8 @@ catálogo. Toda página comparte el mismo esqueleto: navbar, `<main>` y footer.
   <div class="mx-page">
     <header class="mx-post-hero">…</header>
     <article class="mx-prose">…</article>
-    <footer>… Siguiente artículo …</footer>
-    <section>… Recomendados (mx-result-list) …</section>
+    <footer class="mx-post-next">… Siguiente artículo …</footer>
+    <section class="mx-post-related">… Recomendados (mx-result-list) …</section>
   </div>
 </main>
 ```
@@ -94,7 +94,7 @@ Ver [Artículo](/catalog/organisms/article).
 ```html
 <main id="contenido">
   <div class="mx-page">
-    <h1 class="mx-heading">Búsqueda</h1>
+    <h1 class="mx-heading mx-heading--page">Búsqueda</h1>
     <section class="mx-notice">… guía o "sin resultados" …</section>
     <ul class="mx-result-list">… filas …</ul>
     <nav class="mx-pagination">…</nav>
@@ -108,9 +108,9 @@ Ver [Fila de resultado](/catalog/molecules/result-row) y
 ## Página no encontrada
 
 ```html preview wide
-<div class="mx-page" style="padding:0">
-  <section class="mx-notice">
-    <h1 class="mx-notice__title" style="font-size:1.75rem">Página no encontrada</h1>
+<div class="mx-container">
+  <section class="mx-notice mx-notice--page">
+    <h1 class="mx-notice__title mx-notice__title--lg">Página no encontrada</h1>
     <p class="mx-notice__text">La página que buscas no existe o cambió de dirección.</p>
     <nav class="mx-notice__actions" aria-label="Enlaces de salida">
       <a class="mx-link" href="#">Volver al inicio</a>

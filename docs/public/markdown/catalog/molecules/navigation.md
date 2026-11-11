@@ -108,5 +108,5 @@ Lista con ícono de marca (del sprite) y nombre. Dos formas: lista vertical
 </nav>
 ```
 
-- Botones de superficie con padding 10px 18px; deshabilitado en `#b8b8c5`.
+- Botones de superficie compactos: padding 10px 18px y texto de 0.8333rem (13.33px); deshabilitado en `#b8b8c5`.
 - Etiqueta central en .9rem `#b8b8c5`.

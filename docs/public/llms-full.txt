@@ -410,7 +410,7 @@ CTA azul de las secciones promocionales.
 | Contorno | `.mx-button` | Acciones secundarias y enlaces con ícono (redes sociales). |
 | Acento | `.mx-button--accent` | La acción principal de una sección ("Descargar CV"). Una por bloque. |
 | Superficie | `.mx-button--surface` | Navegación entre páginas ("Siguiente artículo", paginación). |
-| Discreto | `.mx-button--quiet` | Acciones secundarias dentro de tarjetas ("Limpiar búsqueda"). |
+| Discreto | `.mx-button--quiet` | Acciones secundarias dentro de tarjetas ("Limpiar búsqueda"); texto compacto de 0.8333rem (13.33px). |
 | Pequeño mono | `.mx-button--sm` | Utilidades en barras ("Volver arriba"). |
 | CTA | `.mx-button--cta` | Llamada a la acción sobre secciones promocionales. |
 | CTA contorno | `.mx-button--cta-outline` | Acción secundaria junto a un CTA. |
@@ -700,7 +700,8 @@ title: Tipografía y enlaces
 |---|---|---|---|---|
 | Display (`--display`) | Geist Pixel 400 | `clamp(2.2rem, 4.5vw, 3.6rem)` | 1.15 | `text-wrap: balance`; sombra `0 0 32px rgba(108,56,122,.35)` |
 | Sección (`.mx-heading`) | Geist Pixel 400 | 1.75rem (28px) | 1.2 | margen inferior 14px |
-| Sección grande (`--lg`) | Geist Pixel 400 | `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 1.2 | — |
+| Título de página (`--page`) | Geist Pixel 400 | 1.75rem (28px) | normal | margen inferior 14px (búsqueda) |
+| Sección grande (`--lg`) | Geist Pixel 400 | `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 1.2 | `letter-spacing: -.01em`; sin margen dentro de `.mx-section` |
 | Subtítulo h3 | Geist Sans 700 | 1.05–1.35rem | 1.3–1.35 | — |
 | Etiqueta (`.mx-label`) | Geist Pixel 400 | 0.85rem | normal | MAYÚSCULAS, `letter-spacing: .08em` |
 
@@ -1672,7 +1673,7 @@ Lista con ícono de marca (del sprite) y nombre. Dos formas: lista vertical
 </nav>
 ```
 
-- Botones de superficie con padding 10px 18px; deshabilitado en `#b8b8c5`.
+- Botones de superficie compactos: padding 10px 18px y texto de 0.8333rem (13.33px); deshabilitado en `#b8b8c5`.
 - Etiqueta central en .9rem `#b8b8c5`.
 
 
@@ -1895,7 +1896,9 @@ recomendados.
 | Código en línea | Geist Mono .9em sobre `#101018`, padding 2px 6px |
 | Bloques de código | [`.mx-code`](/catalog/molecules/content#bloque-de-codigo) |
 | Imágenes | centradas, borde 1px blanco 8 %, sombra de reposo |
-| Separador | línea de 1px `#ffffff` |
+| h1 dentro del texto | 1.17em, margen de 1em (el título de la página va en la cabecera) |
+| Cita | margen de 1em arriba y abajo y 40px a cada lado |
+| Separador | el del navegador: línea en relieve (`border: 1px inset`) gris, margen de 0.5em |
 | Ancho | el del contenedor de la página (sin columna estrecha) |
 
 </div>
@@ -1903,9 +1906,9 @@ recomendados.
 ## Pie del artículo
 
 ```html preview wide
-<footer style="display:flex;justify-content:flex-end;margin-bottom:14px"><a class="mx-button mx-button--surface" href="#">Siguiente artículo</a></footer>
-<section aria-labelledby="recomendados">
-  <h2 class="mx-heading" id="recomendados" style="font-size:1.35rem">Recomendados</h2>
+<footer class="mx-post-next"><a class="mx-button mx-button--surface" href="#">Siguiente artículo</a></footer>
+<section class="mx-post-related" aria-labelledby="recomendados">
+  <h2 class="mx-post-related__title" id="recomendados">Recomendados</h2>
   <ul class="mx-result-list">
     <li class="mx-result-row">
       <img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">
@@ -2552,8 +2555,8 @@ catálogo. Toda página comparte el mismo esqueleto: navbar, `<main>` y footer.
   <div class="mx-page">
     <header class="mx-post-hero">…</header>
     <article class="mx-prose">…</article>
-    <footer>… Siguiente artículo …</footer>
-    <section>… Recomendados (mx-result-list) …</section>
+    <footer class="mx-post-next">… Siguiente artículo …</footer>
+    <section class="mx-post-related">… Recomendados (mx-result-list) …</section>
   </div>
 </main>
 ```
@@ -2565,7 +2568,7 @@ Ver [Artículo](/catalog/organisms/article).
 ```html
 <main id="contenido">
   <div class="mx-page">
-    <h1 class="mx-heading">Búsqueda</h1>
+    <h1 class="mx-heading mx-heading--page">Búsqueda</h1>
     <section class="mx-notice">… guía o "sin resultados" …</section>
     <ul class="mx-result-list">… filas …</ul>
     <nav class="mx-pagination">…</nav>
@@ -2579,9 +2582,9 @@ Ver [Fila de resultado](/catalog/molecules/result-row) y
 ## Página no encontrada
 
 ```html preview wide
-<div class="mx-page" style="padding:0">
-  <section class="mx-notice">
-    <h1 class="mx-notice__title" style="font-size:1.75rem">Página no encontrada</h1>
+<div class="mx-container">
+  <section class="mx-notice mx-notice--page">
+    <h1 class="mx-notice__title mx-notice__title--lg">Página no encontrada</h1>
     <p class="mx-notice__text">La página que buscas no existe o cambió de dirección.</p>
     <nav class="mx-notice__actions" aria-label="Enlaces de salida">
       <a class="mx-link" href="#">Volver al inicio</a>

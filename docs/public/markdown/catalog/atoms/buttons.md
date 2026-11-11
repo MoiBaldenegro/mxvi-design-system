@@ -17,7 +17,7 @@ CTA azul de las secciones promocionales.
 | Contorno | `.mx-button` | Acciones secundarias y enlaces con ícono (redes sociales). |
 | Acento | `.mx-button--accent` | La acción principal de una sección ("Descargar CV"). Una por bloque. |
 | Superficie | `.mx-button--surface` | Navegación entre páginas ("Siguiente artículo", paginación). |
-| Discreto | `.mx-button--quiet` | Acciones secundarias dentro de tarjetas ("Limpiar búsqueda"). |
+| Discreto | `.mx-button--quiet` | Acciones secundarias dentro de tarjetas ("Limpiar búsqueda"); texto compacto de 0.8333rem (13.33px). |
 | Pequeño mono | `.mx-button--sm` | Utilidades en barras ("Volver arriba"). |
 | CTA | `.mx-button--cta` | Llamada a la acción sobre secciones promocionales. |
 | CTA contorno | `.mx-button--cta-outline` | Acción secundaria junto a un CTA. |

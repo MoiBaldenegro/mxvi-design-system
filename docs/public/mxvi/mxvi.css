@@ -163,6 +163,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* hidden always wins over the display of a component (lists, pagination, notices). */
+[hidden] { display: none !important; }
+
 /* height: 100% keeps the sticky header within one viewport. */
 html, body { margin: 0; width: 100%; height: 100%; }
 
@@ -267,6 +270,8 @@ h1, h2 {
   font-size: 1.75rem;
   line-height: 1.2;
 }
+
+.mx-heading--page { line-height: normal; }
 
 .mx-heading--lg { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); letter-spacing: -0.01em; }
 
@@ -375,6 +380,7 @@ h1, h2 {
   padding: 10px 18px;
   border-color: var(--color-border);
   color: var(--color-accent);
+  font-size: 0.8333rem;
   font-weight: 400;
 }
 
@@ -813,7 +819,7 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   margin-top: var(--gap-card);
 }
 
-.mx-pagination .mx-button--surface { padding: 10px 18px; }
+.mx-pagination .mx-button--surface { padding: 10px 18px; font-size: 0.8333rem; }
 
 .mx-pagination__label { color: var(--color-text-secondary); font-size: 0.9rem; }
 
@@ -970,6 +976,15 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 
 .mx-notice__text { margin: 0; color: var(--color-text-secondary); line-height: 1.55; }
 
+.mx-notice__text--lg { font-size: 1.05rem; }
+
+/* Page notice (not found): even padding and a page-sized title. */
+.mx-notice--page { padding: calc(var(--gap-card) * 2); }
+
+.mx-notice__title--lg { font-size: 1.75rem; }
+
+.mx-notice--page .mx-notice__text { line-height: normal; }
+
 .mx-notice__actions { display: flex; flex-wrap: wrap; gap: var(--gap-card); margin-top: var(--gap-card); }
 
 @media (max-width: 768px) {
@@ -1060,6 +1075,7 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   border-color: var(--color-accent);
   color: var(--color-accent);
   opacity: 1;
+  gap: 6px;
   white-space: nowrap;
   font-family: var(--font-sans);
   font-size: 0.75rem;
@@ -1094,6 +1110,8 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 
 .mx-result-row__link { color: var(--color-text); font-size: 1.05rem; line-height: 1.35; text-decoration: none; }
 
+.mx-result-row__title { margin: 0; font-size: inherit; }
+
 .mx-result-row__link::after { content: ''; position: absolute; inset: 0; }
 
 .mx-result-row__link:hover { text-decoration: underline; }
@@ -1116,6 +1134,7 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 @media (max-width: 768px) {
   .mx-result-row { padding: 12px 6px; }
   .mx-result-row .mx-thumb { display: none; }
+  .mx-result-row__title { font-size: 1rem; }
 }
 
 /* MXVI — brand tile. Values from tokens.css (moisesbaldenegro.com).
@@ -1937,6 +1956,9 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
 }
 
+/* An h1 inside the Markdown is a small heading: the page title lives in the post hero. */
+.mx-prose h1 { margin-block: 1em; font-size: 1.17em; text-wrap: balance; }
+
 .mx-prose h2 {
   margin-block: 1.5lh 0.5lh;
   color: var(--color-text);
@@ -1976,12 +1998,16 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   background: var(--color-surface);
 }
 
-.mx-prose blockquote { margin: 0 0 1lh; padding-left: 40px; }
+/* A wrapped code block (.mx-code) carries the bottom margin itself. */
+.mx-prose .mx-code pre { margin: 0; }
 
-.mx-prose hr { margin: 1lh 0; border: 0; border-top: 1px solid var(--color-text); }
+.mx-prose blockquote { margin: 1em 40px; }
+
+/* hr keeps the browser rule: a 2px inset line, 0.5em above and below. */
 
 .mx-prose img {
   display: block;
+  width: auto;
   max-width: 100%;
   height: auto;
   margin: var(--gap-card) auto 32px;
@@ -1994,6 +2020,37 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 @media (max-width: 768px) {
   .mx-prose h2 { font-size: 1.4rem; }
   .mx-prose h3 { font-size: 1.2rem; }
+  .mx-prose img { margin-bottom: 24px; }
+}
+
+/* MXVI — post footer: next article and related posts. Values from tokens.css
+   (moisesbaldenegro.com). Spec and markup: catalog/organisms/article. */
+
+.mx-post-next { display: flex; justify-content: flex-end; margin-top: var(--gap-card); }
+
+.mx-post-related { margin-top: var(--gap-card); }
+
+.mx-post-related__title {
+  margin: 0 0 var(--gap-card);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: 1.35rem;
+}
+
+.mx-post-related .mx-result-list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-card); }
+
+.mx-post-related .mx-result-row { padding: var(--gap-card) 12px; }
+
+.mx-post-related .mx-result-row__link { font-family: var(--font-display); font-synthesis: none; line-height: normal; }
+
+@media (max-width: 768px) {
+  .mx-post-next { justify-content: stretch; }
+  .mx-post-next .mx-button { width: 100%; justify-content: center; }
+  .mx-post-related .mx-result-list { grid-template-columns: 1fr; }
+  .mx-post-related .mx-result-row { padding: 12px 6px; }
+  .mx-post-related .mx-result-row__link { display: block; width: 100%; }
 }
 
 /* MXVI — promo. Values from tokens.css (moisesbaldenegro.com).

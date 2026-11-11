@@ -85,7 +85,9 @@ recomendados.
 | Código en línea | Geist Mono .9em sobre `#101018`, padding 2px 6px |
 | Bloques de código | [`.mx-code`](/catalog/molecules/content#bloque-de-codigo) |
 | Imágenes | centradas, borde 1px blanco 8 %, sombra de reposo |
-| Separador | línea de 1px `#ffffff` |
+| h1 dentro del texto | 1.17em, margen de 1em (el título de la página va en la cabecera) |
+| Cita | margen de 1em arriba y abajo y 40px a cada lado |
+| Separador | el del navegador: línea en relieve (`border: 1px inset`) gris, margen de 0.5em |
 | Ancho | el del contenedor de la página (sin columna estrecha) |
 
 </div>
@@ -93,9 +95,9 @@ recomendados.
 ## Pie del artículo
 
 ```html preview wide
-<footer style="display:flex;justify-content:flex-end;margin-bottom:14px"><a class="mx-button mx-button--surface" href="#">Siguiente artículo</a></footer>
-<section aria-labelledby="recomendados">
-  <h2 class="mx-heading" id="recomendados" style="font-size:1.35rem">Recomendados</h2>
+<footer class="mx-post-next"><a class="mx-button mx-button--surface" href="#">Siguiente artículo</a></footer>
+<section class="mx-post-related" aria-labelledby="recomendados">
+  <h2 class="mx-post-related__title" id="recomendados">Recomendados</h2>
   <ul class="mx-result-list">
     <li class="mx-result-row">
       <img class="mx-thumb" src="/mxvi/assets/examples/entry-01.webp" alt="" width="112" height="63">

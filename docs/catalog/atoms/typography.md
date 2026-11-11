@@ -22,7 +22,8 @@ title: Tipografía y enlaces
 |---|---|---|---|---|
 | Display (`--display`) | Geist Pixel 400 | `clamp(2.2rem, 4.5vw, 3.6rem)` | 1.15 | `text-wrap: balance`; sombra `0 0 32px rgba(108,56,122,.35)` |
 | Sección (`.mx-heading`) | Geist Pixel 400 | 1.75rem (28px) | 1.2 | margen inferior 14px |
-| Sección grande (`--lg`) | Geist Pixel 400 | `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 1.2 | — |
+| Título de página (`--page`) | Geist Pixel 400 | 1.75rem (28px) | normal | margen inferior 14px (búsqueda) |
+| Sección grande (`--lg`) | Geist Pixel 400 | `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 1.2 | `letter-spacing: -.01em`; sin margen dentro de `.mx-section` |
 | Subtítulo h3 | Geist Sans 700 | 1.05–1.35rem | 1.3–1.35 | — |
 | Etiqueta (`.mx-label`) | Geist Pixel 400 | 0.85rem | normal | MAYÚSCULAS, `letter-spacing: .08em` |
 
