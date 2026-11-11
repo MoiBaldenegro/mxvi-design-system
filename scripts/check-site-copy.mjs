@@ -1,5 +1,5 @@
 // Checks that moisesbaldenegro.com uses the current component sheets.
-// The website keeps a synced copy of mxvi/components.css and mxvi/components/**
+// The website keeps a synced copy of mxvi/base.css, mxvi/components.css and mxvi/components/**
 // in src/styles/mxvi/, described by manifest.json (sha256 per file). This check
 // compares that manifest with the files in this repository.
 //
@@ -28,14 +28,18 @@ async function readManifest() {
   return response.json()
 }
 
-async function systemFiles(dir = path.join(root, 'mxvi', 'components'), prefix = 'components') {
-  const files = ['components.css']
+async function componentFiles(dir = path.join(root, 'mxvi', 'components'), prefix = 'components') {
+  const files = []
   for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
     const relative = `${prefix}/${entry.name}`
-    if (entry.isDirectory()) files.push(...(await systemFiles(path.join(dir, entry.name), relative)).slice(1))
+    if (entry.isDirectory()) files.push(...(await componentFiles(path.join(dir, entry.name), relative)))
     else if (entry.name.endsWith('.css')) files.push(relative)
   }
   return files
+}
+
+async function systemFiles() {
+  return ['base.css', 'components.css', ...(await componentFiles())]
 }
 
 async function main() {

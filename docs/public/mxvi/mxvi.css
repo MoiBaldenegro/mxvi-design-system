@@ -1567,7 +1567,10 @@ a.mx-tag:hover { border-color: var(--color-accent); }
     pointer-events: auto;
     transition: opacity var(--transition-default), transform var(--transition-default);
   }
-  .mx-navbar__menu .mx-nav-link { display: flex; align-items: center; min-height: 2.75rem; font-size: 1rem; }
+  /* Links animate only their color: an inherited visibility transition would block focus at t=0. */
+  .mx-navbar__menu .mx-nav-link { display: flex; align-items: center; min-height: 2.75rem; font-size: 1rem; transition: color var(--transition-default); }
+  /* The filled search clear button declares visibility: visible; while closed it inherits the panel's. */
+  .mx-navbar:not([data-menu='open']) .mx-navbar__menu .mx-search.is-filled .mx-search__clear { visibility: inherit; }
   .mx-navbar__menu .mx-search { flex: none; width: 100%; margin: var(--gap-card) 0 0; }
 }
 
@@ -1624,6 +1627,7 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 .mx-footer-brand .mx-button--accent {
   margin-top: calc(var(--gap-card) / 2);
   padding: calc(var(--gap-card) * 0.6) calc(var(--gap-card) * 1.3);
+  font-size: inherit;
 }
 
 .mx-footer-bar {
