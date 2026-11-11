@@ -160,7 +160,7 @@ descripción.
 | Parte | Valor |
 |---|---|
 | Contenedor | `#101018`, borde 1px blanco 8 %, sombra `0 25px 80px rgba(0,0,0,.35)`; alto mínimo 560px |
-| Foto | cuadrada, ocupa la parte superior; máscara de opaca al 50 % a transparente al 92 % |
+| Foto | proporción real de la imagen (atributos `width`/`height`) arriba; banda 16:9 entre 769 y 1200px y cuadrada en móvil; máscara de opaca al 50 % a transparente al 92 % |
 | Contenido | abajo y centrado, padding 28px 28px 18px |
 | Handle | [`.mx-handle`](/catalog/atoms/tags), 10px sobre el nombre |
 | Nombre | Geist Pixel `min(2.4rem, 6.8cqi)` (escala con el ancho de la tarjeta), interlineado 1, `letter-spacing: -1px` |

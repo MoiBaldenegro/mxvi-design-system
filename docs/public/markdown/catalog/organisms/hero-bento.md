@@ -76,7 +76,7 @@ con otro contenido, o solo la cuadrícula (`.mx-bento`).
 | Resplandor (`.mx-hero__glow`) | círculo de 900px, radial `rgba(108,56,122,.35)` a transparente, 200px fuera arriba y 300px a la derecha; flota 6px arriba y abajo en un ciclo de 10s (solo sin "reducir movimiento") |
 | Cuadrícula | 12 columnas, filas de 95px, separación 14px, ancho `min(1500px, 95%)`, margen vertical 32px |
 | Tamaños | `data-cols` (2, 3, 4, 5, 6, 12) y `data-rows` (2, 3, 4, 6) en cada tarjeta |
-| ≤ 1200px | 6 columnas; filas de 140px como mínimo; las tarjetas ocupan 2 columnas y el perfil toda la fila (650px de alto mínimo) |
+| ≤ 1200px | 6 columnas; filas de 140px como mínimo; cada tarjeta ocupa 1 columna y el perfil toda la fila (650px de alto mínimo, foto en banda 16:9) |
 | ≤ 768px | 1 columna, filas de 190px como mínimo; las tarjetas con `data-hide-mobile` se ocultan |
 
 </div>

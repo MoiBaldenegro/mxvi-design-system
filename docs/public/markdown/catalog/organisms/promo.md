@@ -76,5 +76,7 @@ translúcido sobre la atmósfera morada.
 | Bordes | 1px blanco 8 % arriba y abajo; padding vertical `clamp(32px, 5vw, 64px)` |
 | Letras | 4 columnas (2 en ≤ 768px), alto `clamp(72px, 10vw, 150px)` (64px en móvil), en blanco al 62 % |
 | Hover / foco | opacidad 100 %, sube 4px, escala 1.04 y glow de `#B37AC2` |
+| `.mx-logo-band--bleed` | ocupa todo el ancho de la ventana (`100vw`) aunque esté dentro de un contenedor centrado |
+| Movimiento reducido | sin desplazamiento ni transición en hover |
 
 </div>
