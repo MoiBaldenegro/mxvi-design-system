@@ -5,14 +5,17 @@ titleTemplate: One identity. Multiple products.
 hero:
   name: MXNI
   text: Design System
-  tagline: Un lenguaje visual para construir productos, experiencias y contenido con una identidad coherente.
+  tagline: El look de moisesbaldenegro.com convertido en sistema. Componentes reales, especificaciones exactas y contexto listo para agentes de IA.
   actions:
     - theme: brand
-      text: Explorar fundamentos
-      link: /foundations/colors
+      text: Ver catálogo
+      link: /catalog/
     - theme: alt
-      text: Guía para agentes de IA
-      link: /ai/agent-instructions
+      text: ADN visual
+      link: /catalog/visual-dna
+    - theme: alt
+      text: Prompt maestro
+      link: /catalog/master-prompt
     - theme: alt
       text: Descargar Markdown
       link: /downloads/mxni-design-system-markdown.zip
@@ -20,38 +23,35 @@ hero:
     src: /brand/mxni-hero.svg
     alt: MXNI Design System visual identity
 features:
-  - icon: 🖥️
-    title: Plataformas
+  - title: Catálogo
+    details: Átomos, moléculas, organismos y plantillas con su especificación visual exacta, vista previa y código.
+    link: /catalog/
+    linkText: Ver componentes
+  - title: Plataformas
     details: Guías específicas para web, escritorio y móvil, con contexto listo para agentes de IA.
     link: /platforms/
     linkText: Elegir plataforma
-  - icon: 🎨
-    title: Foundations
+  - title: Foundations
     details: Colores, tipografía, geometría, espaciado, motion y accesibilidad.
     link: /foundations/colors
     linkText: Explorar foundations
-  - icon: 🧩
-    title: Components
+  - title: Components
     details: Contratos y reglas para componentes de interfaz reutilizables.
     link: /components/overview
     linkText: Ver componentes
-  - icon: 🧭
-    title: Guidelines
+  - title: Guidelines
     details: Composición Bento, expresión por producto y reglas editoriales.
     link: /guidelines/overview
     linkText: Consultar guidelines
-  - icon: 🤖
-    title: AI-ready
+  - title: AI-ready
     details: Markdown crudo, llms.txt, contexto consolidado e instrucciones para agentes.
     link: /ai/context-strategy
     linkText: Integrar con IA
-  - icon: ⚙️
-    title: Implementation
+  - title: Implementation
     details: Tokens CSS, integración React y gobernanza de versiones.
     link: /implementation/overview
     linkText: Implementar
-  - icon: 📦
-    title: Portable documentation
+  - title: Portable documentation
     details: Descarga la documentación completa en Markdown para trabajar offline.
     link: /llms.txt
     linkText: Recursos descargables
@@ -59,15 +59,25 @@ features:
 
 <div class="mxni-callout">
 
-**Estado:** propuesta inicial v1.0. Los tokens y reglas de esta documentación son la fuente de verdad inicial de MXNI. Las decisiones aún no validadas en productos reales deben tratarse como propuestas, no como estándares inmutables.
+**Estado:** v1.1. El look, los tokens y el catálogo se extrajeron de [moisesbaldenegro.com](https://moisesbaldenegro.com), que es la referencia viva del sistema. Las decisiones marcadas como **Propuesta** todavía no existen en el sitio y deben validarse.
 
 </div>
 
 ## La idea
 
-MXNI es un sistema visual compartido por un ecosistema de productos. No busca que todos los productos se vean idénticos: busca que todos hablen el mismo lenguaje.
+MXNI es el lenguaje visual de un ecosistema de productos. Cualquier producto
+que lo use debe verse como moisesbaldenegro.com: noche índigo, líneas finas,
+esquinas rectas, un acento ciruela y tipografía Geist Pixel.
 
 **Technical. Modular. Expressive.**
+
+Para usarlo en web basta una hoja de estilos:
+
+```html
+<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css">
+```
+
+En cualquier otra tecnología, reproduce los valores del [catálogo](/catalog/).
 
 ## Recursos rápidos
 
@@ -82,6 +92,8 @@ para tu proyecto:
 
 **Todo el sistema:**
 
+- [Catálogo de componentes](/catalog/) · [ADN visual](/catalog/visual-dna) · [Prompt maestro](/catalog/master-prompt)
+- [Hoja de estilos: mxni.css](/mxni/mxni.css)
 - [Índice para modelos: llms.txt](/llms.txt)
 - [Documentación consolidada: llms-full.txt](/llms-full.txt)
 - [Instrucciones para agentes](/ai/agent-instructions.md)

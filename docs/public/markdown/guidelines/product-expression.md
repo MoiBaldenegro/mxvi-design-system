@@ -8,11 +8,12 @@ MXNI supports multiple product types while retaining a shared foundation.
 
 ## Shared across all products
 
-- Core typography.
-- Core color roles.
-- Spacing and geometry scale.
+- Geist Pixel, Geist Sans and Geist Mono with the documented scale.
+- Background `#070716`, surface `#101018`, white hairlines, plum accent `#B37AC2`.
+- Square corners and the 14px spacing unit.
+- The single transition `.28s cubic-bezier(.2,.8,.2,1)`.
+- The catalog components and the official logo.
 - Interaction and accessibility principles.
-- Brand signature and visual language.
 
 ## Allowed to vary
 
@@ -25,12 +26,12 @@ MXNI supports multiple product types while retaining a shared foundation.
 
 ## Product families
 
-| Family | Priority | Expression |
-|---|---|---|
-| Web | Brand and storytelling | Spacious, editorial, Bento |
-| Software | Task completion | Functional, clear, balanced |
-| Media | Attention and narrative | Expressive, high contrast |
-| Docs | Retrieval and comprehension | Structured, readable, technical |
+| Family | Priority | Expression | Reference |
+|---|---|---|---|
+| Web | Brand and storytelling | Hero Bento, article feed, promo tiles | moisesbaldenegro.com home |
+| Software | Task completion | Navbar, cards, lists, notices; less atmosphere | [Templates](/catalog/templates) |
+| Media | Attention and narrative | Brand tiles, promo tiles, full-bleed logo band | [Promo](/catalog/organisms/promo) |
+| Docs | Retrieval and comprehension | Prose, code blocks, result rows | This documentation site |
 
 A product may add tokens, but additions must be named, justified, and documented.
 

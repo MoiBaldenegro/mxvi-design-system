@@ -8,6 +8,12 @@ title: Brand identity
 
 **MXNI** es una identidad para un ecosistema de tecnología, software, ingeniería y contenido educativo.
 
+### Referencia viva
+
+[moisesbaldenegro.com](https://moisesbaldenegro.com) es la expresión de
+referencia de MXNI. Si hay dudas sobre cómo debe verse algo, se resuelve
+comparándolo con ese sitio y con el [ADN visual](/catalog/visual-dna).
+
 ### Propósito
 
 Hacer que los productos y experiencias tecnológicas sean reconocibles, coherentes y claros, sin sacrificar personalidad.
@@ -30,6 +36,7 @@ Hacer que los productos y experiencias tecnológicas sean reconocibles, coherent
 4. La composición debe sentirse intencional y modular.
 5. Los productos pueden tener personalidad propia sin romper los fundamentos.
 6. No utilizar efectos de neón como sustituto de una buena jerarquía visual.
+7. Esquinas rectas, líneas finas y un solo acento ciruela: la sobriedad es la firma.
 
 ## Tagline
 

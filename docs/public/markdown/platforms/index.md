@@ -29,7 +29,8 @@ para aplicaciones instaladas.
 ## Qué se comparte siempre
 
 - Paleta de marca, colores semánticos y proporciones de uso ([Color](/foundations/colors)).
-- Tipografías Manrope y JetBrains Mono, y la escala tipográfica ([Typography](/foundations/typography)).
+- Tipografías Geist Sans, Geist Mono y Geist Pixel, y la escala tipográfica ([Typography](/foundations/typography)).
+- El [catálogo de componentes](/catalog/) y su [ADN visual](/catalog/visual-dna).
 - Escala de espaciado `4–64 px` ([Spacing & layout](/foundations/spacing-layout)).
 - Radios, bordes, sombras y glow ([Geometry & effects](/foundations/geometry-effects)).
 - Duraciones y principios de movimiento ([Motion](/foundations/motion)).

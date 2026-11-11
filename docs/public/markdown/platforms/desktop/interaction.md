@@ -22,7 +22,7 @@ semántico de la guía [Web](/platforms/web/interaction) también aplican.
 ## Foco
 
 - Anillo de foco visible en todos los controles, incluidos los personalizados.
-- Puedes usar el cian `#24CDE0` o el morado `#A83FE0` según el fondo; el glow
+- Anillo de 2px `#B37AC2` con 2px de separación; el glow
   no basta por sí solo.
 - `Tab` recorre las regiones (sidebar, contenido, inspector); las flechas se
   mueven dentro de listas, árboles y grupos.
@@ -31,7 +31,7 @@ semántico de la guía [Web](/platforms/web/interaction) también aplican.
 ## Arrastrar y soltar
 
 - Siempre existe una alternativa con teclado o menú (por ejemplo "Mover a…").
-- Muestra la zona de destino con `--mxni-elevated` y borde `#24CDE0`.
+- Muestra la zona de destino con `--color-surface` y borde `#B37AC2`.
 
 ## Preferencias del sistema
 
@@ -44,9 +44,9 @@ semántico de la guía [Web](/platforms/web/interaction) también aplican.
 
 ## Movimiento
 
-- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion).
-- Las animaciones de paneles y menús usan `Fast` o `Base`; en escritorio se
-  esperan respuestas inmediatas.
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)` de [Motion](/foundations/motion).
+- Paneles y menús usan la misma transición; en escritorio se esperan
+  respuestas inmediatas.
 
 ## Rendimiento y estado
 

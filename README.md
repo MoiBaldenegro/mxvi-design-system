@@ -1,6 +1,17 @@
 # MXNI Design System Documentation
 
-Documentation platform for the MXNI visual ecosystem. It is designed for three audiences:
+Documentation platform for the MXNI visual ecosystem. Its look, tokens and
+component catalog are extracted from [moisesbaldenegro.com](https://moisesbaldenegro.com):
+any product that follows it should look identical to that site.
+
+- `mxni/` — the real stylesheet package: `tokens.css`, `fonts.css`, `base.css`,
+  `components.css` (`.mx-*` classes), `mxni.js`, Geist fonts (OFL 1.1) and assets.
+  It is published as `/mxni/mxni.css` (fonts + tokens + base + components).
+- `docs/catalog/` — atoms, molecules, organisms and templates, each with an exact
+  visual spec, a live preview and reference code for HTML, React, Vue, Svelte,
+  Angular and Astro.
+
+It is designed for three audiences:
 
 1. **People:** searchable, navigable documentation with visual examples.
 2. **AI agents and language models:** stable raw Markdown, `llms.txt`, `llms-full.txt`, and agent instructions.

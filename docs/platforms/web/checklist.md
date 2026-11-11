@@ -9,14 +9,16 @@ deben reportar cada punto.
 
 ## Marca y tokens
 
-- [ ] Colores, tipografía, espaciado y radios salen de los tokens `--mxni-*`.
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens de `mxni/tokens.css`.
+- [ ] Todas las esquinas son rectas y los títulos usan Geist Pixel.
+- [ ] Se usaron componentes del catálogo en lugar de crear nuevos.
 - [ ] Los acentos se usan con moderación (5–10 % de la composición).
 - [ ] El logo es el SVG oficial con sus colores originales.
 - [ ] No hay valores sueltos sin justificar.
 
 ## Layout
 
-- [ ] Funciona en Compact (`< 640 px`), Medium, Wide y XL.
+- [ ] Funciona en 390, 768, 1200 y 1440 px de ancho.
 - [ ] No hay scroll horizontal en la página.
 - [ ] El orden de lectura es el mismo en todos los tamaños.
 - [ ] La densidad corresponde al tipo de producto.

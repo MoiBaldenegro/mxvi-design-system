@@ -4,15 +4,21 @@ title: Cards and panels
 
 # Cards and panels
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/molecules/cards).
+:::
+
 ## Purpose
 
 Cards group related information. Panels provide a larger structural region.
 
 ## Surface hierarchy
 
-- Base: `--mxni-bg`
-- Surface: `--mxni-surface`
-- Elevated: `--mxni-elevated`
+- Base: `--color-background` (`#070716`)
+- Surface: `--color-surface` (`#101018`)
+- Strong border on hover: `--color-border-strong`
 
 ## Rules
 

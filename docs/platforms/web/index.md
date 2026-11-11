@@ -30,26 +30,27 @@ un teléfono también sigue esta guía, usando su layout compacto.
 Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
 guía completa o `/llms-web.txt`.
 
-**Tokens**
+**Look (idéntico a moisesbaldenegro.com)**
 
-- Fondo `#09070D` (`--mxni-bg`), superficie `#15111C` (`--mxni-surface`),
-  elevada `#211A2B` (`--mxni-elevated`), borde `#382C42` (`--mxni-border`).
-- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
-- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
-  (limitado a datos y estados).
-- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
-  info `#24CDE0`.
-- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
-- Espaciado `4, 8, 12, 16, 24, 32, 48, 64 px`; radios `2, 6, 10 px` y `999 px`
-  solo para pills.
-- Movimiento `120 / 180 / 280 / 400 ms`.
+- Fondo `#070716`, superficie `#101018`; bordes 1px blanco al 8 % y al 15 %.
+- Texto `#ffffff`, secundario `#b8b8c5`.
+- Acento único ciruela `#B37AC2` (hover `#C396CF`); nunca como relleno.
+- **Esquinas rectas en todo** (radio 0).
+- Geist Pixel para títulos, navegación, títulos de tarjeta y tags; Geist Sans
+  para texto e interfaz; Geist Mono para código y metadatos.
+- Atmósfera de héroes: degradado `#3C1F44` → `#150A18` → `#05050b` con grano
+  de puntos y glow `rgba(108,56,122,.35)`.
+- Espaciado en múltiplos de `14px`.
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)`.
+- Detalle completo: [ADN visual](/catalog/visual-dna) y
+  [Catálogo](/catalog/).
 
 **Reglas web**
 
-1. Implementa con los tokens CSS `--mxni-*` de
-   [CSS tokens](/implementation/css-tokens); no copies valores sueltos.
-2. Diseña mobile-first con los breakpoints Compact `< 640`, Medium
-   `640–1023`, Wide `1024–1439` y XL `≥ 1440 px`.
+1. Usa `mxni.css` y los componentes `.mx-*` del [catálogo](/catalog/); los
+   valores salen de los [tokens](/implementation/css-tokens).
+2. Diseña mobile-first con los cortes del sitio: 600, 768, 900, 970 y
+   1200px ([layout](/platforms/web/layout)).
 3. HTML semántico: `<a>` para navegar, `<button>` para acciones, encabezados en
    orden y landmarks (`header`, `nav`, `main`, `footer`).
 4. Todo funciona con teclado y tiene foco visible (`:focus-visible`).
@@ -66,5 +67,6 @@ guía completa o `/llms-web.txt`.
 - Forzar un layout de marketing en una aplicación funcional.
 - Usar todos los acentos con la misma intensidad.
 - Reconstruir el logo con una fuente: usa el [SVG oficial](/brand/logo).
-- Poner texto largo en JetBrains Mono.
+- Poner texto largo en Geist Mono o Geist Pixel.
+- Redondear esquinas.
 - Ocultar contenido esencial detrás de hover o de animaciones.

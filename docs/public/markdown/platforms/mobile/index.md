@@ -34,18 +34,20 @@ mano, interacción táctil y convenciones fuertes de cada sistema operativo.
 Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
 guía completa o `/llms-mobile.txt`.
 
-**Tokens**
+**Look (idéntico a moisesbaldenegro.com)**
 
-- Fondo `#09070D`, superficie `#15111C`, elevada `#211A2B`, borde `#382C42`.
-- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
-- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
-  (limitado a datos y estados).
-- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
-  info `#24CDE0`.
-- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
-- Espaciado `4, 8, 12, 16, 24, 32, 48, 64`; radios `2, 6, 10` y `999` solo
-  para pills.
-- Movimiento `120 / 180 / 280 / 400 ms`.
+- Fondo `#070716`, superficie `#101018`; bordes 1px blanco al 8 % y al 15 %.
+- Texto `#ffffff`, secundario `#b8b8c5`.
+- Acento único ciruela `#B37AC2` (hover `#C396CF`); nunca como relleno.
+- **Esquinas rectas en todo** (radio 0).
+- Geist Pixel para títulos, navegación, títulos de tarjeta y tags; Geist Sans
+  para texto e interfaz; Geist Mono para código y metadatos.
+- Atmósfera de héroes: degradado `#3C1F44` → `#150A18` → `#05050b` con grano
+  de puntos y glow `rgba(108,56,122,.35)`.
+- Espaciado en múltiplos de `14px`.
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)`.
+- Detalle completo: [ADN visual](/catalog/visual-dna) y
+  [Catálogo](/catalog/).
 
 **Reglas móviles**
 

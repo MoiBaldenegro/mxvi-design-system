@@ -46,10 +46,10 @@ pantalla.
 - **Barra de título:** usa la nativa o una personalizada que respete la
   posición de los controles de ventana del sistema (izquierda en macOS,
   derecha en Windows) y siga siendo arrastrable.
-- **Sidebar:** `--mxni-surface`, de `220` a `280 px`; colapsable a solo íconos
+- **Sidebar:** `--color-surface` con borde derecho `--color-border`, de `220` a `280 px`; colapsable a solo íconos
   (`56`–`64 px`).
-- **Contenido:** `--mxni-bg`, con margen interno `space-6` o `space-8`.
-- **Inspector:** `--mxni-surface`, de `280` a `360 px`, ocultable.
+- **Contenido:** `--color-background`, con margen interno de `21` o `28 px`.
+- **Inspector:** `--color-surface`, de `280` a `360 px`, ocultable.
 - **Barra de estado:** `24`–`28 px`, texto Label o Code, información
   secundaria (sincronización, versión, posición).
 
@@ -64,7 +64,7 @@ foco, y un tamaño mínimo para que el contenido no se rompa.
 | Herramienta de productividad | Equilibrada | `32–40 px` |
 | Editor / IDE / herramientas técnicas | Compacta | `24–32 px` |
 
-Compacta nunca significa apretada: mantén al menos `space-2` entre elementos
+Compacta nunca significa apretada: mantén al menos `7 px` entre elementos
 interactivos.
 
 ## Tipografía en escritorio

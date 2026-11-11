@@ -4,57 +4,58 @@ title: Web — Layout y responsive
 
 # Web: layout y responsive
 
-## Breakpoints
+## Contenedor y cortes
 
-Usa los breakpoints de [Spacing & layout](/foundations/spacing-layout). Elige
-el cambio de layout según el contenido, no según el nombre del dispositivo.
+Todo el contenido vive en un contenedor de `min(1500px, 95%)` centrado: el
+margen lateral es el 2.5 % del ancho de la ventana. Los cortes son los de
+[Spacing & layout](/foundations/spacing-layout):
 
-| Nombre | Ancho | Columnas | Margen lateral sugerido |
-|---|---:|---|---|
-| Compact | `< 640 px` | 4 o una sola columna | `space-4` (16 px) |
-| Medium | `640–1023 px` | 4 o 6 | `space-6` (24 px) |
-| Wide | `1024–1439 px` | 12 | `space-8` (32 px) |
-| XL | `≥ 1440 px` | 12, con ancho máximo | `space-8` (32 px) o más |
-
-**Propuesta:** limita el contenido a un contenedor de entre `1200` y
-`1280 px` en Wide y XL para que las líneas y las tarjetas no se estiren.
+| Ancho | Qué cambia |
+|---|---|
+| ≤ 599px | Footer en 1 columna |
+| ≤ 768px | Bento en 1 columna, header de artículo apilado, promos en 1 columna, paddings de página 32px / 48px |
+| ≥ 769px | Línea de tiempo con línea vertical |
+| ≥ 900px | Cuadrículas de tarjetas a 3 columnas, cifras a 4, footer completo, perfil en 2 columnas |
+| ≤ 969px | Navbar con menú ☰ |
+| ≤ 1200px | Bento a 6 columnas |
 
 ## Mobile-first
 
-1. Diseña primero el layout Compact en una sola columna.
-2. Agrega columnas cuando el contenido lo pida.
+1. Diseña primero el layout de una sola columna.
+2. Agrega columnas en los cortes de arriba.
 3. Mantén el mismo orden de lectura en todos los tamaños; el orden visual no
    debe contradecir el orden del HTML.
 4. Nunca debe aparecer scroll horizontal en la página. Las tablas anchas hacen
    scroll dentro de su propio contenedor.
 
-## Densidad por tipo de producto
+## Ritmo vertical
 
-| Tipo | Densidad | Espaciado entre secciones |
-|---|---|---|
-| Marca / landing | Espaciosa | `space-12`–`space-16` |
-| Documentación | Equilibrada | `space-8`–`space-12` |
-| Aplicación web | Equilibrada | `space-6`–`space-8` |
-| Dashboard / herramientas de datos | Compacta, nunca apretada | `space-4`–`space-6` |
+| Bloque | Espaciado |
+|---|---|
+| Página de listado (`.mx-page`) | 48px arriba, 64px abajo (32px / 48px en ≤ 768px) |
+| Entre secciones (`.mx-stack`) | 28px |
+| Título de sección → contenido (`.mx-section`) | 21px |
+| Entre tarjetas | 14px |
+| Contenido → footer | 70px |
 
 ## Composición Bento
 
-Las composiciones [Bento](/guidelines/bento-composition) funcionan bien en
-sitios de marca y dashboards:
+El [hero Bento](/catalog/organisms/hero-bento) es la firma de la portada:
 
-- En Wide/XL las tarjetas pueden ocupar varias columnas y alturas distintas.
-- En Medium reduce a 2 columnas; en Compact, a una sola.
-- Conserva gutters constantes (`space-4` o `space-6`).
-- La tarjeta más importante va primero en el orden del HTML.
+- 12 columnas, filas de 95px, separación 14px.
+- La tarjeta de perfil va primero (5 × 6); el resto mezcla tarjetas anchas
+  y cuadradas.
+- 6 columnas en ≤ 1200px y 1 en ≤ 768px, mostrando solo las tarjetas
+  marcadas para móvil.
 
 ## Tipografía en web
 
-- Body de `16 px` por defecto; `14 px` solo en interfaces densas.
-- Largo de línea de 60–80 caracteres en texto largo.
-- Los títulos Display (`48–64 px`) se reducen en Compact (por ejemplo con
-  `clamp()`), sin bajar de H1 (`36 px`) en el título principal.
-- Carga Manrope y JetBrains Mono preferentemente self-hosted, con
-  `font-display: swap`.
+- Carga `mxni.css` (incluye Geist, Geist Mono y Geist Pixel autoalojadas, con
+  `font-display: swap`).
+- Texto de interfaz a 1rem; cuerpo de artículo de 17 a 19px con interlineado
+  1.7.
+- Títulos en Geist Pixel; ver la escala completa en
+  [Typography](/foundations/typography).
 
 ## Imágenes y media
 

@@ -16,8 +16,8 @@ accesibilidad y comportamiento, úsalo y aplícale los tokens de MXNI.
   márgenes) y vivir en la zona inferior.
 - Un solo botón principal por pantalla.
 - Estado presionado visible al tocar (cambio de superficie u opacidad), con
-  duración `Fast` (120 ms).
-- Radio `radius-md` (6) o `radius-lg` (10) en botones grandes.
+  la transición del sistema.
+- Radio 0, igual que en todo el sistema.
 
 ## Campos
 
@@ -35,13 +35,12 @@ accesibilidad y comportamiento, úsalo y aplícale los tokens de MXNI.
 - Toda la fila es el área táctil si lleva a un detalle.
 - Las acciones por deslizamiento (swipe) son atajos; la misma acción existe en
   el detalle o en un menú.
-- Divisores `--mxni-border` o separación por espacio, no ambos.
+- Divisores `--color-border` o separación por espacio, no ambos.
 
 ## Tarjetas
 
 - Ocupan el ancho disponible menos los márgenes.
-- Superficie `--mxni-surface`, borde `--mxni-border`, radio `radius-md` o
-  `radius-lg`.
+- Superficie `--color-surface`, borde `--color-border`, radio 0.
 - Si toda la tarjeta es tocable, no lleva otras acciones dentro.
 
 ## Hojas inferiores y diálogos

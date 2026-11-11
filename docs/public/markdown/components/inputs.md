@@ -4,6 +4,12 @@ title: Inputs
 
 # Inputs
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/atoms/inputs).
+:::
+
 ## Supported patterns
 
 - Text field

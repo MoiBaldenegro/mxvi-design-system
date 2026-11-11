@@ -4,18 +4,29 @@ title: Buttons
 
 # Buttons
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/atoms/buttons).
+:::
+
 ## Purpose
 
 Buttons trigger an action. Use links for navigation.
 
 ## Variants
 
-| Variant | Purpose |
-|---|---|
-| Primary | Main action in a context |
-| Secondary | Supporting action |
-| Ghost | Low-emphasis action |
-| Destructive | Irreversible or dangerous action |
+| Variant | Catalog class | Purpose |
+|---|---|---|
+| Accent (primary) | `.mx-button--accent` | Main action in a context |
+| Outline (secondary) | `.mx-button` | Supporting action, links with icons |
+| Surface | `.mx-button--surface` | Page navigation (next, pagination) |
+| Quiet | `.mx-button--quiet` | Low-emphasis action inside cards |
+| Small mono | `.mx-button--sm` | Utility actions in bars |
+| CTA | `.mx-button--cta`, `--cta-outline` | Promotional sections only |
+
+Destructive actions are not defined yet. **Proposal:** outline button with the
+proposed danger color `#F05B72` on border and text, plus an explicit label.
 
 ## Rules
 
@@ -28,7 +39,7 @@ Buttons trigger an action. Use links for navigation.
 
 ## Sizing
 
-Suggested heights: small 32 px, medium 40 px, large 48 px. Ensure touch targets remain usable on touch devices.
+Padding defines the size (see the catalog specs); corners are always square. Ensure touch targets reach 44 × 44 px on touch devices.
 
 ## Do not
 

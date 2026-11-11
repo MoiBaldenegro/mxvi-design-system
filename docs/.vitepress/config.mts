@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { transformPreviews } from './mx-preview'
 
 const repository = process.env.GITHUB_REPOSITORY ?? ''
 const [owner, repo] = repository.split('/')
@@ -13,13 +14,29 @@ export default defineConfig({
   description: 'Sistema de diseño para el ecosistema MXNI: fundamentos, componentes, patrones y documentación para humanos y agentes de IA.',
   base,
   cleanUrls: true,
+  markdown: {
+    config(md) {
+      // ```html preview blocks → live preview + framework tabs (see mx-preview.ts).
+      md.core.ruler.before('normalize', 'mx-preview', state => {
+        state.src = transformPreviews(state.src, base)
+      })
+    },
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        // Native landmark used by the search component.
+        isCustomElement: tag => tag === 'search',
+      },
+    },
+  },
   lastUpdated: true,
   appearance: 'dark',
   sitemap: {
     hostname: 'https://moibaldenegro.github.io',
   },
   head: [
-    ['meta', { name: 'theme-color', content: '#09070D' }],
+    ['meta', { name: 'theme-color', content: '#070716' }],
     ['meta', { name: 'color-scheme', content: 'dark' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'MXNI Design System' }],
@@ -42,6 +59,7 @@ export default defineConfig({
       provider: 'local',
     },
     nav: [
+      { text: 'Catálogo', link: '/catalog/' },
       {
         text: 'Plataformas',
         items: [
@@ -68,6 +86,40 @@ export default defineConfig({
       },
     ],
     sidebar: {
+      '/catalog/': [
+        { text: 'Catálogo', items: [
+          { text: 'Inicio', link: '/catalog/' },
+          { text: 'ADN visual', link: '/catalog/visual-dna' },
+          { text: 'Prompt maestro', link: '/catalog/master-prompt' },
+          { text: 'Usar en cualquier tecnología', link: '/catalog/install' },
+        ] },
+        { text: 'Átomos', collapsed: false, items: [
+          { text: 'Botones', link: '/catalog/atoms/buttons' },
+          { text: 'Tipografía y enlaces', link: '/catalog/atoms/typography' },
+          { text: 'Tags, chips y badges', link: '/catalog/atoms/tags' },
+          { text: 'Campos y botón de ícono', link: '/catalog/atoms/inputs' },
+          { text: 'Logo, imágenes y divisor', link: '/catalog/atoms/media' },
+        ] },
+        { text: 'Moléculas', collapsed: false, items: [
+          { text: 'Barra de búsqueda', link: '/catalog/molecules/search' },
+          { text: 'Navegación y listas', link: '/catalog/molecules/navigation' },
+          { text: 'Tarjetas', link: '/catalog/molecules/cards' },
+          { text: 'Tarjeta de marca y perfil', link: '/catalog/molecules/brand-tile' },
+          { text: 'Bloques de contenido', link: '/catalog/molecules/content' },
+          { text: 'Fila de resultado', link: '/catalog/molecules/result-row' },
+        ] },
+        { text: 'Organismos', collapsed: false, items: [
+          { text: 'Navbar', link: '/catalog/organisms/navbar' },
+          { text: 'Footer', link: '/catalog/organisms/footer' },
+          { text: 'Hero Bento', link: '/catalog/organisms/hero-bento' },
+          { text: 'Perfil (About)', link: '/catalog/organisms/profile' },
+          { text: 'Artículo', link: '/catalog/organisms/article' },
+          { text: 'Promociones y banda de logo', link: '/catalog/organisms/promo' },
+        ] },
+        { text: 'Plantillas', collapsed: false, items: [
+          { text: 'Plantillas de página', link: '/catalog/templates' },
+        ] },
+      ],
       '/platforms/': [
         { text: 'Plataformas', items: [
           { text: 'Elegir plataforma', link: '/platforms/' },
@@ -156,7 +208,7 @@ export default defineConfig({
   },
 ],
     footer: {
-      message: 'MXNI Design System · Initial specification v1.0',
+      message: 'MXNI Design System v1.1 · El look de moisesbaldenegro.com',
       copyright: 'Built for a consistent technology ecosystem.',
     },
     editLink: {

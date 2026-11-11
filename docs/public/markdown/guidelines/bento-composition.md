@@ -21,7 +21,7 @@ Bento is a modular composition made from rectangular content regions with varied
 
 ## Suggested grid
 
-Desktop: 12 columns. Tablet: 6 columns. Mobile: 4 columns or single column.
+Desktop: 12 columns with 95px rows and 14px gaps. ≤ 1200px: 6 columns. ≤ 768px: single column. See the [Hero Bento](/catalog/organisms/hero-bento) organism for the reference implementation.
 
 ## Common failure modes
 

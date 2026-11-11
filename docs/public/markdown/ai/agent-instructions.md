@@ -4,37 +4,62 @@ title: MXNI instructions for AI agents
 
 # MXNI instructions for AI agents
 
-This document is the compact behavioral contract for AI systems generating MXNI interfaces, graphics, or implementation code.
+This document is the compact behavioral contract for AI systems generating
+MXNI interfaces, graphics, or implementation code. The goal: anything you
+build must look **identical to moisesbaldenegro.com**, in any technology.
 
-## Brand
+## Read first
 
-MXNI is a balanced futuristic technology identity: technical, modular, expressive, and legible.
+1. [Visual DNA](/catalog/visual-dna) (`catalog/visual-dna.md`) — the traits
+   that make something look MXNI.
+2. [Component catalog](/catalog/) (`catalog/`) — every component with its
+   exact visual spec and reference markup.
+3. The guide for the target platform: `platforms/web/`,
+   `platforms/desktop/` or `platforms/mobile/`.
 
-## Visual constraints
+A ready-to-paste prompt is in [Master prompt](/catalog/master-prompt).
 
-- Default dark background: `#09070D`.
-- Surface: `#15111C`.
-- Elevated surface: `#211A2B`.
-- Primary brand: `#A83FE0`.
-- Secondary accent: `#E044C5`.
-- Technical/interaction accent: `#24CDE0`.
-- Limited highlight: `#B5F52D`.
-- Display font: Manrope.
-- Technical font: JetBrains Mono.
-- Radius scale: 2, 6, 10 px.
-- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64 px.
+## Look (non-negotiable)
 
-## Composition
+- Page background `#070716` (indigo night). Surfaces `#101018`. Never pure
+  black or neutral grey backgrounds.
+- Text `#ffffff`; secondary text `#b8b8c5`.
+- Borders: 1px `rgba(255,255,255,.08)`; strong borders 1px
+  `rgba(255,255,255,.15)`.
+- Single accent: plum `#B37AC2` (hover `#C396CF`) for active borders, tags,
+  links, focus, underlines and markers. Never as a button or block fill.
+- **Square corners everywhere** (`border-radius: 0`).
+- Typography (Geist family):
+  - Geist Pixel (Circle), weight 400, no synthetic bold: h1, h2, navbar
+    links, card titles, tags, kicker, search input.
+  - Geist Sans: body and UI; h3 at 600–800.
+  - Geist Mono: code, `@handles`, small metadata, footer bottom bar.
+  - Labels and brand-tile titles: UPPERCASE, `letter-spacing: .08em`.
+- Hero atmosphere: radial gradient `#3C1F44` → `#150A18` → `#05050b`, a 1px
+  dot grain every 14px at 3 % white, and a glow `rgba(108,56,122,.35)`.
+- Spacing unit 14px (`--gap-card`) and its multiples; container
+  `min(1500px, 95%)`.
+- Shadows: rest `inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)`;
+  hover `inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)`.
+- Transitions: `.28s cubic-bezier(.2,.8,.2,1)`; honor reduced motion.
 
-Prefer modular grids, controlled rectangular geometry, clear hierarchy, and negative space. Use subtle technical textures and localized glow. Avoid generic cyberpunk, excessive neon, random circuit patterns, rainbow gradients, and decorative noise.
+## Implementation
 
-## Product adaptation
-
-Keep foundations consistent. Adapt density, navigation, semantic colors, and composition to the product's task. Do not force a marketing layout into a functional application.
+- Web: link `/mxni/mxni.css` and use the `.mx-*` classes from the catalog.
+  The HTML in the catalog is canonical; framework tabs only adapt syntax.
+- Other technologies: reproduce the exact values from the catalog specs and
+  [Use in any technology](/catalog/install).
+- Prefer an existing catalog component over a new one. Compose bigger pieces
+  from atoms and molecules.
+- Do not invent tokens. If something is missing, propose a documented
+  addition.
+- Do not replace real content with decorative placeholders.
 
 ## Accessibility
 
-Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduced motion, accessible labels, and non-color status cues.
+Target WCAG 2.2 AA: semantic HTML, keyboard navigation, visible focus (2px
+`#B37AC2` ring, 2px offset), reduced motion, accessible names, non-color
+status cues.
 
 ## Platforms
 
@@ -44,25 +69,16 @@ Identify the target platform before designing or coding and follow its guide:
 - Desktop (installed Windows, macOS or Linux apps): `platforms/desktop/` or `/llms-desktop.txt`.
 - Mobile (installed iOS or Android apps): `platforms/mobile/` or `/llms-mobile.txt`.
 
-Foundations and tokens are the same everywhere; layout, navigation, input,
-component sizing and OS conventions follow the platform guide. A website opened
-on a phone follows the web guide.
-
-## Implementation rules
-
-1. Read the relevant docs before coding.
-2. Reuse existing tokens and components.
-3. Do not invent new core tokens.
-4. If a gap exists, propose an extension and document it.
-5. Do not replace real content with decorative placeholders.
-6. Report deviations and explain why they are needed.
+The look is the same everywhere; layout, navigation, input, component sizing
+and OS conventions follow the platform guide. A website opened on a phone
+follows the web guide.
 
 ## Output checklist
 
 Before finishing, report:
 - target platform (web, desktop or mobile);
+- catalog components used;
 - tokens used;
-- components/patterns reused;
 - responsive or adaptive behavior for that platform;
 - accessibility considerations;
 - deviations or proposed additions.

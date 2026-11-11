@@ -38,13 +38,13 @@ la API de accesibilidad de Android) y se prueban con VoiceOver y TalkBack.
 - Soporta Dynamic Type (iOS) y la escala de fuente (Android) al menos hasta
   200 %, sin cortes ni solapamientos.
 - Contraste AA en las combinaciones reales; revisa el texto secundario
-  `#B7AABD` y atenuado `#81768A` sobre `--mxni-surface` y `--mxni-elevated`.
+  `#b8b8c5` sobre `--color-background` y `--color-surface`.
 - El color nunca es la única señal: acompaña con ícono o texto.
 
 ## Movimiento
 
-- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion);
-  transiciones de pantalla con `Slow` (280 ms) o la transición nativa.
+- Transición `.28s cubic-bezier(.2,.8,.2,1)` de [Motion](/foundations/motion);
+  en transiciones de pantalla usa la nativa del sistema.
 - Con "Reducir movimiento" activo, sustituye desplazamientos y escalas por
   fundidos o cambios inmediatos.
 

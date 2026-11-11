@@ -21,14 +21,13 @@ táctil, lector de pantalla o una combinación. Diseña para todos.
 
 ## Foco
 
-- Anillo de foco visible y con contraste suficiente; puedes usar el cian
-  `#24CDE0` o el morado `#A83FE0` según el fondo.
+- Anillo de foco: 2px `#B37AC2` con 2px de separación (global en `base.css`).
 - No uses el glow como único indicador de foco.
 - Al abrir un diálogo, el foco entra en él; al cerrarlo, regresa al disparador.
 
 ## Movimiento
 
-- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion).
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)` de [Motion](/foundations/motion).
 - Con `prefers-reduced-motion: reduce`, elimina o reduce animaciones no
   esenciales.
 - Sin parallax que estorbe la lectura y sin destellos.

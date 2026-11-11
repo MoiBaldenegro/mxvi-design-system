@@ -15,7 +15,7 @@ explica cómo implementarlos en web.
 - Usa `<button type="button">` o `type="submit"` dentro de formularios.
 - Estado de carga: deshabilita el envío duplicado y anuncia el progreso
   (`aria-busy` o texto).
-- Radio `radius-md` (6 px).
+- Radio 0 (esquinas rectas). Variantes y specs en [Botones](/catalog/atoms/buttons).
 
 ## Campos
 
@@ -30,7 +30,7 @@ explica cómo implementarlos en web.
 
 ## Tarjetas y paneles
 
-- Superficies `--mxni-surface` y `--mxni-elevated`, borde `--mxni-border`.
+- Superficie `--color-surface`, borde `--color-border`; ver [Tarjetas](/catalog/molecules/cards).
 - Una tarjeta clicable entera usa un enlace con nombre accesible; si tiene
   varias acciones, no hagas clicable toda la tarjeta.
 - En Compact, las tarjetas ocupan todo el ancho disponible.
@@ -50,7 +50,7 @@ explica cómo implementarlos en web.
 - En Compact, la tabla hace scroll horizontal dentro de su contenedor o se
   transforma en una lista de tarjetas.
 - Números en `font-variant-numeric: tabular-nums`; identificadores y versiones
-  en JetBrains Mono.
+  en Geist Mono.
 
 ## Íconos
 

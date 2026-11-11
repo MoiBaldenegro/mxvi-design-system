@@ -14,7 +14,8 @@ A future MCP server may expose tools such as:
 - `search_mxni_docs(query)`
 - `get_mxni_document(path)`
 - `get_mxni_tokens()`
-- `get_mxni_component(name)`
+- `get_mxni_component(name)` — returns the catalog page (visual spec + HTML) of a component.
+- `get_mxni_visual_dna()` — returns `catalog/visual-dna.md`.
 
 The server should read from the same versioned Markdown and token sources. It must not maintain a divergent copy.
 

@@ -13,8 +13,8 @@ de fuente del usuario.
 
 | Token | iOS | Android |
 |---|---|---|
-| `space-4` (16 px) | 16 pt | 16 dp |
-| `radius-md` (6 px) | 6 pt | 6 dp |
+| `--gap-card` (14 px) | 14 pt | 14 dp |
+| `--radius-square` (0) | 0 | 0 |
 | Body (16 px) | 16 pt | 16 sp |
 
 ## Tamaños de pantalla
@@ -31,10 +31,10 @@ para los valores exactos.
 
 ## Márgenes y espaciado
 
-- Márgenes laterales de `16` (`space-4`) en teléfonos y `24` (`space-6`) en
+- Márgenes laterales de `14` (`--gap-card`) en teléfonos y `21` (× 1.5) en
   tabletas.
-- Separación entre secciones de `24` a `32` (`space-6`–`space-8`).
-- Separación entre elementos táctiles de al menos `8` (`space-2`).
+- Separación entre secciones de `28` a `42` (× 2 a × 3).
+- Separación entre elementos táctiles de al menos `7` (× 0.5).
 
 ## Áreas seguras
 

@@ -14,6 +14,14 @@ Start with the agent instructions, then retrieve the relevant foundation, compon
 - [Foundations: spacing and layout](./markdown/foundations/spacing-layout.md)
 - [Foundations: accessibility](./markdown/foundations/accessibility.md)
 
+## Look and component catalog
+Everything must look identical to moisesbaldenegro.com. Read the visual DNA first.
+- [Visual DNA](./markdown/catalog/visual-dna.md)
+- [Master prompt](./markdown/catalog/master-prompt.md)
+- [Component catalog](./markdown/catalog/index.md)
+- [Use in any technology](./markdown/catalog/install.md)
+- [Stylesheet: mxni.css](./mxni/mxni.css) · [tokens.css](./mxni/tokens.css) · [mxni.js](./mxni/mxni.js)
+
 ## Platforms
 Pick the target platform first. Each bundle contains the agent instructions,
 foundations, components and the complete platform guide in one file.
@@ -29,6 +37,28 @@ foundations, components and the complete platform guide in one file.
 - [Brand identity](./markdown/brand/identity.md)
 - [Logo](./markdown/brand/logo.md)
 - [Visual language](./markdown/brand/visual-language.md)
+- [Botones](./markdown/catalog/atoms/buttons.md)
+- [Campos y botón de ícono](./markdown/catalog/atoms/inputs.md)
+- [Logo, imágenes y divisor](./markdown/catalog/atoms/media.md)
+- [Tags, chips y badges](./markdown/catalog/atoms/tags.md)
+- [Tipografía y enlaces](./markdown/catalog/atoms/typography.md)
+- [Catálogo de componentes](./markdown/catalog/index.md)
+- [Usar en cualquier tecnología](./markdown/catalog/install.md)
+- [Prompt maestro](./markdown/catalog/master-prompt.md)
+- [Tarjeta de marca y tarjeta de perfil](./markdown/catalog/molecules/brand-tile.md)
+- [Tarjetas](./markdown/catalog/molecules/cards.md)
+- [Bloques de contenido](./markdown/catalog/molecules/content.md)
+- [Navegación y listas de enlaces](./markdown/catalog/molecules/navigation.md)
+- [Fila de resultado](./markdown/catalog/molecules/result-row.md)
+- [Barra de búsqueda](./markdown/catalog/molecules/search.md)
+- [Artículo](./markdown/catalog/organisms/article.md)
+- [Footer](./markdown/catalog/organisms/footer.md)
+- [Hero Bento](./markdown/catalog/organisms/hero-bento.md)
+- [Navbar](./markdown/catalog/organisms/navbar.md)
+- [Perfil (About)](./markdown/catalog/organisms/profile.md)
+- [Promociones y banda de logo](./markdown/catalog/organisms/promo.md)
+- [Plantillas de página](./markdown/catalog/templates.md)
+- [ADN visual](./markdown/catalog/visual-dna.md)
 - [Buttons](./markdown/components/buttons.md)
 - [Cards and panels](./markdown/components/cards-panels.md)
 - [Feedback components](./markdown/components/feedback.md)
@@ -37,18 +67,18 @@ foundations, components and the complete platform guide in one file.
 - [Components overview](./markdown/components/overview.md)
 - [Accessibility](./markdown/foundations/accessibility.md)
 - [Color](./markdown/foundations/colors.md)
-- [Geometry and effects](./markdown/foundations/geometry-effects.md)
-- [Motion](./markdown/foundations/motion.md)
-- [Spacing and layout](./markdown/foundations/spacing-layout.md)
-- [Typography](./markdown/foundations/typography.md)
+- [Geometría y efectos](./markdown/foundations/geometry-effects.md)
+- [Movimiento](./markdown/foundations/motion.md)
+- [Espaciado y layout](./markdown/foundations/spacing-layout.md)
+- [Tipografía](./markdown/foundations/typography.md)
 - [Bento composition](./markdown/guidelines/bento-composition.md)
 - [Content and data visualization](./markdown/guidelines/content-data.md)
 - [Guidelines overview](./markdown/guidelines/overview.md)
 - [Product expression](./markdown/guidelines/product-expression.md)
 - [Thumbnails](./markdown/guidelines/thumbnails.md)
-- [CSS tokens](./markdown/implementation/css-tokens.md)
+- [Tokens CSS](./markdown/implementation/css-tokens.md)
 - [Implementation overview](./markdown/implementation/overview.md)
-- [React integration](./markdown/implementation/react.md)
+- [Integración con React](./markdown/implementation/react.md)
 - [Versioning and contribution](./markdown/implementation/versioning.md)
 - [index.md](./markdown/index.md)
 - [Escritorio: checklist de revisión](./markdown/platforms/desktop/checklist.md)
@@ -75,7 +105,7 @@ foundations, components and the complete platform guide in one file.
 - [Complete Markdown bundle](./downloads/mxni-design-system-markdown.zip)
 
 ## Agent usage
-1. Read `ai/agent-instructions.md`.
+1. Read `ai/agent-instructions.md` and `catalog/visual-dna.md`.
 2. Identify the target platform (web, desktop or mobile) and read its guide or `llms-<platform>.txt`.
 3. Read only the other documents relevant to the current task.
 4. Reuse documented tokens and patterns.

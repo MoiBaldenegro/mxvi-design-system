@@ -48,8 +48,35 @@ const PLATFORMS = [
   { id: 'mobile', label: 'Mobile', zip: 'mxni-mobile-markdown.zip' },
 ]
 
+// Component catalog: the concrete look, shared by every platform.
+const CATALOG_DOCS = [
+  'catalog/visual-dna.md',
+  'catalog/master-prompt.md',
+  'catalog/index.md',
+  'catalog/install.md',
+  'catalog/atoms/buttons.md',
+  'catalog/atoms/typography.md',
+  'catalog/atoms/tags.md',
+  'catalog/atoms/inputs.md',
+  'catalog/atoms/media.md',
+  'catalog/molecules/search.md',
+  'catalog/molecules/navigation.md',
+  'catalog/molecules/cards.md',
+  'catalog/molecules/brand-tile.md',
+  'catalog/molecules/content.md',
+  'catalog/molecules/result-row.md',
+  'catalog/organisms/navbar.md',
+  'catalog/organisms/footer.md',
+  'catalog/organisms/hero-bento.md',
+  'catalog/organisms/profile.md',
+  'catalog/organisms/article.md',
+  'catalog/organisms/promo.md',
+  'catalog/templates.md',
+]
+
 const CORE_DOCS = [
   'ai/agent-instructions.md',
+  ...CATALOG_DOCS,
   'platforms/index.md',
   'foundations/colors.md',
   'foundations/typography.md',
@@ -80,8 +107,9 @@ const docByPath = new Map(docs.map(doc => [doc.relative, doc]))
 function platformDocs(platform) {
   const paths = [
     'ai/agent-instructions.md',
+    'catalog/visual-dna.md',
     ...PLATFORM_PAGES.map(page => `platforms/${platform.id}/${page}.md`),
-    ...CORE_DOCS.filter(file => file !== 'ai/agent-instructions.md'),
+    ...CORE_DOCS.filter(file => file !== 'ai/agent-instructions.md' && file !== 'catalog/visual-dna.md'),
   ]
   const missing = paths.filter(file => !docByPath.has(file))
   if (missing.length) throw new Error(`Missing documents for ${platform.id}: ${missing.join(', ')}`)
@@ -98,17 +126,21 @@ function platformAgents(platform) {
     '## Read in this order',
     '',
     '1. `ai/agent-instructions.md` — behavioral contract for agents.',
-    `2. \`platforms/${platform.id}/index.md\` — platform summary and compact agent contract.`,
-    `3. The rest of \`platforms/${platform.id}/\` as needed: layout, navigation, components, interaction, checklist.`,
-    '4. `foundations/`, `components/`, `brand/` and `guidelines/` for detailed rules.',
-    '5. `implementation/css-tokens.md` for the canonical token values.',
+    '2. `catalog/visual-dna.md` — the traits that make something look MXNI (identical to moisesbaldenegro.com).',
+    `3. \`platforms/${platform.id}/index.md\` — platform summary and compact agent contract.`,
+    '4. `catalog/` — every component with its exact visual spec and reference HTML.',
+    `5. The rest of \`platforms/${platform.id}/\`, plus \`foundations/\`, \`brand/\` and \`guidelines/\` as needed.`,
+    '',
+    'A ready-to-paste prompt is in `catalog/master-prompt.md`.',
     '',
     `\`llms-${platform.id}.txt\` contains all of the above in a single file.`,
     '',
     '## Links and assets',
     '',
     '- Links that start with `/` point to files in this folder: `/foundations/colors` is `foundations/colors.md`.',
-    '- The official logo SVGs are in `brand/assets/`. Never rebuild the logo with a font.',
+    '- The official logo SVGs are in `brand/assets/` and `mxni/assets/`. Never rebuild the logo with a font.',
+    '- `mxni/mxni.css` is the real stylesheet (fonts, tokens, base and `.mx-*` components); `mxni/mxni.js` adds optional behaviors.',
+    '- In web projects link `mxni/mxni.css`; in other technologies reproduce the values in the catalog specs.',
     '',
     '## Report',
     '',
@@ -139,6 +171,14 @@ const indexLines = [
   '- [Foundations: spacing and layout](./markdown/foundations/spacing-layout.md)',
   '- [Foundations: accessibility](./markdown/foundations/accessibility.md)',
   '',
+  '## Look and component catalog',
+  'Everything must look identical to moisesbaldenegro.com. Read the visual DNA first.',
+  '- [Visual DNA](./markdown/catalog/visual-dna.md)',
+  '- [Master prompt](./markdown/catalog/master-prompt.md)',
+  '- [Component catalog](./markdown/catalog/index.md)',
+  '- [Use in any technology](./markdown/catalog/install.md)',
+  '- [Stylesheet: mxni.css](./mxni/mxni.css) · [tokens.css](./mxni/tokens.css) · [mxni.js](./mxni/mxni.js)',
+  '',
   '## Platforms',
   'Pick the target platform first. Each bundle contains the agent instructions,',
   'foundations, components and the complete platform guide in one file.',
@@ -153,7 +193,7 @@ const indexLines = [
   '- [Complete Markdown bundle](./downloads/mxni-design-system-markdown.zip)',
   '',
   '## Agent usage',
-  '1. Read `ai/agent-instructions.md`.',
+  '1. Read `ai/agent-instructions.md` and `catalog/visual-dna.md`.',
   '2. Identify the target platform (web, desktop or mobile) and read its guide or `llms-<platform>.txt`.',
   '3. Read only the other documents relevant to the current task.',
   '4. Reuse documented tokens and patterns.',
@@ -178,6 +218,30 @@ const full = [
   '',
 ].join('\n')
 await fs.writeFile(path.join(publicRoot, 'llms-full.txt'), full)
+
+// MXNI stylesheet package: copied to /mxni/ and bundled as mxni.css
+// (fonts + tokens + base + components) so any product can link one file.
+const mxniSource = path.join(root, 'mxni')
+const mxniPublic = path.join(publicRoot, 'mxni')
+await fs.rm(mxniPublic, { recursive: true, force: true })
+await fs.cp(mxniSource, mxniPublic, { recursive: true })
+const mxniParts = ['fonts.css', 'tokens.css', 'base.css', 'components.css']
+const mxniBundle = [
+  '/* MXNI Design System — mxni.css (generated: fonts + tokens + base + components). */',
+  ...await Promise.all(mxniParts.map(part => fs.readFile(path.join(mxniSource, part), 'utf8'))),
+].join('\n\n')
+await fs.writeFile(path.join(mxniPublic, 'mxni.css'), mxniBundle)
+
+async function walkFiles(dir, prefix = '') {
+  const result = []
+  for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+    const relative = prefix ? `${prefix}/${entry.name}` : entry.name
+    if (entry.isDirectory()) result.push(...await walkFiles(path.join(dir, entry.name), relative))
+    else result.push({ name: `mxni/${relative}`, file: path.join(dir, entry.name) })
+  }
+  return result
+}
+const mxniFiles = (await walkFiles(mxniPublic)).filter(entry => !entry.name.startsWith('mxni/assets/examples/'))
 
 const logoAssets = (await fs.readdir(path.join(publicRoot, 'brand')))
   .filter(name => name.startsWith('mxni-logo') && name.endsWith('.svg'))
@@ -217,6 +281,7 @@ for (const platform of PLATFORMS) {
     { name: contextName, content: context },
     ...selected.map(doc => ({ name: doc.relative, file: path.join(markdownOutput, doc.relative) })),
     ...logoAssets.map(name => ({ name: `brand/assets/${name}`, file: path.join(publicRoot, 'brand', name) })),
+    ...mxniFiles,
   ])
   console.log(`Generated ${contextName} and downloads/${platform.zip} (${selected.length} documents)`)
 }
@@ -238,6 +303,9 @@ await new Promise((resolve, reject) => {
   }
   for (const name of logoAssets) {
     archive.file(path.join(publicRoot, 'brand', name), { name: `mxni-design-system/brand/assets/${name}` })
+  }
+  for (const entry of mxniFiles) {
+    archive.file(entry.file, { name: `mxni-design-system/${entry.name}` })
   }
   archive.file(path.join(root, 'AGENTS.md'), { name: 'mxni-design-system/AGENTS.md' })
   archive.finalize()

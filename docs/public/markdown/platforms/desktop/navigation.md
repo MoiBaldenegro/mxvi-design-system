@@ -47,7 +47,7 @@ Respeta los atajos estándar del sistema y no los reasignes:
 | Cerrar ventana o pestaña | `Ctrl + W` | `⌘ + W` |
 | Salir | `Alt + F4` / `Ctrl + Q` | `⌘ + Q` |
 
-Muestra los atajos en JetBrains Mono, en `--mxni-text-muted`, alineados a la
+Muestra los atajos en Geist Mono, en `--color-text-secondary`, alineados a la
 derecha en los menús.
 
 ## Logo

@@ -4,6 +4,12 @@ title: Feedback components
 
 # Feedback components
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/molecules/content).
+:::
+
 ## Toasts
 
 Use for brief, non-blocking feedback. Do not put essential instructions only in a toast.

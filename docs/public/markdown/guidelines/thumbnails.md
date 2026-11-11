@@ -51,30 +51,32 @@ Place the subject on the side that makes them look or point toward the title. Ke
 
 ## Background and treatment
 
-- Darken and simplify the original background, or replace it with `#09070D` when it is distracting.
+- Darken and simplify the original background, or replace it with `#070716` when it is distracting.
 - Separate the subject with a soft rim light in the family's primary accent.
 - Use one localized gradient glow behind the subject, following [Geometry and effects](/foundations/geometry-effects).
-- Limit structure to a discreet technical grid or one or two rectangular modules with 2–10 px radii, near the edges.
+- Limit structure to a discreet dot grain or one or two rectangular modules with square corners, near the edges.
 - Keep decoration behind the subject and away from the title.
 
 ## Accent families
 
 | Family | Primary accent | Secondary accent |
 |---|---|---|
-| Technical (default) | Electric Purple `#A83FE0` | Digital Cyan `#24CDE0` |
-| Intelligence | Electric Purple `#A83FE0` | Neon Magenta `#E044C5` |
-| Experimental | Digital Cyan `#24CDE0` | Electric Purple `#A83FE0` |
+| Technical (default) | Plum `#B37AC2` | Logo orange `#F7941D` |
+| Intelligence | Plum `#B37AC2` | Handle cyan `#5fd6ff` |
+| Experimental | Logo orange `#F7941D` | Plum `#B37AC2` |
 
-The secondary accent stays small and never matches the primary in intensity. Signal Lime `#B5F52D` may mark a single word or data point, and only when the title needs it.
+**Proposal:** these families extend the website palette (plum accent, logo
+orange and handle cyan) for thumbnails; validate them on real thumbnails.
+The secondary accent stays small and never matches the primary in intensity.
 
 ## Title
 
-- Font: Manrope, weight 800, sentence case, left-aligned, tight line height.
+- Font: Geist Sans, weight 800, sentence case, left-aligned, tight line height.
 - Size: 104–144 px, in up to 3 lines (see [Proposed addition](#proposed-addition)).
-- Color: `--mxni-text` `#F7F4FA`. Highlight at most one word with an accent color, and only if it stays legible.
+- Color: `--color-text` `#ffffff`. Highlight at most one word with an accent color, and only if it stays legible.
 - Darken the area behind the title until the text reaches at least 4.5:1 contrast.
 - Use the title exactly as provided. Do not invent, translate, or add words.
-- Image models can misspell text. If that happens, generate the thumbnail without a title and set it afterwards in Manrope.
+- Image models can misspell text. If that happens, generate the thumbnail without a title and set it afterwards in Geist Sans.
 
 ## Logo
 
@@ -113,16 +115,16 @@ text and faces. It must read clearly at 168x94 px.
 
 BRAND DIRECTION
 Dark, technical, modular, and precise. Darken and simplify the
-original background, or replace it with near-black #09070D if it is
+original background, or replace it with near-black indigo #070716 if it is
 distracting. Separate the subject with a soft rim light in the
 primary accent. Add one localized gradient glow behind the subject.
-Add at most a discreet technical grid and one or two rectangular
-modules near the edges, always behind the subject.
+Add at most a discreet dot grain and one or two square-cornered
+rectangular modules near the edges, always behind the subject.
 
 ACCENT FAMILY
-Technical: primary #A83FE0 purple, small secondary #24CDE0 cyan.
-Intelligence: primary #A83FE0 purple, small secondary #E044C5 magenta.
-Experimental: primary #24CDE0 cyan, small secondary #A83FE0 purple.
+Technical: primary #B37AC2 plum, small secondary #F7941D orange.
+Intelligence: primary #B37AC2 plum, small secondary #5fd6ff cyan.
+Experimental: primary #F7941D orange, small secondary #B37AC2 plum.
 Use only the family selected above. The secondary accent must stay
 clearly weaker than the primary.
 
@@ -130,8 +132,8 @@ TITLE
 If TITLE is "none", render no text of any kind.
 Otherwise, render the TITLE exactly once, spelled exactly as given,
 on the side opposite the subject: very large and heavy geometric
-sans-serif in the style of Manrope ExtraBold, sentence case,
-left-aligned, up to 3 lines, color #F7F4FA, on a background dark
+sans-serif in the style of Geist ExtraBold, sentence case,
+left-aligned, up to 3 lines, color #ffffff, on a background dark
 enough for strong contrast. Add no other words.
 
 DO NOT INCLUDE

@@ -1,47 +1,117 @@
-:root {
-  --vp-c-brand-1: #b45bea;
-  --vp-c-brand-2: #a83fe0;
-  --vp-c-brand-3: #812bb2;
-  --vp-c-brand-soft: rgba(168, 63, 224, 0.14);
-  --vp-c-bg: #09070d;
-  --vp-c-bg-alt: #0f0b14;
-  --vp-c-bg-elv: #15111c;
-  --vp-c-bg-soft: #15111c;
-  --vp-c-border: #382c42;
-  --vp-c-divider: #2b2132;
-  --vp-c-gutter: #09070d;
-  --vp-c-text-1: #f7f4fa;
-  --vp-c-text-2: #b7aabd;
-  --vp-c-text-3: #81768a;
-  --vp-font-family-base: "Manrope", Inter, ui-sans-serif, system-ui, sans-serif;
-  --vp-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(110deg, #b45bea 5%, #e044c5 55%, #24cde0 100%);
-  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(168,63,224,.20), transparent 68%);
-  --vp-home-hero-image-filter: blur(52px);
-}
+/* ==========================================================================
+   Documentation theme: VitePress dressed with the real MXNI look
+   (moisesbaldenegro.com). Values come from mxni/tokens.css.
+   ========================================================================== */
 
+:root,
 .dark {
-  --vp-c-bg: #09070d;
-  --vp-c-bg-alt: #0f0b14;
-  --vp-c-bg-elv: #15111c;
-  --vp-c-bg-soft: #15111c;
+  --vp-c-brand-1: var(--color-accent);
+  --vp-c-brand-2: var(--color-accent-hover);
+  --vp-c-brand-3: var(--color-logo-purple);
+  --vp-c-brand-soft: color-mix(in srgb, var(--color-accent) 14%, transparent);
+
+  --vp-c-bg: var(--color-background);
+  --vp-c-bg-alt: #05050b;
+  --vp-c-bg-elv: var(--color-surface);
+  --vp-c-bg-soft: var(--color-surface);
+  --vp-c-gutter: var(--color-background);
+
+  --vp-c-border: var(--color-border-strong);
+  --vp-c-divider: var(--color-border);
+  --vp-c-gutter: var(--color-border);
+
+  --vp-c-text-1: var(--color-text);
+  --vp-c-text-2: var(--color-text-secondary);
+  --vp-c-text-3: #8a8a99;
+
+  --vp-c-default-soft: var(--color-surface);
+  --vp-code-bg: var(--color-surface);
+  --vp-code-block-bg: var(--color-surface);
+  --vp-code-color: var(--color-accent-hover);
+
+  --vp-font-family-base: var(--font-sans);
+  --vp-font-family-mono: var(--font-mono);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-image-background-image: radial-gradient(circle, var(--color-glow), transparent 68%);
+  --vp-home-hero-image-filter: blur(52px);
+
+  --vp-button-brand-bg: var(--color-background);
+  --vp-button-brand-border: var(--color-accent);
+  --vp-button-brand-text: var(--color-text);
+  --vp-button-brand-hover-bg: var(--color-background);
+  --vp-button-brand-hover-border: var(--color-accent-hover);
+  --vp-button-brand-hover-text: var(--color-text);
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-border: var(--color-border-strong);
+  --vp-button-alt-text: var(--color-text);
+  --vp-button-alt-hover-bg: var(--color-surface);
+  --vp-button-alt-hover-border: var(--color-accent);
+  --vp-button-alt-hover-text: var(--color-text);
+
+  --vp-custom-block-tip-bg: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --vp-custom-block-tip-border: var(--color-accent);
 }
 
-.VPNavBar {
-  background: rgba(9, 7, 13, .88) !important;
-  backdrop-filter: blur(16px);
+body { background: var(--color-background); }
+
+/* Square corners everywhere, like the website. */
+.VPButton,
+.VPFeature,
+.VPNavBarSearchButton,
+.DocSearch-Button,
+.VPLocalSearchBox .shell,
+.VPLocalSearchBox .search-bar,
+.custom-block,
+.vp-doc div[class*='language-'],
+.vp-code-group .tabs,
+.vp-doc :not(pre) > code,
+.VPSwitch,
+.VPSwitch .check,
+.VPFlyout .menu,
+.VPMenu,
+.VPDocOutlineDropdown,
+.VPSocialLink,
+.vp-doc table,
+.VPSidebarItem .item {
+  border-radius: 0 !important;
 }
 
-.VPNavBar .title,
-.VPNavBarTitle .title {
-  font-weight: 800;
-  letter-spacing: -.06em;
+/* Glass navbar with a strong hairline. */
+.VPNavBar,
+.VPNavBar.has-sidebar .content-body,
+.VPNavBar:not(.home.top) .content-body {
+  background: var(--color-navbar) !important;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.VPNavBar .divider-line { background-color: var(--color-border-strong) !important; }
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .text {
+  font-family: var(--font-display) !important;
+  font-synthesis: none;
+  font-weight: 400 !important;
 }
 
-/* Hero name: the official MXNI logo replaces the typeset name. The text
-   stays in the <h1> for screen readers and search engines, but is not drawn
-   (the logo must not be rebuilt with a font when the official SVG exists). */
+/* Titles in Geist Pixel. */
+.vp-doc h1,
+.vp-doc h2,
+.VPHome .VPHero .text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+.vp-doc h2 { border-top-color: var(--color-border); }
+.vp-doc h3 { letter-spacing: -.01em; }
+.vp-doc a { text-underline-offset: 3px; }
+
+/* Buttons: 2px plum outline (primary) and strong hairline (secondary). */
+.VPButton.brand { border-width: 2px; }
+.VPButton.brand:hover { box-shadow: 0 0 21px var(--color-glow); }
+
+/* Home hero: the official MXNI logo replaces the typeset name. The text
+   stays in the <h1> for screen readers and search engines. */
 .VPHome .VPHero .name {
   display: block;
   height: 48px;
@@ -56,158 +126,118 @@
   font-size: 0;
   line-height: 0;
 }
+@media (min-width: 640px) { .VPHome .VPHero .name { height: 64px; } }
+@media (min-width: 960px) { .VPHome .VPHero .name { height: 72px; background-position: left center; } }
+.VPHome .VPHero .text { max-width: 760px; }
 
-@media (min-width: 640px) {
-  .VPHome .VPHero .name {
-    height: 64px;
-  }
+/* Home background: hero gradient with the dot grain of the website. */
+.VPHome {
+  background:
+    radial-gradient(color-mix(in srgb, var(--color-text) 3%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at top right, var(--color-hero-top) 0%, var(--color-hero-mid) 35%, var(--color-hero-bottom) 100%);
+  background-size: 14px 14px, auto;
 }
 
-@media (min-width: 960px) {
-  .VPHome .VPHero .name {
-    height: 72px;
-    background-position: left center;
-  }
-}
-
-.VPHome .VPHero .text {
-  max-width: 760px;
-  letter-spacing: -.035em;
-}
-
+/* Feature cards: surface + hairline, accent border and lift on hover. */
 .VPFeature {
-  border: 1px solid var(--vp-c-border) !important;
-  background: linear-gradient(145deg, rgba(33,26,43,.78), rgba(21,17,28,.92)) !important;
-  transition: border-color 180ms ease, transform 180ms ease;
+  border: 1px solid var(--color-border) !important;
+  background: var(--color-surface) !important;
+  box-shadow: var(--shadow-card-rest);
+  transition: var(--transition-default);
 }
-
 .VPFeature:hover {
-  border-color: rgba(180, 91, 234, .65) !important;
-  transform: translateY(-2px);
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
+.VPFeature .title { font-family: var(--font-display); font-weight: 400; font-synthesis: none; letter-spacing: .04em; text-transform: uppercase; }
 
-.vp-doc h1,
-.vp-doc h2,
-.vp-doc h3 {
-  letter-spacing: -.04em;
+.vp-doc div[class*="language-"] { border: 1px solid var(--color-border); }
+.vp-doc table { display: table; width: 100%; }
+
+/* --- Catalog previews (isolated iframes, see MxPreview.vue) ------------- */
+.mx-demo {
+  margin: 20px 0 0;
+  border: 1px solid var(--color-border-strong);
+  border-bottom: 0;
+  background: var(--color-background);
 }
-
-.vp-doc h2 {
-  border-top-color: var(--vp-c-border);
+.mx-demo__stage { position: relative; overflow: hidden; }
+.mx-demo__frame { display: block; width: 100%; border: 0; transform-origin: 0 0; }
+.mx-demo__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
 }
-
-.vp-doc a {
-  text-underline-offset: 3px;
+.mx-demo__viewport {
+  padding: 4px 10px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition-default);
 }
+.mx-demo__viewport span { font-family: var(--font-mono); opacity: .7; }
+.mx-demo__viewport:hover { border-color: var(--color-border-strong); color: var(--color-text); }
+.mx-demo__viewport[aria-pressed='true'] { border-color: var(--color-accent); color: var(--color-accent-hover); }
 
-.vp-doc div[class*="language-"] {
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-}
+/* The code group sits flush under its preview. */
+.mx-demo + .vp-code-group { margin-top: 0 !important; }
+.mx-demo + .vp-code-group .tabs { border: 1px solid var(--color-border-strong); border-bottom: 0; }
 
-.vp-doc table {
-  display: table;
-  width: 100%;
-}
+/* --- Spec tables ---------------------------------------------------------- */
+.mx-spec td:first-child { white-space: nowrap; color: var(--vp-c-text-2); }
 
+/* --- Color swatches ------------------------------------------------------- */
 .mxni-swatch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 12px;
+  gap: 14px;
   margin: 20px 0;
 }
+.mxni-swatch { overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); }
+.mxni-swatch__color { height: 72px; border-bottom: 1px solid var(--color-border); }
+.mxni-swatch__meta { padding: 12px; font-size: 13px; }
+.mxni-swatch__meta code { display: block; margin-top: 4px; }
 
-.mxni-swatch {
-  overflow: hidden;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-  background: var(--vp-c-bg-elv);
-}
-
-.mxni-swatch__color {
-  height: 72px;
-}
-
-.mxni-swatch__meta {
-  padding: 12px;
-  font-size: 13px;
-}
-
-.mxni-swatch__meta code {
-  display: block;
-  margin-top: 4px;
-}
-
-.mxni-callout {
-  border: 1px solid rgba(168,63,224,.45);
-  border-left: 3px solid #a83fe0;
-  border-radius: 6px;
-  padding: 14px 16px;
-  background: rgba(168,63,224,.07);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
-}
-/* Logo page: the official two-color logo is shown on a light surface. */
+/* --- Logo page ------------------------------------------------------------ */
 .logo-preview {
   display: grid;
   place-items: center;
   margin: 16px 0 24px;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 12px;
+  border: 1px solid var(--color-border-strong);
   background: #f7f4fa;
   padding: 32px;
 }
+.logo-preview img { width: min(100%, 360px); height: auto; }
 
-.logo-preview img {
-  width: min(100%, 360px);
-  height: auto;
-}
-
-/* Raw Markdown links shown at the top of every documentation page. */
+/* --- Raw Markdown links at the top of every page -------------------------- */
 .mxni-markdown-source {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 14px;
   margin-bottom: 24px;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
-  background: var(--vp-c-bg-soft);
   padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   font-size: 13px;
 }
+.mxni-markdown-source__label { color: var(--vp-c-text-3); font-family: var(--font-display); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.mxni-markdown-source a { color: var(--color-accent); font-weight: 600; text-decoration: none; }
+.mxni-markdown-source a:hover, .mxni-markdown-source a:focus-visible { color: var(--color-accent-hover); text-decoration: underline; }
+.mxni-markdown-source__path { margin-left: auto; color: var(--vp-c-text-3); font-size: 12px; overflow-wrap: anywhere; }
 
-.mxni-markdown-source__label {
-  color: var(--vp-c-text-3);
-  font-family: var(--vp-font-family-mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-.mxni-markdown-source a {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.mxni-markdown-source a:hover,
-.mxni-markdown-source a:focus-visible {
-  text-decoration: underline;
-}
-
-.mxni-markdown-source__path {
-  margin-left: auto;
-  color: var(--vp-c-text-3);
-  font-size: 12px;
-  overflow-wrap: anywhere;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }

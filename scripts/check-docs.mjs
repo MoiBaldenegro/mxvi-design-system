@@ -15,6 +15,11 @@ const required = [
   'implementation/css-tokens.md',
   'ai/agent-instructions.md',
   'platforms/index.md',
+  'catalog/index.md',
+  'catalog/visual-dna.md',
+  'catalog/master-prompt.md',
+  'catalog/install.md',
+  'catalog/templates.md',
   ...['web', 'desktop', 'mobile'].flatMap(platform =>
     ['index', 'layout', 'navigation', 'components', 'interaction', 'checklist']
       .map(page => `platforms/${platform}/${page}.md`)),

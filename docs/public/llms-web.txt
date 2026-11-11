@@ -15,37 +15,62 @@ title: MXNI instructions for AI agents
 
 # MXNI instructions for AI agents
 
-This document is the compact behavioral contract for AI systems generating MXNI interfaces, graphics, or implementation code.
+This document is the compact behavioral contract for AI systems generating
+MXNI interfaces, graphics, or implementation code. The goal: anything you
+build must look **identical to moisesbaldenegro.com**, in any technology.
 
-## Brand
+## Read first
 
-MXNI is a balanced futuristic technology identity: technical, modular, expressive, and legible.
+1. [Visual DNA](/catalog/visual-dna) (`catalog/visual-dna.md`) — the traits
+   that make something look MXNI.
+2. [Component catalog](/catalog/) (`catalog/`) — every component with its
+   exact visual spec and reference markup.
+3. The guide for the target platform: `platforms/web/`,
+   `platforms/desktop/` or `platforms/mobile/`.
 
-## Visual constraints
+A ready-to-paste prompt is in [Master prompt](/catalog/master-prompt).
 
-- Default dark background: `#09070D`.
-- Surface: `#15111C`.
-- Elevated surface: `#211A2B`.
-- Primary brand: `#A83FE0`.
-- Secondary accent: `#E044C5`.
-- Technical/interaction accent: `#24CDE0`.
-- Limited highlight: `#B5F52D`.
-- Display font: Manrope.
-- Technical font: JetBrains Mono.
-- Radius scale: 2, 6, 10 px.
-- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64 px.
+## Look (non-negotiable)
 
-## Composition
+- Page background `#070716` (indigo night). Surfaces `#101018`. Never pure
+  black or neutral grey backgrounds.
+- Text `#ffffff`; secondary text `#b8b8c5`.
+- Borders: 1px `rgba(255,255,255,.08)`; strong borders 1px
+  `rgba(255,255,255,.15)`.
+- Single accent: plum `#B37AC2` (hover `#C396CF`) for active borders, tags,
+  links, focus, underlines and markers. Never as a button or block fill.
+- **Square corners everywhere** (`border-radius: 0`).
+- Typography (Geist family):
+  - Geist Pixel (Circle), weight 400, no synthetic bold: h1, h2, navbar
+    links, card titles, tags, kicker, search input.
+  - Geist Sans: body and UI; h3 at 600–800.
+  - Geist Mono: code, `@handles`, small metadata, footer bottom bar.
+  - Labels and brand-tile titles: UPPERCASE, `letter-spacing: .08em`.
+- Hero atmosphere: radial gradient `#3C1F44` → `#150A18` → `#05050b`, a 1px
+  dot grain every 14px at 3 % white, and a glow `rgba(108,56,122,.35)`.
+- Spacing unit 14px (`--gap-card`) and its multiples; container
+  `min(1500px, 95%)`.
+- Shadows: rest `inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)`;
+  hover `inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)`.
+- Transitions: `.28s cubic-bezier(.2,.8,.2,1)`; honor reduced motion.
 
-Prefer modular grids, controlled rectangular geometry, clear hierarchy, and negative space. Use subtle technical textures and localized glow. Avoid generic cyberpunk, excessive neon, random circuit patterns, rainbow gradients, and decorative noise.
+## Implementation
 
-## Product adaptation
-
-Keep foundations consistent. Adapt density, navigation, semantic colors, and composition to the product's task. Do not force a marketing layout into a functional application.
+- Web: link `/mxni/mxni.css` and use the `.mx-*` classes from the catalog.
+  The HTML in the catalog is canonical; framework tabs only adapt syntax.
+- Other technologies: reproduce the exact values from the catalog specs and
+  [Use in any technology](/catalog/install).
+- Prefer an existing catalog component over a new one. Compose bigger pieces
+  from atoms and molecules.
+- Do not invent tokens. If something is missing, propose a documented
+  addition.
+- Do not replace real content with decorative placeholders.
 
 ## Accessibility
 
-Target WCAG 2.2 AA. Use semantic HTML, keyboard navigation, visible focus, reduced motion, accessible labels, and non-color status cues.
+Target WCAG 2.2 AA: semantic HTML, keyboard navigation, visible focus (2px
+`#B37AC2` ring, 2px offset), reduced motion, accessible names, non-color
+status cues.
 
 ## Platforms
 
@@ -55,28 +80,120 @@ Identify the target platform before designing or coding and follow its guide:
 - Desktop (installed Windows, macOS or Linux apps): `platforms/desktop/` or `/llms-desktop.txt`.
 - Mobile (installed iOS or Android apps): `platforms/mobile/` or `/llms-mobile.txt`.
 
-Foundations and tokens are the same everywhere; layout, navigation, input,
-component sizing and OS conventions follow the platform guide. A website opened
-on a phone follows the web guide.
-
-## Implementation rules
-
-1. Read the relevant docs before coding.
-2. Reuse existing tokens and components.
-3. Do not invent new core tokens.
-4. If a gap exists, propose an extension and document it.
-5. Do not replace real content with decorative placeholders.
-6. Report deviations and explain why they are needed.
+The look is the same everywhere; layout, navigation, input, component sizing
+and OS conventions follow the platform guide. A website opened on a phone
+follows the web guide.
 
 ## Output checklist
 
 Before finishing, report:
 - target platform (web, desktop or mobile);
+- catalog components used;
 - tokens used;
-- components/patterns reused;
 - responsive or adaptive behavior for that platform;
 - accessibility considerations;
 - deviations or proposed additions.
+
+
+
+---
+
+<!-- SOURCE: catalog/visual-dna.md -->
+
+---
+title: ADN visual
+---
+
+# ADN visual
+
+Estos son los rasgos que hacen que una interfaz se vea MXNI. Si un producto
+cumple todos, se ve como [moisesbaldenegro.com](https://moisesbaldenegro.com)
+aunque esté hecho en otra tecnología. Si rompe uno, deja de verse MXNI.
+
+## 1. Noche índigo, no negro puro
+
+- Fondo de página `#070716`: casi negro con un tinte índigo.
+- Superficies de tarjetas `#101018`, apenas más claras que el fondo.
+- Nunca uses `#000000` ni grises neutros para fondos.
+
+## 2. Líneas finas en lugar de cajas pesadas
+
+- Los contenedores se separan con bordes de **1px blanco al 8 %**
+  (`rgba(255,255,255,.08)`); los que necesitan más presencia usan **15 %**.
+- No hay rellenos de color en las tarjetas ni divisores gruesos.
+
+## 3. Esquinas rectas en todo
+
+- **Radio 0** en tarjetas, botones, campos, tags, imágenes, menús e incluso en
+  la barra de desplazamiento. Es la regla más reconocible del sistema.
+
+## 4. Un solo acento: ciruela
+
+- El acento es `#B37AC2` (hover `#C396CF`). Se usa en bordes activos, tags,
+  enlaces, el anillo de foco, el subrayado de la navegación y los marcadores.
+- El acento ocupa poco espacio: es una señal, no un fondo.
+- El azul `#0071e3` existe solo como CTA de las tarjetas promocionales.
+
+## 5. Tres caras de Geist
+
+| Cara | Uso |
+|---|---|
+| **Geist Pixel (Circle)** | Títulos h1 y h2, enlaces de la navbar, títulos de tarjeta, tags, kicker, búsqueda, etiquetas de columna del footer. Siempre en peso 400, sin negrita sintética. |
+| **Geist Sans** | Todo el texto de lectura e interfaz; títulos h3 en 600–800. |
+| **Geist Mono** | Código, handles (`@usuario`), metadatos pequeños, barra inferior del footer, ubicación. |
+
+Los títulos de tarjetas y las etiquetas van en **MAYÚSCULAS** con
+`letter-spacing: 0.08em`.
+
+## 6. Atmósfera morada en los héroes
+
+- Los bloques principales (hero, header de artículo, perfil, footer, banda de
+  logo) llevan un degradado radial que va de `#3C1F44` (ciruela profundo) a
+  `#150A18` y `#05050b`.
+- Encima, un **grano de puntos** de 1px cada 14px al 3 % de blanco.
+- Un **resplandor** radial `rgba(108,56,122,.35)` flota en una esquina.
+
+## 7. Bento de marcas
+
+- El hero es una cuadrícula Bento de 12 columnas con filas de 95px y
+  separación de 14px.
+- Cada tarjeta de marca tiene el color de su tecnología, un título pequeño en
+  mayúsculas arriba a la izquierda y el **logo gigante, rotado y recortado**
+  saliendo por la esquina inferior derecha.
+
+## 8. Profundidad sutil
+
+- Tarjetas en reposo: sombra suave con un brillo interior de 1px arriba
+  (`inset 0 1px 0 rgba(255,255,255,.05)`).
+- Al pasar el mouse: borde de acento o más fuerte, sombra mayor y, en
+  tarjetas grandes, elevación de 2–4px.
+- El glow morado aparece solo en acciones principales (hover del botón de
+  acento) y en el foco de la búsqueda.
+
+## 9. Un ritmo: múltiplos de 14
+
+- La unidad base es **14px**. Separaciones y paddings son múltiplos: 3.5, 7,
+  10.5, 14, 21, 28, 35, 42, 56, 70px.
+- El contenido vive en un contenedor de `min(1500px, 95%)` centrado.
+
+## 10. Movimiento con una sola curva
+
+- Todas las transiciones duran **0.28s** con `cubic-bezier(.2,.8,.2,1)`.
+- Los movimientos son cortos: subrayados que crecen, flechas que se desplazan
+  2px, tarjetas que suben 4px.
+- Con "reducir movimiento" todo se vuelve instantáneo.
+
+## Señales de que algo NO es MXNI
+
+- Esquinas redondeadas.
+- Botones rellenos de morado o degradados en botones.
+- Fondos negro puro o grises neutros.
+- Títulos en una fuente que no sea Geist Pixel.
+- Bordes grises opacos en lugar de blanco translúcido.
+- Varias fuentes de acento compitiendo (cian, verde, rosa) fuera de las
+  tarjetas de marca.
+- Sombras de colores en reposo.
+
 
 
 ---
@@ -115,26 +232,27 @@ un teléfono también sigue esta guía, usando su layout compacto.
 Este bloque es suficiente para trabajos pequeños. Para trabajos grandes, lee la
 guía completa o `/llms-web.txt`.
 
-**Tokens**
+**Look (idéntico a moisesbaldenegro.com)**
 
-- Fondo `#09070D` (`--mxni-bg`), superficie `#15111C` (`--mxni-surface`),
-  elevada `#211A2B` (`--mxni-elevated`), borde `#382C42` (`--mxni-border`).
-- Texto `#F7F4FA`, secundario `#B7AABD`, atenuado `#81768A`.
-- Marca `#A83FE0`; acentos magenta `#E044C5`, cian `#24CDE0`, lima `#B5F52D`
-  (limitado a datos y estados).
-- Semánticos: éxito `#39C98A`, advertencia `#F3B64B`, peligro `#F05B72`,
-  info `#24CDE0`.
-- Manrope para interfaz y títulos; JetBrains Mono para código y metadatos.
-- Espaciado `4, 8, 12, 16, 24, 32, 48, 64 px`; radios `2, 6, 10 px` y `999 px`
-  solo para pills.
-- Movimiento `120 / 180 / 280 / 400 ms`.
+- Fondo `#070716`, superficie `#101018`; bordes 1px blanco al 8 % y al 15 %.
+- Texto `#ffffff`, secundario `#b8b8c5`.
+- Acento único ciruela `#B37AC2` (hover `#C396CF`); nunca como relleno.
+- **Esquinas rectas en todo** (radio 0).
+- Geist Pixel para títulos, navegación, títulos de tarjeta y tags; Geist Sans
+  para texto e interfaz; Geist Mono para código y metadatos.
+- Atmósfera de héroes: degradado `#3C1F44` → `#150A18` → `#05050b` con grano
+  de puntos y glow `rgba(108,56,122,.35)`.
+- Espaciado en múltiplos de `14px`.
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)`.
+- Detalle completo: [ADN visual](/catalog/visual-dna) y
+  [Catálogo](/catalog/).
 
 **Reglas web**
 
-1. Implementa con los tokens CSS `--mxni-*` de
-   [CSS tokens](/implementation/css-tokens); no copies valores sueltos.
-2. Diseña mobile-first con los breakpoints Compact `< 640`, Medium
-   `640–1023`, Wide `1024–1439` y XL `≥ 1440 px`.
+1. Usa `mxni.css` y los componentes `.mx-*` del [catálogo](/catalog/); los
+   valores salen de los [tokens](/implementation/css-tokens).
+2. Diseña mobile-first con los cortes del sitio: 600, 768, 900, 970 y
+   1200px ([layout](/platforms/web/layout)).
 3. HTML semántico: `<a>` para navegar, `<button>` para acciones, encabezados en
    orden y landmarks (`header`, `nav`, `main`, `footer`).
 4. Todo funciona con teclado y tiene foco visible (`:focus-visible`).
@@ -151,7 +269,8 @@ guía completa o `/llms-web.txt`.
 - Forzar un layout de marketing en una aplicación funcional.
 - Usar todos los acentos con la misma intensidad.
 - Reconstruir el logo con una fuente: usa el [SVG oficial](/brand/logo).
-- Poner texto largo en JetBrains Mono.
+- Poner texto largo en Geist Mono o Geist Pixel.
+- Redondear esquinas.
 - Ocultar contenido esencial detrás de hover o de animaciones.
 
 
@@ -166,57 +285,58 @@ title: Web — Layout y responsive
 
 # Web: layout y responsive
 
-## Breakpoints
+## Contenedor y cortes
 
-Usa los breakpoints de [Spacing & layout](/foundations/spacing-layout). Elige
-el cambio de layout según el contenido, no según el nombre del dispositivo.
+Todo el contenido vive en un contenedor de `min(1500px, 95%)` centrado: el
+margen lateral es el 2.5 % del ancho de la ventana. Los cortes son los de
+[Spacing & layout](/foundations/spacing-layout):
 
-| Nombre | Ancho | Columnas | Margen lateral sugerido |
-|---|---:|---|---|
-| Compact | `< 640 px` | 4 o una sola columna | `space-4` (16 px) |
-| Medium | `640–1023 px` | 4 o 6 | `space-6` (24 px) |
-| Wide | `1024–1439 px` | 12 | `space-8` (32 px) |
-| XL | `≥ 1440 px` | 12, con ancho máximo | `space-8` (32 px) o más |
-
-**Propuesta:** limita el contenido a un contenedor de entre `1200` y
-`1280 px` en Wide y XL para que las líneas y las tarjetas no se estiren.
+| Ancho | Qué cambia |
+|---|---|
+| ≤ 599px | Footer en 1 columna |
+| ≤ 768px | Bento en 1 columna, header de artículo apilado, promos en 1 columna, paddings de página 32px / 48px |
+| ≥ 769px | Línea de tiempo con línea vertical |
+| ≥ 900px | Cuadrículas de tarjetas a 3 columnas, cifras a 4, footer completo, perfil en 2 columnas |
+| ≤ 969px | Navbar con menú ☰ |
+| ≤ 1200px | Bento a 6 columnas |
 
 ## Mobile-first
 
-1. Diseña primero el layout Compact en una sola columna.
-2. Agrega columnas cuando el contenido lo pida.
+1. Diseña primero el layout de una sola columna.
+2. Agrega columnas en los cortes de arriba.
 3. Mantén el mismo orden de lectura en todos los tamaños; el orden visual no
    debe contradecir el orden del HTML.
 4. Nunca debe aparecer scroll horizontal en la página. Las tablas anchas hacen
    scroll dentro de su propio contenedor.
 
-## Densidad por tipo de producto
+## Ritmo vertical
 
-| Tipo | Densidad | Espaciado entre secciones |
-|---|---|---|
-| Marca / landing | Espaciosa | `space-12`–`space-16` |
-| Documentación | Equilibrada | `space-8`–`space-12` |
-| Aplicación web | Equilibrada | `space-6`–`space-8` |
-| Dashboard / herramientas de datos | Compacta, nunca apretada | `space-4`–`space-6` |
+| Bloque | Espaciado |
+|---|---|
+| Página de listado (`.mx-page`) | 48px arriba, 64px abajo (32px / 48px en ≤ 768px) |
+| Entre secciones (`.mx-stack`) | 28px |
+| Título de sección → contenido (`.mx-section`) | 21px |
+| Entre tarjetas | 14px |
+| Contenido → footer | 70px |
 
 ## Composición Bento
 
-Las composiciones [Bento](/guidelines/bento-composition) funcionan bien en
-sitios de marca y dashboards:
+El [hero Bento](/catalog/organisms/hero-bento) es la firma de la portada:
 
-- En Wide/XL las tarjetas pueden ocupar varias columnas y alturas distintas.
-- En Medium reduce a 2 columnas; en Compact, a una sola.
-- Conserva gutters constantes (`space-4` o `space-6`).
-- La tarjeta más importante va primero en el orden del HTML.
+- 12 columnas, filas de 95px, separación 14px.
+- La tarjeta de perfil va primero (5 × 6); el resto mezcla tarjetas anchas
+  y cuadradas.
+- 6 columnas en ≤ 1200px y 1 en ≤ 768px, mostrando solo las tarjetas
+  marcadas para móvil.
 
 ## Tipografía en web
 
-- Body de `16 px` por defecto; `14 px` solo en interfaces densas.
-- Largo de línea de 60–80 caracteres en texto largo.
-- Los títulos Display (`48–64 px`) se reducen en Compact (por ejemplo con
-  `clamp()`), sin bajar de H1 (`36 px`) en el título principal.
-- Carga Manrope y JetBrains Mono preferentemente self-hosted, con
-  `font-display: swap`.
+- Carga `mxni.css` (incluye Geist, Geist Mono y Geist Pixel autoalojadas, con
+  `font-display: swap`).
+- Texto de interfaz a 1rem; cuerpo de artículo de 17 a 19px con interlineado
+  1.7.
+- Títulos en Geist Pixel; ver la escala completa en
+  [Typography](/foundations/typography).
 
 ## Imágenes y media
 
@@ -298,7 +418,7 @@ explica cómo implementarlos en web.
 - Usa `<button type="button">` o `type="submit"` dentro de formularios.
 - Estado de carga: deshabilita el envío duplicado y anuncia el progreso
   (`aria-busy` o texto).
-- Radio `radius-md` (6 px).
+- Radio 0 (esquinas rectas). Variantes y specs en [Botones](/catalog/atoms/buttons).
 
 ## Campos
 
@@ -313,7 +433,7 @@ explica cómo implementarlos en web.
 
 ## Tarjetas y paneles
 
-- Superficies `--mxni-surface` y `--mxni-elevated`, borde `--mxni-border`.
+- Superficie `--color-surface`, borde `--color-border`; ver [Tarjetas](/catalog/molecules/cards).
 - Una tarjeta clicable entera usa un enlace con nombre accesible; si tiene
   varias acciones, no hagas clicable toda la tarjeta.
 - En Compact, las tarjetas ocupan todo el ancho disponible.
@@ -333,7 +453,7 @@ explica cómo implementarlos en web.
 - En Compact, la tabla hace scroll horizontal dentro de su contenedor o se
   transforma en una lista de tarjetas.
 - Números en `font-variant-numeric: tabular-nums`; identificadores y versiones
-  en JetBrains Mono.
+  en Geist Mono.
 
 ## Íconos
 
@@ -369,14 +489,13 @@ táctil, lector de pantalla o una combinación. Diseña para todos.
 
 ## Foco
 
-- Anillo de foco visible y con contraste suficiente; puedes usar el cian
-  `#24CDE0` o el morado `#A83FE0` según el fondo.
+- Anillo de foco: 2px `#B37AC2` con 2px de separación (global en `base.css`).
 - No uses el glow como único indicador de foco.
 - Al abrir un diálogo, el foco entra en él; al cerrarlo, regresa al disparador.
 
 ## Movimiento
 
-- Duraciones `120 / 180 / 280 / 400 ms` de [Motion](/foundations/motion).
+- Transición única `.28s cubic-bezier(.2,.8,.2,1)` de [Motion](/foundations/motion).
 - Con `prefers-reduced-motion: reduce`, elimina o reduce animaciones no
   esenciales.
 - Sin parallax que estorbe la lectura y sin destellos.
@@ -421,14 +540,16 @@ deben reportar cada punto.
 
 ## Marca y tokens
 
-- [ ] Colores, tipografía, espaciado y radios salen de los tokens `--mxni-*`.
+- [ ] Colores, tipografía, espaciado y radios salen de los tokens de `mxni/tokens.css`.
+- [ ] Todas las esquinas son rectas y los títulos usan Geist Pixel.
+- [ ] Se usaron componentes del catálogo en lugar de crear nuevos.
 - [ ] Los acentos se usan con moderación (5–10 % de la composición).
 - [ ] El logo es el SVG oficial con sus colores originales.
 - [ ] No hay valores sueltos sin justificar.
 
 ## Layout
 
-- [ ] Funciona en Compact (`< 640 px`), Medium, Wide y XL.
+- [ ] Funciona en 390, 768, 1200 y 1440 px de ancho.
 - [ ] No hay scroll horizontal en la página.
 - [ ] El orden de lectura es el mismo en todos los tamaños.
 - [ ] La densidad corresponde al tipo de producto.
@@ -458,6 +579,2157 @@ deben reportar cada punto.
 - Comportamiento responsive.
 - Consideraciones de accesibilidad.
 - Desviaciones o adiciones propuestas.
+
+
+
+---
+
+<!-- SOURCE: catalog/master-prompt.md -->
+
+---
+title: Prompt maestro
+---
+
+# Prompt maestro
+
+Copia este bloque al inicio de cualquier tarea de interfaz. Contiene todo lo
+necesario para que un agente de IA produzca algo que se vea idéntico a
+[moisesbaldenegro.com](https://moisesbaldenegro.com), en cualquier tecnología.
+Agrega al final lo que quieres construir.
+
+```text
+Diseña siguiendo el design system MXNI. El resultado debe verse idéntico a
+moisesbaldenegro.com. Referencia completa:
+https://moibaldenegro.github.io/mxvi-design-system/llms-web.txt
+
+LOOK (obligatorio)
+- Fondo #070716 (noche índigo). Superficies #101018. Nunca negro puro ni grises.
+- Texto #ffffff; secundario #b8b8c5.
+- Bordes 1px rgba(255,255,255,.08); bordes fuertes 1px rgba(255,255,255,.15).
+- Acento único ciruela #B37AC2, hover #C396CF: bordes activos, tags, enlaces,
+  foco, subrayados y marcadores. Nunca como fondo de botones.
+- RADIO 0 EN TODO: tarjetas, botones, inputs, tags, imágenes, menús.
+- Tipografía Geist:
+  · Geist Pixel (Circle), peso 400, sin negrita: h1, h2, enlaces de navbar,
+    títulos de tarjeta, tags, kicker, input de búsqueda.
+  · Geist Sans: texto e interfaz; h3 en 600–800.
+  · Geist Mono: código, @handles, metadatos, barra inferior del footer.
+  · Etiquetas y títulos de tarjeta en MAYÚSCULAS con letter-spacing .08em.
+- Héroes y footer: degradado radial #3C1F44 → #150A18 → #05050b, grano de
+  puntos 1px cada 14px al 3% de blanco y resplandor rgba(108,56,122,.35).
+- Unidad de espacio 14px; usa múltiplos (7, 14, 21, 28, 42, 56). Contenedor
+  min(1500px, 95%) centrado.
+- Sombras: reposo "inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)";
+  hover "inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)".
+- Transiciones: .28s cubic-bezier(.2,.8,.2,1). Respeta prefers-reduced-motion.
+
+COMPONENTES
+- Navbar sticky de vidrio: fondo rgba(8,8,18,.75) + blur 18px, alto 64px, borde
+  inferior 15%. Logo MXNI a la izquierda, enlaces Geist Pixel 0.95rem con
+  subrayado de acento de 2px que crece en hover y queda fijo en la página
+  actual, búsqueda a la derecha.
+- Botón principal: fondo #070716, borde 2px #B37AC2, texto blanco 600; en hover
+  borde #C396CF y glow 0 0 21px rgba(108,56,122,.35). Botón secundario: borde
+  1px blanco 15%, transparente.
+- Tag: texto #B37AC2, borde 1px blanco 8%, padding 4px 12px, Geist Pixel .85rem.
+- Tarjeta: fondo #101018, borde 1px blanco 8%, padding 21px o 24px 28px; en
+  hover borde de acento.
+- Foco: anillo 2px #B37AC2 con separación 2px.
+- Footer: degradado + glow, 4 columnas (marca, navegación, últimos, redes) con
+  títulos en mayúsculas Geist Pixel y barra inferior en Geist Mono .78rem.
+
+IMPLEMENTACIÓN
+- En web, usa la hoja oficial:
+  https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css
+  y las clases .mx-* del catálogo:
+  https://moibaldenegro.github.io/mxvi-design-system/catalog/
+- En otras tecnologías, reproduce los valores exactos de arriba.
+- Accesibilidad WCAG 2.2 AA: HTML semántico, teclado, foco visible, alt en
+  imágenes, el color nunca es la única señal.
+- Al terminar reporta: componentes del catálogo usados, tokens usados y
+  cualquier desviación.
+
+TAREA
+<describe aquí lo que quieres construir>
+```
+
+## Variantes por plataforma
+
+Cambia la primera URL por el contexto de la plataforma:
+
+| Plataforma | Contexto |
+|---|---|
+| Web | `/llms-web.txt` |
+| Escritorio | `/llms-desktop.txt` |
+| Móvil | `/llms-mobile.txt` |
+
+El look es el mismo en las tres; la guía de cada plataforma explica cómo
+adaptar navegación, tamaños táctiles y convenciones del sistema operativo.
+
+## Proyecto local
+
+Si descargaste el paquete en tu proyecto (por ejemplo en `docs/mxni/`),
+sustituye las URLs por rutas locales:
+
+```text
+Sigue el design system MXNI de docs/mxni/. Empieza por docs/mxni/AGENTS.md,
+lee docs/mxni/catalog/visual-dna.md y usa docs/mxni/mxni/mxni.css.
+```
+
+
+
+---
+
+<!-- SOURCE: catalog/index.md -->
+
+---
+title: Catálogo de componentes
+---
+
+# Catálogo de componentes
+
+Este catálogo es el **look real de MXNI**, extraído pieza por pieza de
+[moisesbaldenegro.com](https://moisesbaldenegro.com). Cualquier producto que
+use estos componentes, o que reproduzca sus especificaciones, debe verse
+idéntico a ese sitio.
+
+El catálogo es de **diseño**, no de una tecnología. Cada componente se describe
+de tres formas:
+
+1. **Especificación visual:** colores, medidas, tipografía, bordes, sombras,
+   estados y comportamiento responsive en valores exactos. Con esto se puede
+   reproducir en cualquier medio (web, escritorio, móvil, Figma, SwiftUI,
+   Flutter...).
+2. **Vista previa en vivo:** renderizada con la hoja de estilos real.
+3. **Código de referencia:** el mismo marcado en HTML, React, Vue, Svelte,
+   Angular y Astro. El HTML con clases `mx-` es la fuente canónica; las demás
+   pestañas solo adaptan la sintaxis.
+
+## Empieza aquí
+
+| Página | Para qué |
+|---|---|
+| [ADN visual](/catalog/visual-dna) | Los rasgos que hacen que algo se vea MXNI. Léelo primero. |
+| [Prompt maestro](/catalog/master-prompt) | Instrucción lista para que un agente genere un producto idéntico de un solo prompt. |
+| [Usar en cualquier tecnología](/catalog/install) | Cómo cargar `mxni.css` en web y cómo mapear los tokens a plataformas nativas. |
+
+## Niveles
+
+Los componentes están organizados como *atomic design*. Puedes usar cada
+pieza pequeña por separado o los bloques grandes completos: por ejemplo, el
+footer entero o solo su lista de redes sociales; el hero Bento completo o una
+sola tarjeta de marca.
+
+### Átomos
+
+Las piezas mínimas. No se dividen más.
+
+| Componente | Clases |
+|---|---|
+| [Botones](/catalog/atoms/buttons) | `.mx-button` y variantes `--accent`, `--surface`, `--quiet`, `--sm`, `--cta`, `--cta-outline` |
+| [Tipografía y enlaces](/catalog/atoms/typography) | `.mx-heading`, `.mx-label`, `.mx-text`, `.mx-meta`, `.mx-link` |
+| [Tags, chips y badges](/catalog/atoms/tags) | `.mx-tag`, `.mx-chip`, `.mx-kicker`, `.mx-badge`, `.mx-handle`, `.mx-verified` |
+| [Campos y botón de ícono](/catalog/atoms/inputs) | `.mx-input`, `.mx-icon-button` |
+| [Logo, imágenes y divisor](/catalog/atoms/media) | `.mx-logo`, `.mx-media`, `.mx-thumb`, `.mx-photo`, `.mx-divider` |
+
+### Moléculas
+
+Combinaciones pequeñas de átomos con un propósito.
+
+| Componente | Clases |
+|---|---|
+| [Barra de búsqueda](/catalog/molecules/search) | `.mx-search` |
+| [Navegación y listas de enlaces](/catalog/molecules/navigation) | `.mx-nav-links`, `.mx-link-list`, `.mx-social-link`, `.mx-tag-list`, `.mx-pagination` |
+| [Tarjetas](/catalog/molecules/cards) | `.mx-card`, `.mx-article-card`, `.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat` |
+| [Tarjeta de marca y perfil](/catalog/molecules/brand-tile) | `.mx-brand-tile`, `.mx-profile-card` |
+| [Bloques de contenido](/catalog/molecules/content) | `.mx-callout`, `.mx-quote`, `.mx-notice`, `.mx-code`, `.mx-timeline-item` |
+| [Fila de resultado](/catalog/molecules/result-row) | `.mx-result-row`, `.mx-result-list` |
+
+### Organismos
+
+Secciones completas, listas para usar tal cual.
+
+| Componente | Clases |
+|---|---|
+| [Navbar](/catalog/organisms/navbar) | `.mx-navbar` |
+| [Footer](/catalog/organisms/footer) | `.mx-footer`, `.mx-footer-brand`, `.mx-footer-bar` |
+| [Hero Bento](/catalog/organisms/hero-bento) | `.mx-hero`, `.mx-bento` |
+| [Perfil (About)](/catalog/organisms/profile) | `.mx-profile-hero`, `.mx-stats`, `.mx-timeline`, `.mx-card-grid` |
+| [Artículo](/catalog/organisms/article) | `.mx-post-hero`, `.mx-prose`, `.mx-article-list` |
+| [Promociones y banda de logo](/catalog/organisms/promo) | `.mx-promo-grid`, `.mx-promo-tile`, `.mx-logo-band` |
+
+### Plantillas
+
+Páginas completas armadas con los organismos:
+[Plantillas de página](/catalog/templates).
+
+## Archivos
+
+| Archivo | Contenido |
+|---|---|
+| [`/mxni/mxni.css`](/mxni/mxni.css) | Todo en un archivo: fuentes, tokens, base y componentes. |
+| [`/mxni/tokens.css`](/mxni/tokens.css) | Solo los tokens (variables CSS). |
+| [`/mxni/components.css`](/mxni/components.css) | Solo los componentes. |
+| [`/mxni/base.css`](/mxni/base.css) | Reset y estilos globales de página. |
+| [`/mxni/mxni.js`](/mxni/mxni.js) | Comportamientos opcionales: menú móvil, limpiar búsqueda, copiar código. |
+| `/mxni/fonts/` | Geist, Geist Mono y Geist Pixel (licencia SIL OFL 1.1). |
+| [`/mxni/assets/sprite.svg`](/mxni/assets/sprite.svg) | Íconos y logos de marca usados por las tarjetas y las redes sociales. |
+| [`/mxni/assets/logo.svg`](/mxni/assets/logo.svg) | Logo oficial MXNI. |
+
+Los paquetes descargables de cada plataforma incluyen la carpeta `mxni/`
+completa.
+
+
+
+---
+
+<!-- SOURCE: catalog/install.md -->
+
+---
+title: Usar en cualquier tecnología
+---
+
+# Usar en cualquier tecnología
+
+MXNI es un **lenguaje visual**. En web se implementa con una hoja de estilos
+sin dependencias; en cualquier otra tecnología se reproduce con los mismos
+valores. No requiere ningún framework.
+
+## Web: una sola hoja de estilos
+
+```html
+<link rel="stylesheet" href="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.css">
+<!-- Opcional: menú móvil, limpiar búsqueda y copiar código -->
+<script src="https://moibaldenegro.github.io/mxvi-design-system/mxni/mxni.js" defer></script>
+```
+
+Para producción, descarga el paquete de la plataforma (incluye la carpeta
+`mxni/` con CSS, JS, fuentes y assets) y sírvelo desde tu propio dominio:
+
+```text
+mxni/
+├── mxni.css          ← fuentes + tokens + base + componentes
+├── tokens.css        ← solo variables
+├── base.css          ← reset y estilos globales
+├── components.css    ← componentes .mx-*
+├── fonts.css         ← @font-face de Geist
+├── mxni.js           ← comportamientos opcionales
+├── fonts/            ← Geist, Geist Mono, Geist Pixel (OFL 1.1)
+└── assets/           ← logo.svg, sprite.svg
+```
+
+### Por framework
+
+Las clases son CSS puro, así que funcionan igual en cualquier framework. Solo
+cambia cómo se importa la hoja:
+
+::: code-group
+
+```html [HTML]
+<link rel="stylesheet" href="/mxni/mxni.css">
+<script src="/mxni/mxni.js" defer></script>
+```
+
+```tsx [React / Next.js]
+// app/layout.tsx o main.tsx
+import './mxni/mxni.css'
+
+// En JSX usa className en lugar de class:
+<a className="mx-button mx-button--accent" href="/cv.pdf">Descargar CV</a>
+```
+
+```ts [Vue / Nuxt]
+// main.ts (Vue) o nuxt.config.ts → css: ['~/mxni/mxni.css']
+import './mxni/mxni.css'
+```
+
+```svelte [Svelte / SvelteKit]
+<!-- src/routes/+layout.svelte -->
+<script>
+  import '../mxni/mxni.css'
+</script>
+<slot />
+```
+
+```json [Angular]
+// angular.json → projects.<app>.architect.build.options
+"styles": ["src/mxni/mxni.css"]
+```
+
+```astro [Astro]
+---
+// src/layouts/Layout.astro
+import '../mxni/mxni.css'
+---
+```
+
+:::
+
+### Comportamientos (JS)
+
+`mxni.js` es opcional y solo lee atributos `data-*`. Si tu framework maneja el
+estado, reimplementa el mismo contrato:
+
+| Componente | Contrato |
+|---|---|
+| Menú móvil de la navbar | Botón `[data-mx-menu-toggle]` dentro de `.mx-navbar`. Al abrir: `data-menu="open"` en la navbar y `aria-expanded="true"` en el botón. `Escape` cierra y devuelve el foco al botón. |
+| Búsqueda | Clase `is-filled` en `.mx-search` cuando el input tiene texto; el botón `[data-mx-clear]` vacía el input y le da foco. |
+| Copiar código | Botón `[data-mx-copy]` dentro de `.mx-code`: copia el `<pre>`, añade `is-copied` y muestra "Copiado" durante 2 s. |
+
+Si renderizas contenido después de la carga (SPA), llama a
+`window.MXNI.init(contenedor)`.
+
+## Otras tecnologías: mapa de tokens
+
+Para escritorio nativo, móvil o herramientas de diseño, reproduce estos
+valores. **Propuesta:** `1px` equivale a `1pt` en iOS y `1dp` en Android.
+
+| Token | Valor | SwiftUI | Jetpack Compose | Flutter |
+|---|---|---|---|---|
+| `--color-background` | `#070716` | `Color(hex: 0x070716)` | `Color(0xFF070716)` | `Color(0xFF070716)` |
+| `--color-surface` | `#101018` | `Color(hex: 0x101018)` | `Color(0xFF101018)` | `Color(0xFF101018)` |
+| `--color-text` | `#FFFFFF` | `.white` | `Color.White` | `Colors.white` |
+| `--color-text-secondary` | `#B8B8C5` | `Color(hex: 0xB8B8C5)` | `Color(0xFFB8B8C5)` | `Color(0xFFB8B8C5)` |
+| `--color-border` | blanco 8 % | `.white.opacity(0.08)` | `Color.White.copy(alpha = .08f)` | `Colors.white.withOpacity(.08)` |
+| `--color-border-strong` | blanco 15 % | `.white.opacity(0.15)` | `Color.White.copy(alpha = .15f)` | `Colors.white.withOpacity(.15)` |
+| `--color-accent` | `#B37AC2` | `Color(hex: 0xB37AC2)` | `Color(0xFFB37AC2)` | `Color(0xFFB37AC2)` |
+| `--color-accent-hover` | `#C396CF` | `Color(hex: 0xC396CF)` | `Color(0xFFC396CF)` | `Color(0xFFC396CF)` |
+| `--radius-square` | `0` | `RoundedRectangle(cornerRadius: 0)` | `RectangleShape` | `BorderRadius.zero` |
+| `--gap-card` | `14` | `14` | `14.dp` | `14` |
+| `--transition-default` | `0.28s` `cubic-bezier(.2,.8,.2,1)` | `.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.28)` | `tween(280, easing = CubicBezierEasing(.2f, .8f, .2f, 1f))` | `Duration(milliseconds: 280)`, `Cubic(.2, .8, .2, 1)` |
+
+Fuentes: usa los archivos de `mxni/fonts/` (Geist, Geist Mono y Geist Pixel
+Circle) registrándolos en la plataforma correspondiente.
+
+La lista completa de tokens está en [Tokens CSS](/implementation/css-tokens).
+
+
+
+---
+
+<!-- SOURCE: catalog/atoms/buttons.md -->
+
+---
+title: Botones
+---
+
+# Botones
+
+**Nivel:** átomo · **Clase base:** `.mx-button`
+
+Botones y enlaces con forma de botón. Todos tienen **esquinas rectas**, texto
+Geist Sans en peso 600 y bordes finos; ninguno tiene relleno de color salvo el
+CTA azul de las secciones promocionales.
+
+## Variantes
+
+| Variante | Clase | Cuándo usarla |
+|---|---|---|
+| Contorno | `.mx-button` | Acciones secundarias y enlaces con ícono (redes sociales). |
+| Acento | `.mx-button--accent` | La acción principal de una sección ("Descargar CV"). Una por bloque. |
+| Superficie | `.mx-button--surface` | Navegación entre páginas ("Siguiente artículo", paginación). |
+| Discreto | `.mx-button--quiet` | Acciones secundarias dentro de tarjetas ("Limpiar búsqueda"). |
+| Pequeño mono | `.mx-button--sm` | Utilidades en barras ("Volver arriba"). |
+| CTA | `.mx-button--cta` | Llamada a la acción sobre secciones promocionales. |
+| CTA contorno | `.mx-button--cta-outline` | Acción secundaria junto a un CTA. |
+
+```html preview
+<div class="mx-row">
+  <a class="mx-button" href="#">
+    <svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>
+    GitHub
+  </a>
+  <a class="mx-button mx-button--accent" href="#">Descargar CV <span aria-hidden="true">↓</span></a>
+  <a class="mx-button mx-button--surface" href="#">Siguiente artículo</a>
+  <button class="mx-button mx-button--quiet" type="button">Limpiar búsqueda</button>
+  <a class="mx-button mx-button--sm" href="#">Volver arriba <span aria-hidden="true">↑</span></a>
+</div>
+```
+
+```html preview
+<div class="mx-row">
+  <a class="mx-button mx-button--cta" href="#">Ver en YouTube</a>
+  <a class="mx-button mx-button--cta-outline" href="#">Sobre mí</a>
+</div>
+```
+
+## Especificación visual
+
+<div class="mx-spec">
+
+| Propiedad | Contorno | Acento | Superficie | CTA |
+|---|---|---|---|---|
+| Fondo | transparente | `#070716` | `#101018` | `#0071e3` |
+| Borde | 1px `rgba(255,255,255,.15)` | **2px** `#B37AC2` | 1px `rgba(255,255,255,.08)` | 1px `#0071e3` |
+| Texto | `#fff`, 600 | `#fff`, 600 | `#fff`, 400 | `#fff`, 400, 15px |
+| Padding | 7px 14px | 10.5px 21px | 14px | 8px 18px |
+| Radio | 0 | 0 | 0 | 0 |
+| Hover | borde `#B37AC2`, fondo `#101018` | borde `#C396CF` + glow `0 0 21px rgba(108,56,122,.35)` | borde `#B37AC2` | fondo `#0077ed` |
+| Foco | anillo 2px `#B37AC2`, separación 2px | igual | igual | igual |
+| Transición | `.28s cubic-bezier(.2,.8,.2,1)` | igual | igual | igual |
+
+</div>
+
+- Ícono: `1.1em`, `currentColor`, separado del texto por `7px`.
+- Las flechas (`↓`, `↑`, `↗`) van en un `<span aria-hidden="true">`.
+- El CTA azul solo vive sobre las tarjetas promocionales: no es el color de
+  acción del resto del sistema.
+
+## Reglas
+
+- Usa `<a>` si navega y `<button>` si ejecuta una acción.
+- Una sola variante **Acento** por bloque.
+- Sin esquinas redondeadas, sin degradados y sin sombras en reposo.
+- En pantallas táctiles el área tocable debe llegar a 44 × 44 px (agrega
+  padding vertical si hace falta).
+
+
+
+---
+
+<!-- SOURCE: catalog/atoms/typography.md -->
+
+---
+title: Tipografía y enlaces
+---
+
+# Tipografía y enlaces
+
+**Nivel:** átomo · **Clases:** `.mx-heading`, `.mx-label`, `.mx-text`,
+`.mx-meta`, `.mx-link`
+
+## Títulos y etiquetas
+
+```html preview
+<h1 class="mx-heading mx-heading--display">Agilismo, diseño y fragilidad</h1>
+<h2 class="mx-heading">Últimos artículos</h2>
+<h2 class="mx-heading mx-heading--lg">Experiencia</h2>
+<p class="mx-label">Navegación</p>
+```
+
+<div class="mx-spec">
+
+| Elemento | Fuente | Tamaño | Interlineado | Otros |
+|---|---|---|---|---|
+| Display (`--display`) | Geist Pixel 400 | `clamp(2.2rem, 4.5vw, 3.6rem)` | 1.15 | `text-wrap: balance`; sombra `0 0 32px rgba(108,56,122,.35)` |
+| Sección (`.mx-heading`) | Geist Pixel 400 | 1.75rem (28px) | 1.2 | margen inferior 14px |
+| Sección grande (`--lg`) | Geist Pixel 400 | `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 1.2 | — |
+| Subtítulo h3 | Geist Sans 700 | 1.05–1.35rem | 1.3–1.35 | — |
+| Etiqueta (`.mx-label`) | Geist Pixel 400 | 0.85rem | normal | MAYÚSCULAS, `letter-spacing: .08em` |
+
+</div>
+
+- Geist Pixel tiene una sola cara: nunca la pongas en negrita ni cursiva
+  (`font-synthesis: none`).
+- Un solo `h1` por página.
+
+## Texto y metadatos
+
+```html preview
+<p class="mx-text">Ingeniero de Software Senior y Arquitecto de Sistemas con más de 6 años de experiencia en backend.</p>
+<p class="mx-text mx-text--secondary">Artículos en español sobre arquitectura de software y sistemas operativos.</p>
+<p class="mx-text--lead">Artículos dedicados a la ingeniería de software aplicada y proyectos reales.</p>
+<p class="mx-meta">Por Moisés Baldenegro Melendez • 6 min de lectura</p>
+<p class="mx-meta mx-meta--mono">27 Octubre 2026 · 6 min</p>
+<p class="mx-meta mx-meta--pill">Por Moisés Baldenegro Melendez • 4 min de lectura</p>
+```
+
+<div class="mx-spec">
+
+| Clase | Fuente | Tamaño | Color | Interlineado |
+|---|---|---|---|---|
+| `.mx-text` | Geist Sans 400 | 1rem | `#ffffff` | 1.55 |
+| `.mx-text--secondary` | Geist Sans 400 | 1rem | `#b8b8c5` | 1.55 |
+| `.mx-text--lead` | Geist Sans 400 | 1.2rem | `#b8b8c5` | 1.6 |
+| `.mx-meta` | Geist Sans 400 | 0.9rem | `#b8b8c5` | normal |
+| `.mx-meta--mono` | Geist Mono 400 | 0.75rem | `#b8b8c5` | normal |
+| `.mx-meta--pill` | Geist Sans 400 | 0.9rem | `#b8b8c5` | borde 1px blanco 15 %, fondo superficie al 70 %, padding 6px 14px |
+
+</div>
+
+- Texto largo de artículo: ver [Artículo](/catalog/organisms/article)
+  (`.mx-prose`, 17→19px, interlineado 1.7).
+
+## Enlaces
+
+```html preview
+<div class="mx-row">
+  <a class="mx-link" href="#">Volver al inicio</a>
+  <a class="mx-link" href="#">Buscar artículos</a>
+  <a class="mx-link mx-link--subtle" href="#">Arquitectura</a>
+</div>
+```
+
+<div class="mx-spec">
+
+| Clase | Color | Peso | Subrayado | Hover |
+|---|---|---|---|---|
+| `.mx-link` | `#B37AC2` | 600 | sí | `#C396CF` |
+| `.mx-link--subtle` | `#b8b8c5` | 400 | no | `#C396CF` |
+
+</div>
+
+
+
+---
+
+<!-- SOURCE: catalog/atoms/tags.md -->
+
+---
+title: Tags, chips y badges
+---
+
+# Tags, chips y badges
+
+**Nivel:** átomo · **Clases:** `.mx-tag`, `.mx-chip`, `.mx-kicker`,
+`.mx-badge`, `.mx-handle`, `.mx-verified`
+
+Etiquetas pequeñas, todas con esquinas rectas. Cada una tiene un papel
+distinto; no las intercambies.
+
+```html preview
+<div class="mx-row">
+  <span class="mx-tag">#arquitectura</span>
+  <span class="mx-tag mx-tag--sm">#backend</span>
+  <span class="mx-chip">Node.js</span>
+  <span class="mx-kicker">#arquitectura</span>
+  <span class="mx-badge">sep 2023 – presente</span>
+  <span class="mx-badge mx-badge--muted">1 año 2 meses</span>
+  <span class="mx-handle">@moibaldenegro <span class="mx-verified"><span aria-hidden="true">✓</span><span class="mx-visually-hidden">Verificado</span></span></span>
+</div>
+```
+
+## Especificación visual
+
+<div class="mx-spec">
+
+| Átomo | Uso | Fuente | Color de texto | Borde | Fondo | Padding |
+|---|---|---|---|---|---|---|
+| Tag `.mx-tag` | Temas de un artículo (`#tema`) | Geist Pixel .85rem | `#B37AC2` | 1px blanco 8 % | — | 4px 12px |
+| Tag pequeño `--sm` | Tags en filas de resultados | Geist Pixel .78rem | `#B37AC2` | 1px blanco 8 % | — | 3px 10px |
+| Chip `.mx-chip` | Tecnologías y habilidades | Geist Sans .85rem | `#b8b8c5` | 1px blanco 15 % | `#070716` | 3.5px 10.5px |
+| Kicker `.mx-kicker` | Categoría sobre un título | Geist Pixel .8rem, MAYÚSCULAS, `.08em` | `#C396CF` | 1px `#B37AC2` | acento al 12 % | 4px 14px |
+| Badge `.mx-badge` | Periodo, estado | Geist Sans .85rem 600 | `#ffffff` | 1px `#B37AC2` (o blanco 15 % en `--muted`) | — | 3.5px 10.5px |
+| Handle `.mx-handle` | `@usuario` | Geist Mono .8rem 600 | `#5fd6ff` | 1px `rgba(0,195,255,.35)` | `#081a28` + halo `0 0 35px rgba(0,170,255,.15)` | 5px 12px |
+| Verificado `.mx-verified` | Dentro del handle | 0.6rem | `#ffffff` | — | `#0a6f9e` | cuadro de 16×16px |
+
+</div>
+
+## Reglas
+
+- Los tags pueden ser enlaces (`<a class="mx-tag">`); al pasar el mouse el
+  borde cambia a `#B37AC2`.
+- Agrupa varios con [`.mx-tag-list` o `.mx-chip-list`](/catalog/molecules/navigation#lista-de-tags).
+- El check del handle lleva un texto oculto ("Verificado") para lectores de
+  pantalla.
+- El cian del handle es exclusivo de la identidad del usuario: no lo uses en
+  otros elementos.
+
+
+
+---
+
+<!-- SOURCE: catalog/atoms/inputs.md -->
+
+---
+title: Campos y botón de ícono
+---
+
+# Campos y botón de ícono
+
+**Nivel:** átomo · **Clases:** `.mx-input`, `.mx-icon-button`
+
+## Campo de texto
+
+```html preview
+<label class="mx-label" for="demo-email" style="display:block;margin-bottom:7px">Correo</label>
+<input class="mx-input" id="demo-email" type="email" placeholder="tu@correo.com" autocomplete="email">
+```
+
+<div class="mx-spec">
+
+| Propiedad | Valor |
+|---|---|
+| Fondo | `#101018` |
+| Borde | 1px blanco 8 % |
+| Radio | 0 |
+| Texto | Geist Sans .95rem `#ffffff` |
+| Placeholder | `#b8b8c5` |
+| Padding | 10px 14px |
+| Foco | borde `#B37AC2` + halo `0 0 0 4px rgba(108,56,122,.35)` + anillo de foco global |
+
+</div>
+
+- Siempre con etiqueta visible; el placeholder no la sustituye.
+- Para buscar usa la molécula [Barra de búsqueda](/catalog/molecules/search),
+  que añade la lupa animada y el botón de limpiar.
+
+## Botón de ícono
+
+Botón cuadrado para acciones de un solo ícono: abrir el menú móvil, copiar
+código.
+
+```html preview
+<div class="mx-row">
+  <button class="mx-icon-button" type="button" aria-label="Abrir menú">☰</button>
+  <button class="mx-icon-button" type="button" aria-label="Cerrar menú">✕</button>
+  <button class="mx-icon-button mx-icon-button--sm" type="button" aria-label="Copiar código">⧉</button>
+</div>
+```
+
+<div class="mx-spec">
+
+| Propiedad | Normal | Pequeño (`--sm`) |
+|---|---|---|
+| Tamaño | 44 × 44px (2.75rem) | 30 × 30px |
+| Borde | 1px blanco 8 % | 1px blanco 8 % |
+| Fondo | transparente | transparente |
+| Ícono | 1.25rem `#ffffff` | .9rem `#b8b8c5` |
+| Hover | borde blanco 15 % | borde blanco 15 % |
+
+</div>
+
+- Todo botón de ícono necesita `aria-label`.
+- En táctil usa el tamaño normal (44px).
+
+
+
+---
+
+<!-- SOURCE: catalog/atoms/media.md -->
+
+---
+title: Logo, imágenes y divisor
+---
+
+# Logo, imágenes y divisor
+
+**Nivel:** átomo · **Clases:** `.mx-logo`, `.mx-media`, `.mx-thumb`,
+`.mx-photo`, `.mx-divider`
+
+## Logo
+
+```html preview
+<div class="mx-row">
+  <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
+  <a class="mx-logo mx-logo--lg" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+</div>
+```
+
+- Navbar: 72px de ancho. Footer: 96px (`--lg`).
+- Siempre el [SVG oficial](/brand/logo) con sus colores originales; el logo
+  enlaza al inicio.
+
+## Imagen 16:9 y 4:3
+
+```html preview
+<img class="mx-media" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" style="max-width:520px">
+```
+
+<div class="mx-spec">
+
+| Clase | Proporción | Ajuste | Borde | Uso |
+|---|---|---|---|---|
+| `.mx-media` | 16:9 | `object-fit: cover` | 1px blanco 8 % | Portadas de artículo |
+| `.mx-media--4x3` | 4:3 | `cover` | 1px blanco 8 % | Imagen del header de artículo |
+| `.mx-thumb` | 16:9, 112px de ancho | `cover` | 1px blanco 8 % | Filas de resultados |
+
+</div>
+
+## Miniatura
+
+```html preview
+<img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+```
+
+## Foto enmarcada
+
+Foto cuadrada con un marco de acento separado de la imagen y resplandor.
+
+```html preview
+<div style="width:220px;padding:14px;box-shadow:0 0 70px var(--color-glow)">
+  <img class="mx-photo" src="/mxni/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960">
+</div>
+```
+
+<div class="mx-spec">
+
+| Propiedad | Valor |
+|---|---|
+| Proporción | 1:1, `object-position: center top` |
+| Marco | `outline: 2px solid #B37AC2`, separado 7px |
+| Sombra | `0 25px 80px rgba(0,0,0,.35)` |
+| Halo del contenedor | `0 0 70px rgba(108,56,122,.35)` |
+
+</div>
+
+## Divisor
+
+```html preview
+<p class="mx-text">Antes</p>
+<hr class="mx-divider">
+<p class="mx-text">Después</p>
+<hr class="mx-divider mx-divider--strong">
+```
+
+- 1px blanco 8 % (`--strong`: 15 %), margen vertical 14px.
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/search.md -->
+
+---
+title: Barra de búsqueda
+---
+
+# Barra de búsqueda
+
+**Nivel:** molécula · **Clase:** `.mx-search` · **Compuesta por:** campo,
+ícono de lupa y botón de limpiar
+
+Escribe en el campo para ver el botón ×; con el foco y texto, la lupa
+"escanea" en bucle.
+
+```html preview
+<search class="mx-search">
+  <form class="mx-search__form" action="/search" method="get">
+    <svg class="mx-search__icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="8.5" cy="8.5" r="7" />
+      <path d="M13.5 13.5 19 19" />
+    </svg>
+    <input class="mx-search__input" type="search" name="q" enterkeyhint="search" placeholder="Buscar artículos…" aria-label="Buscar artículos">
+    <button class="mx-search__clear" type="button" data-mx-clear aria-label="Limpiar búsqueda">×</button>
+  </form>
+</search>
+```
+
+Ancho completo (`.mx-search--block`), por ejemplo dentro del menú móvil:
+
+```html preview
+<search class="mx-search mx-search--block">
+  <form class="mx-search__form" action="/search" method="get">
+    <svg class="mx-search__icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="8.5" cy="8.5" r="7" />
+      <path d="M13.5 13.5 19 19" />
+    </svg>
+    <input class="mx-search__input" type="search" name="q" placeholder="Buscar artículos…" aria-label="Buscar artículos">
+    <button class="mx-search__clear" type="button" data-mx-clear aria-label="Limpiar búsqueda">×</button>
+  </form>
+</search>
+```
+
+## Especificación visual
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Campo | 240px de ancho (100 % en `--block` y en móvil), padding 10px 42px |
+| Fondo y borde | `#101018`, 1px blanco 8 %, radio 0 |
+| Texto | **Geist Pixel** .95rem `#ffffff`; placeholder `#b8b8c5` |
+| Lupa | 16 × 16px a 16px del borde izquierdo, trazo 2px, `#b8b8c5` |
+| Foco | borde `#B37AC2` + halo `0 0 0 4px rgba(108,56,122,.35)`; lupa `#B37AC2` y escala 1.12 |
+| Con texto y foco | la lupa se mueve en bucle (1.6s): desplazamiento de 3px y rotación de ±10° |
+| Con texto sin foco | lupa `#B37AC2` quieta |
+| Botón × | 32 × 32px a 6px del borde derecho, `#b8b8c5`; hover `#B37AC2`; oculto sin texto |
+
+</div>
+
+## Comportamiento
+
+- Es un formulario `GET` a `/search?q=`: funciona sin JavaScript.
+- Con [`mxni.js`](/catalog/install#comportamientos-js), la clase `is-filled`
+  muestra el botón × y este vacía el campo.
+- El landmark `<search>` y el `aria-label` del campo le dan nombre accesible;
+  la lupa es decorativa.
+- Con "reducir movimiento" la lupa no se anima.
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/navigation.md -->
+
+---
+title: Navegación y listas de enlaces
+---
+
+# Navegación y listas de enlaces
+
+**Nivel:** molécula · **Clases:** `.mx-nav-links`, `.mx-link-list`,
+`.mx-social-link`, `.mx-tag-list`, `.mx-chip-list`, `.mx-pagination`
+
+## Enlaces de navegación
+
+Enlaces de la navbar. Al pasar el mouse crece un subrayado de acento de 2px;
+en la página actual queda fijo.
+
+```html preview
+<nav aria-label="Principal">
+  <ul class="mx-nav-links">
+    <li><a class="mx-nav-link" href="#" aria-current="page">About</a></li>
+    <li><a class="mx-nav-link" href="#">Arquitectura</a></li>
+    <li><a class="mx-nav-link" href="#">Diseño de sistemas</a></li>
+    <li><a class="mx-nav-link" href="#">@moibaldenegro</a></li>
+  </ul>
+</nav>
+```
+
+<div class="mx-spec">
+
+| Propiedad | Valor |
+|---|---|
+| Fuente | Geist Pixel .95rem (.85rem en ≤ 969px), `#ffffff` |
+| Separación | 42px (24px en ≤ 969px) |
+| Hover | texto `#C396CF`; subrayado `#B37AC2` de 2px a 6px bajo el texto que crece de 0 a 100 % |
+| Actual (`aria-current="page"`) | texto `#B37AC2`, subrayado completo |
+
+</div>
+
+## Lista de enlaces
+
+Columna de enlaces del footer: discretos, en gris secundario.
+
+```html preview
+<div style="max-width:260px">
+  <p class="mx-label" style="margin-bottom:14px">Navegación</p>
+  <ul class="mx-link-list">
+    <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
+  </ul>
+</div>
+```
+
+## Redes sociales
+
+Lista con ícono de marca (del sprite) y nombre. Dos formas: lista vertical
+(footer) o en fila con botones (perfil).
+
+```html preview
+<ul class="mx-link-list" style="max-width:260px">
+  <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+  <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+  <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+  <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+</ul>
+```
+
+```html preview
+<ul class="mx-social-list--inline">
+  <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub</a></li>
+  <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn</a></li>
+  <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube</a></li>
+</ul>
+```
+
+- Íconos de 1.1em; los logos de marca conservan sus colores del sprite.
+- Separación entre elementos: 10.5px (vertical) o 10.5px (en fila).
+- Los enlaces externos llevan el texto oculto "(sitio externo)".
+
+## Lista de tags
+
+```html preview
+<ul class="mx-tag-list">
+  <li><a class="mx-tag" href="#">#api</a></li>
+  <li><a class="mx-tag" href="#">#seguridad</a></li>
+  <li><a class="mx-tag" href="#">#autenticacion</a></li>
+  <li><a class="mx-tag" href="#">#jwt</a></li>
+</ul>
+```
+
+```html preview
+<ul class="mx-chip-list">
+  <li class="mx-chip">Node.js</li>
+  <li class="mx-chip">TypeScript</li>
+  <li class="mx-chip">Rust</li>
+  <li class="mx-chip">WebAssembly</li>
+</ul>
+```
+
+- Tags separados 8px; chips separados 7px. Ambos se ajustan en varias líneas.
+
+## Paginación
+
+```html preview
+<nav class="mx-pagination" aria-label="Paginación">
+  <button class="mx-button mx-button--surface" type="button" disabled>Anterior</button>
+  <span class="mx-pagination__label">Página 1 de 3</span>
+  <button class="mx-button mx-button--surface" type="button">Siguiente</button>
+</nav>
+```
+
+- Botones de superficie con padding 10px 18px; deshabilitado en `#b8b8c5`.
+- Etiqueta central en .9rem `#b8b8c5`.
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/cards.md -->
+
+---
+title: Tarjetas
+---
+
+# Tarjetas
+
+**Nivel:** molécula · **Clases:** `.mx-card`, `.mx-article-card`,
+`.mx-project-card`, `.mx-group-card`, `.mx-entry-list`, `.mx-stat`
+
+Todas las tarjetas comparten la misma base: fondo `#101018`, borde de 1px
+blanco al 8 %, **esquinas rectas** y sombra suave con brillo interior.
+
+## Tarjeta base
+
+```html preview
+<div class="mx-card mx-card--interactive" style="max-width:420px">
+  <p class="mx-text">Contenido de la tarjeta.</p>
+</div>
+```
+
+<div class="mx-spec">
+
+| Propiedad | Valor |
+|---|---|
+| Fondo | `#101018` |
+| Borde | 1px `rgba(255,255,255,.08)`, radio 0 |
+| Padding | 21px (1.5 × 14) |
+| Sombra en reposo | `inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)` (`--flat`: sin sombra) |
+| Hover (`--interactive`) | borde `rgba(255,255,255,.15)`; sombra `inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)` |
+
+</div>
+
+## Tarjeta de artículo
+
+Portada 16:9, título en Geist Pixel, autor y tiempo de lectura, descripción y
+tags. La imagen y el título forman un solo enlace.
+
+```html preview
+<article class="mx-article-card" style="max-width:680px">
+  <a class="mx-article-card__link" href="#">
+    <img class="mx-media mx-article-card__image" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
+    <h3 class="mx-article-card__title">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</h3>
+  </a>
+  <p class="mx-meta">Por Moisés Baldenegro Melendez • 6 min de lectura</p>
+  <p class="mx-article-card__description">Una guía técnica sobre los mecanismos de autenticación y autorización en arquitecturas backend modernas.</p>
+  <ul class="mx-tag-list">
+    <li class="mx-tag">#api</li>
+    <li class="mx-tag">#seguridad</li>
+    <li class="mx-tag">#jwt</li>
+  </ul>
+</article>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | `#101018`, borde 1px blanco 8 %, padding 24px 28px (18px 20px en ≤ 768px); sin sombra en reposo |
+| Hover | borde `#B37AC2` + sombra de hover |
+| Imagen | 16:9, borde 1px blanco 8 %, margen vertical 14px |
+| Título | Geist Pixel 1.35rem (1.15rem en ≤ 768px), interlineado 1.3; hover `#C396CF` |
+| Meta | Geist Sans .9rem `#b8b8c5` |
+| Descripción | Geist Sans 1rem `#ffffff`, interlineado 1.55 |
+| Tags | [`.mx-tag`](/catalog/atoms/tags), separados 8px |
+
+</div>
+
+## Tarjeta de proyecto
+
+Toda la tarjeta es clicable a través del enlace del título; la flecha ↗ se
+desplaza al pasar el mouse.
+
+```html preview wide
+<ul class="mx-card-grid">
+  <li class="mx-card mx-project-card">
+    <h3 class="mx-project-card__name"><a class="mx-project-card__link" href="#">Raúl<span class="mx-visually-hidden"> (sitio externo)</span></a><span class="mx-project-card__arrow" aria-hidden="true">↗</span></h3>
+    <p class="mx-project-card__description">Framework HTTP/MVC educativo para Node.js en TypeScript, sin dependencias.</p>
+  </li>
+  <li class="mx-card mx-project-card">
+    <h3 class="mx-project-card__name"><a class="mx-project-card__link" href="#">mouter-router<span class="mx-visually-hidden"> (sitio externo)</span></a><span class="mx-project-card__arrow" aria-hidden="true">↗</span></h3>
+    <p class="mx-project-card__description">Librería de routing ligera y tipada para React, publicada en npm.</p>
+  </li>
+  <li class="mx-card mx-project-card">
+    <h3 class="mx-project-card__name"><a class="mx-project-card__link" href="#">MFinance<span class="mx-visually-hidden"> (sitio externo)</span></a><span class="mx-project-card__arrow" aria-hidden="true">↗</span></h3>
+    <p class="mx-project-card__description">App de finanzas personales con Tauri v2, Rust y React.</p>
+  </li>
+</ul>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Título | Geist Sans 1.15rem 700 `#ffffff`; hover `#C396CF` |
+| Flecha ↗ | `#C396CF` 600; en hover se mueve 2px arriba y a la derecha |
+| Descripción | .95rem `#b8b8c5`, interlineado 1.6 |
+| Hover | borde blanco 15 %, sombra de hover, la tarjeta sube 2px |
+| Separación interna | 10.5px |
+
+</div>
+
+## Tarjeta de grupo
+
+Título y una lista de chips (habilidades por área) o de entradas
+(educación, certificaciones).
+
+```html preview wide
+<div class="mx-card-grid">
+  <article class="mx-card mx-card--interactive mx-group-card">
+    <h3 class="mx-group-card__title">Lenguajes y runtimes</h3>
+    <ul class="mx-chip-list">
+      <li class="mx-chip">Node.js</li>
+      <li class="mx-chip">TypeScript</li>
+      <li class="mx-chip">Python</li>
+      <li class="mx-chip">Rust</li>
+    </ul>
+  </article>
+  <article class="mx-card mx-card--interactive mx-group-card">
+    <h3 class="mx-group-card__title mx-group-card__title--accent">Certificaciones</h3>
+    <ul class="mx-entry-list">
+      <li><strong class="mx-entry-list__name">Backend con Rust</strong><span class="mx-entry-list__meta">Alura Latam</span></li>
+      <li><strong class="mx-entry-list__name">Administración de Servidores Linux</strong><span class="mx-entry-list__meta">Alura Latam</span></li>
+    </ul>
+  </article>
+  <article class="mx-card mx-card--interactive mx-group-card">
+    <h3 class="mx-group-card__title mx-group-card__title--accent">Idiomas</h3>
+    <ul class="mx-entry-list">
+      <li><strong class="mx-entry-list__name">Español</strong><span class="mx-entry-list__meta">Nativo</span></li>
+      <li><strong class="mx-entry-list__name">Inglés</strong><span class="mx-entry-list__meta">Intermedio (B1–B2, técnico)</span></li>
+    </ul>
+  </article>
+</div>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Título | Geist Sans 1.05rem 700 `#ffffff` (`--accent`: `#C396CF`) |
+| Entrada | nombre 600 `#ffffff`; meta .9rem `#b8b8c5`; separadas por línea de 1px blanco 8 % y 14px de espacio |
+| Separación título–contenido | 14px |
+
+</div>
+
+## Cifra destacada
+
+```html preview wide
+<ul class="mx-stats">
+  <li class="mx-stat"><span class="mx-stat__value">+6</span><span class="mx-stat__label">años de experiencia</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">4</span><span class="mx-stat__label">roles en 4 organizaciones</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">Sep 2025</span><span class="mx-stat__label">sistema en producción</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">3</span><span class="mx-stat__label">certificaciones</span></li>
+</ul>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | `#101018`, borde 1px blanco 8 %, padding 21px 14px, centrado |
+| Valor | Geist Sans 800 `clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem)` en `#B37AC2` |
+| Etiqueta | .9rem `#b8b8c5` |
+| Grilla | 2 columnas; 4 desde 900px; separación 14px |
+
+</div>
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/brand-tile.md -->
+
+---
+title: Tarjeta de marca y perfil
+---
+
+# Tarjeta de marca y tarjeta de perfil
+
+**Nivel:** molécula · **Clases:** `.mx-brand-tile`, `.mx-profile-card`
+
+Son las piezas del [hero Bento](/catalog/organisms/hero-bento). Se pueden usar
+solas o dentro de la cuadrícula.
+
+## Tarjeta de marca
+
+Color de fondo de la marca, título pequeño en mayúsculas y el logo **gigante,
+rotado y recortado** saliendo por la esquina inferior derecha. Si tiene enlace,
+toda la tarjeta es clicable y aparece una flecha ↗ al pasar el mouse.
+
+```html preview wide
+<div class="mx-card-grid">
+  <article class="mx-brand-tile" data-brand="rust">
+    <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Rust</p></header>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 224 224"><use href="/mxni/assets/sprite.svg#rust"/></svg></div>
+    <a class="mx-brand-tile__link" href="#"><span class="mx-visually-hidden">Rust</span><span class="mx-brand-tile__arrow" aria-hidden="true">↗</span></a>
+  </article>
+  <article class="mx-brand-tile" data-brand="react">
+    <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">React</p></header>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 569 512"><use href="/mxni/assets/sprite.svg#react"/></svg></div>
+  </article>
+  <article class="mx-brand-tile" data-brand="typescript">
+    <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">TypeScript</p></header>
+    <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxni/assets/sprite.svg#typescript"/></svg></div>
+  </article>
+</div>
+```
+
+Tarjeta rica: con contenido en lugar de logo (por ejemplo, estadísticas).
+
+```html preview
+<article class="mx-brand-tile" data-brand="htb" style="max-width:520px;min-height:240px">
+  <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Hack The Box</p></header>
+  <div class="mx-brand-tile__body"><p style="margin:0">Rango: Hacker · 42 máquinas</p></div>
+  <div class="mx-brand-tile__icon" style="opacity:.16"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxni/assets/sprite.svg#htb"/></svg></div>
+</article>
+```
+
+### Especificación visual
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Fondo | color de la marca (`data-brand`), ver tabla de abajo |
+| Borde | 1px blanco 8 %, radio 0, sombra de reposo |
+| Brillo superior | degradado de blanco 8 % a transparente en el 45 % superior |
+| Glow inferior | círculo radial de 180px en la esquina inferior derecha (−45px fuera) |
+| Título | Geist Pixel .95rem MAYÚSCULAS `.08em`, a 18px arriba y 22px a la izquierda (.8rem y 14px en ≤ 1200px) |
+| Logo | 115px de ancho por defecto, rotado −8°, escalado ×3, anclado a 4px de la derecha y 32px del borde inferior; desborda y se recorta |
+| Hover | la tarjeta sube 4px, sombra de hover, `contrast(1.4)`; el logo gira a 2° y escala ×1.12 |
+| Flecha ↗ | 1.25rem, arriba a la derecha (16px), aparece con hover o foco |
+| Alto mínimo | 190px fuera de la cuadrícula; dentro, lo define la fila |
+
+</div>
+
+Ajustes por tarjeta: `--icon-width`, `--icon-rotation` y `--icon-scale`
+(por ejemplo `style="--icon-width:240px; --icon-scale:7"` para logos grandes).
+
+### Colores de marca
+
+<div class="mxni-swatch-grid">
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#0E6C82"></div><div class="mxni-swatch__meta"><b>react</b><code>#0E6C82</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B74D05"></div><div class="mxni-swatch__meta"><b>html</b><code>#B74D05</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#08783A"></div><div class="mxni-swatch__meta"><b>node</b><code>#08783A</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#091223"></div><div class="mxni-swatch__meta"><b>github</b><code>#091223</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B61111"></div><div class="mxni-swatch__meta"><b>youtube</b><code>#B61111</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A33A16"></div><div class="mxni-swatch__meta"><b>rust</b><code>#A33A16</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#215BC7"></div><div class="mxni-swatch__meta"><b>typescript</b><code>#215BC7</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#6C387A"></div><div class="mxni-swatch__meta"><b>css</b><code>#6C387A</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#232F3E"></div><div class="mxni-swatch__meta"><b>aws</b><code>#232F3E</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#5C2A1C"></div><div class="mxni-swatch__meta"><b>claude-code</b><code>#5C2A1C</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3A0D18"></div><div class="mxni-swatch__meta"><b>nestjs</b><code>#3A0D18</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A8470C"></div><div class="mxni-swatch__meta"><b>cloudflare</b><code>#A8470C</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B4532F"></div><div class="mxni-swatch__meta"><b>claude</b><code>#B4532F</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3D2B1F"></div><div class="mxni-swatch__meta"><b>bun</b><code>#3D2B1F</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#1A2332"></div><div class="mxni-swatch__meta"><b>htb</b><code>#1A2332</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#252A31"></div><div class="mxni-swatch__meta"><b>bash</b><code>#252A31</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#241A5C"></div><div class="mxni-swatch__meta"><b>webassembly</b><code>#241A5C</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#2E1039"></div><div class="mxni-swatch__meta"><b>astro</b><code>#2E1039</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#101114"></div><div class="mxni-swatch__meta"><b>opencode</b><code>#101114</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#0F2C36"></div><div class="mxni-swatch__meta"><b>tauri</b><code>#0F2C36</code></div></div>
+</div>
+
+Los colores están oscurecidos para que el título blanco tenga contraste de al
+menos 4.5:1. Para una marca nueva, elige un tono que cumpla ese contraste y
+agrégalo como `--color-marca-<nombre>`.
+
+## Tarjeta de perfil
+
+Foto que se desvanece hacia el fondo, handle cian, nombre en Geist Pixel y
+descripción.
+
+```html preview
+<section class="mx-profile-card" style="max-width:480px">
+  <div class="mx-profile-card__image"><img src="/mxni/assets/examples/moises-hero.jpg" alt="Moisés Baldenegro Melendez" width="952" height="960"></div>
+  <div class="mx-profile-card__content">
+    <span class="mx-handle">@moibaldenegro <span class="mx-verified"><span aria-hidden="true">✓</span><span class="mx-visually-hidden">Verificado</span></span></span>
+    <h1 class="mx-profile-card__name">Moisés Baldenegro Melendez</h1>
+    <p class="mx-profile-card__description">Senior Software Engineer • Systems Architect • Node.js • NestJS • TypeScript • Rust</p>
+  </div>
+</section>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | `#101018`, borde 1px blanco 8 %, sombra `0 25px 80px rgba(0,0,0,.35)`; alto mínimo 560px |
+| Foto | cuadrada, ocupa la parte superior; máscara de opaca al 50 % a transparente al 92 % |
+| Contenido | abajo y centrado, padding 28px 28px 18px |
+| Handle | [`.mx-handle`](/catalog/atoms/tags), 10px sobre el nombre |
+| Nombre | Geist Pixel `min(2.4rem, 6.8cqi)` (escala con el ancho de la tarjeta), interlineado 1, `letter-spacing: -1px` |
+| Descripción | .95rem `#b8b8c5`, interlineado 1.55, 14px bajo el nombre |
+
+</div>
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/content.md -->
+
+---
+title: Bloques de contenido
+---
+
+# Bloques de contenido
+
+**Nivel:** molécula · **Clases:** `.mx-callout`, `.mx-quote`, `.mx-notice`,
+`.mx-code`, `.mx-timeline-item`
+
+## Callout
+
+Nota destacada dentro de una tarjeta, con una barra de acento a la izquierda.
+
+```html preview
+<p class="mx-callout"><strong>Resultado:</strong> Sistema en producción en septiembre de 2025: optimizó procesos administrativos y aumentó márgenes.</p>
+```
+
+- Fondo `#070716` (más oscuro que la tarjeta), barra izquierda de 3px
+  `#B37AC2`, padding 10.5px 14px, interlineado 1.6.
+- El texto en `<strong>` va en `#C396CF`.
+
+## Cita
+
+Frase destacada (filosofía, testimonio).
+
+```html preview
+<blockquote class="mx-quote">
+  <p class="mx-quote__text" lang="en">Deterministic Engineering in an Agentic World</p>
+  <p class="mx-quote__caption">Uso la IA para construir software, pero con procesos verificables: specs primero, tests antes que el código y una feature a la vez.</p>
+</blockquote>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | `#101018`, borde 1px blanco 8 % con barra izquierda de **4px** `#B37AC2`, padding 28px 35px (21px en ≤ 768px) |
+| Frase | Geist Sans 800 `clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem)`, `letter-spacing: -.02em`; comillas “ ” en `#C396CF` |
+| Texto | 1.1rem `#b8b8c5`, máximo 70 caracteres por línea |
+
+</div>
+
+## Aviso
+
+Estado vacío, guía o página de error.
+
+```html preview
+<section class="mx-notice">
+  <h2 class="mx-notice__title">Página no encontrada</h2>
+  <p class="mx-notice__text">La página que buscas no existe o cambió de dirección.</p>
+  <nav class="mx-notice__actions" aria-label="Enlaces de salida">
+    <a class="mx-link" href="#">Volver al inicio</a>
+    <a class="mx-link" href="#">Buscar artículos</a>
+  </nav>
+</section>
+```
+
+```html preview
+<section class="mx-notice">
+  <p class="mx-notice__text">No se encontraron resultados para 'kubernetes'.</p>
+  <div class="mx-notice__actions"><button class="mx-button mx-button--quiet" type="button">Limpiar búsqueda</button></div>
+</section>
+```
+
+- `#101018`, borde 1px blanco 8 %, padding 24px 28px.
+- Título en Geist Pixel 1.35rem; texto `#b8b8c5`, interlineado 1.55.
+
+## Bloque de código
+
+Con botón para copiar arriba a la derecha (requiere
+[`mxni.js`](/catalog/install#comportamientos-js) o tu propia implementación).
+
+```html preview
+<div class="mx-code">
+  <pre><code>const { privateKey } = generateKeyPairSync('ed25519')
+console.log(privateKey.export({ type: 'pkcs8', format: 'pem' }))</code></pre>
+  <button class="mx-code__copy" type="button" data-mx-copy aria-label="Copiar código">⧉</button>
+</div>
+```
+
+- `<pre>` en `#101018` con borde 1px blanco 8 %, padding 16px 20px, Geist Mono.
+- Botón de 30 × 30px al 70 % de opacidad (100 % en hover, foco y móvil); al
+  copiar muestra "Copiado" en `#B37AC2`.
+
+## Elemento de línea de tiempo
+
+Experiencia laboral: puesto, periodo, organización, logros y resultado. Se
+apila dentro de la [línea de tiempo](/catalog/organisms/profile#linea-de-tiempo).
+
+```html preview
+<article class="mx-card mx-card--interactive mx-timeline-item">
+  <header class="mx-timeline-item__head">
+    <h3 class="mx-timeline-item__role">Líder de Desarrollo &amp; Arquitecto de Software</h3>
+    <span class="mx-badge">sep 2023 – presente</span>
+  </header>
+  <p class="mx-timeline-item__org">Taquerías MG · Guadalajara, Jalisco</p>
+  <ul class="mx-timeline-item__highlights">
+    <li>Arquitectura backend de un ecosistema multiplataforma con Node.js, NestJS y TypeScript.</li>
+    <li>Microservicios en Docker y serverless en Cloudflare Workers.</li>
+  </ul>
+  <p class="mx-callout"><strong>Resultado:</strong> Sistema en producción en septiembre de 2025.</p>
+</article>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Puesto | Geist Sans 1.15rem 700 |
+| Periodo | [`.mx-badge`](/catalog/atoms/tags) a la derecha |
+| Organización | .95rem `#b8b8c5`, 4.7px arriba y 14px abajo |
+| Logros | lista con viñetas `#B37AC2`, separación 7px, interlineado 1.6 |
+| Resultado | [`.mx-callout`](#callout) |
+
+</div>
+
+
+
+---
+
+<!-- SOURCE: catalog/molecules/result-row.md -->
+
+---
+title: Fila de resultado
+---
+
+# Fila de resultado
+
+**Nivel:** molécula · **Clases:** `.mx-result-row`, `.mx-result-list`
+
+Filas compactas para resultados de búsqueda y artículos recomendados:
+miniatura, título enlazado (toda la fila es clicable), metadatos y, opcional,
+descripción y tags. Las filas se separan con líneas finas, sin cajas.
+
+```html preview wide
+<ul class="mx-result-list">
+  <li class="mx-result-row">
+    <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+    <div class="mx-result-row__body">
+      <a class="mx-result-row__link" href="#">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</a>
+      <p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 6 min</p>
+      <p class="mx-result-row__description">Una guía técnica sobre los mecanismos de autenticación y autorización en arquitecturas backend modernas: JWT, OAuth 2.0 y API Keys.</p>
+      <ul class="mx-tag-list"><li class="mx-tag mx-tag--sm">#api</li><li class="mx-tag mx-tag--sm">#seguridad</li></ul>
+    </div>
+  </li>
+  <li class="mx-result-row">
+    <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+    <div class="mx-result-row__body">
+      <a class="mx-result-row__link" href="#">Principios del diseño de software</a>
+      <p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 9 min</p>
+    </div>
+  </li>
+</ul>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Fila | padding 16px 12px (12px 6px en ≤ 768px), línea inferior 1px blanco 8 % (no en la última) |
+| Hover | fondo `#101018` |
+| Miniatura | 112px, 16:9; se oculta en ≤ 768px |
+| Título | Geist Sans 1.05rem `#ffffff`, interlineado 1.35; subrayado en hover |
+| Meta | .85rem `#b8b8c5`, 4px arriba |
+| Descripción | .95rem, máximo 2 líneas (se corta con "…") |
+| Tags | [`.mx-tag--sm`](/catalog/atoms/tags), 6px arriba |
+
+</div>
+
+- El `::after` del enlace cubre toda la fila: no pongas otros enlaces dentro.
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/navbar.md -->
+
+---
+title: Navbar
+---
+
+# Navbar
+
+**Nivel:** organismo · **Clase:** `.mx-navbar` · **Compuesta por:**
+[logo](/catalog/atoms/media#logo),
+[enlaces de navegación](/catalog/molecules/navigation#enlaces-de-navegacion),
+[botón de ícono](/catalog/atoms/inputs#boton-de-icono) y
+[barra de búsqueda](/catalog/molecules/search)
+
+Barra superior fija de vidrio. En escritorio muestra logo, enlaces y búsqueda
+en una fila; en ≤ 969px se convierte en un botón ☰ que despliega un panel con
+los enlaces y la búsqueda a lo ancho.
+
+```html preview flush wide
+<a class="mx-skip-link" href="#contenido">Saltar al contenido</a>
+<header class="mx-navbar">
+  <nav class="mx-navbar__inner" aria-label="Principal">
+    <a class="mx-logo" href="#" aria-current="page"><img src="/mxni/assets/logo.svg" alt="Inicio" width="72" height="25"></a>
+    <button class="mx-icon-button mx-navbar__toggle" type="button" data-mx-menu-toggle aria-controls="mx-menu" aria-expanded="false" aria-label="Abrir menú"></button>
+    <div class="mx-navbar__menu" id="mx-menu">
+      <a class="mx-nav-link" href="#" aria-current="page">About</a>
+      <a class="mx-nav-link" href="#">Arquitectura</a>
+      <a class="mx-nav-link" href="#">Diseño de sistemas</a>
+      <a class="mx-nav-link" href="#">@moibaldenegro</a>
+      <search class="mx-search">
+        <form class="mx-search__form" action="/search" method="get">
+          <svg class="mx-search__icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="7" /><path d="M13.5 13.5 19 19" /></svg>
+          <input class="mx-search__input" type="search" name="q" placeholder="Buscar artículos…" aria-label="Buscar artículos">
+          <button class="mx-search__clear" type="button" data-mx-clear aria-label="Limpiar búsqueda">×</button>
+        </form>
+      </search>
+    </div>
+  </nav>
+</header>
+<main id="contenido" style="height:380px"></main>
+```
+
+## Especificación visual
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Posición | `sticky` arriba, `z-index: 100`; deja de ser sticky con alto de pantalla ≤ 500px |
+| Fondo | `rgba(8,8,18,.75)` con `backdrop-filter: blur(18px)` |
+| Borde inferior | 1px blanco 15 % |
+| Alto | 64px; contenido en `min(1500px, 95%)` centrado |
+| Distribución | logo — enlaces (42px entre sí) — búsqueda alineada a la derecha |
+| Logo | 72px de ancho |
+| Enlaces | Geist Pixel .95rem con subrayado de acento (ver [enlaces](/catalog/molecules/navigation#enlaces-de-navegacion)) |
+| Búsqueda | 240px |
+| Móvil (≤ 969px) | logo a la izquierda, botón ☰ de 44px a la derecha; el panel aparece debajo con fondo `#070716`, borde inferior 15 %, enlaces de 44px de alto y 1rem, búsqueda a lo ancho; abre con fundido y desplazamiento de 8px |
+
+</div>
+
+## Comportamiento y accesibilidad
+
+- "Saltar al contenido" es el primer elemento: invisible hasta recibir foco,
+  aparece arriba a la izquierda con fondo `#B37AC2`.
+- El enlace de la página actual lleva `aria-current="page"`.
+- Botón ☰/✕ con `aria-expanded` y `aria-controls`; `Escape` cierra el panel y
+  devuelve el foco ([contrato de `mxni.js`](/catalog/install#comportamientos-js)).
+- Sin JavaScript, en móvil los enlaces se acomodan en varias líneas y la
+  búsqueda ocupa todo el ancho.
+- Los enlaces externos llevan "(sitio externo)" oculto.
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/footer.md -->
+
+---
+title: Footer
+---
+
+# Footer
+
+**Nivel:** organismo · **Clase:** `.mx-footer`
+
+El footer se puede usar **completo** o **por partes**. Cada parte funciona
+sola: el bloque de marca, una columna de enlaces, la lista de redes sociales o
+la barra inferior.
+
+## Footer completo
+
+```html preview flush wide
+<footer class="mx-footer" style="margin-top:0">
+  <div class="mx-footer__inner">
+    <div class="mx-footer-brand">
+      <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+      <p class="mx-footer-brand__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
+      <p class="mx-footer-brand__location"><span aria-hidden="true">◉</span> Guadalajara, Jalisco, México</p>
+      <a class="mx-button mx-button--accent" href="#" download>Descargar CV <span aria-hidden="true">↓</span></a>
+    </div>
+    <nav class="mx-footer__column" aria-label="Navegación">
+      <p class="mx-label">Navegación</p>
+      <ul class="mx-link-list">
+        <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
+        <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+        <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
+        <li><a class="mx-link mx-link--subtle" href="#">Buscar artículos</a></li>
+      </ul>
+    </nav>
+    <section class="mx-footer__column" aria-label="Últimos artículos">
+      <p class="mx-label">Últimos artículos</p>
+      <ul class="mx-link-list">
+        <li><a class="mx-link mx-link--subtle mx-footer__post" href="#">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</a><span class="mx-meta mx-meta--mono">27 Octubre 2026 · 6 min</span></li>
+        <li><a class="mx-link mx-link--subtle mx-footer__post" href="#">Los 4 desafíos del diseño de sistemas</a><span class="mx-meta mx-meta--mono">23 Octubre 2026 · 4 min</span></li>
+      </ul>
+    </section>
+    <nav class="mx-footer__column" aria-label="Conecta">
+      <p class="mx-label">Conecta</p>
+      <ul class="mx-link-list">
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+        <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="mx-footer-bar">
+    <p>© 2026 Moisés Baldenegro Melendez · Hecho con Astro y desplegado en Cloudflare</p>
+    <a class="mx-button mx-button--sm" href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+```
+
+### Especificación visual
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Fondo | glow radial `rgba(108,56,122,.35)` (elipse 60 % × 120 % centrada arriba) sobre un degradado vertical de `#070716` a `#05050b` |
+| Borde superior | 1px blanco 15 %; 70px de separación con el contenido anterior |
+| Texto base | .92rem `#b8b8c5` |
+| Columnas | 1 en < 600px · 2 entre 600 y 899px (la marca ocupa toda la fila) · desde 900px: marca (1.4fr) + 3 columnas iguales |
+| Separación | 35px vertical, 28px horizontal; padding 56px arriba, 42px abajo |
+| Títulos de columna | [`.mx-label`](/catalog/atoms/typography): Geist Pixel .85rem MAYÚSCULAS, 14px abajo |
+| Enlaces | `#b8b8c5`, hover `#C396CF`; título de artículo en `#ffffff`, fecha en Geist Mono .75rem |
+| Barra inferior | Geist Mono .78rem, línea superior 1px blanco 8 %, padding 21px; copyright a la izquierda y "Volver arriba" a la derecha (centrados en < 600px) |
+
+</div>
+
+## Partes
+
+### Bloque de marca
+
+Logo de 96px, frase, ubicación con punto de acento y acción principal.
+
+```html preview wide
+<div class="mx-footer-brand">
+  <a class="mx-logo" href="#"><img src="/mxni/assets/logo.svg" alt="Inicio" width="96" height="34"></a>
+  <p class="mx-footer-brand__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
+  <p class="mx-footer-brand__location"><span aria-hidden="true">◉</span> Guadalajara, Jalisco, México</p>
+  <a class="mx-button mx-button--accent" href="#">Descargar CV <span aria-hidden="true">↓</span></a>
+</div>
+```
+
+- Ancho máximo 34 caracteres; frase en `#ffffff` con interlineado 1.5.
+- Ubicación en Geist Mono .8rem; el ◉ en `#B37AC2`.
+
+### Columna de enlaces
+
+```html preview wide
+<nav class="mx-footer__column" aria-label="Navegación" style="max-width:280px">
+  <p class="mx-label">Navegación</p>
+  <ul class="mx-link-list">
+    <li><a class="mx-link mx-link--subtle" href="#">Inicio</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">About</a></li>
+    <li><a class="mx-link mx-link--subtle" href="#">Arquitectura</a></li>
+  </ul>
+</nav>
+```
+
+### Columna de artículos recientes
+
+```html preview wide
+<section class="mx-footer__column" aria-label="Últimos artículos" style="max-width:320px">
+  <p class="mx-label">Últimos artículos</p>
+  <ul class="mx-link-list">
+    <li><a class="mx-link mx-link--subtle mx-footer__post" href="#">Cómo generar una clave privada Ed25519 en una sola línea con Node.js</a><span class="mx-meta mx-meta--mono">27 Octubre 2026 · 3 min</span></li>
+    <li><a class="mx-link mx-link--subtle mx-footer__post" href="#">Los 4 desafíos del diseño de sistemas</a><span class="mx-meta mx-meta--mono">23 Octubre 2026 · 4 min</span></li>
+  </ul>
+</section>
+```
+
+### Redes sociales
+
+```html preview wide
+<nav class="mx-footer__column" aria-label="Conecta" style="max-width:280px">
+  <p class="mx-label">Conecta</p>
+  <ul class="mx-link-list">
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+    <li><a class="mx-link mx-link--subtle mx-social-link" href="#" rel="me noopener"><svg class="mx-social-link__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#x"/></svg>X<span class="mx-visually-hidden"> (sitio externo)</span></a></li>
+  </ul>
+</nav>
+```
+
+### Barra inferior
+
+```html preview flush wide
+<div class="mx-footer-bar">
+  <p>© 2026 Moisés Baldenegro Melendez · Hecho con Astro y desplegado en Cloudflare</p>
+  <a class="mx-button mx-button--sm" href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
+</div>
+```
+
+## Accesibilidad
+
+- Las columnas de enlaces son `<nav>` con `aria-label`; la de artículos es
+  `<section>`.
+- El footer siempre queda al fondo de la página: el `<main>` absorbe el
+  espacio libre (`base.css`).
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/hero-bento.md -->
+
+---
+title: Hero Bento
+---
+
+# Hero Bento
+
+**Nivel:** organismo · **Clases:** `.mx-hero`, `.mx-bento` · **Compuesto
+por:** [tarjeta de perfil](/catalog/molecules/brand-tile#tarjeta-de-perfil) y
+[tarjetas de marca](/catalog/molecules/brand-tile#tarjeta-de-marca)
+
+El hero de la portada: atmósfera morada con grano de puntos y una cuadrícula
+Bento de 12 columnas. Se puede usar entero, solo la atmósfera (`.mx-hero`)
+con otro contenido, o solo la cuadrícula (`.mx-bento`).
+
+```html preview flush wide
+<section class="mx-hero">
+  <div class="mx-hero__background"><div class="mx-hero__glow"></div></div>
+  <div class="mx-bento">
+    <section class="mx-profile-card" data-cols="5" data-rows="6">
+      <div class="mx-profile-card__image"><img src="/mxni/assets/examples/moises-hero.jpg" alt="Moisés Baldenegro Melendez" width="952" height="960"></div>
+      <div class="mx-profile-card__content">
+        <span class="mx-handle">@moibaldenegro <span class="mx-verified"><span aria-hidden="true">✓</span><span class="mx-visually-hidden">Verificado</span></span></span>
+        <h1 class="mx-profile-card__name">Moisés Baldenegro Melendez</h1>
+        <p class="mx-profile-card__description">Senior Software Engineer • Systems Architect • Node.js • NestJS • Rust</p>
+      </div>
+    </section>
+    <article class="mx-brand-tile" data-brand="htb" data-cols="5" data-rows="4">
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Hack The Box</p></header>
+      <div class="mx-brand-tile__body"><p style="margin:0">Rango: Hacker · 42 máquinas</p></div>
+      <div class="mx-brand-tile__icon" style="opacity:.16;--icon-width:150px;--icon-scale:6"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 791.27002"><use href="/mxni/assets/sprite.svg#htb"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="rust" data-cols="2" data-rows="2" data-hide-mobile>
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Rust</p></header>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 224 224"><use href="/mxni/assets/sprite.svg#rust"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="aws" data-cols="2" data-rows="2" data-hide-mobile>
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">AWS</p></header>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="/mxni/assets/sprite.svg#aws"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="cloudflare" data-cols="2" data-rows="2" data-hide-mobile>
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Cloudflare</p></header>
+      <div class="mx-brand-tile__icon" style="--icon-width:270px;--icon-rotation:0deg;--icon-scale:1.25"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 116"><use href="/mxni/assets/sprite.svg#cloudflare-cloud"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="nestjs" data-cols="5" data-rows="2">
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">NestJS</p></header>
+      <div class="mx-brand-tile__icon" style="--icon-width:230px;--icon-rotation:-5deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 264.6 255.6"><use href="/mxni/assets/sprite.svg#nestjs"/></svg></div>
+      <a class="mx-brand-tile__link" href="#"><span class="mx-visually-hidden">NestJS</span><span class="mx-brand-tile__arrow" aria-hidden="true">↗</span></a>
+    </article>
+    <article class="mx-brand-tile" data-brand="node" data-cols="4" data-rows="2">
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">Node JS</p></header>
+      <div class="mx-brand-tile__icon" style="--icon-width:240px;--icon-rotation:-10deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 292"><use href="/mxni/assets/sprite.svg#node"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="react" data-cols="2" data-rows="2" data-hide-mobile>
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">React</p></header>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 569 512"><use href="/mxni/assets/sprite.svg#react"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="typescript" data-cols="4" data-rows="2">
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">TypeScript</p></header>
+      <div class="mx-brand-tile__icon" style="--icon-width:220px;--icon-rotation:-10deg;--icon-scale:7"><svg aria-hidden="true" focusable="false" viewBox="0 0 256 256"><use href="/mxni/assets/sprite.svg#typescript"/></svg></div>
+    </article>
+    <article class="mx-brand-tile" data-brand="github" data-cols="2" data-rows="2" data-hide-mobile>
+      <header class="mx-brand-tile__header"><p class="mx-brand-tile__title">GitHub</p></header>
+      <div class="mx-brand-tile__icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 1024 1024"><use href="/mxni/assets/sprite.svg#github"/></svg></div>
+    </article>
+  </div>
+</section>
+```
+
+## Especificación visual
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Fondo (`.mx-hero__background`) | puntos de 1px blanco al 3 % cada 14px sobre un degradado radial desde arriba a la derecha: `#3C1F44` 0 % → `#150A18` 35 % → `#05050b` 100 % |
+| Resplandor (`.mx-hero__glow`) | círculo de 900px, radial `rgba(108,56,122,.35)` a transparente, 200px fuera arriba y 300px a la derecha; flota 6px arriba y abajo en un ciclo de 10s (solo sin "reducir movimiento") |
+| Cuadrícula | 12 columnas, filas de 95px, separación 14px, ancho `min(1500px, 95%)`, margen vertical 32px |
+| Tamaños | `data-cols` (2, 3, 4, 5, 6, 12) y `data-rows` (2, 3, 4, 6) en cada tarjeta |
+| ≤ 1200px | 6 columnas; filas de 140px como mínimo; las tarjetas ocupan 2 columnas y el perfil toda la fila (650px de alto mínimo) |
+| ≤ 768px | 1 columna, filas de 190px como mínimo; las tarjetas con `data-hide-mobile` se ocultan |
+
+</div>
+
+## Composición
+
+- La tarjeta de perfil va primero y es la más grande (5 × 6 en escritorio).
+- Mezcla tamaños: una o dos tarjetas anchas por fila y el resto cuadradas.
+- Las tarjetas de marca con enlace llevan la flecha ↗ y abren en otra pestaña.
+- En móvil muestra solo las tarjetas más importantes.
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/profile.md -->
+
+---
+title: Perfil (About)
+---
+
+# Perfil (About)
+
+**Nivel:** organismo · **Clases:** `.mx-profile-hero`, `.mx-stats`,
+`.mx-timeline`, `.mx-card-grid`, `.mx-section`
+
+Las secciones de una página de perfil o "Acerca de": encabezado con foto,
+cifras, línea de tiempo y cuadrículas de tarjetas.
+
+## Encabezado de perfil
+
+```html preview wide
+<section class="mx-profile-hero" aria-labelledby="perfil-nombre">
+  <div class="mx-profile-hero__media"><img class="mx-photo" src="/mxni/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960"></div>
+  <div class="mx-profile-hero__body">
+    <span class="mx-handle">@moibaldenegro</span>
+    <h1 class="mx-profile-hero__name" id="perfil-nombre">Moisés Baldenegro Melendez</h1>
+    <p class="mx-profile-hero__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
+    <p class="mx-profile-hero__location">Guadalajara, Jalisco, México</p>
+    <p class="mx-profile-hero__summary">Ingeniero de Software Senior y Arquitecto de Sistemas con más de 6 años de experiencia en backend con Node.js, NestJS y TypeScript.</p>
+    <p class="mx-profile-hero__focus">Senior Software Engineer • Systems Architect • Node.js • NestJS • TypeScript • Rust</p>
+    <div class="mx-profile-hero__actions">
+      <ul class="mx-social-list--inline">
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#github"/></svg>GitHub</a></li>
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#linkedin"/></svg>LinkedIn</a></li>
+        <li><a class="mx-button" href="#"><svg class="mx-button__icon" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#youtube"/></svg>YouTube</a></li>
+      </ul>
+      <a class="mx-button mx-button--accent" href="#" download>Descargar CV <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | degradado lineal a 160° de `#3C1F44` a `#150A18` (70 %), borde 1px blanco 8 % |
+| Distribución | apilado y centrado; desde 900px, foto de 280px a la izquierda y texto alineado a la izquierda, separación 49px, padding 49px |
+| Foto | [`.mx-photo`](/catalog/atoms/media#foto-enmarcada) con halo `0 0 70px rgba(108,56,122,.35)` |
+| Nombre | Geist Pixel `clamp(2rem, 1.4rem + 2.4vw, 3.25rem)`, interlineado 1.1 |
+| Titular | 1.15rem 600 `#ffffff` |
+| Ubicación | .95rem `#b8b8c5` |
+| Resumen | 1.05rem `#ffffff`, interlineado 1.7, máximo 68 caracteres |
+| Enfoque | .9rem `#b8b8c5`, `letter-spacing: .02em` |
+| Acciones | redes en [botones de contorno](/catalog/atoms/buttons) + [botón de acento](/catalog/atoms/buttons) |
+
+</div>
+
+## Cifras
+
+```html preview wide
+<ul class="mx-stats">
+  <li class="mx-stat"><span class="mx-stat__value">+6</span><span class="mx-stat__label">años de experiencia</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">4</span><span class="mx-stat__label">roles en 4 organizaciones</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">Sep 2025</span><span class="mx-stat__label">sistema en producción</span></li>
+  <li class="mx-stat"><span class="mx-stat__value">3</span><span class="mx-stat__label">certificaciones</span></li>
+</ul>
+```
+
+- 2 columnas; 4 desde 900px. Detalle de cada cifra en
+  [Tarjetas](/catalog/molecules/cards#cifra-destacada).
+
+## Línea de tiempo
+
+```html preview wide
+<section class="mx-section" aria-labelledby="experiencia">
+  <h2 class="mx-heading mx-heading--lg" id="experiencia">Experiencia</h2>
+  <ol class="mx-timeline">
+    <li class="mx-timeline-item">
+      <article class="mx-card mx-card--interactive">
+        <header class="mx-timeline-item__head"><h3 class="mx-timeline-item__role">Líder de Desarrollo &amp; Arquitecto de Software</h3><span class="mx-badge">sep 2023 – presente</span></header>
+        <p class="mx-timeline-item__org">Taquerías MG · Guadalajara, Jalisco</p>
+        <ul class="mx-timeline-item__highlights"><li>Arquitectura backend de un ecosistema multiplataforma.</li><li>Microservicios en Docker y serverless en Cloudflare Workers.</li></ul>
+        <p class="mx-callout"><strong>Resultado:</strong> Sistema en producción en septiembre de 2025.</p>
+      </article>
+    </li>
+    <li class="mx-timeline-item">
+      <article class="mx-card mx-card--interactive">
+        <header class="mx-timeline-item__head"><h3 class="mx-timeline-item__role">Desarrollador Web Multiplataforma</h3><span class="mx-badge mx-badge--muted">1 año 2 meses</span></header>
+        <p class="mx-timeline-item__org">Kellogg's Company · Mazatlán, Sinaloa</p>
+        <ul class="mx-timeline-item__highlights"><li>APIs RESTful con Python y Django conectadas a interfaces Angular.</li></ul>
+      </article>
+    </li>
+  </ol>
+</section>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Línea (desde 769px) | 2px blanco 15 % a la izquierda, contenido desplazado 28px |
+| Marcador | cuadrado de 12px `#B37AC2` con un anillo del color de fondo de 4.7px; el primero añade glow `0 0 14px rgba(108,56,122,.35)` |
+| Separación entre elementos | 21px |
+| Tarjeta | [elemento de línea de tiempo](/catalog/molecules/content#elemento-de-linea-de-tiempo) |
+
+</div>
+
+## Cuadrícula de tarjetas
+
+`.mx-card-grid`: una columna en teléfonos, tantas como quepan de 260px en
+adelante y exactamente 3 desde 900px (`--2`: 2 columnas). Se usa para
+habilidades, proyectos y credenciales; ver [Tarjetas](/catalog/molecules/cards).
+
+```html preview wide
+<section class="mx-section" aria-labelledby="stack">
+  <h2 class="mx-heading mx-heading--lg" id="stack">Stack y habilidades</h2>
+  <div class="mx-card-grid">
+    <article class="mx-card mx-card--interactive mx-group-card"><h3 class="mx-group-card__title">Backend y arquitectura</h3><ul class="mx-chip-list"><li class="mx-chip">NestJS</li><li class="mx-chip">Clean Architecture</li><li class="mx-chip">DDD</li></ul></article>
+    <article class="mx-card mx-card--interactive mx-group-card"><h3 class="mx-group-card__title">Bases de datos</h3><ul class="mx-chip-list"><li class="mx-chip">MongoDB</li><li class="mx-chip">PostgreSQL</li><li class="mx-chip">Redis</li></ul></article>
+    <article class="mx-card mx-card--interactive mx-group-card"><h3 class="mx-group-card__title">Cloud y DevOps</h3><ul class="mx-chip-list"><li class="mx-chip">Docker</li><li class="mx-chip">AWS</li><li class="mx-chip">Cloudflare Workers</li></ul></article>
+  </div>
+</section>
+```
+
+## Secciones
+
+- `.mx-section`: título + contenido con 21px de separación.
+- `.mx-stack`: apila secciones con 28px de separación.
+- La página de perfil completa está en [Plantillas](/catalog/templates#perfil).
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/article.md -->
+
+---
+title: Artículo
+---
+
+# Artículo
+
+**Nivel:** organismo · **Clases:** `.mx-post-hero`, `.mx-prose`,
+`.mx-article-list`
+
+Todo lo necesario para listados y páginas de lectura: el feed de artículos,
+el encabezado del artículo, el cuerpo de lectura y el pie con navegación y
+recomendados.
+
+## Lista de artículos
+
+```html preview wide
+<section class="mx-section" aria-labelledby="ultimos">
+  <h2 class="mx-heading" id="ultimos">Últimos artículos</h2>
+  <div class="mx-article-list">
+    <article class="mx-article-card">
+      <a class="mx-article-card__link" href="#">
+        <img class="mx-media mx-article-card__image" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768" loading="lazy">
+        <h3 class="mx-article-card__title">Autenticación de APIs: Estrategias, Tokens y Buenas Prácticas</h3>
+      </a>
+      <p class="mx-meta">Por Moisés Baldenegro Melendez • 6 min de lectura</p>
+      <p class="mx-article-card__description">Una guía técnica sobre autenticación y autorización en arquitecturas backend modernas.</p>
+      <ul class="mx-tag-list"><li class="mx-tag">#api</li><li class="mx-tag">#seguridad</li></ul>
+    </article>
+  </div>
+</section>
+```
+
+- Tarjetas en una columna separadas 14px. Detalle en
+  [Tarjeta de artículo](/catalog/molecules/cards#tarjeta-de-articulo).
+
+## Encabezado de artículo
+
+```html preview wide
+<header class="mx-post-hero">
+  <img class="mx-media" src="/mxni/assets/examples/entry-01.webp" alt="" width="1376" height="768">
+  <div class="mx-post-hero__copy">
+    <p class="mx-kicker">#arquitectura</p>
+    <h1 class="mx-post-hero__title">Agilismo, diseño y fragilidad</h1>
+    <p class="mx-meta mx-meta--pill">Por Moisés Baldenegro Melendez • 4 min de lectura</p>
+  </div>
+</header>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Contenedor | 2 columnas iguales (1 en ≤ 768px), separación 32px, padding 32px (20px en móvil), borde 1px blanco 15 %, sombra `0 25px 80px rgba(0,0,0,.35)` |
+| Fondo | degradado a 160°: `#3C1F44` → `#150A18` (45 %) → `#05050b`, más un brillo radial del acento al 22 % arriba a la derecha y un glow de 640px |
+| Línea inferior | 3px, degradado de `#B37AC2` a transparente (70 %) |
+| Imagen | 4:3 (16:9 en móvil), borde 1px blanco 15 %, glow `0 0 48px rgba(108,56,122,.35)` |
+| Kicker | [`.mx-kicker`](/catalog/atoms/tags), 14px sobre el título |
+| Título | Geist Pixel `clamp(2.2rem, 4.5vw, 3.6rem)`, interlineado 1.15, `text-wrap: balance`, sombra de glow |
+| Meta | [`.mx-meta--pill`](/catalog/atoms/typography#texto-y-metadatos) |
+
+</div>
+
+## Cuerpo de lectura
+
+```html preview wide
+<article class="mx-prose">
+  <h2>El falso agilismo: ¿Rapidez o prisa?</h2>
+  <p>Muchos ingenieros se han dejado influenciar por el mal uso de las llamadas <strong>metodologías ágiles</strong>. Se confunde el “agilismo” con la “rapidez”.</p>
+  <blockquote><p><strong>Producto vs. Proyecto</strong> El software debe verse siempre como un producto.</p></blockquote>
+  <h3>1. El nivel macro (Diseño Estratégico)</h3>
+  <ul><li>Requisitos funcionales.</li><li>Requisitos no funcionales.</li></ul>
+  <p>Usa <code>generateKeyPairSync</code> y lee la <a href="#">documentación oficial</a>.</p>
+  <hr>
+</article>
+```
+
+<div class="mx-spec">
+
+| Elemento | Valor |
+|---|---|
+| Cuerpo | Geist Sans `clamp(1.0625rem, 1rem + .3vw, 1.1875rem)` (17→19px), interlineado 1.7, `letter-spacing: .01em`, `text-wrap: pretty`, párrafos separados una línea |
+| h2 | Geist Pixel 1.75rem (1.4rem en móvil), margen 1.5 líneas arriba y .5 abajo |
+| h3 | Geist Sans 1.4rem (1.2rem en móvil) |
+| Enlaces | `#B37AC2`, hover `#C396CF` |
+| Código en línea | Geist Mono .9em sobre `#101018`, padding 2px 6px |
+| Bloques de código | [`.mx-code`](/catalog/molecules/content#bloque-de-codigo) |
+| Imágenes | centradas, borde 1px blanco 8 %, sombra de reposo |
+| Separador | línea de 1px `#ffffff` |
+| Ancho | el del contenedor de la página (sin columna estrecha) |
+
+</div>
+
+## Pie del artículo
+
+```html preview wide
+<footer style="display:flex;justify-content:flex-end;margin-bottom:14px"><a class="mx-button mx-button--surface" href="#">Siguiente artículo</a></footer>
+<section aria-labelledby="recomendados">
+  <h2 class="mx-heading" id="recomendados" style="font-size:1.35rem">Recomendados</h2>
+  <ul class="mx-result-list">
+    <li class="mx-result-row">
+      <img class="mx-thumb" src="/mxni/assets/examples/entry-01.webp" alt="" width="112" height="63">
+      <div class="mx-result-row__body"><a class="mx-result-row__link" href="#">Principios del diseño de software</a><p class="mx-result-row__meta">Por Moisés Baldenegro Melendez • 9 min</p></div>
+    </li>
+  </ul>
+</section>
+```
+
+- "Siguiente artículo": [botón de superficie](/catalog/atoms/buttons) alineado
+  a la derecha (a lo ancho en móvil).
+- Recomendados: [filas de resultado](/catalog/molecules/result-row) en 2
+  columnas (1 en móvil).
+
+
+
+---
+
+<!-- SOURCE: catalog/organisms/promo.md -->
+
+---
+title: Promociones y banda de logo
+---
+
+# Promociones y banda de logo
+
+**Nivel:** organismo · **Clases:** `.mx-promo-grid`, `.mx-promo-tile`,
+`.mx-logo-band`
+
+## Tarjetas promocionales
+
+Cuadrícula 2 × 2 de proyectos o contenido destacado, al estilo de una tienda:
+título grande, subtítulo, dos acciones azules y una imagen que se funde desde
+arriba.
+
+```html preview flush wide
+<section class="mx-promo-grid" aria-label="Proyectos y contenido">
+  <article class="mx-promo-tile" data-tone="youtube">
+    <h3 class="mx-promo-tile__title">Rust en el kernel de Linux</h3>
+    <p class="mx-promo-tile__subtitle">Programación de sistemas explicada en video, de la memoria al kernel.</p>
+    <div class="mx-promo-tile__actions">
+      <a class="mx-button mx-button--cta" href="#">Ver en YouTube</a>
+      <a class="mx-button mx-button--cta-outline" href="#">Sobre mí</a>
+    </div>
+    <img class="mx-promo-tile__image" src="/mxni/assets/examples/pic01.webp" alt="Video sobre Rust en el kernel de Linux" width="1920" height="1920" loading="lazy">
+  </article>
+  <article class="mx-promo-tile" data-tone="mfinance">
+    <h3 class="mx-promo-tile__title">MFinance</h3>
+    <p class="mx-promo-tile__subtitle">Tus finanzas personales, 100 % locales. Tauri, Rust y React.</p>
+    <div class="mx-promo-tile__actions">
+      <a class="mx-button mx-button--cta" href="#">Ver el código</a>
+      <a class="mx-button mx-button--cta-outline" href="#">Más proyectos</a>
+    </div>
+    <img class="mx-promo-tile__image" src="/mxni/assets/examples/pic01.webp" alt="Captura de MFinance" width="1920" height="1920" loading="lazy">
+  </article>
+</section>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Cuadrícula | 2 columnas (1 en ≤ 768px), separación y padding 10px |
+| Tarjeta | alto mínimo 580px (500px en móvil), padding superior 52px (40px), contenido centrado, fondo por tono |
+| Tonos (`data-tone`) | `youtube` `#0e0e10` · `mfinance` `#0d1a1d` · `new-relic` `#0e0b22` · `tomatesoft` `#0b0909` |
+| Título | Geist Sans 600 `clamp(28px, 3vw, 40px)` |
+| Subtítulo | `clamp(17px, 1.6vw, 21px)` `#b8b8c5`, máximo 32 caracteres por línea |
+| Acciones | [CTA y CTA contorno](/catalog/atoms/buttons), separación 14px, 16px bajo el subtítulo |
+| Imagen | cuadrada, hasta 440px (88 % y 360px en móvil), pegada abajo, se funde de transparente a opaca en el 22 % superior |
+
+</div>
+
+- Es el único lugar donde el azul `#0071e3` aparece como acción.
+
+## Banda de logo
+
+Franja de borde a borde con las cuatro letras del logo como enlaces, en blanco
+translúcido sobre la atmósfera morada.
+
+```html preview flush wide
+<section class="mx-logo-band" aria-label="MXNI">
+  <div class="mx-logo-band__track">
+    <a class="mx-logo-band__link" href="#" aria-label="M — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 717 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-m"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="X — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 805 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-x"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="V — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 795 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-v"/></svg></a>
+    <a class="mx-logo-band__link" href="#" aria-label="I — GitHub"><svg class="mx-logo-band__logo" viewBox="0 0 190 716" aria-hidden="true" focusable="false"><use href="/mxni/assets/sprite.svg#mxvi-i"/></svg></a>
+  </div>
+</section>
+```
+
+<div class="mx-spec">
+
+| Parte | Valor |
+|---|---|
+| Fondo | glow radial central `rgba(108,56,122,.35)` sobre un degradado horizontal `#150A18` → `#3C1F44` → `#150A18` |
+| Bordes | 1px blanco 8 % arriba y abajo; padding vertical `clamp(32px, 5vw, 64px)` |
+| Letras | 4 columnas (2 en ≤ 768px), alto `clamp(72px, 10vw, 150px)` (64px en móvil), en blanco al 62 % |
+| Hover / foco | opacidad 100 %, sube 4px, escala 1.04 y glow de `#B37AC2` |
+
+</div>
+
+
+
+---
+
+<!-- SOURCE: catalog/templates.md -->
+
+---
+title: Plantillas de página
+---
+
+# Plantillas de página
+
+**Nivel:** plantilla. Estructuras completas armadas con los organismos del
+catálogo. Toda página comparte el mismo esqueleto: navbar, `<main>` y footer.
+
+## Esqueleto común
+
+```html
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070716">
+  <title>Título | Sitio</title>
+  <link rel="stylesheet" href="/mxni/mxni.css">
+  <script src="/mxni/mxni.js" defer></script>
+</head>
+<body>
+  <a class="mx-skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="mx-navbar">…</header>          <!-- Organismo: Navbar -->
+  <main id="contenido" tabindex="-1">
+    …                                          <!-- Contenido de la plantilla -->
+  </main>
+  <footer class="mx-footer">…</footer>         <!-- Organismo: Footer -->
+</body>
+</html>
+```
+
+- `theme-color` igual al fondo (`#070716`).
+- `<main>` ocupa el espacio libre para que el footer quede abajo.
+
+## Portada
+
+| Orden | Bloque | Organismo |
+|---|---|---|
+| 1 | Hero Bento con perfil y tarjetas de marca | [Hero Bento](/catalog/organisms/hero-bento) |
+| 2 | Últimos artículos (`.mx-page` → `.mx-section`) | [Lista de artículos](/catalog/organisms/article#lista-de-articulos) |
+| 3 | Banda de logo | [Banda de logo](/catalog/organisms/promo#banda-de-logo) |
+| 4 | Tarjetas promocionales 2 × 2 | [Promociones](/catalog/organisms/promo#tarjetas-promocionales) |
+
+```html
+<main id="contenido">
+  <section class="mx-hero">…<div class="mx-bento">…</div></section>
+  <div class="mx-page"><section class="mx-section">… artículos …</section></div>
+  <section class="mx-logo-band">…</section>
+  <section class="mx-promo-grid">…</section>
+</main>
+```
+
+## Perfil
+
+| Orden | Bloque | Organismo |
+|---|---|---|
+| 1 | Encabezado con foto, redes y CV | [Encabezado de perfil](/catalog/organisms/profile#encabezado-de-perfil) |
+| 2 | Cifras | [Cifras](/catalog/organisms/profile#cifras) |
+| 3 | Experiencia | [Línea de tiempo](/catalog/organisms/profile#linea-de-tiempo) |
+| 4 | Stack, proyectos, formación | [Cuadrícula de tarjetas](/catalog/organisms/profile#cuadricula-de-tarjetas) |
+| 5 | Filosofía | [Cita](/catalog/molecules/content#cita) |
+
+```html
+<main id="contenido">
+  <div class="mx-page mx-stack">
+    <section class="mx-profile-hero">…</section>
+    <ul class="mx-stats">…</ul>
+    <section class="mx-section"><h2 class="mx-heading mx-heading--lg">Experiencia</h2><ol class="mx-timeline">…</ol></section>
+    <section class="mx-section"><h2 class="mx-heading mx-heading--lg">Stack y habilidades</h2><div class="mx-card-grid">…</div></section>
+    <section class="mx-section"><h2 class="mx-heading mx-heading--lg">Filosofía</h2><blockquote class="mx-quote">…</blockquote></section>
+  </div>
+</main>
+```
+
+## Artículo
+
+```html
+<main id="contenido">
+  <div class="mx-page">
+    <header class="mx-post-hero">…</header>
+    <article class="mx-prose">…</article>
+    <footer>… Siguiente artículo …</footer>
+    <section>… Recomendados (mx-result-list) …</section>
+  </div>
+</main>
+```
+
+Ver [Artículo](/catalog/organisms/article).
+
+## Búsqueda
+
+```html
+<main id="contenido">
+  <div class="mx-page">
+    <h1 class="mx-heading">Búsqueda</h1>
+    <section class="mx-notice">… guía o "sin resultados" …</section>
+    <ul class="mx-result-list">… filas …</ul>
+    <nav class="mx-pagination">…</nav>
+  </div>
+</main>
+```
+
+Ver [Fila de resultado](/catalog/molecules/result-row) y
+[Paginación](/catalog/molecules/navigation#paginacion).
+
+## Página no encontrada
+
+```html preview wide
+<div class="mx-page" style="padding:0">
+  <section class="mx-notice">
+    <h1 class="mx-notice__title" style="font-size:1.75rem">Página no encontrada</h1>
+    <p class="mx-notice__text">La página que buscas no existe o cambió de dirección.</p>
+    <nav class="mx-notice__actions" aria-label="Enlaces de salida">
+      <a class="mx-link" href="#">Volver al inicio</a>
+      <a class="mx-link" href="#">Buscar artículos</a>
+    </nav>
+  </section>
+</div>
+```
 
 
 
@@ -496,7 +2768,8 @@ para aplicaciones instaladas.
 ## Qué se comparte siempre
 
 - Paleta de marca, colores semánticos y proporciones de uso ([Color](/foundations/colors)).
-- Tipografías Manrope y JetBrains Mono, y la escala tipográfica ([Typography](/foundations/typography)).
+- Tipografías Geist Sans, Geist Mono y Geist Pixel, y la escala tipográfica ([Typography](/foundations/typography)).
+- El [catálogo de componentes](/catalog/) y su [ADN visual](/catalog/visual-dna).
 - Escala de espaciado `4–64 px` ([Spacing & layout](/foundations/spacing-layout)).
 - Radios, bordes, sombras y glow ([Geometry & effects](/foundations/geometry-effects)).
 - Duraciones y principios de movimiento ([Motion](/foundations/motion)).
@@ -578,56 +2851,106 @@ title: Color
 
 # Color
 
-Los colores son decisiones iniciales de MXNI v1.0 y deben validarse en interfaces y contenido reales.
+Paleta real de [moisesbaldenegro.com](https://moisesbaldenegro.com). Los
+nombres son los tokens de [`mxni/tokens.css`](/implementation/css-tokens).
 
-## Core palette
+## Base
 
 <div class="mxni-swatch-grid">
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#09070D"></div><div class="mxni-swatch__meta"><b>Void</b><code>#09070D</code>Background</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#15111C"></div><div class="mxni-swatch__meta"><b>Surface</b><code>#15111C</code>Containers</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#211A2B"></div><div class="mxni-swatch__meta"><b>Elevated</b><code>#211A2B</code>Raised surfaces</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#382C42"></div><div class="mxni-swatch__meta"><b>Border</b><code>#382C42</code>Dividers</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A83FE0"></div><div class="mxni-swatch__meta"><b>Electric Purple</b><code>#A83FE0</code>Primary brand</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#E044C5"></div><div class="mxni-swatch__meta"><b>Neon Magenta</b><code>#E044C5</code>Expressive accent</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#24CDE0"></div><div class="mxni-swatch__meta"><b>Digital Cyan</b><code>#24CDE0</code>Interactive accent</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B5F52D"></div><div class="mxni-swatch__meta"><b>Signal Lime</b><code>#B5F52D</code>Data highlight</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716"></div><div class="mxni-swatch__meta"><b>Fondo</b><code>--color-background · #070716</code>Página: noche índigo</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#101018"></div><div class="mxni-swatch__meta"><b>Superficie</b><code>--color-surface · #101018</code>Tarjetas, campos, paneles</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#ffffff"></div><div class="mxni-swatch__meta"><b>Texto</b><code>--color-text · #ffffff</code>Texto principal</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#b8b8c5"></div><div class="mxni-swatch__meta"><b>Texto secundario</b><code>--color-text-secondary · #b8b8c5</code>Metadatos, descripciones</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716;box-shadow:inset 0 0 0 6px rgba(255,255,255,.08)"></div><div class="mxni-swatch__meta"><b>Borde</b><code>--color-border · rgba(255,255,255,.08)</code>Hairline por defecto</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716;box-shadow:inset 0 0 0 6px rgba(255,255,255,.15)"></div><div class="mxni-swatch__meta"><b>Borde fuerte</b><code>--color-border-strong · rgba(255,255,255,.15)</code>Navbar, botones, hover</div></div>
 </div>
 
-## Semantic colors
+## Acento
 
-Semantic colors communicate meaning, not brand identity. Initial defaults:
+Un solo acento: **ciruela**. Se usa en poca superficie: bordes activos,
+tags, enlaces, foco, subrayados, marcadores y cifras.
 
-| Token | Value | Meaning |
+<div class="mxni-swatch-grid">
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B37AC2"></div><div class="mxni-swatch__meta"><b>Acento</b><code>--color-accent · #B37AC2</code>Señal principal</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#C396CF"></div><div class="mxni-swatch__meta"><b>Acento hover</b><code>--color-accent-hover · #C396CF</code>Hover y énfasis</div></div>
+</div>
+
+## Atmósfera
+
+Degradado y resplandor de los bloques principales (hero, header de artículo,
+perfil, footer, banda de logo) y fondo de la navbar.
+
+<div class="mxni-swatch-grid">
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3C1F44"></div><div class="mxni-swatch__meta"><b>Hero arriba</b><code>--color-hero-top · #3C1F44</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#150A18"></div><div class="mxni-swatch__meta"><b>Hero medio</b><code>--color-hero-mid · #150A18</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#05050b"></div><div class="mxni-swatch__meta"><b>Hero abajo</b><code>--color-hero-bottom · #05050b</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:rgba(108,56,122,.35)"></div><div class="mxni-swatch__meta"><b>Glow</b><code>--color-glow · rgba(108,56,122,.35)</code>Resplandor y halo de foco</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:rgba(8,8,18,.75)"></div><div class="mxni-swatch__meta"><b>Navbar</b><code>--color-navbar · rgba(8,8,18,.75)</code>+ blur 18px</div></div>
+</div>
+
+Degradado de referencia:
+
+```css
+background:
+  radial-gradient(color-mix(in srgb, #fff 3%, transparent) 1px, transparent 1px),
+  radial-gradient(circle at top right, #3C1F44 0%, #150A18 35%, #05050b 100%);
+background-size: 14px 14px, auto;
+```
+
+## Colores con un solo uso
+
+| Color | Token | Único uso permitido |
 |---|---|---|
-| Success | `#39C98A` | Successful operation |
-| Warning | `#F3B64B` | Caution or pending |
-| Danger | `#F05B72` | Error or destructive action |
-| Info | `#24CDE0` | Neutral information |
+| `#6C387A` · `#F7941D` | `--color-logo-purple`, `--color-logo-orange` | El logo MXNI |
+| `#5fd6ff` sobre `#081a28` | `--color-username-text`, `--color-username-bg` | El handle `@usuario` |
+| `#0a6f9e` | `--color-verified` | La marca de verificado |
+| `#0071e3` / `#2997ff` | `--color-promo-cta`, `--color-promo-link` | Acciones de las tarjetas promocionales |
+| Colores de marca | `--color-marca-*` | Fondo de las [tarjetas de marca](/catalog/molecules/brand-tile#colores-de-marca) |
+| `#6C387A` / `#090912` | `--color-scrollbar-*` | La barra de desplazamiento |
 
-Do not use lime as the only indicator of success or red as the only indicator of error. Include labels, icons, or text.
+## Colores semánticos
 
-## Usage ratios
+El sitio todavía no usa estados de éxito, advertencia o error. **Propuesta**
+para cuando un producto los necesite (con contraste AA sobre `#101018`):
 
-As a starting point for dark interfaces:
+| Estado | Valor |
+|---|---|
+| Éxito | `#39C98A` |
+| Advertencia | `#F3B64B` |
+| Error | `#F05B72` |
+| Información | `#5fd6ff` |
 
-- 65–75% dark backgrounds and surfaces.
-- 15–25% neutral text and structural elements.
-- 5–10% brand and accent colors.
+Acompáñalos siempre con texto o ícono; el color nunca es la única señal.
 
-These are visual heuristics, not strict pixel quotas.
+## Proporciones
 
-## Contrast
+- 85–90 % fondo y superficies oscuras.
+- 8–12 % texto y líneas.
+- 2–5 % acento.
+- Las tarjetas de marca y las promocionales son la única excepción con
+  bloques de color sólido.
 
-Check text and interactive states against their actual backgrounds. Normal text should target WCAG 2.2 AA contrast (4.5:1); large text and meaningful UI graphics should target at least 3:1 where applicable. Do not assume a brand color is accessible on every surface.
+## Contraste
 
-## Rules
+| Combinación | Contraste |
+|---|---|
+| `#ffffff` sobre `#070716` | 19.98 : 1 |
+| `#b8b8c5` sobre `#101018` | 9.65 : 1 |
+| `#B37AC2` sobre `#070716` | 6.17 : 1 |
+| `#B37AC2` sobre `#101018` | 5.84 : 1 |
+| `#C396CF` sobre `#101018` | 7.74 : 1 |
+| `#ffffff` sobre `#0071e3` (CTA) | 4.70 : 1 |
 
-- Purple is the primary brand signal.
-- Magenta is expressive, not a default action color.
-- Cyan highlights interaction and technical information.
-- Lime is a limited highlight for data and status.
-- Use neutral text for long reading.
-- Never use all accents at equal intensity in one composition.
+Verifica cualquier combinación nueva contra WCAG 2.2 AA (4.5 : 1 en texto
+normal, 3 : 1 en texto grande y gráficos).
+
+## Reglas
+
+- Nunca uses negro puro ni grises neutros como fondo.
+- El acento no se usa como fondo de botones ni de bloques grandes.
+- Los bordes son siempre blancos translúcidos, nunca grises opacos.
+- No agregues acentos nuevos (cian, verde, rosa) fuera de sus usos únicos.
+
 
 
 ---
@@ -638,38 +2961,62 @@ Check text and interactive states against their actual backgrounds. Normal text 
 title: Typography
 ---
 
-# Typography
+# Tipografía
 
-## Families
+MXNI usa la familia **Geist** en tres caras, autoalojadas en `mxni/fonts/`
+(licencia SIL Open Font License 1.1).
 
-| Role | Family | Usage |
+## Familias
+
+| Token | Cara | Uso |
 |---|---|---|
-| Display / UI | Manrope | Headlines, navigation, labels, interface text |
-| Technical | JetBrains Mono | Code, IDs, versions, metadata, technical annotations |
+| `--font-display` | **Geist Pixel (Circle)** | h1 y h2, enlaces de la navbar, títulos de tarjeta, tags, kicker, input de búsqueda, etiquetas de columna del footer |
+| `--font-sans` | **Geist Sans** (variable 100–900) | Texto de lectura e interfaz, títulos h3, botones |
+| `--font-mono` | **Geist Mono** (variable 100–900) | Código, handles (`@usuario`), fechas y metadatos pequeños, barra inferior del footer, ubicación |
 
-Load fonts locally or from a reliable font provider. For production and privacy-sensitive applications, prefer self-hosted font files with appropriate licensing.
+Geist Pixel tiene **una sola cara (400)**. Nunca la pongas en negrita ni
+cursiva: usa `font-weight: 400` y `font-synthesis: none`.
 
-## Type scale
+## Escala
 
-| Token | Size | Weight | Typical use |
-|---|---:|---:|---|
-| Display | 48–64 px | 700–800 | Campaigns and covers |
-| H1 | 36–40 px | 700 | Page title |
-| H2 | 28–32 px | 700 | Main section |
-| H3 | 20–24 px | 600–700 | Card or subsection |
-| Body | 14–16 px | 400–500 | Reading |
-| Label | 10–12 px | 600 | Metadata |
-| Code | 12–14 px | 400–500 | Code and technical values |
+| Rol | Cara | Tamaño | Peso | Interlineado |
+|---|---|---|---|---|
+| Display (título de artículo) | Pixel | `clamp(2.2rem, 4.5vw, 3.6rem)` | 400 | 1.15 |
+| Nombre de perfil | Pixel | `clamp(2rem, 1.4rem + 2.4vw, 3.25rem)` | 400 | 1.1 |
+| h1 de página | Pixel | 1.75rem | 400 | 1.2 |
+| h2 de sección | Pixel | 1.75rem o `clamp(1.5rem, 1.2rem + 1vw, 2rem)` | 400 | 1.2 |
+| Título de tarjeta de artículo | Pixel | 1.35rem | 400 | 1.3 |
+| h3 de tarjeta | Sans | 1.05–1.15rem | 700 | 1.35 |
+| Cifra destacada | Sans | `clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem)` | 800 | 1.1 |
+| Cita | Sans | `clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem)` | 800 | 1.2 |
+| Cuerpo de artículo | Sans | `clamp(1.0625rem, 1rem + .3vw, 1.1875rem)` (17→19px) | 400 | 1.7 |
+| Texto de interfaz | Sans | 1rem | 400 | 1.55 |
+| Navegación | Pixel | .95rem (.85rem en ≤ 969px) | 400 | normal |
+| Metadatos | Sans | .85–.9rem | 400 | normal |
+| Etiqueta / título de tarjeta de marca | Pixel | .85–.95rem, MAYÚSCULAS, `letter-spacing: .08em` | 400 | normal |
+| Tag | Pixel | .78–.85rem | 400 | normal |
+| Mono pequeño | Mono | .75–.8rem | 400–600 | normal |
 
-## Rules
+## Reglas
 
-- Use sentence case for normal headings.
-- Use uppercase sparingly for compact technical labels.
-- Keep long-form text in a comfortable line length (roughly 60–80 characters).
-- Do not use monospace for paragraphs.
-- Do not use ultra-light weights on dark backgrounds.
-- Use line height around 1.45–1.7 for body text.
-- Typography must remain legible at mobile sizes.
+- Títulos de sección en Geist Pixel; nunca en Sans ni Mono.
+- Etiquetas y títulos de tarjetas de marca en MAYÚSCULAS con
+  `letter-spacing: .08em`.
+- Texto largo en Geist Sans, con interlineado de 1.55 a 1.7.
+- Usa `text-wrap: balance` en títulos grandes y `pretty` en párrafos.
+- Un solo `h1` por página.
+- No uses Geist Mono para párrafos ni Geist Pixel para texto largo.
+
+## Carga
+
+```css
+@import url('/mxni/fonts.css');  /* o mxni.css, que ya la incluye */
+```
+
+En otras plataformas registra los archivos de `mxni/fonts/`:
+`Geist-Variable.woff2`, `Geist-Italic-Variable.woff2`,
+`GeistMono-Variable.woff2` y `GeistPixel-Circle.woff2`.
+
 
 
 ---
@@ -680,50 +3027,78 @@ Load fonts locally or from a reliable font provider. For production and privacy-
 title: Spacing and layout
 ---
 
-# Spacing and layout
+# Espaciado y layout
 
-## Spacing scale
+## Unidad base: 14px
 
-| Token | Value |
-|---|---:|
-| `space-1` | 4 px |
-| `space-2` | 8 px |
-| `space-3` | 12 px |
-| `space-4` | 16 px |
-| `space-6` | 24 px |
-| `space-8` | 32 px |
-| `space-12` | 48 px |
-| `space-16` | 64 px |
+Todo el espaciado sale de un token: `--gap-card: 14px`. Separaciones y
+paddings son múltiplos de él.
 
-Use the scale consistently. A one-off value is allowed only when a layout constraint justifies it and should be documented if reused.
+| Múltiplo | Valor | Uso típico |
+|---|---:|---|
+| × 0.25 | 3.5px | Padding vertical de chips y badges |
+| × 0.33 | 4.7px | Separación cifra–etiqueta |
+| × 0.5 | 7px | Separación ícono–texto, entre chips |
+| × 0.75 | 10.5px | Entre elementos de una lista, padding de chips |
+| × 1 | 14px | Separación de tarjetas en cuadrículas, márgenes de títulos |
+| × 1.5 | 21px | Padding de tarjetas, separación entre título y contenido de sección |
+| × 2 | 28px | Separación entre secciones |
+| × 2.5 | 35px | Padding de citas, separación de filas del footer |
+| × 3 | 42px | Padding vertical de página (arriba) |
+| × 4 | 56px | Padding vertical de página (abajo), padding superior del footer |
+| × 5 | 70px | Separación entre el contenido y el footer |
 
-## Grid
+Valores fijos que también usa el sitio: 24px 28px (padding de tarjetas de
+artículo y avisos), 32px (header de artículo), 42px (separación entre enlaces
+de la navbar), 48px / 64px (padding vertical de páginas de listado).
 
-- Use a 12-column grid for desktop interfaces where useful.
-- Use 4 or 6 columns on tablet layouts depending on content.
-- Use 4 columns or a single-column flow on narrow mobile layouts.
-- Use consistent gutters and alignment.
-- Bento compositions may span multiple columns but must preserve a clear reading order.
+## Contenedor
 
-## Responsive breakpoints
+```css
+width: min(1500px, 95%);   /* --container-max */
+margin-inline: auto;
+```
 
-Suggested defaults (adapt to content, not device labels):
+Todas las secciones (navbar, contenido, footer) usan el mismo contenedor.
+Las únicas excepciones de borde a borde son la banda de logo y las tarjetas
+promocionales.
 
-| Name | Width |
-|---|---:|
-| Compact | < 640 px |
-| Medium | 640–1023 px |
-| Wide | 1024–1439 px |
-| XL | >= 1440 px |
+## Header
 
-## Density
+- Alto: 64px (`--header-height`), sticky.
+- `scroll-padding-top` igual al alto del header, para que los anclajes no
+  queden debajo.
 
-Choose density based on task:
-- Marketing/editorial: spacious.
-- Dashboards: balanced.
-- Data-heavy tools: compact, but never cramped.
+## Breakpoints
 
-Do not make every product use the same density.
+Los cortes son los del sitio, mobile first:
+
+| Corte | Qué cambia |
+|---|---|
+| ≥ 600px | Footer en 2 columnas |
+| ≤ 768px | Bento en 1 columna, header de artículo apilado, promos en 1 columna, paddings reducidos |
+| ≥ 769px | Línea de tiempo con línea vertical y marcadores |
+| ≥ 900px | Cuadrículas de tarjetas a 3 columnas, cifras a 4, footer en marca + 3 columnas, perfil en 2 columnas |
+| ≤ 969px / ≥ 970px | Navbar: menú ☰ en móvil, fila completa en escritorio |
+| ≤ 1200px | Bento a 6 columnas |
+
+## Cuadrículas
+
+| Cuadrícula | Definición |
+|---|---|
+| Bento | 12 columnas, filas de 95px, separación 14px (6 columnas en ≤ 1200px, 1 en ≤ 768px) |
+| Tarjetas | `repeat(auto-fit, minmax(min(100%, 260px), 1fr))`, 3 columnas fijas desde 900px |
+| Cifras | 2 columnas, 4 desde 900px |
+| Footer | 1 → 2 → `1.4fr + 3 × 1fr` |
+| Promos | 2 columnas con 10px de separación, 1 en ≤ 768px |
+
+## Densidad
+
+- Las páginas de contenido son espaciosas: tarjetas en una columna con 14px
+  entre ellas.
+- Las secciones de perfil son equilibradas: cuadrículas de 3 columnas.
+- El hero Bento es denso: 14px entre tarjetas de distintos tamaños.
+
 
 
 ---
@@ -734,43 +3109,80 @@ Do not make every product use the same density.
 title: Geometry and effects
 ---
 
-# Geometry and effects
+# Geometría y efectos
 
-## Radius
+## Esquinas: siempre rectas
 
-| Token | Value | Use |
-|---|---:|---|
-| `radius-sm` | 2 px | Tags, tight controls |
-| `radius-md` | 6 px | Inputs, cards, buttons |
-| `radius-lg` | 10 px | Large panels and media |
-| `radius-pill` | 999 px | Pills only |
+```css
+--radius-square: 0;
+```
 
-MXNI favors controlled corners over overly rounded, playful surfaces.
+Es la regla más reconocible de MXNI. Radio **0** en tarjetas, botones,
+campos, tags, chips, imágenes, menús, diálogos, marcadores e incluso la barra
+de desplazamiento. Las únicas formas redondas son las que vienen dentro de un
+logo o ícono.
 
-## Borders
+## Bordes
 
-Use `#382C42` for subtle structure on dark surfaces. Borders should clarify grouping without creating a visible grid around every element.
+| Token | Valor | Uso |
+|---|---|---|
+| `--color-border` | 1px `rgba(255,255,255,.08)` | Tarjetas, campos, tags, divisores |
+| `--color-border-strong` | 1px `rgba(255,255,255,.15)` | Navbar, footer, botones de contorno, hover de tarjetas |
+| Acento | 1–2px `#B37AC2` | Estados activos, botón principal (2px), badges, kicker |
+| Barra de acento | 3–4px `#B37AC2` a la izquierda | Callouts (3px) y citas (4px) |
 
-## Shadows
+## Sombras
 
-- Use deep black shadows for elevation.
-- Use purple glow only for selected or highlighted elements.
-- Avoid stacking multiple glow layers.
-- Prefer a border or surface change over glow for focus and selection.
+| Token | Valor | Uso |
+|---|---|---|
+| `--shadow-card-rest` | `inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)` | Tarjetas en reposo |
+| `--shadow-card-hover` | `inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)` | Tarjetas en hover |
+| `--shadow-card` | `0 25px 80px rgba(0,0,0,.35)` | Bloques grandes (perfil, header de artículo, fotos) |
+| `--shadow-username` | `0 0 35px rgba(0,170,255,.15)` | Halo del handle |
+
+El brillo `inset` de 1px arriba es lo que da relieve a las superficies sobre
+el fondo oscuro.
 
 ## Glow
 
-Recommended starting effect:
+`--color-glow: rgba(108,56,122,.35)`. Aparece en:
+
+- Hover del botón principal: `box-shadow: 0 0 21px var(--color-glow)`.
+- Foco de la búsqueda: `box-shadow: 0 0 0 4px var(--color-glow)`.
+- Resplandores radiales de los héroes y el footer.
+- Halo de fotos e imágenes destacadas (`0 0 48–70px`).
+- Sombra de texto de los títulos display (`0 0 32px`).
+
+Nunca en reposo sobre tarjetas comunes.
+
+## Degradados
+
+| Nombre | Definición | Dónde |
+|---|---|---|
+| Atmósfera hero | radial desde arriba a la derecha: `#3C1F44` 0 % → `#150A18` 35 % → `#05050b` 100 % | Hero Bento |
+| Panel de perfil | lineal 160°: `#3C1F44` → `#150A18` 70 % | Encabezado de perfil |
+| Header de artículo | lineal 160°: `#3C1F44` → `#150A18` 45 % → `#05050b` + brillo radial del acento al 22 % | Header de artículo |
+| Footer | glow radial arriba + lineal `#070716` → `#05050b` | Footer |
+| Banda de logo | lineal horizontal `#150A18` → `#3C1F44` → `#150A18` + glow central | Banda de logo |
+| Línea de acento | lineal 90°: `#B37AC2` → transparente al 70 % | Borde inferior del header de artículo |
+| Brillo superior de tarjeta de marca | lineal 180°: blanco 8 % → transparente al 45 % | Tarjetas de marca |
+
+## Textura
+
+Grano de puntos sobre las atmósferas:
 
 ```css
-box-shadow: 0 0 24px rgb(168 63 224 / 20%);
+background-image: radial-gradient(color-mix(in srgb, #fff 3%, transparent) 1px, transparent 1px);
+background-size: 14px 14px;
 ```
 
-Glow is decorative. It must not be the only indication of focus, selection, or state.
+## Máscaras
 
-## Gradients
+- Foto de la tarjeta de perfil: se desvanece de opaca (50 %) a transparente
+  (92 %) hacia abajo.
+- Imágenes promocionales: aparecen de transparente a opaca en el 22 %
+  superior.
 
-Use localized gradients from purple to magenta. Cyan may appear as a small terminal accent. Avoid broad rainbow gradients.
 
 
 ---
@@ -781,30 +3193,39 @@ Use localized gradients from purple to magenta. Cyan may appear as a small termi
 title: Motion
 ---
 
-# Motion
+# Movimiento
 
-## Principles
+## Una sola curva
 
-Motion should explain state, hierarchy, and cause/effect. It should not delay tasks or distract from content.
+```css
+--transition-default: .28s cubic-bezier(.2, .8, .2, 1);
+```
 
-## Timing
+Todas las transiciones de interfaz (color, borde, sombra, transform,
+opacidad) usan esta duración y esta curva: entrada rápida y frenado suave.
 
-| Token | Duration | Use |
-|---|---:|---|
-| Fast | 120 ms | Small feedback |
-| Base | 180 ms | Hover and focus transitions |
-| Slow | 280 ms | Panels and menus |
-| Emphasis | 400 ms | Large, intentional transitions |
+## Movimientos del sistema
 
-Use ease-out for entering elements and ease-in for leaving elements. Avoid spring or bounce effects unless they communicate a meaningful physical interaction.
+| Movimiento | Detalle |
+|---|---|
+| Subrayado de navegación | Barra de 2px que crece de 0 a 100 % del ancho del enlace |
+| Elevación de tarjeta de marca | Sube 4px, `contrast(1.4)`; el logo gira de su ángulo a 2° y escala ×1.12 |
+| Elevación de tarjeta de proyecto | Sube 2px; la flecha ↗ se mueve 2px arriba y a la derecha |
+| Flecha de enlace de tarjeta | Aparece (opacidad 0 → 1) y se desplaza 2px |
+| Lupa de búsqueda | Con foco escala ×1.12; con texto y foco "escanea": ciclo de 1.6s con ±3px y ±10° |
+| Panel del menú móvil | Fundido + desplazamiento de 8px hacia abajo |
+| Resplandor del hero | Flota 6px arriba y abajo en un ciclo de 10s |
+| Banda de logo | Las letras suben 4px y escalan ×1.04 |
 
-## Rules
+## Reglas
 
-- Provide immediate feedback for actions.
-- Do not animate large areas unnecessarily.
-- Respect `prefers-reduced-motion`.
-- Never use flashing or rapid strobing.
-- Avoid parallax that interferes with reading.
+- Los movimientos son cortos (2–8px) y nunca bloquean la tarea.
+- Sin rebotes ni efectos elásticos.
+- Con `prefers-reduced-motion: reduce` todas las animaciones y transiciones
+  se vuelven instantáneas, sin desplazamientos (incluidas en `base.css` y
+  `components.css`).
+- Nada parpadea ni destella.
+
 
 
 ---
@@ -837,7 +3258,18 @@ Dark interfaces can cause low-contrast text and controls. Test actual combinatio
 
 ## Focus
 
-Use a clearly visible outline or ring. Do not remove the browser focus indicator without replacing it.
+Every interactive element shows a **2px `#B37AC2` outline with a 2px
+offset** on `:focus-visible` (global rule in `mxni/base.css`). Inside clipped
+containers (brand tiles) the offset is negative (`-4px`) so the ring stays
+visible. Do not remove the focus indicator without replacing it.
+
+## Built into the system
+
+- "Skip to content" link as the first focusable element (`.mx-skip-link`).
+- `.mx-visually-hidden` for accessible names and "(external site)" hints.
+- Global reduced-motion rule: animations and transitions become instant.
+- Contrast of the core palette is verified in [Color](/foundations/colors#contraste).
+- Icon buttons are 44 × 44px; decorative icons use `aria-hidden="true"`.
 
 ## Validation
 
@@ -853,6 +3285,12 @@ title: Components overview
 ---
 
 # Components overview
+
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/).
+:::
 
 This section defines the intended contracts for reusable MXNI components. It is a design specification, not yet a published component library.
 
@@ -908,18 +3346,29 @@ title: Buttons
 
 # Buttons
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/atoms/buttons).
+:::
+
 ## Purpose
 
 Buttons trigger an action. Use links for navigation.
 
 ## Variants
 
-| Variant | Purpose |
-|---|---|
-| Primary | Main action in a context |
-| Secondary | Supporting action |
-| Ghost | Low-emphasis action |
-| Destructive | Irreversible or dangerous action |
+| Variant | Catalog class | Purpose |
+|---|---|---|
+| Accent (primary) | `.mx-button--accent` | Main action in a context |
+| Outline (secondary) | `.mx-button` | Supporting action, links with icons |
+| Surface | `.mx-button--surface` | Page navigation (next, pagination) |
+| Quiet | `.mx-button--quiet` | Low-emphasis action inside cards |
+| Small mono | `.mx-button--sm` | Utility actions in bars |
+| CTA | `.mx-button--cta`, `--cta-outline` | Promotional sections only |
+
+Destructive actions are not defined yet. **Proposal:** outline button with the
+proposed danger color `#F05B72` on border and text, plus an explicit label.
 
 ## Rules
 
@@ -932,7 +3381,7 @@ Buttons trigger an action. Use links for navigation.
 
 ## Sizing
 
-Suggested heights: small 32 px, medium 40 px, large 48 px. Ensure touch targets remain usable on touch devices.
+Padding defines the size (see the catalog specs); corners are always square. Ensure touch targets reach 44 × 44 px on touch devices.
 
 ## Do not
 
@@ -950,6 +3399,12 @@ title: Inputs
 ---
 
 # Inputs
+
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/atoms/inputs).
+:::
 
 ## Supported patterns
 
@@ -990,15 +3445,21 @@ title: Cards and panels
 
 # Cards and panels
 
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/molecules/cards).
+:::
+
 ## Purpose
 
 Cards group related information. Panels provide a larger structural region.
 
 ## Surface hierarchy
 
-- Base: `--mxni-bg`
-- Surface: `--mxni-surface`
-- Elevated: `--mxni-elevated`
+- Base: `--color-background` (`#070716`)
+- Surface: `--color-surface` (`#101018`)
+- Strong border on hover: `--color-border-strong`
 
 ## Rules
 
@@ -1023,6 +3484,12 @@ title: Navigation
 ---
 
 # Navigation
+
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/organisms/navbar).
+:::
 
 ## Patterns
 
@@ -1056,6 +3523,12 @@ title: Feedback components
 ---
 
 # Feedback components
+
+::: tip Look concreto
+Esta página define el **contrato** (propósito, estados y reglas). El aspecto
+exacto, con medidas, colores y código, está en el
+[catálogo de componentes](/catalog/molecules/content).
+:::
 
 ## Toasts
 
@@ -1092,6 +3565,12 @@ title: Brand identity
 
 **MXNI** es una identidad para un ecosistema de tecnología, software, ingeniería y contenido educativo.
 
+### Referencia viva
+
+[moisesbaldenegro.com](https://moisesbaldenegro.com) es la expresión de
+referencia de MXNI. Si hay dudas sobre cómo debe verse algo, se resuelve
+comparándolo con ese sitio y con el [ADN visual](/catalog/visual-dna).
+
 ### Propósito
 
 Hacer que los productos y experiencias tecnológicas sean reconocibles, coherentes y claros, sin sacrificar personalidad.
@@ -1114,6 +3593,7 @@ Hacer que los productos y experiencias tecnológicas sean reconocibles, coherent
 4. La composición debe sentirse intencional y modular.
 5. Los productos pueden tener personalidad propia sin romper los fundamentos.
 6. No utilizar efectos de neón como sustituto de una buena jerarquía visual.
+7. Esquinas rectas, líneas finas y un solo acento ciruela: la sobriedad es la firma.
 
 ## Tagline
 
@@ -1204,17 +3684,21 @@ MXNI debe sentirse como una extensión visual de un entorno de ingeniería moder
 
 ## Recursos gráficos
 
-- Grids y líneas técnicas discretas.
-- Paneles rectangulares y superficies por capas.
-- Geometría abstracta y modular.
-- Gradientes localizados entre morado y magenta.
-- Cyan para contraste y señales interactivas.
-- Lime para datos o highlights puntuales.
-- Ruido y texturas con opacidad baja.
+- Esquinas rectas en todo: paneles, botones, tags e imágenes.
+- Líneas finas blancas translúcidas (8 % y 15 %) en lugar de cajas pesadas.
+- Atmósfera morada: degradado radial `#3C1F44` → `#150A18` → `#05050b` con
+  grano de puntos de 1px cada 14px y un resplandor `rgba(108,56,122,.35)`.
+- Un solo acento ciruela `#B37AC2` como señal.
+- Tipografía Geist Pixel para títulos y etiquetas en mayúsculas.
+- Bento de tarjetas de marca con logos gigantes, rotados y recortados.
+
+El detalle completo está en el [ADN visual](/catalog/visual-dna).
 
 ## Evitar
 
 - Cyberpunk genérico con exceso de neón.
+- Esquinas redondeadas.
+- Acentos adicionales (cian, magenta, verde) fuera de sus usos únicos.
 - Circuitos aleatorios como decoración universal.
 - Rojo/naranja como colores dominantes de marca.
 - Glow en todos los elementos.
@@ -1248,6 +3732,20 @@ Guidelines translate foundations into repeatable decisions.
 - Are brand accents used intentionally?
 - Can the composition be recognized as MXNI without relying on the logo?
 
+## Recognition test
+
+A composition is recognizable as MXNI when it has, at least:
+
+- the indigo night background `#070716` with `#101018` surfaces;
+- 1px white hairlines (8 % / 15 %) instead of heavy boxes;
+- square corners on every element;
+- Geist Pixel titles and uppercase labels;
+- a single plum accent `#B37AC2` used as a signal;
+- the purple atmosphere (gradient, dot grain, glow) on hero blocks.
+
+The full list is the [Visual DNA](/catalog/visual-dna). Build compositions from
+[catalog](/catalog/) components before designing new ones.
+
 ## Content hierarchy
 
 1. Primary message or task.
@@ -1272,11 +3770,12 @@ MXNI supports multiple product types while retaining a shared foundation.
 
 ## Shared across all products
 
-- Core typography.
-- Core color roles.
-- Spacing and geometry scale.
+- Geist Pixel, Geist Sans and Geist Mono with the documented scale.
+- Background `#070716`, surface `#101018`, white hairlines, plum accent `#B37AC2`.
+- Square corners and the 14px spacing unit.
+- The single transition `.28s cubic-bezier(.2,.8,.2,1)`.
+- The catalog components and the official logo.
 - Interaction and accessibility principles.
-- Brand signature and visual language.
 
 ## Allowed to vary
 
@@ -1289,12 +3788,12 @@ MXNI supports multiple product types while retaining a shared foundation.
 
 ## Product families
 
-| Family | Priority | Expression |
-|---|---|---|
-| Web | Brand and storytelling | Spacious, editorial, Bento |
-| Software | Task completion | Functional, clear, balanced |
-| Media | Attention and narrative | Expressive, high contrast |
-| Docs | Retrieval and comprehension | Structured, readable, technical |
+| Family | Priority | Expression | Reference |
+|---|---|---|---|
+| Web | Brand and storytelling | Hero Bento, article feed, promo tiles | moisesbaldenegro.com home |
+| Software | Task completion | Navbar, cards, lists, notices; less atmosphere | [Templates](/catalog/templates) |
+| Media | Attention and narrative | Brand tiles, promo tiles, full-bleed logo band | [Promo](/catalog/organisms/promo) |
+| Docs | Retrieval and comprehension | Prose, code blocks, result rows | This documentation site |
 
 A product may add tokens, but additions must be named, justified, and documented.
 
@@ -1333,7 +3832,7 @@ Bento is a modular composition made from rectangular content regions with varied
 
 ## Suggested grid
 
-Desktop: 12 columns. Tablet: 6 columns. Mobile: 4 columns or single column.
+Desktop: 12 columns with 95px rows and 14px gaps. ≤ 1200px: 6 columns. ≤ 768px: single column. See the [Hero Bento](/catalog/organisms/hero-bento) organism for the reference implementation.
 
 ## Common failure modes
 
@@ -1364,6 +3863,20 @@ title: Content and data visualization
 
 ## Data visualization
 
+**Proposal** (the website has no charts yet). Charts follow the same look:
+
+| Element | Value |
+|---|---|
+| Plot area | `#101018` with a 1px `rgba(255,255,255,.08)` border, square corners |
+| Grid lines | 1px `rgba(255,255,255,.08)`; axis 1px `rgba(255,255,255,.15)` |
+| Axis labels and ticks | Geist Mono .75rem `#b8b8c5` |
+| Chart title | Geist Pixel, like a section heading |
+| Values | Geist Sans 800 for big figures (like [stats](/catalog/molecules/cards#cifra-destacada)) |
+| Series 1 → 6 | `#B37AC2`, `#F7941D`, `#5fd6ff`, `#39C98A`, `#F3B64B`, `#F05B72` |
+| Bars and areas | square ends, no rounded caps |
+
+Rules:
+
 - Use neutral surfaces and restrained grid lines.
 - Reserve accent colors for series or important values.
 - Use direct labels when they improve comprehension.
@@ -1385,68 +3898,68 @@ Do not use the brand palette as a substitute for a complete categorical data pal
 title: CSS tokens
 ---
 
-# CSS tokens
+# Tokens CSS
 
-The following CSS is the initial canonical token set. Copy it into a shared stylesheet or package and keep it synchronized with this document.
+La fuente de verdad es [`/mxni/tokens.css`](/mxni/tokens.css). Sus nombres y
+valores son **idénticos** a `src/styles/tokens.css` de moisesbaldenegro.com,
+para que ambos se puedan comparar y sincronizar 1:1.
 
-```css
-:root {
-  /* Brand */
-  --mxni-primary: #A83FE0;
-  --mxni-secondary: #E044C5;
-  --mxni-cyan: #24CDE0;
-  --mxni-lime: #B5F52D;
-
-  /* Backgrounds */
-  --mxni-bg: #09070D;
-  --mxni-surface: #15111C;
-  --mxni-elevated: #211A2B;
-
-  /* Structure */
-  --mxni-border: #382C42;
-
-  /* Text */
-  --mxni-text: #F7F4FA;
-  --mxni-text-secondary: #B7AABD;
-  --mxni-text-muted: #81768A;
-
-  /* Semantic */
-  --mxni-success: #39C98A;
-  --mxni-warning: #F3B64B;
-  --mxni-danger: #F05B72;
-  --mxni-info: #24CDE0;
-
-  /* Typography */
-  --mxni-font-display: "Manrope", sans-serif;
-  --mxni-font-mono: "JetBrains Mono", monospace;
-
-  /* Spacing */
-  --mxni-space-1: 4px;
-  --mxni-space-2: 8px;
-  --mxni-space-3: 12px;
-  --mxni-space-4: 16px;
-  --mxni-space-6: 24px;
-  --mxni-space-8: 32px;
-  --mxni-space-12: 48px;
-  --mxni-space-16: 64px;
-
-  /* Radius */
-  --mxni-radius-sm: 2px;
-  --mxni-radius-md: 6px;
-  --mxni-radius-lg: 10px;
-  --mxni-radius-pill: 999px;
-
-  /* Effects */
-  --mxni-glow-purple: 0 0 24px rgb(168 63 224 / 20%);
-  --mxni-shadow: 0 8px 32px rgb(0 0 0 / 35%);
-
-  /* Motion */
-  --mxni-motion-fast: 120ms;
-  --mxni-motion-base: 180ms;
-  --mxni-motion-slow: 280ms;
-}
+```html
+<link rel="stylesheet" href="/mxni/mxni.css">   <!-- incluye los tokens -->
+<!-- o solo los tokens: -->
+<link rel="stylesheet" href="/mxni/tokens.css">
 ```
 
-## Naming
+## Tokens principales
 
-Use `--mxni-{category}-{name}`. Do not use unexplained abbreviations. Prefer semantic aliases in product themes instead of changing core tokens.
+| Grupo | Token | Valor |
+|---|---|---|
+| Fondo | `--color-background` | `#070716` |
+| | `--color-surface` | `#101018` |
+| Texto | `--color-text` | `#ffffff` |
+| | `--color-text-secondary` | `#b8b8c5` |
+| Borde | `--color-border` | `rgba(255,255,255,.08)` |
+| | `--color-border-strong` | `rgba(255,255,255,.15)` |
+| Acento | `--color-accent` | `#B37AC2` |
+| | `--color-accent-hover` | `#C396CF` |
+| Atmósfera | `--color-hero-top` | `#3C1F44` |
+| | `--color-hero-mid` | `#150A18` |
+| | `--color-hero-bottom` | `#05050b` |
+| | `--color-glow` | `rgba(108,56,122,.35)` |
+| | `--color-navbar` | `rgba(8,8,18,.75)` |
+| Logo | `--color-logo-purple` | `#6C387A` |
+| | `--color-logo-orange` | `#F7941D` |
+| Handle | `--color-username-bg` / `-border` / `-text` | `#081a28` / `rgba(0,195,255,.35)` / `#5fd6ff` |
+| | `--color-verified` | `#0a6f9e` |
+| Promo | `--color-promo-cta` / `-cta-hover` / `-link` | `#0071e3` / `#0077ed` / `#2997ff` |
+| | `--color-promo-{youtube,mfinance,new-relic,tomatesoft}` | `#0e0e10`, `#0d1a1d`, `#0e0b22`, `#0b0909` |
+| | `--gap-promo` | `10px` |
+| Marcas | `--color-marca-*` | ver [tarjeta de marca](/catalog/molecules/brand-tile#colores-de-marca) |
+| Scrollbar | `--color-scrollbar-thumb` / `-track` | `#6C387A` / `#090912` |
+| Radio | `--radius-square` | `0` |
+| Espaciado | `--gap-card` | `14px` |
+| | `--space-mxvi-band` | `clamp(32px, 5vw, 64px)` |
+| Layout | `--container-max` | `1500px` |
+| | `--header-height` | `64px` |
+| | `--video-max-width` | `640px` |
+| Sombra | `--shadow-card` | `0 25px 80px rgba(0,0,0,.35)` |
+| | `--shadow-card-rest` | `inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.28)` |
+| | `--shadow-card-hover` | `inset 0 1px 0 rgba(255,255,255,.233), 0 25px 60px rgba(0,0,0,.38)` |
+| | `--shadow-username` | `0 0 35px rgba(0,170,255,.15)` |
+| Movimiento | `--transition-default` | `.28s cubic-bezier(.2,.8,.2,1)` |
+| Tipografía | `--font-sans` | Geist |
+| | `--font-mono` | Geist Mono |
+| | `--font-display` | Geist Pixel (Circle) |
+| Banda de logo | `--opacity-logo-band` / `-hover` | `.62` / `1` |
+
+## Reglas
+
+- Patrón de nombres: `--grupo-nombre` en kebab-case.
+- Todo color, espacio, radio, sombra, fuente y transición sale de un token;
+  no escribas valores sueltos en los componentes.
+- Los espaciados se expresan como múltiplos: `calc(var(--gap-card) * 1.5)`.
+- Si un producto necesita un token nuevo, agrégalo con el mismo patrón y
+  documéntalo; no cambies el valor de un token existente en un solo producto.
+- Para mapear los tokens a plataformas nativas, ver
+  [Usar en cualquier tecnología](/catalog/install#otras-tecnologias-mapa-de-tokens).
+

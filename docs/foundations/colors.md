@@ -4,53 +4,102 @@ title: Color
 
 # Color
 
-Los colores son decisiones iniciales de MXNI v1.0 y deben validarse en interfaces y contenido reales.
+Paleta real de [moisesbaldenegro.com](https://moisesbaldenegro.com). Los
+nombres son los tokens de [`mxni/tokens.css`](/implementation/css-tokens).
 
-## Core palette
+## Base
 
 <div class="mxni-swatch-grid">
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#09070D"></div><div class="mxni-swatch__meta"><b>Void</b><code>#09070D</code>Background</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#15111C"></div><div class="mxni-swatch__meta"><b>Surface</b><code>#15111C</code>Containers</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#211A2B"></div><div class="mxni-swatch__meta"><b>Elevated</b><code>#211A2B</code>Raised surfaces</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#382C42"></div><div class="mxni-swatch__meta"><b>Border</b><code>#382C42</code>Dividers</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#A83FE0"></div><div class="mxni-swatch__meta"><b>Electric Purple</b><code>#A83FE0</code>Primary brand</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#E044C5"></div><div class="mxni-swatch__meta"><b>Neon Magenta</b><code>#E044C5</code>Expressive accent</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#24CDE0"></div><div class="mxni-swatch__meta"><b>Digital Cyan</b><code>#24CDE0</code>Interactive accent</div></div>
-  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B5F52D"></div><div class="mxni-swatch__meta"><b>Signal Lime</b><code>#B5F52D</code>Data highlight</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716"></div><div class="mxni-swatch__meta"><b>Fondo</b><code>--color-background · #070716</code>Página: noche índigo</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#101018"></div><div class="mxni-swatch__meta"><b>Superficie</b><code>--color-surface · #101018</code>Tarjetas, campos, paneles</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#ffffff"></div><div class="mxni-swatch__meta"><b>Texto</b><code>--color-text · #ffffff</code>Texto principal</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#b8b8c5"></div><div class="mxni-swatch__meta"><b>Texto secundario</b><code>--color-text-secondary · #b8b8c5</code>Metadatos, descripciones</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716;box-shadow:inset 0 0 0 6px rgba(255,255,255,.08)"></div><div class="mxni-swatch__meta"><b>Borde</b><code>--color-border · rgba(255,255,255,.08)</code>Hairline por defecto</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#070716;box-shadow:inset 0 0 0 6px rgba(255,255,255,.15)"></div><div class="mxni-swatch__meta"><b>Borde fuerte</b><code>--color-border-strong · rgba(255,255,255,.15)</code>Navbar, botones, hover</div></div>
 </div>
 
-## Semantic colors
+## Acento
 
-Semantic colors communicate meaning, not brand identity. Initial defaults:
+Un solo acento: **ciruela**. Se usa en poca superficie: bordes activos,
+tags, enlaces, foco, subrayados, marcadores y cifras.
 
-| Token | Value | Meaning |
+<div class="mxni-swatch-grid">
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#B37AC2"></div><div class="mxni-swatch__meta"><b>Acento</b><code>--color-accent · #B37AC2</code>Señal principal</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#C396CF"></div><div class="mxni-swatch__meta"><b>Acento hover</b><code>--color-accent-hover · #C396CF</code>Hover y énfasis</div></div>
+</div>
+
+## Atmósfera
+
+Degradado y resplandor de los bloques principales (hero, header de artículo,
+perfil, footer, banda de logo) y fondo de la navbar.
+
+<div class="mxni-swatch-grid">
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#3C1F44"></div><div class="mxni-swatch__meta"><b>Hero arriba</b><code>--color-hero-top · #3C1F44</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#150A18"></div><div class="mxni-swatch__meta"><b>Hero medio</b><code>--color-hero-mid · #150A18</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:#05050b"></div><div class="mxni-swatch__meta"><b>Hero abajo</b><code>--color-hero-bottom · #05050b</code></div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:rgba(108,56,122,.35)"></div><div class="mxni-swatch__meta"><b>Glow</b><code>--color-glow · rgba(108,56,122,.35)</code>Resplandor y halo de foco</div></div>
+  <div class="mxni-swatch"><div class="mxni-swatch__color" style="background:rgba(8,8,18,.75)"></div><div class="mxni-swatch__meta"><b>Navbar</b><code>--color-navbar · rgba(8,8,18,.75)</code>+ blur 18px</div></div>
+</div>
+
+Degradado de referencia:
+
+```css
+background:
+  radial-gradient(color-mix(in srgb, #fff 3%, transparent) 1px, transparent 1px),
+  radial-gradient(circle at top right, #3C1F44 0%, #150A18 35%, #05050b 100%);
+background-size: 14px 14px, auto;
+```
+
+## Colores con un solo uso
+
+| Color | Token | Único uso permitido |
 |---|---|---|
-| Success | `#39C98A` | Successful operation |
-| Warning | `#F3B64B` | Caution or pending |
-| Danger | `#F05B72` | Error or destructive action |
-| Info | `#24CDE0` | Neutral information |
+| `#6C387A` · `#F7941D` | `--color-logo-purple`, `--color-logo-orange` | El logo MXNI |
+| `#5fd6ff` sobre `#081a28` | `--color-username-text`, `--color-username-bg` | El handle `@usuario` |
+| `#0a6f9e` | `--color-verified` | La marca de verificado |
+| `#0071e3` / `#2997ff` | `--color-promo-cta`, `--color-promo-link` | Acciones de las tarjetas promocionales |
+| Colores de marca | `--color-marca-*` | Fondo de las [tarjetas de marca](/catalog/molecules/brand-tile#colores-de-marca) |
+| `#6C387A` / `#090912` | `--color-scrollbar-*` | La barra de desplazamiento |
 
-Do not use lime as the only indicator of success or red as the only indicator of error. Include labels, icons, or text.
+## Colores semánticos
 
-## Usage ratios
+El sitio todavía no usa estados de éxito, advertencia o error. **Propuesta**
+para cuando un producto los necesite (con contraste AA sobre `#101018`):
 
-As a starting point for dark interfaces:
+| Estado | Valor |
+|---|---|
+| Éxito | `#39C98A` |
+| Advertencia | `#F3B64B` |
+| Error | `#F05B72` |
+| Información | `#5fd6ff` |
 
-- 65–75% dark backgrounds and surfaces.
-- 15–25% neutral text and structural elements.
-- 5–10% brand and accent colors.
+Acompáñalos siempre con texto o ícono; el color nunca es la única señal.
 
-These are visual heuristics, not strict pixel quotas.
+## Proporciones
 
-## Contrast
+- 85–90 % fondo y superficies oscuras.
+- 8–12 % texto y líneas.
+- 2–5 % acento.
+- Las tarjetas de marca y las promocionales son la única excepción con
+  bloques de color sólido.
 
-Check text and interactive states against their actual backgrounds. Normal text should target WCAG 2.2 AA contrast (4.5:1); large text and meaningful UI graphics should target at least 3:1 where applicable. Do not assume a brand color is accessible on every surface.
+## Contraste
 
-## Rules
+| Combinación | Contraste |
+|---|---|
+| `#ffffff` sobre `#070716` | 19.98 : 1 |
+| `#b8b8c5` sobre `#101018` | 9.65 : 1 |
+| `#B37AC2` sobre `#070716` | 6.17 : 1 |
+| `#B37AC2` sobre `#101018` | 5.84 : 1 |
+| `#C396CF` sobre `#101018` | 7.74 : 1 |
+| `#ffffff` sobre `#0071e3` (CTA) | 4.70 : 1 |
 
-- Purple is the primary brand signal.
-- Magenta is expressive, not a default action color.
-- Cyan highlights interaction and technical information.
-- Lime is a limited highlight for data and status.
-- Use neutral text for long reading.
-- Never use all accents at equal intensity in one composition.
+Verifica cualquier combinación nueva contra WCAG 2.2 AA (4.5 : 1 en texto
+normal, 3 : 1 en texto grande y gráficos).
+
+## Reglas
+
+- Nunca uses negro puro ni grises neutros como fondo.
+- El acento no se usa como fondo de botones ni de bloques grandes.
+- Los bordes son siempre blancos translúcidos, nunca grises opacos.
+- No agregues acentos nuevos (cian, verde, rosa) fuera de sus usos únicos.

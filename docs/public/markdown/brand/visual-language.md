@@ -12,17 +12,21 @@ MXNI debe sentirse como una extensión visual de un entorno de ingeniería moder
 
 ## Recursos gráficos
 
-- Grids y líneas técnicas discretas.
-- Paneles rectangulares y superficies por capas.
-- Geometría abstracta y modular.
-- Gradientes localizados entre morado y magenta.
-- Cyan para contraste y señales interactivas.
-- Lime para datos o highlights puntuales.
-- Ruido y texturas con opacidad baja.
+- Esquinas rectas en todo: paneles, botones, tags e imágenes.
+- Líneas finas blancas translúcidas (8 % y 15 %) en lugar de cajas pesadas.
+- Atmósfera morada: degradado radial `#3C1F44` → `#150A18` → `#05050b` con
+  grano de puntos de 1px cada 14px y un resplandor `rgba(108,56,122,.35)`.
+- Un solo acento ciruela `#B37AC2` como señal.
+- Tipografía Geist Pixel para títulos y etiquetas en mayúsculas.
+- Bento de tarjetas de marca con logos gigantes, rotados y recortados.
+
+El detalle completo está en el [ADN visual](/catalog/visual-dna).
 
 ## Evitar
 
 - Cyberpunk genérico con exceso de neón.
+- Esquinas redondeadas.
+- Acentos adicionales (cian, magenta, verde) fuera de sus usos únicos.
 - Circuitos aleatorios como decoración universal.
 - Rojo/naranja como colores dominantes de marca.
 - Glow en todos los elementos.

@@ -32,8 +32,8 @@ explica cómo adaptarlos a escritorio.
 - Selección con clic, `Shift + clic` (rango) y `Ctrl/⌘ + clic` (múltiple).
 - Navegación con flechas, `Home`, `End`, `Page Up/Down`.
 - Columnas redimensionables y ordenables cuando haya muchos datos.
-- Fila seleccionada: `--mxni-elevated` + barra o borde `#A83FE0`.
-- Números con cifras tabulares; IDs y rutas en JetBrains Mono.
+- Fila seleccionada: `--color-surface` + barra izquierda de 3px `#B37AC2`.
+- Números con cifras tabulares; IDs y rutas en Geist Mono.
 
 ## Paneles e inspectores
 

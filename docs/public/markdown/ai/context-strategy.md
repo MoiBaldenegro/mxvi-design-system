@@ -19,11 +19,14 @@ Make MXNI documentation retrievable by humans, agents, IDE assistants, and langu
 | `/markdown/...` | Individual raw Markdown files |
 | `/downloads/mxni-design-system-markdown.zip` | Offline documentation bundle |
 | `/ai/agent-instructions.md` | Short implementation contract |
+| `/markdown/catalog/visual-dna.md` | The traits that make something look MXNI |
+| `/markdown/catalog/master-prompt.md` | Ready-to-paste prompt to build an identical product |
+| `/mxni/mxni.css`, `/mxni/mxni.js` | The real stylesheet and optional behaviors |
 
 ## Recommended model workflow
 
 1. Start with `llms.txt`.
-2. Read `ai/agent-instructions.md`.
+2. Read `ai/agent-instructions.md` and `catalog/visual-dna.md`.
 3. Identify the target platform and load its context (`/llms-<platform>.txt`) or its guide under `platforms/<platform>/`.
 4. Retrieve only the relevant foundation, guideline, or component documents.
 5. For large tasks, use the platform context or `llms-full.txt` as broad context, then verify details against the individual canonical Markdown pages.
