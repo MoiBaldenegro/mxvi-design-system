@@ -16,7 +16,7 @@ cifras, línea de tiempo y cuadrículas de tarjetas.
 <section class="mx-profile-hero" aria-labelledby="perfil-nombre">
   <div class="mx-profile-hero__media"><img class="mx-photo" src="/mxvi/assets/examples/moises-hero.jpg" alt="Retrato de Moisés Baldenegro" width="952" height="960"></div>
   <div class="mx-profile-hero__body">
-    <span class="mx-handle">@moibaldenegro</span>
+    <p class="mx-profile-hero__handle">@moibaldenegro</p>
     <h1 class="mx-profile-hero__name" id="perfil-nombre">Moisés Baldenegro Melendez</h1>
     <p class="mx-profile-hero__headline">Senior Software Engineer | Backend &amp; Node.js Developer | Systems Architect</p>
     <p class="mx-profile-hero__location">Guadalajara, Jalisco, México</p>

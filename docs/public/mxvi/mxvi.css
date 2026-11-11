@@ -268,7 +268,7 @@ h1, h2 {
   line-height: 1.2;
 }
 
-.mx-heading--lg { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+.mx-heading--lg { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); letter-spacing: -0.01em; }
 
 .mx-heading--display {
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
@@ -291,7 +291,7 @@ h1, h2 {
 
 .mx-text--secondary { color: var(--color-text-secondary); }
 
-.mx-text--lead { color: var(--color-text-secondary); font-size: 1.2rem; line-height: 1.6; }
+.mx-text--lead { max-width: 70ch; color: var(--color-text-secondary); font-size: 1.2rem; line-height: 1.6; }
 
 .mx-meta { margin: 0; color: var(--color-text-secondary); font-size: 0.9rem; }
 
@@ -1474,6 +1474,8 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 
 .mx-section { display: grid; gap: calc(var(--gap-card) * 1.5); }
 
+.mx-section > .mx-heading { margin: 0; }
+
 .mx-stack { display: grid; gap: calc(var(--gap-card) * 2); }
 
 .mx-card-grid {
@@ -1776,6 +1778,16 @@ a.mx-tag:hover { border-color: var(--color-accent); }
 
 .mx-profile-hero__body p { margin: 0; }
 
+.mx-profile-hero__handle {
+  padding: calc(var(--gap-card) / 3) var(--gap-card);
+  border: 1px solid var(--color-username-border);
+  border-radius: var(--radius-square);
+  background: var(--color-username-bg);
+  color: var(--color-username-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .mx-profile-hero__name {
   margin: 0;
   color: var(--color-text);
@@ -1805,6 +1817,8 @@ a.mx-tag:hover { border-color: var(--color-accent); }
   gap: var(--gap-card);
   margin-top: calc(var(--gap-card) / 2);
 }
+
+.mx-profile-hero .mx-social-list--inline { justify-content: center; }
 
 @media (min-width: 900px) {
   .mx-profile-hero {

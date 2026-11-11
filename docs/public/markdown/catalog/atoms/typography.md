@@ -49,7 +49,7 @@ title: Tipografía y enlaces
 |---|---|---|---|---|
 | `.mx-text` | Geist Sans 400 | 1rem | `#ffffff` | 1.55 |
 | `.mx-text--secondary` | Geist Sans 400 | 1rem | `#b8b8c5` | 1.55 |
-| `.mx-text--lead` | Geist Sans 400 | 1.2rem | `#b8b8c5` | 1.6 |
+| `.mx-text--lead` | Geist Sans 400, máximo 70ch | 1.2rem | `#b8b8c5` | 1.6 |
 | `.mx-meta` | Geist Sans 400 | 0.9rem | `#b8b8c5` | normal |
 | `.mx-meta--mono` | Geist Mono 400 | 0.75rem | `#b8b8c5` | normal |
 | `.mx-meta--pill` | Geist Sans 400 | 0.9rem | `#b8b8c5` | borde 1px blanco 15 %, fondo superficie al 70 %, padding 6px 14px |
