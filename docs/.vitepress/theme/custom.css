@@ -39,11 +39,6 @@
   letter-spacing: -.06em;
 }
 
-.VPNavBar .title::after {
-  content: "_";
-  color: #e044c5;
-}
-
 .VPHome .VPHero .name {
   font-weight: 800;
   letter-spacing: -.065em;
@@ -134,4 +129,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
+}
+/* Logo page: the official two-color logo is shown on a light surface. */
+.logo-preview {
+  display: grid;
+  place-items: center;
+  margin: 16px 0 24px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  background: #f7f4fa;
+  padding: 32px;
+}
+
+.logo-preview img {
+  width: min(100%, 360px);
+  height: auto;
 }
