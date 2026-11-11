@@ -10,7 +10,8 @@
     "build": "npm run docs:prepare && vitepress build docs",
     "preview": "vitepress preview docs",
     "typecheck": "vue-tsc --noEmit",
-    "docs:check": "node scripts/check-docs.mjs"
+    "docs:check": "node scripts/check-docs.mjs",
+    "tokens:check": "node scripts/check-tokens-sync.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

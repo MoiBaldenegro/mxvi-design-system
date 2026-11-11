@@ -1,0 +1,30 @@
+name: Tokens in sync with moisesbaldenegro.com
+
+# moisesbaldenegro.com is the living reference of the MXVI look. This check
+# fails when mxvi/tokens.css and the website's src/styles/tokens.css differ.
+# It runs on every change here and daily, to catch changes made on the website.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '23 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tokens-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Compare tokens with the website
+        run: node scripts/check-tokens-sync.mjs
